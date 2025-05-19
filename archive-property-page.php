@@ -19,25 +19,25 @@
 
     <!-- Archived Properties Table -->
     <div class="table-responsive mt-3">
-      <table class="table table-striped table-sm fs-9 mb-0 text-center justify-content-center align-items-center">
+      <table class="table table-striped table-sm mb-0 text-center">
         <thead>
           <tr>
-            <th class="sort border-top border-translucent ps-3" data-sort="property-id">
+            <th class="border-top border-translucent ps-3" data-sort="property-id">
               <i class="bi bi-hash me-1"></i> Property ID
             </th>
-            <th class="sort border-top border-translucent ps-3" data-sort="title">
+            <th class="border-top border-translucent ps-3" data-sort="title">
               <i class="bi bi-house-door me-1"></i> Title
             </th>
-            <th class="sort border-top border-translucent ps-3" data-sort="location">
+            <th class="border-top border-translucent ps-3" data-sort="location">
               <i class="bi bi-geo-alt me-1"></i> Location
             </th>
-            <th class="sort border-top border-translucent ps-3" data-sort="owner">
+            <th class="border-top border-translucent ps-3" data-sort="owner">
               <i class="bi bi-person me-1"></i> Owner
             </th>
-            <th class="sort border-top border-translucent ps-3" data-sort="status">
+            <th class="border-top border-translucent ps-3" data-sort="status">
               <i class="bi bi-info-circle me-1"></i> Status
             </th>
-            <th class="sort border-top border-translucent ps-3" data-sort="action">
+            <th class="border-top border-translucent ps-3" data-sort="action">
               <i class="bi bi-gear me-1"></i> Action
             </th>
           </tr>
@@ -49,21 +49,21 @@
             <td class="align-middle ps-3 title">Oceanfront Condo</td>
             <td class="align-middle location">Miami</td>
             <td class="align-middle owner">John Smith</td>
-            <td class="align-middle ps-3 status">pending</td>
-            <td class="align-middle white-space-nowrap text-center pe-0">
-              <div class="btn-reveal-trigger position-static"><button
-                  class="btn btn-sm dropdown-toggle dropdown-caret-none transition-none btn-reveal fs-10" type="button"
-                  data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false"
-                  data-bs-reference="parent"><span class="fas fa-ellipsis-h fs-10"></span></button>
+            <td class="align-middle ps-3 status">Pending</td>
+            <td class="align-middle text-center pe-0">
+              <div class="btn-reveal-trigger position-static">
+                <button class="btn btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="bi bi-three-dots"></i>
+                </button>
                 <div class="dropdown-menu dropdown-menu-end py-2">
-                  <a class="dropdown-item" href="#!">
+                  <a class="dropdown-item" href="#!" onclick="viewClosureSummary('PROP1001')">
                     <i class="bi bi-eye me-2"></i> View
                   </a>
-                  <a class="dropdown-item" href="#!">
+                  <a class="dropdown-item" href="#!" onclick="confirmRestore('PROP1001')">
                     <i class="bi bi-box-arrow-up-right me-2"></i> Restore
                   </a>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item text-danger" href="#!">
+                  <a class="dropdown-item text-danger" href="#!" onclick="confirmDelete('PROP1001')">
                     <i class="bi bi-trash3 me-2"></i> Delete
                   </a>
                 </div>
@@ -71,25 +71,25 @@
             </td>
           </tr>
           <tr>
-            <td class="align-middle ps-3 profile-id">PROP1001</td>
-            <td class="align-middle ps-3 title">Oceanfront Condo</td>
-            <td class="align-middle location">Miami</td>
-            <td class="align-middle owner">John Smith</td>
-            <td class="align-middle ps-3 status">pending</td>
-            <td class="align-middle white-space-nowrap text-center pe-0">
-              <div class="btn-reveal-trigger position-static"><button
-                  class="btn btn-sm dropdown-toggle dropdown-caret-none transition-none btn-reveal fs-10" type="button"
-                  data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false"
-                  data-bs-reference="parent"><span class="fas fa-ellipsis-h fs-10"></span></button>
+            <td class="align-middle ps-3 profile-id">PROP1002</td>
+            <td class="align-middle ps-3 title">Mountain Cabin</td>
+            <td class="align-middle location">Denver</td>
+            <td class="align-middle owner">Jane Doe</td>
+            <td class="align-middle ps-3 status">Finalized</td>
+            <td class="align-middle text-center pe-0">
+              <div class="btn-reveal-trigger position-static">
+                <button class="btn btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="bi bi-three-dots"></i>
+                </button>
                 <div class="dropdown-menu dropdown-menu-end py-2">
-                  <a class="dropdown-item" href="#!">
+                  <a class="dropdown-item" href="#!" onclick="viewClosureSummary('PROP1002')">
                     <i class="bi bi-eye me-2"></i> View
                   </a>
-                  <a class="dropdown-item" href="#!">
+                  <a class="dropdown-item" href="#!" onclick="confirmRestore('PROP1002')">
                     <i class="bi bi-box-arrow-up-right me-2"></i> Restore
                   </a>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item text-danger" href="#!">
+                  <a class="dropdown-item text-danger" href="#!" onclick="confirmDelete('PROP1002')">
                     <i class="bi bi-trash3 me-2"></i> Delete
                   </a>
                 </div>
@@ -98,8 +98,6 @@
           </tr>
         </tbody>
       </table>
-
-
     </div>
 
     <!-- Closure Summary Modal -->
@@ -124,12 +122,11 @@
     </div>
 
     <!-- Restore Confirmation Modal -->
-    <div class="modal fade" id="restoreConfirmModal" tabindex="-1" aria-labelledby="restoreConfirmModalLabel"
-      aria-hidden="true">
+    <div class="modal fade" id="restoreModal" tabindex="-1" aria-labelledby="restoreModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header bg-primary text-white">
-            <h5 class="modal-title" id="restoreConfirmModalLabel">Confirm Restore</h5>
+            <h5 class="modal-title" id="restoreModalLabel">Confirm Restore</h5>
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
@@ -137,20 +134,18 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-            <button type="button" class="btn btn-primary">Restore</button>
+            <button type="button" class="btn btn-primary" id="confirmRestoreBtn">Restore</button>
           </div>
         </div>
       </div>
     </div>
 
-
     <!-- Delete Confirmation Modal -->
-    <div class="modal fade" id="deleteConfirmModal" tabindex="-1" aria-labelledby="deleteConfirmModalLabel"
-      aria-hidden="true">
+    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header bg-danger text-white">
-            <h5 class="modal-title" id="deleteConfirmModalLabel">Confirm Deletion</h5>
+            <h5 class="modal-title" id="deleteModalLabel">Confirm Deletion</h5>
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
@@ -158,12 +153,11 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-            <button type="button" class="btn btn-danger">Delete</button>
+            <button type="button" class="btn btn-danger" id="confirmDeleteBtn">Delete</button>
           </div>
         </div>
       </div>
     </div>
-
 
     <!-- Toast Notification -->
     <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
@@ -176,7 +170,6 @@
     </div>
 
     <!-- Bootstrap JS Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
