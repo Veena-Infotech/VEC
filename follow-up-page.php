@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -13,7 +12,6 @@
   <!-- GSAP Library -->
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
 </head>
-
 <body class="bg-light text-dark">
 
   <!-- Header -->
@@ -32,38 +30,67 @@
         <table class="table table-striped table-hover align-middle">
           <thead class="table-secondary text-center">
             <tr>
-              <th scope="col">Client Name</th>
-              <th scope="col">Contact</th>
+              <th scope="col">Property ID</th>
+              <th scope="col">Title</th>
+              <th scope="col">Location</th>
+              <th scope="col">Owner</th>
               <th scope="col">Status</th>
-              <th scope="col">Scheduled Visit</th>
               <th scope="col">Actions</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody class="list">
             <tr>
-              <td>Jane Smith</td>
-              <td>jane.smith@example.com</td>
-              <td><span class="badge bg-info text-dark">Interested</span></td>
-              <td>Not Scheduled</td>
-              <td class="text-center">
-                <div class="dropdown">
-                  <button
-                    class="btn btn-outline-primary btn-sm dropdown-toggle"
-                    type="button" id="actionDropdown1"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                    aria-label="Actions for Jane Smith">
-                    <i class="bi bi-gear"></i>
+              <td class="align-middle ps-3 profile-id">PROP1001</td>
+              <td class="align-middle ps-3 title">Oceanfront Condo</td>
+              <td class="align-middle location">Miami</td>
+              <td class="align-middle owner">John Smith</td>
+              <td class="align-middle ps-3 status">Pending</td>
+              <td class="align-middle text-center pe-0">
+                <div class="btn-reveal-trigger position-static">
+                  <button class="btn btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="bi bi-three-dots"></i>
                   </button>
-                  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="actionDropdown1">
-                    <li><button class="dropdown-item" type="button" onclick="openScheduleVisitModal('Jane Smith')"><i class="bi bi-calendar-plus me-2"></i> Schedule Visit</button></li>
-                    <li><button class="dropdown-item" type="button" onclick="openCommunicationModal('Jane Smith')"><i class="bi bi-chat-dots me-2"></i> View Communication</button></li>
-                    <li><button class="dropdown-item" type="button" onclick="openUpdateStatusModal('Jane Smith')"><i class="bi bi-pencil-square me-2"></i> Update Status</button></li>
-                  </ul>
+                  <div class="dropdown-menu dropdown-menu-end py-2">
+                    <a class="dropdown-item" href="#!" onclick="viewClosureSummary('PROP1001')">
+                      <i class="bi bi-eye me-2"></i> View
+                    </a>
+                    <a class="dropdown-item" href="#!" onclick="confirmRestore('PROP1001')">
+                      <i class="bi bi-box-arrow-up-right me-2"></i> Restore
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item text-danger" href="#!" onclick="confirmDelete('PROP1001')">
+                      <i class="bi bi-trash3 me-2"></i> Delete
+                    </a>
+                  </div>
                 </div>
               </td>
             </tr>
-            <!-- Additional rows can be added here -->
+            <tr>
+              <td class="align-middle ps-3 profile-id">PROP1002</td>
+              <td class="align-middle ps-3 title">Mountain Cabin</td>
+              <td class="align-middle location">Denver</td>
+              <td class="align-middle owner">Jane Doe</td>
+              <td class="align-middle ps-3 status">Finalized</td>
+              <td class="align-middle text-center pe-0">
+                <div class="btn-reveal-trigger position-static">
+                  <button class="btn btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="bi bi-three-dots"></i>
+                  </button>
+                  <div class="dropdown-menu dropdown-menu-end py-2">
+                    <a class="dropdown-item" href="#!" onclick="viewClosureSummary('PROP1002')">
+                      <i class="bi bi-eye me-2"></i> View
+                    </a>
+                    <a class="dropdown-item" href="#!" onclick="confirmRestore('PROP1002')">
+                      <i class="bi bi-box-arrow-up-right me-2"></i> Restore
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item text-danger" href="#!" onclick="confirmDelete('PROP1002')">
+                      <i class="bi bi-trash3 me-2"></i> Delete
+                    </a>
+                  </div>
+                </div>
+              </td>
+            </tr>
           </tbody>
         </table>
       </div>
@@ -75,20 +102,22 @@
       <div class="accordion" id="communicationAccordion">
         <div class="accordion-item">
           <h2 class="accordion-header" id="headingOne">
-            <button
-              class="accordion-button collapsed"
-              type="button" data-bs-toggle="collapse"
-              data-bs-target="#collapseOne"
-              aria-expanded="false"
-              aria-controls="collapseOne">
+            <button 
+              class="accordion-button collapsed" 
+              type="button" data-bs-toggle="collapse" 
+              data-bs-target="#collapseOne" 
+              aria-expanded="false" 
+              aria-controls="collapseOne"
+            >
               Jane Smith - Last Contact: May 15, 2025
             </button>
           </h2>
-          <div
-            id="collapseOne"
-            class="accordion-collapse collapse"
-            aria-labelledby="headingOne"
-            data-bs-parent="#communicationAccordion">
+          <div 
+            id="collapseOne" 
+            class="accordion-collapse collapse" 
+            aria-labelledby="headingOne" 
+            data-bs-parent="#communicationAccordion"
+          >
             <div class="accordion-body">
               <p><strong>Note:</strong> Interested in scheduling a visit next week. Requested more details about the neighborhood.</p>
               <p><strong>Communication:</strong> Sent brochure and answered initial queries.</p>
@@ -257,5 +286,4 @@
     });
   </script>
 </body>
-
 </html>
