@@ -43,10 +43,8 @@
         <!-- Locality with Auto-suggest -->
         <div class="col-md-4 position-relative">
           <label for="locality" class="form-label">Locality (Ward-based Mumbai regions)</label>
-          <input type="text" class="form-control" id="locality" placeholder="Start typing locality..."
-            autocomplete="off" required />
-          <ul class="list-group position-absolute w-100" id="localitySuggestions"
-            style="z-index: 1050; max-height: 180px; overflow-y: auto; display: none;"></ul>
+          <input type="text" class="form-control" id="locality" placeholder="Start typing locality..." autocomplete="off" required />
+          <ul class="list-group position-absolute w-100" id="localitySuggestions" style="z-index: 1050; max-height: 180px; overflow-y: auto; display: none;"></ul>
         </div>
 
         <!-- Address -->
@@ -58,8 +56,7 @@
         <!-- Pincode -->
         <div class="col-md-3">
           <label for="pincode" class="form-label">Pincode</label>
-          <input type="text" class="form-control" id="pincode" placeholder="Enter pincode" pattern="[0-9]{6}"
-            title="6 digit pincode" required />
+          <input type="text" class="form-control" id="pincode" placeholder="Enter pincode" pattern="[0-9]{6}" title="6 digit pincode" required />
         </div>
 
         <!-- Landmark -->
@@ -166,14 +163,12 @@
           <label for="imagesVideos" class="form-label">Upload Images/Videos</label>
           <input class="form-control" type="file" id="imagesVideos" accept="image/*,video/*" multiple />
           <small class="form-text text-muted">You can upload up to 10 images/videos (max 5MB each).</small>
-
         </div>
 
         <!-- Upload Documents -->
         <div class="col-md-6">
           <label for="documentsUpload" class="form-label">Upload Documents (Title Deed, OC, etc.)</label>
-          <input class="form-control" type="file" id="documentsUpload" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"
-            multiple />
+          <input class="form-control" type="file" id="documentsUpload" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" multiple />
           <small class="form-text text-muted">Supported formats: PDF, DOC, Images</small>
         </div>
 
@@ -243,12 +238,7 @@
       }
       filtered.forEach(loc => {
         const li = document.createElement('li');
-        li.classList.add(
-          'list-group-item',
-          'list-group-item-action',
-          'py-1',
-          'small'
-        );
+        li.classList.add('list-group-item', 'list-group-item-action', 'py-1', 'small');
         li.textContent = loc;
         li.addEventListener('click', () => {
           localityInput.value = loc;

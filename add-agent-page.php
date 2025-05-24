@@ -15,18 +15,54 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <!-- Bootstrap JS Bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    body {
+      background-color: #e9ecef; /* Light gray background */
+      color: #333;
+      font-family: 'Arial', sans-serif;
+    }
+    .card {
+      border-radius: 15px;
+      background: white;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+      margin-top: 50px; /* Add margin to separate from the top */
+    }
+    .card:hover {
+      transform: scale(1.02);
+    }
+    .form-label {
+      font-weight: bold;
+    }
+    .btn-primary {
+      background-color: #6a11cb; /* Custom primary color */
+      border: none;
+      transition: background-color 0.3s;
+    }
+    .btn-primary:hover {
+      background-color: #2575fc; /* Darker shade on hover */
+    }
+    .btn-outline-secondary {
+      color: #6a11cb;
+      border-color: #6a11cb;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .btn-outline-secondary:hover {
+      background-color: #6a11cb;
+      color: white;
+    }
+    .form-control:focus {
+      border-color: #6a11cb;
+      box-shadow: 0 0 5px rgba(106, 17, 203, 0.5);
+    }
+  </style>
 </head>
-<body class="bg-light">
-
-  <!-- Header -->
-  <header class="py-4 text-center bg-primary text-white">
-    <h1 class="fs-2"><i class="bi bi-person-plus"></i> Add Agent</h1>
-  </header>
+<body>
 
   <!-- Main Content -->
   <main class="container mb-5">
-    <section class="card p-4 mt-4" id="agentFormSection">
-      <h2 class="fs-4 mb-4">Agent Onboarding Form</h2>
+    <section class="card p-4" id="agentFormSection">
+      <h2 class="fs-4 mb-4 text-center">Agent Onboarding Form</h2>
       <form id="agentForm">
         <div class="row mb-3">
           <div class="col-md-6">
@@ -35,7 +71,7 @@
           </div>
           <div class="col-md-6">
             <label for="contact" class="form-label">Contact</label>
-            <input type="tel" class="form-control" id="contact" required />
+            <input type="tel" class="form-control" id="contact" required pattern="[0-9]{10}" title="Please enter a valid 10-digit phone number." />
           </div>
         </div>
         <div class="mb-3">
@@ -81,16 +117,11 @@
           <label for="agreementUpload" class="form-label">Agreement Upload (Commission Agreement)</label>
           <input type="file" class="form-control" id="agreementUpload" accept=".pdf,.jpg,.jpeg,.png" required />
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary w-100">Submit</button>
       </form>
-      <button class="btn btn-outline-secondary mt-3" onclick="addPropertyForAgent()">Add Property for Agent</button>
+      <button class="btn btn-outline-secondary mt-3 w-100" onclick="addPropertyForAgent()">Add Property for Agent</button>
     </section>
   </main>
-
-  <!-- Footer -->
-  <footer class="text-center py-4">
-    <p>&copy; 2025 Real Estate Management. All rights reserved.</p>
-  </footer>
 
   <!-- Script for form validation and animations -->
   <script>
@@ -113,16 +144,32 @@
 
       $('#agentForm').on('submit', function(e) {
         e.preventDefault();
-        // Add your form submission logic here
+
+        // Custom validation
+        if (!this.checkValidity()) {
+          alert('Please fill out all required fields correctly.');
+          return;
+        }
+
+        // Submit animation
         gsap.to("#agentFormSection", { 
           duration: 0.5, 
           scale: 0.95, 
           ease: "power2.out", 
           onComplete: function() {
-            alert('Agent added successfully!');
             gsap.to("#agentFormSection", { 
               duration: 0.5, 
-              scale: 1 
+              opacity: 0, 
+              onComplete: function() {
+                alert('Agent added successfully!');
+                // Reset form after submission
+                $('#agentForm')[0].reset();
+                gsap.to("#agentFormSection", { 
+                  duration: 0.5, 
+                  scale: 1, 
+                  opacity: 1 
+                });
+              } 
             });
           } 
         });
