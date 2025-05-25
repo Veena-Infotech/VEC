@@ -128,7 +128,7 @@
       <!-- Right Column: Summary -->
       <aside class="col-lg-5">
         <div class="card p-4 shadow-sm sticky-top" style="top: 80px;">
-          <h3 class="h5 mb-3 text-primary">
+          <h3 class="h5 mb-3 text-secondary">
             <i class="bi bi-card-list me-2"></i> Closure Summary
           </h3>
           <dl class="row">

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -12,13 +13,15 @@
   <!-- GSAP Library -->
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
 </head>
+
 <body class="bg-light text-dark">
 
   <!-- Header -->
-  <header class="py-4 text-center bg-white shadow-sm mb-5">
+  <div class="py-4 text-center bg-white shadow-sm mb-5">
     <h1 class="fs-2"><i class="bi bi-building"></i> Manage Property</h1>
     <p class="fs-6 text-muted">Track interested clients, schedule visits, and maintain communication history</p>
-  </header>
+  </div>
+
 
   <!-- Main Content -->
   <main class="container mb-5">
@@ -102,22 +105,20 @@
       <div class="accordion" id="communicationAccordion">
         <div class="accordion-item">
           <h2 class="accordion-header" id="headingOne">
-            <button 
-              class="accordion-button collapsed" 
-              type="button" data-bs-toggle="collapse" 
-              data-bs-target="#collapseOne" 
-              aria-expanded="false" 
-              aria-controls="collapseOne"
-            >
+            <button
+              class="accordion-button collapsed"
+              type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseOne"
+              aria-expanded="false"
+              aria-controls="collapseOne">
               Jane Smith - Last Contact: May 15, 2025
             </button>
           </h2>
-          <div 
-            id="collapseOne" 
-            class="accordion-collapse collapse" 
-            aria-labelledby="headingOne" 
-            data-bs-parent="#communicationAccordion"
-          >
+          <div
+            id="collapseOne"
+            class="accordion-collapse collapse"
+            aria-labelledby="headingOne"
+            data-bs-parent="#communicationAccordion">
             <div class="accordion-body">
               <p><strong>Note:</strong> Interested in scheduling a visit next week. Requested more details about the neighborhood.</p>
               <p><strong>Communication:</strong> Sent brochure and answered initial queries.</p>
@@ -129,10 +130,6 @@
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer class="bg-white text-center py-3 shadow-sm mt-auto">
-    <p class="fs-6 text-muted mb-0">&copy; 2025 Real Estate Management. All rights reserved.</p>
-  </footer>
 
   <!-- Modals -->
 
@@ -286,4 +283,5 @@
     });
   </script>
 </body>
+
 </html>
