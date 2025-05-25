@@ -22,21 +22,30 @@
             <div class="col-lg-4 mb-4">
                 <div class="card shadow-sm">
                     <div class="card-body">
-                        <h5 class="fw-semibold"><i class="bi bi-calendar3"></i> Calendar</h5>
+                        <h5 class="fw-semibold mb-3">
+                            <i class="bi bi-calendar3 me-2 text-primary"></i> Calendar
+                        </h5>
                         <input type="month" class="form-control mb-3" value="2025-05" />
-                        <ul class="list-group">
-                            <li class="list-group-item list-group-item-primary">25 May 2025</li>
+                        <ul class="list-group mb-0">
+                            <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-primary">
+                                25 May 2025
+                                <span class="badge bg-primary rounded-pill">Today</span>
+                            </li>
                             <li class="list-group-item">26 May 2025</li>
                             <li class="list-group-item">27 May 2025</li>
                         </ul>
                     </div>
                 </div>
 
-                <div class="mt-4">
-                    <h6 class="fw-semibold">Meetings on May 25, 2025</h6>
-                    <div class="border-start ps-3">
-                        <p class="mb-1 fw-bold">Rate Negotiation</p>
-                        <p class="text-muted small"><i class="bi bi-clock"></i> 10:27 PM - 11:27 PM</p>
+                <div class="card mt-4 shadow-sm">
+                    <div class="card-body">
+                        <h6 class="fw-semibold mb-3">Meetings on <span class="text-primary">May 25, 2025</span></h6>
+                        <div class="border-start border-3 border-primary ps-3">
+                            <p class="mb-1 fw-bold">Rate Negotiation</p>
+                            <p class="text-muted small mb-0">
+                                <i class="bi bi-clock me-1"></i>10:27 PM - 11:27 PM
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
