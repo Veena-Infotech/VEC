@@ -138,6 +138,76 @@
             color: #1abc9c;
             font-weight: 600;
         }
+
+        /* Existing styles... (keep all your original CSS above) */
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .vec-header {
+                padding: 1rem;
+                text-align: center;
+            }
+
+            .vec-header .title-row {
+                flex-direction: column;
+                gap: 0.3rem;
+            }
+
+            .vec-header .title-main {
+                font-size: 1.5rem;
+                letter-spacing: 2px;
+            }
+
+            .vec-header .title-sub {
+                font-size: 1rem;
+                margin-left: 0;
+            }
+
+            .vec-nav {
+                gap: 1.5rem;
+            }
+
+            .vec-subnav {
+                gap: 1rem;
+                font-size: 0.85rem;
+            }
+
+            .vec-subnav .subnav-group {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.4rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .vec-header .title-main {
+                font-size: 1.3rem;
+            }
+
+            .vec-header .title-sub {
+                font-size: 0.95rem;
+            }
+
+            .vec-nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .vec-subnav {
+                flex-direction: column;
+            }
+
+            .vec-subnav .subnav-group {
+                width: 100%;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 0.5rem;
+            }
+
+            .vec-subnav .subnav-group span {
+                font-size: 0.85rem;
+            }
+        }
     </style>
 </head>
 
