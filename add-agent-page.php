@@ -35,25 +35,25 @@
       font-weight: bold;
     }
     .btn-primary {
-      background-color: #6a11cb; /* Custom primary color */
+      background-color: #2c3e50;/* Custom primary color */
       border: none;
       transition: background-color 0.3s;
     }
     .btn-primary:hover {
-      background-color: #2575fc; /* Darker shade on hover */
+      background-color:rgb(32, 47, 62); /* Darker shade on hover */
     }
     .btn-outline-secondary {
-      color: #6a11cb;
-      border-color: #6a11cb;
+      color:#2c3e50;
+      border-color: #2c3e50;
       transition: background-color 0.3s, color 0.3s;
     }
     .btn-outline-secondary:hover {
-      background-color: #6a11cb;
+      background-color:rgb(57, 81, 104);
       color: white;
     }
     .form-control:focus {
-      border-color: #6a11cb;
-      box-shadow: 0 0 5px rgba(106, 17, 203, 0.5);
+      border-color:rgb(65, 91, 117);
+      box-shadow: 0 0 5px rgba(#2c3e50, 0.5);
     }
   </style>
 </head>
