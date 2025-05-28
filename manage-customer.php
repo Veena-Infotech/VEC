@@ -1,174 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Manage Customer</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Manage Customer</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
-
 <body class="bg-body-tertiary">
+  <div class="container py-5">
+    <h1 class="mb-4 text-dark fw-bold text-center">Manage Customer</h1>
 
-    <div class="container py-5">
-        <h1 class="mb-4 text-dark fw-bold text-center">Manage Customer</h1>
-
-        <!-- Filter Card -->
-        <div class="card shadow-sm mb-4 border-muted bg-white">
-            <div class="card-header bg-light text-dark fw-semibold border-bottom border-muted">
-                Search & Filter Customers
-            </div>
-            <div class="card-body">
-                <form class="row g-3">
-                    <div class="col-md-3">
-                        <label for="filterType" class="form-label text-secondary">Type</label>
-                        <select id="filterType" class="form-select border-muted">
-                            <option value="" selected>All Types</option>
-                            <option>Buyer</option>
-                            <option>Seller</option>
-                            <option>Investor</option>
-                        </select>
-                    </div>
-                    <div class="col-md-3">
-                        <label for="filterBudget" class="form-label text-secondary">Budget</label>
-                        <select id="filterBudget" class="form-select border-muted">
-                            <option value="" selected>All Budgets</option>
-                            <option>&lt; $100,000</option>
-                            <option>$100,000 - $500,000</option>
-                            <option>&gt; $500,000</option>
-                        </select>
-                    </div>
-                    <div class="col-md-3">
-                        <label for="filterLocation" class="form-label text-secondary">Location</label>
-                        <select id="filterLocation" class="form-select border-muted">
-                            <option value="" selected>All Locations</option>
-                            <option>New York</option>
-                            <option>San Francisco</option>
-                            <option>Miami</option>
-                        </select>
-                    </div>
-                    <div class="col-md-3 d-flex align-items-end">
-                        <button type="button" id="btnFilter" class="btn btn-outline-dark w-100">Apply Filters</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-
-        <!-- Customer Info Card -->
-        <div class="card shadow-sm mb-4 border-muted bg-white" id="customerCard">
-            <div class="card-header d-flex justify-content-between align-items-center bg-light text-dark fw-semibold border-bottom border-muted">
-                <span>Customer: <strong>John Doe</strong></span>
-                <select id="statusSelect" class="form-select form-select-sm w-auto border-muted">
-                    <option value="Looking" selected>Looking</option>
-                    <option value="On Hold">On Hold</option>
-                    <option value="Closed Deal">Closed Deal</option>
-                </select>
-            </div>
-            <div class="card-body">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                    <button id="btnMatchProperties" class="btn btn-outline-dark">Match with Property Listings</button>
-
-                    <div class="d-flex align-items-center gap-2">
-                        <label for="assignAgent" class="mb-0 text-secondary">Assign Sales Agent:</label>
-                        <select id="assignAgent" class="form-select form-select-sm border-muted" style="width: 200px;">
-                            <option selected disabled>Select Agent</option>
-                            <option>Agent A</option>
-                            <option>Agent B</option>
-                            <option>Agent C</option>
-                        </select>
-                    </div>
-                </div>
-
-                <!-- Notes -->
-                <h5 class="text-secondary">Follow-up Notes</h5>
-                <div id="notesList" class="bg-light border border-muted rounded p-3 mb-3" style="max-height: 180px; overflow-y: auto;"></div>
-
-                <div class="input-group">
-                    <input type="text" id="noteInput" class="form-control border-muted" placeholder="Add a follow-up note..." />
-                    <button id="addNoteBtn" class="btn btn-outline-dark" type="button">Add Note</button>
-                </div>
-            </div>
-        </div>
+    <!-- Filter Card -->
+    <div class="card shadow-sm mb-4 border-muted bg-white">
+      <div class="card-header bg-light text-dark fw-semibold border-bottom border-muted">
+        Search & Filter Customers
+      </div>
+      <div class="card-body">
+        <form class="row g-3">
+          <div class="col-md-3">
+            <label for="filterType" class="form-label text-secondary">Type</label>
+            <select id="filterType" class="form-select border-muted">
+              <option value="" selected>All Types</option>
+              <option value="Buyer">Buyer</option>
+              <option value="Seller">Seller</option>
+              <option value="Investor">Investor</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <label for="filterBudget" class="form-label text-secondary">Budget</label>
+            <select id="filterBudget" class="form-select border-muted">
+              <option value="" selected>All Budgets</option>
+              <option value="low">&lt; $100,000</option>
+              <option value="medium">$100,000 - $500,000</option>
+              <option value="high">&gt; $500,000</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <label for="filterLocation" class="form-label text-secondary">Location</label>
+            <select id="filterLocation" class="form-select border-muted">
+              <option value="" selected>All Locations</option>
+              <option value="New York">New York</option>
+              <option value="San Francisco">San Francisco</option>
+              <option value="Miami">Miami</option>
+            </select>
+          </div>
+          <div class="col-md-3 d-flex align-items-end">
+            <button type="button" id="btnFilter" class="btn btn-outline-dark w-100">Apply Filters</button>
+          </div>
+        </form>
+      </div>
     </div>
 
-    <script>
-        gsap.from("h1", {
-            duration: 1,
-            y: -40,
-            opacity: 0,
-            ease: "power2.out"
-        });
-        gsap.from(".card", {
-            duration: 0.8,
-            opacity: 0,
-            y: 20,
-            stagger: 0.2,
-            delay: 0.3
-        });
+    <!-- Customer Info Section -->
+    <div id="customerContainer"></div>
+  </div>
 
-        const notesList = document.getElementById("notesList");
-        const addNoteBtn = document.getElementById("addNoteBtn");
-        const noteInput = document.getElementById("noteInput");
+  <script>
+    gsap.from("h1", { duration: 1, y: -40, opacity: 0, ease: "power2.out" });
+    gsap.from(".card", { duration: 0.8, opacity: 0, y: 20, stagger: 0.2, delay: 0.3 });
 
-        function addNote() {
-            const text = noteInput.value.trim();
-            if (!text) return;
+    const customerContainer = document.getElementById("customerContainer");
 
-            const timestamp = new Date().toLocaleString();
-            const noteItem = document.createElement("div");
-            noteItem.className = "border border-muted rounded bg-white p-2 mb-2";
-            noteItem.innerHTML = `
+    // Sample customer data
+    const customers = [
+      {
+        name: "John Doe",
+        type: "Buyer",
+        budget: "medium",
+        location: "New York",
+        status: "Looking",
+        agent: "Agent A"
+      },
+      {
+        name: "Jane Smith",
+        type: "Seller",
+        budget: "high",
+        location: "San Francisco",
+        status: "On Hold",
+        agent: "Agent B"
+      },
+      {
+        name: "Ali Khan",
+        type: "Investor",
+        budget: "low",
+        location: "Miami",
+        status: "Closed Deal",
+        agent: "Agent C"
+      }
+    ];
+
+   function renderCustomers(filteredCustomers) {
+  customerContainer.innerHTML = "";
+
+  if (filteredCustomers.length === 0) {
+    customerContainer.innerHTML = `<div class="alert alert-warning">No matching customers found.</div>`;
+    return;
+  }
+
+  filteredCustomers.forEach((customer, index) => {
+    const card = document.createElement("div");
+    card.className = "card shadow-sm mb-4 border-muted bg-white";
+
+    const noteInputId = `noteInput-${index}`;
+    const notesListId = `notesList-${index}`;
+    const addNoteBtnId = `addNoteBtn-${index}`;
+
+    card.innerHTML = `
+      <div class="card-header d-flex justify-content-between align-items-center bg-light text-dark fw-semibold border-bottom border-muted">
+        <span>Customer: <strong>${customer.name}</strong></span>
+        <select class="form-select form-select-sm w-auto border-muted">
+          <option${customer.status === "Looking" ? " selected" : ""}>Looking</option>
+          <option${customer.status === "On Hold" ? " selected" : ""}>On Hold</option>
+          <option${customer.status === "Closed Deal" ? " selected" : ""}>Closed Deal</option>
+        </select>
+      </div>
+      <div class="card-body">
+        <p class="mb-2 text-secondary">Type: ${customer.type}</p>
+        <p class="mb-2 text-secondary">Budget: ${customer.budget}</p>
+        <p class="mb-2 text-secondary">Location: ${customer.location}</p>
+
+        <div class="d-flex align-items-center gap-2 mb-3">
+          <label class="text-secondary mb-0">Assigned Agent:</label>
+          <select class="form-select form-select-sm border-muted" style="width: 200px;">
+            <option ${customer.agent === "Agent A" ? "selected" : ""}>Agent A</option>
+            <option ${customer.agent === "Agent B" ? "selected" : ""}>Agent B</option>
+            <option ${customer.agent === "Agent C" ? "selected" : ""}>Agent C</option>
+          </select>
+        </div>
+
+        <h6 class="text-secondary">Follow-up Notes</h6>
+        <div id="${notesListId}" class="bg-light border border-muted rounded p-3 mb-3" style="max-height: 180px; overflow-y: auto;"></div>
+
+        <div class="input-group">
+          <input type="text" id="${noteInputId}" class="form-control border-muted" placeholder="Add a follow-up note..." />
+          <button id="${addNoteBtnId}" class="btn btn-outline-dark" type="button">Add Note</button>
+        </div>
+      </div>
+    `;
+
+    customerContainer.appendChild(card);
+
+    // Set up note functionality per customer card
+    const noteInput = card.querySelector(`#${noteInputId}`);
+    const notesList = card.querySelector(`#${notesListId}`);
+    const addNoteBtn = card.querySelector(`#${addNoteBtnId}`);
+
+    const addNote = () => {
+      const text = noteInput.value.trim();
+      if (!text) return;
+
+      const timestamp = new Date().toLocaleString();
+      const noteItem = document.createElement("div");
+      noteItem.className = "border border-muted rounded bg-white p-2 mb-2";
+      noteItem.innerHTML = `
         <div class="d-flex justify-content-between">
           <div class="text-secondary">${text}</div>
           <small class="text-muted">${timestamp}</small>
         </div>
       `;
+      notesList.prepend(noteItem);
+      noteInput.value = "";
 
-            notesList.prepend(noteItem);
-            noteInput.value = "";
-            gsap.from(noteItem, {
-                duration: 0.5,
-                opacity: 0,
-                y: 20
-            });
-        }
+      gsap.from(noteItem, { duration: 0.5, opacity: 0, y: 20 });
+    };
 
-        addNoteBtn.addEventListener("click", addNote);
-        noteInput.addEventListener("keypress", e => {
-            if (e.key === "Enter") addNote();
-        });
+    addNoteBtn.addEventListener("click", addNote);
+    noteInput.addEventListener("keypress", e => {
+      if (e.key === "Enter") addNote();
+    });
 
-        document.getElementById("btnFilter").addEventListener("click", () => {
-            gsap.to("#customerCard", {
-                duration: 0.3,
-                scale: 1.02,
-                yoyo: true,
-                repeat: 1
-            });
-            alert("Filters applied (demo)");
-        });
+    gsap.from(card, { duration: 0.4, opacity: 0, y: 20 });
+  });
+}
 
-        document.getElementById("btnMatchProperties").addEventListener("click", () => {
-            gsap.to("#btnMatchProperties", {
-                scale: 1.1,
-                duration: 0.2,
-                yoyo: true,
-                repeat: 1
-            });
-            alert("Matching properties (demo)");
-        });
 
-        document.getElementById("statusSelect").addEventListener("change", function() {
-            alert(`Status updated to "${this.value}" (demo)`);
-        });
+    document.getElementById("btnFilter").addEventListener("click", () => {
+      const type = document.getElementById("filterType").value;
+      const budget = document.getElementById("filterBudget").value;
+      const location = document.getElementById("filterLocation").value;
 
-        document.getElementById("assignAgent").addEventListener("change", function() {
-            alert(`Assigned to "${this.value}" (demo)`);
-        });
-    </script>
+      const filtered = customers.filter(c =>
+        (type === "" || c.type === type) &&
+        (budget === "" || c.budget === budget) &&
+        (location === "" || c.location === location)
+      );
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+      renderCustomers(filtered);
+    });
+
+    // Initial render
+    renderCustomers(customers);
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
