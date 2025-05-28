@@ -15,6 +15,15 @@
   <!-- GSAP -->
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
+
+  <style>
+    .table-responsive {
+      overflow: visible !important;
+    }
+    .dropdown-menu {
+      z-index: 1055 !important;
+    }
+  </style>
 </head>
 <body class="bg-light">
 
@@ -65,7 +74,7 @@
             <td>Jane Smith</td>
             <td><span class="badge bg-success">Available</span></td>
             <td>Team A</td>
-            <td>
+            <td class="position-relative">
               <div class="btn-group">
                 <button class="btn btn-sm btn-outline-secondary" onclick="openEditModal('PROP001')"><i class="bi bi-pencil-square"></i></button>
                 <button class="btn btn-sm btn-outline-info" onclick="openPreviewModal()"><i class="bi bi-images"></i></button>
@@ -168,7 +177,7 @@
     }
 
     function assignAgent(id) {
-      const agents = ["Team A", "Team B", "Team C"]; // mock agent DB
+      const agents = ["Team A", "Team B", "Team C"];
       let agent = prompt("Assign to agent/team:", agents.join(", "));
       if (agent) showToast(`Assigned to ${agent}`);
     }
