@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -17,46 +18,59 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <style>
     body {
-      background-color: #e9ecef; /* Light gray background */
+      background-color: #e9ecef;
+      /* Light gray background */
       color: #333;
       font-family: 'Arial', sans-serif;
     }
+
     .card {
       border-radius: 15px;
       background: white;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s;
-      margin-top: 50px; /* Add margin to separate from the top */
+      margin-top: 50px;
+      /* Add margin to separate from the top */
     }
+
     .card:hover {
       transform: scale(1.02);
     }
+
     .form-label {
       font-weight: bold;
     }
+
     .btn-primary {
-      background-color: #2c3e50;/* Custom primary color */
+      background-color: #2c3e50;
+      /* Custom primary color */
       border: none;
       transition: background-color 0.3s;
     }
+
     .btn-primary:hover {
-      background-color:rgb(32, 47, 62); /* Darker shade on hover */
+      background-color: rgb(32, 47, 62);
+      /* Darker shade on hover */
     }
+
     .btn-outline-secondary {
-      color:#2c3e50;
+      color: #2c3e50;
       border-color: #2c3e50;
       transition: background-color 0.3s, color 0.3s;
     }
+
     .btn-outline-secondary:hover {
-      background-color:rgb(57, 81, 104);
+      background-color: rgb(57, 81, 104);
       color: white;
     }
+
     .form-control:focus {
-      border-color:rgb(65, 91, 117);
+      border-color: rgb(65, 91, 117);
       box-shadow: 0 0 5px rgba(#2c3e50, 0.5);
     }
   </style>
 </head>
+
 <body>
 
   <!-- Main Content -->
@@ -67,7 +81,7 @@
         <div class="row mb-3">
           <div class="col-md-6">
             <label for="agentName" class="form-label">Name</label>
-            <input type="text" class="form-control" id="agentName" required />
+            <input type="text" class="form-control" id="agentName" required placeholder="Enter Your Name" />
           </div>
           <div class="col-md-6">
             <label for="contact" class="form-label">Contact</label>
@@ -93,7 +107,7 @@
         </div>
         <div class="mb-3">
           <label for="areaOfOperation" class="form-label">Area of Operation (Select up to 10)</label>
-          <select class="form-select" id="areaOfOperation" multiple required>
+          <select class="form-select" id="areaOfOperation" multiple="multiple" required>
             <option value="Locality1">Locality 1</option>
             <option value="Locality2">Locality 2</option>
             <option value="Locality3">Locality 3</option>
@@ -107,7 +121,9 @@
             <option value="Locality11">Locality 11</option>
             <option value="Locality12">Locality 12</option>
           </select>
-          <small class="form-text text-muted">Max 10 areas can be selected.</small>
+        </div>
+
+        <small class="form-text text-muted">Max 10 areas can be selected.</small>
         </div>
         <div class="mb-3">
           <label for="builderTieUps" class="form-label">Preferred Builder Tie-ups (if any)</label>
@@ -127,11 +143,11 @@
   <script>
     $(document).ready(function() {
       // GSAP animation for the form section
-      gsap.from("#agentFormSection", { 
-        duration: 1, 
-        y: -50, 
-        opacity: 0, 
-        ease: "power2.out" 
+      gsap.from("#agentFormSection", {
+        duration: 1,
+        y: -50,
+        opacity: 0,
+        ease: "power2.out"
       });
 
       $('#areaOfOperation').on('change', function() {
@@ -152,26 +168,26 @@
         }
 
         // Submit animation
-        gsap.to("#agentFormSection", { 
-          duration: 0.5, 
-          scale: 0.95, 
-          ease: "power2.out", 
+        gsap.to("#agentFormSection", {
+          duration: 0.5,
+          scale: 0.95,
+          ease: "power2.out",
           onComplete: function() {
-            gsap.to("#agentFormSection", { 
-              duration: 0.5, 
-              opacity: 0, 
+            gsap.to("#agentFormSection", {
+              duration: 0.5,
+              opacity: 0,
               onComplete: function() {
                 alert('Agent added successfully!');
                 // Reset form after submission
                 $('#agentForm')[0].reset();
-                gsap.to("#agentFormSection", { 
-                  duration: 0.5, 
-                  scale: 1, 
-                  opacity: 1 
+                gsap.to("#agentFormSection", {
+                  duration: 0.5,
+                  scale: 1,
+                  opacity: 1
                 });
-              } 
+              }
             });
-          } 
+          }
         });
       });
     });
@@ -182,4 +198,5 @@
     }
   </script>
 </body>
+
 </html>

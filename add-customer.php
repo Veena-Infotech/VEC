@@ -15,6 +15,10 @@
         <h2 class="mb-4 text-primary fw-bold text-center">Add Customer</h2>
         <form id="customerForm" class="needs-validation" novalidate>
           <div class="row g-3">
+             <div class="col-md-6">
+              <label class="form-label">Full Name</label>
+              <input type="text" class="form-control" required placeholder="Enter full name">
+            </div>
             <div class="col-md-6">
               <label class="form-label">Customer Type</label>
               <select class="form-select" id="customerType" required>
@@ -25,20 +29,16 @@
               </select>
             </div>
             <div class="col-md-6">
-              <label class="form-label">Full Name</label>
-              <input type="text" class="form-control" required>
-            </div>
-            <div class="col-md-6">
               <label class="form-label">Contact Number</label>
-              <input type="tel" class="form-control" required>
+              <input type="tel" class="form-control" required placeholder="Enter contact number">
             </div>
             <div class="col-md-6">
               <label class="form-label">Email</label>
-              <input type="email" class="form-control" required>
+              <input type="email" class="form-control" required placeholder="Enter email">
             </div>
             <div class="col-md-6">
               <label class="form-label">Upload ID Proof (PDF/JPEG only)</label>
-              <input type="file" class="form-control" id="idProof" accept=".pdf,.jpeg,.jpg" required>
+              <input type="file" class="form-control" id="idProof" accept=".pdf,.jpeg,.jpg" required placeholder="Upload ID proof">
             </div>
             <div class="col-md-6">
               <label class="form-label">Budget Range</label>
@@ -47,7 +47,7 @@
             </div>
             <div class="col-md-6">
               <label class="form-label">Preferred Localities / Areas</label>
-              <input type="text" class="form-control">
+              <input type="text" class="form-control" placeholder="Enter preferred localities or areas">
             </div>
             <div class="col-md-6">
               <label class="form-label">Purpose</label>
@@ -59,11 +59,11 @@
             </div>
             <div class="col-md-6">
               <label class="form-label">Type of Property Interested In</label>
-              <input type="text" class="form-control">
+              <input type="text" class="form-control" placeholder="e.g. Apartment, Villa, Commercial">
             </div>
             <div class="col-md-6">
               <label class="form-label">Agent Linked</label>
-              <input type="text" class="form-control">
+              <input type="text" class="form-control" placeholder="Enter agent name or ID">
             </div>
             <div class="col-md-6">
               <label class="form-label">Status</label>

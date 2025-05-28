@@ -16,11 +16,14 @@
 
 <body class="bg-light text-dark">
 
-  <!-- Header -->
+  <!-- Title Section -->
   <div class="py-4 text-center bg-white shadow-sm mb-5">
-    <h1 class="fs-2"><i class="bi bi-building"></i> Manage Property</h1>
-    <p class="fs-6 text-muted">Track interested clients, schedule visits, and maintain communication history</p>
+    <div class="fs-2 fw-semibold">
+      <i class="bi bi-building"></i> Manage Property
+    </div>
+    <p class="fs-6 text-muted mb-0">Track interested clients, schedule visits, and maintain communication history</p>
   </div>
+
 
 
   <!-- Main Content -->
@@ -28,7 +31,14 @@
 
     <!-- Interested Buyers/Tenants Section -->
     <section class="mb-5 bg-white rounded shadow-sm p-4">
-      <h2 class="fs-4 mb-4"><i class="bi bi-people pe-2"></i>Interested Buyers/Tenants</h2>
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-4">
+        <h2 class="fs-4 mb-2 mb-md-0"><i class="bi bi-people pe-2"></i>Interested Buyers/Tenants</h2>
+
+        <div class="ms-md-3" style="min-width: 300px;">
+          <input type="text" id="searchInput" class="form-control" placeholder="Search by Property ID, Title, Location, or Owner..." onkeyup="filterTable()">
+        </div>
+      </div>
+
       <div class="table-responsive">
         <table class="table table-striped table-hover align-middle">
           <thead class="table-secondary text-center">
@@ -101,7 +111,16 @@
 
     <!-- Communication History Section -->
     <section class="bg-white rounded shadow-sm p-4">
-      <h2 class="fs-4 mb-4"><i class="bi bi-chat-left-text pe-2"></i>Notes & Communication History</h2>
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-4">
+        <h2 class="fs-4 mb-2 mb-md-0">
+          <i class="bi bi-chat-left-text pe-2"></i>Notes & Communication History
+        </h2>
+
+        <div class="ms-md-3" style="min-width: 300px;">
+          <input type="text" id="notesSearchInput" class="form-control" placeholder="Search notes or messages..." onkeyup="filterNotesTable()">
+        </div>
+      </div>
+
       <div class="accordion" id="communicationAccordion">
         <div class="accordion-item">
           <h2 class="accordion-header" id="headingOne">

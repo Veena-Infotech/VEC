@@ -4,208 +4,111 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>VEC Module Header Component</title>
+    <title>VEC Header</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-
-        /* Reset and base */
-        body,
-        h1,
-        h2,
-        h3,
-        ul,
-        li {
-            margin: 0;
-            padding: 0;
+        .vec-navbar {
+            background-color: #ffffff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+            padding: 0.8rem 1rem;
         }
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #f9fbfc;
+        .vec-brand .title {
+            font-size: 1.25rem;
+            font-weight: 600;
             color: #2c3e50;
+            line-height: 1.2;
         }
 
-        /* Header container */
-        .vec-header {
-            background: #2c3e50;
-            color: #ecf0f1;
-            padding: 1.4rem 2rem;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-            user-select: none;
+        .vec-brand small {
+            font-size: 0.8rem;
+            color: #7f8c8d;
         }
 
-        /* Title section */
-        .vec-header .title-row {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
+        .vec-navbar .nav-link {
+            font-weight: 500;
+            color: #2c3e50 !important;
+            transition: color 0.2s;
         }
 
-        .vec-header .title-main {
-            font-size: 1.8rem;
-            font-weight: 700;
-            letter-spacing: 3px;
-            text-transform: uppercase;
+        .vec-navbar .nav-link.active,
+        .vec-navbar .nav-link:hover {
+            color: #1abc9c !important;
         }
 
-        .vec-header .title-sub {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #1abc9c;
-            margin-left: 8px;
-            white-space: nowrap;
-        }
-
-        /* Tagline */
-        .vec-header .tagline {
-            margin-top: 0.25rem;
-            font-weight: 400;
-            font-size: 1rem;
-            text-align: center;
-            color: #bdc3c7;
-            max-width: 720px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.4;
-        }
-
-        /* Navigation tabs container */
-        .vec-nav {
-            margin-top: 1.2rem;
-            display: flex;
-            justify-content: center;
-            border-top: 1.5px solid #34495e;
-            padding-top: 0.8rem;
-            gap: 2.5rem;
-            flex-wrap: wrap;
-        }
-
-        /* Each primary nav tab */
-        .vec-nav>.nav-item {
-            font-weight: 600;
-            font-size: 1.05rem;
-            color: #ecf0f1;
-            cursor: pointer;
-            position: relative;
-            transition: color 0.3s ease;
-        }
-
-        .vec-nav>.nav-item:hover,
-        .vec-nav>.nav-item.active {
-            color: #1abc9c;
-        }
-
-        .vec-nav>.nav-item::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -6px;
-            width: 0%;
-            height: 3px;
-            background: #1abc9c;
-            transition: width 0.3s ease;
-        }
-
-        .vec-nav>.nav-item:hover::after,
-        .vec-nav>.nav-item.active::after {
-            width: 100%;
-        }
-
-        /* Submenu container */
         .vec-subnav {
-            margin-top: 0.5rem;
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            font-weight: 400;
+            background: #f8f9fa;
+            border-top: 1px solid #dee2e6;
+            padding: 0.75rem 1rem;
+        }
+
+        .vec-subnav .badge {
+            padding: 0.6rem 1rem;
             font-size: 0.9rem;
-            color: #95a5a6;
-            flex-wrap: wrap;
-        }
-
-        .vec-subnav>.subnav-group {
-            display: flex;
-            gap: 0.8rem;
-            padding: 0.25rem 0.5rem;
-            border-radius: 6px;
-            background: #34495e;
-            white-space: nowrap;
-        }
-
-        .vec-subnav>.subnav-group>span {
+            background-color: #ecf9f6;
             color: #1abc9c;
-            font-weight: 600;
+            border: 1px solid #c2f0e8;
+            border-radius: 20px;
+            transition: background 0.3s;
         }
 
-        /* Existing styles... (keep all your original CSS above) */
+        .vec-subnav .badge:hover {
+            background-color: #d1f2eb;
+            cursor: pointer;
+        }
+
+        .vec-tagline {
+            text-align: center;
+            font-size: 0.85rem;
+            color: #7f8c8d;
+            margin-top: 0.4rem;
+        }
 
         /* Responsive Adjustments */
         @media (max-width: 768px) {
-            .vec-header {
-                padding: 1rem;
-                text-align: center;
+            .vec-navbar {
+                padding: 0.5rem 1rem;
             }
 
-            .vec-header .title-row {
-                flex-direction: column;
-                gap: 0.3rem;
+            .vec-brand .title {
+                font-size: 1.1rem;
             }
 
-            .vec-header .title-main {
-                font-size: 1.5rem;
-                letter-spacing: 2px;
-            }
-
-            .vec-header .title-sub {
-                font-size: 1rem;
-                margin-left: 0;
-            }
-
-            .vec-nav {
-                gap: 1.5rem;
+            .vec-brand small {
+                font-size: 0.7rem;
             }
 
             .vec-subnav {
-                gap: 1rem;
-                font-size: 0.85rem;
+                padding: 0.5rem 1rem;
             }
 
-            .vec-subnav .subnav-group {
-                flex-direction: column;
-                align-items: center;
-                gap: 0.4rem;
+            .vec-subnav .badge {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.8rem;
             }
         }
 
         @media (max-width: 480px) {
-            .vec-header .title-main {
-                font-size: 1.3rem;
+            .vec-navbar {
+                padding: 0.3rem 0.8rem;
             }
 
-            .vec-header .title-sub {
-                font-size: 0.95rem;
+            .vec-brand .title {
+                font-size: 1rem;
             }
 
-            .vec-nav {
-                flex-direction: column;
-                gap: 1rem;
+            .vec-brand small {
+                font-size: 0.6rem;
             }
 
             .vec-subnav {
-                flex-direction: column;
+                padding: 0.3rem 0.8rem;
             }
 
-            .vec-subnav .subnav-group {
-                width: 100%;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 0.5rem;
-            }
-
-            .vec-subnav .subnav-group span {
-                font-size: 0.85rem;
+            .vec-subnav .badge {
+                padding: 0.3rem 0.6rem;
+                font-size: 0.7rem;
             }
         }
     </style>
@@ -213,64 +116,69 @@
 
 <body>
 
-    <header class="vec-header" role="banner" aria-label="VEC module header">
-        <div class="title-row" aria-label="Application Title and Group">
-            <div class="title-main" tabindex="0">VEC Real Estate Management</div>
-            <div class="title-sub" tabindex="0">Veena Group Mumbai</div>
-        </div>
-        <div class="tagline" tabindex="0">
-            Streamlining Properties, Customers &amp; Agents Across Buy, Sell &amp; Rent Lifecycles
-        </div>
-        <nav class="vec-nav" aria-label="Primary navigation tabs">
-            <div class="nav-item active" tabindex="0" aria-current="page" aria-controls="property-subnav">Property</div>
-            <div class="nav-item" tabindex="0" aria-controls="customers-subnav">Customers</div>
-            <div class="nav-item" tabindex="0" aria-controls="agents-subnav">Agents</div>
-        </nav>
-        <div class="vec-subnav" aria-label="Sub navigation for selected tab">
-            <div class="subnav-group" id="property-subnav" style="display: flex;">
-                <span>Add Property</span><span>Manage Property</span><span>Archive Property</span><span>Property Follow-Up</span>
+    <!-- Header Navbar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center gap-2 vec-brand" href="#">
+                <i class="bi bi-building text-primary fs-4"></i>
+                <div>
+                    <div class="title">VEC Real Estate Management</div>
+                    <small>Veena Group Mumbai</small>
+                </div>
+            </a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Property
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Add Property</a></li>
+                            <li><a class="dropdown-item" href="#">Manage Property </a></li>
+                            <li><a class="dropdown-item" href="#"> Archive Property </a></li>
+                            <li><a class="dropdown-item" href="#">Property Follow-Up</a></li>
+                        </ul>
+                    </li>
+
+                        <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Customers
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Add Property</a></li>
+                            <li><a class="dropdown-item" href="#">Manage Property </a></li>
+                            <li><a class="dropdown-item" href="#"> Archive Property </a></li>
+                            <li><a class="dropdown-item" href="#">Property Follow-Up</a></li>
+                        </ul>
+                    </li>
+
+                        <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Agents
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Add Property</a></li>
+                            <li><a class="dropdown-item" href="#">Manage Property </a></li>
+                            <li><a class="dropdown-item" href="#"> Archive Property </a></li>
+                            <li><a class="dropdown-item" href="#">Property Follow-Up</a></li>
+                        </ul>
+                    </li>
+                   
+                </ul>
             </div>
-            <div class="subnav-group" id="customers-subnav" style="display: none;">
-                <span>Add Customer</span><span>Update Customer</span><span>Customer Match Tracking</span><span>Status Updates</span>
-            </div>
-            <div class="subnav-group" id="agents-subnav" style="display: none;">
-                <span>Add Agent</span><span>Agent Properties</span><span>Client Referrals</span><span>Commission &amp; Agreement Logs</span>
-            </div>
         </div>
-    </header>
+    </nav>
 
-    <script>
-        // Simple tab switcher for nav and subnav groups
-        const navItems = document.querySelectorAll('.vec-nav > .nav-item');
-        const subnavGroups = document.querySelectorAll('.vec-subnav > .subnav-group');
+    <!-- Sub Navigation -->
+    <div class="vec-subnav text-center">
+        <div class="vec-tagline">
+            Streamlining Properties, Customers & Agents Across Buy, Sell & Rent Lifecycles
+        </div>
+    </div>
 
-        navItems.forEach(item => {
-            item.addEventListener('click', () => {
-                // Remove active from all nav items
-                navItems.forEach(i => i.classList.remove('active'));
-                // Hide all subnav
-                subnavGroups.forEach(g => g.style.display = 'none');
-
-                // Activate clicked tab
-                item.classList.add('active');
-                // Show corresponding subnav group by aria-controls
-                const targetId = item.getAttribute('aria-controls');
-                if (targetId) {
-                    const targetGroup = document.getElementById(targetId);
-                    if (targetGroup) {
-                        targetGroup.style.display = 'flex';
-                    }
-                }
-            });
-            item.addEventListener('keydown', e => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    item.click();
-                }
-            });
-        });
-    </script>
-
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

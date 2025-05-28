@@ -5,6 +5,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>VEC Footer Component</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
@@ -72,6 +74,20 @@
             outline: none;
         }
 
+        .social-links a {
+            margin: 0 10px;
+            font-size: 24px;
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #0077b5;
+            /* LinkedIn blue for example */
+        }
+
+
         @media (max-width: 480px) {
 
             .vec-footer .footer-links a,
@@ -81,7 +97,7 @@
             }
         }
     </style>
-</head>
+</head> 
 
 <body>
 
@@ -95,10 +111,11 @@
                 <a href="#" tabindex="0">Contact Us</a>
             </nav>
             <div class="social-links" aria-label="Social media links">
-                <a href="#" tabindex="0" aria-label="Facebook">Fb</a>
-                <a href="#" tabindex="0" aria-label="Twitter">Tw</a>
-                <a href="#" tabindex="0" aria-label="LinkedIn">Ln</a>
+                <a href="#" tabindex="0" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" tabindex="0" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" tabindex="0" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
             </div>
+
         </div>
     </footer>
 
