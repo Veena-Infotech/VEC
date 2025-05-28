@@ -91,19 +91,19 @@
 
           <!-- Next Service Interest Section -->
           <div class="mb-4">
-            <h3 class="h5 mb-3 text-warning">
+            <h3 class="h5 mb-3 text-primary">
               <i class="bi bi-arrow-repeat me-2"></i> Next Service Interest
             </h3>
 
             <div class="d-flex flex-wrap gap-2">
               <input type="radio" class="btn-check" name="nextService" id="servicePMC" value="PMC" required>
-              <label class="btn btn-outline-warning rounded-pill btn-sm px-3 fw-semibold" for="servicePMC">PMC</label>
+              <label class="btn btn-outline-primary rounded-pill btn-sm px-3 fw-semibold" for="servicePMC">PMC</label>
 
               <input type="radio" class="btn-check" name="nextService" id="serviceResale" value="RESALE">
-              <label class="btn btn-outline-warning rounded-pill btn-sm px-3 fw-semibold" for="serviceResale">RESALE</label>
+              <label class="btn btn-outline-primary rounded-pill btn-sm px-3 fw-semibold" for="serviceResale">RESALE</label>
 
               <input type="radio" class="btn-check" name="nextService" id="serviceRental" value="RENTAL">
-              <label class="btn btn-outline-warning rounded-pill btn-sm px-3 fw-semibold" for="serviceRental">RENTAL</label>
+              <label class="btn btn-outline-primary rounded-pill btn-sm px-3 fw-semibold" for="serviceRental">RENTAL</label>
             </div>
           </div>
 
