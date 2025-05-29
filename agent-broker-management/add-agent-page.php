@@ -55,22 +55,62 @@
           </select>
         </div>
 
-        <div class="mb-1">
-          <label for="areaOfOperation" class="form-label fw-bold">Area of Operation (Select up to 10)</label>
-          <select class="form-select" id="areaOfOperation" multiple required>
-            <option value="Locality1">Locality 1</option>
-            <option value="Locality2">Locality 2</option>
-            <option value="Locality3">Locality 3</option>
-            <option value="Locality4">Locality 4</option>
-            <option value="Locality5">Locality 5</option>
-            <option value="Locality6">Locality 6</option>
-            <option value="Locality7">Locality 7</option>
-            <option value="Locality8">Locality 8</option>
-            <option value="Locality9">Locality 9</option>
-            <option value="Locality10">Locality 10</option>
-            <option value="Locality11">Locality 11</option>
-            <option value="Locality12">Locality 12</option>
-          </select>
+        <div class="mb-3">
+          <label class="form-label fw-bold">Area of Operation (Select up to 10)</label>
+          <div id="areaOfOperationCheckboxes" class="row row-cols-2 g-2">
+            <!-- Each checkbox -->
+            <div class="form-check col">
+              <input class="form-check-input area-checkbox" type="checkbox" value="Locality1" id="loc1">
+              <label class="form-check-label" for="loc1">Locality 1</label>
+            </div>
+            <div class="form-check col">
+              <input class="form-check-input area-checkbox" type="checkbox" value="Locality2" id="loc2">
+              <label class="form-check-label" for="loc2">Locality 2</label>
+            </div>
+            <div class="form-check col">
+              <input class="form-check-input area-checkbox" type="checkbox" value="Locality3" id="loc3">
+              <label class="form-check-label" for="loc3">Locality 3</label>
+            </div>
+            <div class="form-check col">
+              <input class="form-check-input area-checkbox" type="checkbox" value="Locality4" id="loc4">
+              <label class="form-check-label" for="loc4">Locality 4</label>
+            </div>
+            <div class="form-check col">
+              <input class="form-check-input area-checkbox" type="checkbox" value="Locality5" id="loc5">
+              <label class="form-check-label" for="loc5">Locality 5</label>
+            </div>
+            <div class="form-check col">
+              <input class="form-check-input area-checkbox" type="checkbox" value="Locality6" id="loc6">
+              <label class="form-check-label" for="loc6">Locality 6</label>
+            </div>
+            <div class="form-check col">
+              <input class="form-check-input area-checkbox" type="checkbox" value="Locality7" id="loc7">
+              <label class="form-check-label" for="loc7">Locality 7</label>
+            </div>
+            <div class="form-check col">
+              <input class="form-check-input area-checkbox" type="checkbox" value="Locality8" id="loc8">
+              <label class="form-check-label" for="loc8">Locality 8</label>
+            </div>
+            <div class="form-check col">
+              <input class="form-check-input area-checkbox" type="checkbox" value="Locality9" id="loc9">
+              <label class="form-check-label" for="loc9">Locality 9</label>
+            </div>
+            <div class="form-check col">
+              <input class="form-check-input area-checkbox" type="checkbox" value="Locality10" id="loc10">
+              <label class="form-check-label" for="loc10">Locality 10</label>
+            </div>
+            <div class="form-check col">
+              <input class="form-check-input area-checkbox" type="checkbox" value="Locality11" id="loc11">
+              <label class="form-check-label" for="loc11">Locality 11</label>
+            </div>
+            <div class="form-check col">
+              <input class="form-check-input area-checkbox" type="checkbox" value="Locality12" id="loc12">
+              <label class="form-check-label" for="loc12">Locality 12</label>
+            </div>
+          </div>
+          <div id="selection-warning" class="form-text text-danger d-none">
+            You can only select up to 10 localities.
+          </div>
         </div>
         <div class="form-text mb-3">Max 10 areas can be selected.</div>
 
@@ -101,26 +141,12 @@
         ease: "power2.out"
       });
 
-      // Limit area of operation to 10
-      $('#areaOfOperation').on('change', function() {
-        const selected = $(this).find('option:selected');
-        if (selected.length > 10) {
-          alert('You can select a maximum of 10 areas.');
-          const values = selected.slice(0, 10).map(function() {
-            return $(this).val();
-          }).get();
-          $(this).val(values);
-        }
-      });
-
       // Validate helper functions
       function validateName(name) {
-        // Allow only alphabets and spaces
         return /^[A-Za-z\s]+$/.test(name.trim());
       }
 
       function validateContact(contact) {
-        // Allow only numeric characters
         return /^[0-9]+$/.test(contact);
       }
 
@@ -131,30 +157,26 @@
         return allowedTypes.includes(file.type);
       }
 
-      // Step-wise validation
       function stepWiseValidation() {
         const name = $('#agentName').val().trim();
         const contact = $('#contact').val().trim();
         const panFile = document.getElementById('panUpload');
         const aadharFile = document.getElementById('aadharUpload');
         const agreementFile = document.getElementById('agreementUpload');
-        const areaSelection = $('#areaOfOperation').val();
+        const areaChecked = document.querySelectorAll('.area-checkbox:checked').length;
 
-        // Step 1: Validate Name
         if (!validateName(name)) {
           alert("Please enter a valid name (letters and spaces only).");
           $('#agentName').focus();
           return false;
         }
 
-        // Step 2: Validate Contact
         if (!validateContact(contact) || contact.length !== 10) {
           alert("Please enter a valid 10-digit contact number (numbers only).");
           $('#contact').focus();
           return false;
         }
 
-        // Step 3: Validate File Uploads
         if (!validateFile(panFile)) {
           alert("Please upload a valid PAN file.");
           $('#panUpload').focus();
@@ -173,22 +195,19 @@
           return false;
         }
 
-        // Step 4: Validate Area of Operation
-        if (!areaSelection || areaSelection.length === 0) {
+        if (areaChecked === 0) {
           alert("Please select at least one area of operation.");
-          $('#areaOfOperation').focus();
+          document.querySelector('.area-checkbox').focus();
           return false;
         }
 
-        return true; // All validations passed
+        return true;
       }
 
-      // Form submit
       $('#agentForm').on('submit', function(e) {
         e.preventDefault();
 
         if (stepWiseValidation()) {
-          // Show animation
           gsap.to("#agentFormSection", {
             duration: 0.5,
             scale: 0.95,
@@ -210,6 +229,21 @@
             }
           });
         }
+      });
+
+      // Limit area selection checkboxes to 10
+      const checkboxes = document.querySelectorAll('.area-checkbox');
+      const warning = document.getElementById('selection-warning');
+
+      checkboxes.forEach(cb => {
+        cb.addEventListener('change', () => {
+          const checked = document.querySelectorAll('.area-checkbox:checked').length;
+          if (checked > 10) {
+            cb.checked = false;
+            warning.classList.remove('d-none');
+            setTimeout(() => warning.classList.add('d-none'), 2000);
+          }
+        });
       });
     });
 
