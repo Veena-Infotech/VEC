@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -12,6 +13,7 @@
   <!-- GSAP -->
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
 </head>
+
 <body class="bg-body-tertiary">
 
   <div class="container py-5">
@@ -68,6 +70,34 @@
         </div>
       </div>
     </div>
+
+    <!-- Pagination -->
+    <div class="d-flex justify-content-end mt-4">
+      <nav aria-label="Page navigation">
+        <ul class="pagination">
+          <li class="page-item disabled">
+            <a class="page-link rounded-pill px-3" href="#" tabindex="-1" aria-disabled="true" aria-label="Previous">
+              &laquo;
+            </a>
+          </li>
+          <li class="page-item active" aria-current="page">
+            <a class="page-link rounded-pill px-3" href="#">1</a>
+          </li>
+          <li class="page-item">
+            <a class="page-link rounded-pill px-3" href="#">2</a>
+          </li>
+          <li class="page-item">
+            <a class="page-link rounded-pill px-3" href="#">3</a>
+          </li>
+          <li class="page-item">
+            <a class="page-link rounded-pill px-3" href="#" aria-label="Next">
+              &raquo;
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
   </div>
 
   <!-- Bootstrap JS Bundle and Tooltips -->
@@ -104,4 +134,5 @@
     });
   </script>
 </body>
+
 </html>
