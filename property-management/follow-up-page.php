@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Manage Property</title>
+  <title>Follow Up Page | Property</title>
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
@@ -12,6 +12,22 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
   <!-- GSAP Library -->
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+
+  <style>
+    th,
+    td {
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    .form-select-sm {
+      min-width: 120px;
+    }
+
+    #searchInput {
+      padding: 0.4rem 0.75rem;
+    }
+  </style>
 </head>
 
 <body class="bg-light text-dark">
@@ -19,12 +35,10 @@
   <!-- Title Section -->
   <div class="py-4 text-center bg-white shadow-sm mb-5">
     <div class="fs-2 fw-semibold">
-      <i class="bi bi-building"></i> Manage Property
+      <i class="bi bi-building"></i> Follow Up Management
     </div>
-    <p class="fs-6 text-muted mb-0">Track interested clients, schedule visits, and maintain communication history</p>
+    <p class="fs-6 text-muted mb-0">Manage Follow Ups for property</p>
   </div>
-
-
 
   <!-- Main Content -->
   <main class="container mb-5">
@@ -33,15 +47,14 @@
     <section class="mb-5 bg-white rounded shadow-sm p-4">
       <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-4">
         <h2 class="fs-4 mb-2 mb-md-0"><i class="bi bi-people pe-2"></i>Interested Buyers/Tenants</h2>
-
         <div class="ms-md-3" style="min-width: 300px;">
-          <input type="text" id="searchInput" class="form-control" placeholder="Search by Property ID, Title, Location, or Owner..." onkeyup="filterTable()">
+          <input type="text" id="searchInput" class="form-control" placeholder="Search by Property ID, Title, Location, or Owner...">
         </div>
       </div>
 
       <div class="table-responsive">
-        <table class="table table-striped table-hover align-middle">
-          <thead class="table-secondary text-center">
+        <table class="table table-striped table-hover align-middle" id="buyersTable">
+          <thead class="table-secondary">
             <tr>
               <th scope="col">Property ID</th>
               <th scope="col">Title</th>
@@ -53,22 +66,32 @@
           </thead>
           <tbody class="list">
             <tr>
-              <td class="align-middle ps-3 profile-id">PROP1001</td>
-              <td class="align-middle ps-3 title">Oceanfront Condo</td>
-              <td class="align-middle location">Miami</td>
-              <td class="align-middle owner">John Smith</td>
-              <td class="align-middle ps-3 status">Pending</td>
-              <td class="align-middle text-center pe-0">
+              <td class="profile-id">PROP1001</td>
+              <td class="title">Oceanfront Condo</td>
+              <td class="location">Miami</td>
+              <td class="owner">John Smith</td>
+              <td>
+                <select class="form-select form-select-sm">
+                  <option>Interested</option>
+                  <option>Visited</option>
+                  <option>Negotiating</option>
+                  <option>Finalized</option>
+                </select>
+              </td>
+              <td>
                 <div class="btn-reveal-trigger position-static">
-                  <button class="btn btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <button class="btn btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown">
                     <i class="bi bi-three-dots"></i>
                   </button>
                   <div class="dropdown-menu dropdown-menu-end py-2">
                     <a class="dropdown-item" href="#!" onclick="viewClosureSummary('PROP1001')">
                       <i class="bi bi-eye me-2"></i> View
                     </a>
-                    <a class="dropdown-item" href="#!" onclick="confirmRestore('PROP1001')">
-                      <i class="bi bi-box-arrow-up-right me-2"></i> Restore
+                    <a class="dropdown-item" href="#!" onclick="scheduleSiteVisit('PROP1001')">
+                      <i class="bi bi-calendar-event me-2"></i> Schedule Site Visit
+                    </a>
+                    <a class="dropdown-item" href="#!" data-bs-toggle="modal" data-bs-target="#notesModal" onclick="openNotes('PROP1001')">
+                      <i class="bi bi-chat-dots me-2"></i> Add Note
                     </a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item text-danger" href="#!" onclick="confirmDelete('PROP1001')">
@@ -78,167 +101,41 @@
                 </div>
               </td>
             </tr>
-            <tr>
-              <td class="align-middle ps-3 profile-id">PROP1002</td>
-              <td class="align-middle ps-3 title">Mountain Cabin</td>
-              <td class="align-middle location">Denver</td>
-              <td class="align-middle owner">Jane Doe</td>
-              <td class="align-middle ps-3 status">Finalized</td>
-              <td class="align-middle text-center pe-0">
-                <div class="btn-reveal-trigger position-static">
-                  <button class="btn btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="bi bi-three-dots"></i>
-                  </button>
-                  <div class="dropdown-menu dropdown-menu-end py-2">
-                    <a class="dropdown-item" href="#!" onclick="viewClosureSummary('PROP1002')">
-                      <i class="bi bi-eye me-2"></i> View
-                    </a>
-                    <a class="dropdown-item" href="#!" onclick="confirmRestore('PROP1002')">
-                      <i class="bi bi-box-arrow-up-right me-2"></i> Restore
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item text-danger" href="#!" onclick="confirmDelete('PROP1002')">
-                      <i class="bi bi-trash3 me-2"></i> Delete
-                    </a>
-                  </div>
-                </div>
-              </td>
-            </tr>
+
+            <!-- Add more <tr> rows as needed -->
+
           </tbody>
         </table>
       </div>
     </section>
 
-    <!-- Communication History Section -->
-    <section class="bg-white rounded shadow-sm p-4">
-      <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-4">
-        <h2 class="fs-4 mb-2 mb-md-0">
-          <i class="bi bi-chat-left-text pe-2"></i>Notes & Communication History
-        </h2>
-
-        <div class="ms-md-3" style="min-width: 300px;">
-          <input type="text" id="notesSearchInput" class="form-control" placeholder="Search notes or messages..." onkeyup="filterNotesTable()">
-        </div>
-      </div>
-
-      <div class="accordion" id="communicationAccordion">
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingOne">
-            <button
-              class="accordion-button collapsed"
-              type="button" data-bs-toggle="collapse"
-              data-bs-target="#collapseOne"
-              aria-expanded="false"
-              aria-controls="collapseOne">
-              Jane Smith - Last Contact: May 15, 2025
-            </button>
-          </h2>
-          <div
-            id="collapseOne"
-            class="accordion-collapse collapse"
-            aria-labelledby="headingOne"
-            data-bs-parent="#communicationAccordion">
-            <div class="accordion-body">
-              <p><strong>Note:</strong> Interested in scheduling a visit next week. Requested more details about the neighborhood.</p>
-              <p><strong>Communication:</strong> Sent brochure and answered initial queries.</p>
-            </div>
-          </div>
-        </div>
-        <!-- Additional accordion items can be added here -->
-      </div>
-    </section>
   </main>
 
-
-  <!-- Modals -->
-
-  <!-- Schedule Visit Modal -->
-  <div class="modal fade" id="scheduleVisitModal" tabindex="-1" aria-labelledby="scheduleVisitModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
+  <!-- Notes Modal -->
+  <div class="modal fade" id="notesModal" tabindex="-1" aria-labelledby="notesModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
       <div class="modal-content">
-        <div class="modal-header bg-primary text-white">
-          <h5 class="modal-title" id="scheduleVisitModalLabel"><i class="bi bi-calendar-plus"></i> Schedule Visit</h5>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-header">
+          <h5 class="modal-title" id="notesModalLabel"><i class="bi bi-chat-dots"></i> Communication Notes</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
         </div>
-        <form id="scheduleVisitForm">
-          <div class="modal-body">
-            <p id="scheduleVisitClient" class="fw-semibold"></p>
+        <div class="modal-body">
+          <form id="noteForm">
             <div class="mb-3">
-              <label for="visitDate" class="form-label">Select Visit Date</label>
-              <input type="date" class="form-control" id="visitDate" required />
+              <label for="noteText" class="form-label">Note</label>
+              <textarea class="form-control" id="noteText" rows="4" placeholder="Enter communication note..."></textarea>
             </div>
-            <div class="mb-3">
-              <label for="visitTime" class="form-label">Select Visit Time</label>
-              <input type="time" class="form-control" id="visitTime" required />
-            </div>
-            <div class="mb-3">
-              <label for="visitNotes" class="form-label">Notes</label>
-              <textarea class="form-control" id="visitNotes" rows="3" placeholder="Optional notes"></textarea>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-            <button type="submit" class="btn btn-primary">Save Visit</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-
-  <!-- Communication Modal -->
-  <div class="modal fade" id="communicationModal" tabindex="-1" aria-labelledby="communicationModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-      <div class="modal-content">
-        <div class="modal-header bg-info text-white">
-          <h5 class="modal-title" id="communicationModalLabel"><i class="bi bi-chat-dots"></i> Communication History</h5>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body" id="communicationModalBody">
-          <p><strong>Communication history for client will appear here.</strong></p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-outline-info" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary"><i class="bi bi-save2"></i> Save Note</button>
+          </form>
+          <hr />
+          <h6>Previous Notes</h6>
+          <ul class="list-group" id="notesList"></ul>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Update Status Modal -->
-  <div class="modal fade" id="updateStatusModal" tabindex="-1" aria-labelledby="updateStatusModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header bg-warning text-dark">
-          <h5 class="modal-title" id="updateStatusModalLabel"><i class="bi bi-pencil-square"></i> Update Status</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <form id="updateStatusForm">
-          <div class="modal-body">
-            <p id="updateStatusClient" class="fw-semibold"></p>
-            <div class="mb-3">
-              <label for="statusSelect" class="form-label">Select New Status</label>
-              <select class="form-select" id="statusSelect" required>
-                <option value="">Choose status</option>
-                <option value="Interested">Interested</option>
-                <option value="Visited">Visited</option>
-                <option value="Negotiating">Negotiating</option>
-                <option value="Finalized">Finalized</option>
-              </select>
-            </div>
-            <div class="mb-3">
-              <label for="statusNote" class="form-label">Optional Note</label>
-              <textarea class="form-control" id="statusNote" rows="3" placeholder="Notes about status update"></textarea>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-            <button type="submit" class="btn btn-warning">Update Status</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-
-  <!-- Bootstrap JS Bundle -->
+  <!-- Bootstrap Bundle JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
   <!-- GSAP Animations -->
@@ -259,48 +156,55 @@
     });
   </script>
 
+  <!-- Interactions & Search Script -->
   <script>
-    // Modal instances
-    const scheduleVisitModal = new bootstrap.Modal(document.getElementById('scheduleVisitModal'));
-    const communicationModal = new bootstrap.Modal(document.getElementById('communicationModal'));
-    const updateStatusModal = new bootstrap.Modal(document.getElementById('updateStatusModal'));
-
-    // Open Schedule Visit Modal
-    function openScheduleVisitModal(clientName) {
-      document.getElementById('scheduleVisitClient').textContent = `Client: ${clientName}`;
-      document.getElementById('scheduleVisitForm').reset();
-      scheduleVisitModal.show();
+    function openNotes(propertyId) {
+      document.getElementById("noteText").value = "";
+      document.getElementById("notesList").innerHTML =
+        `<li class="list-group-item">No previous notes for ${propertyId}</li>`;
     }
 
-    // Open Communication Modal
-    function openCommunicationModal(clientName) {
-      document.getElementById('communicationModalLabel').textContent = `Communication History — ${clientName}`;
-      // Here you can fetch and populate the communication data dynamically
-      document.getElementById('communicationModalBody').innerHTML = `<p><strong>Communication history for ${clientName} will appear here.</strong></p>`;
-      communicationModal.show();
-    }
-
-    // Open Update Status Modal
-    function openUpdateStatusModal(clientName) {
-      document.getElementById('updateStatusClient').textContent = `Client: ${clientName}`;
-      document.getElementById('updateStatusForm').reset();
-      updateStatusModal.show();
-    }
-
-    // Form submissions for Schedule Visit
-    document.getElementById('scheduleVisitForm').addEventListener('submit', function(e) {
+    document.getElementById("noteForm").addEventListener("submit", function (e) {
       e.preventDefault();
-      alert('Visit scheduled successfully!');
-      scheduleVisitModal.hide();
+      const note = document.getElementById("noteText").value.trim();
+      if (note) {
+        const li = document.createElement("li");
+        li.className = "list-group-item";
+        li.textContent = note;
+        document.getElementById("notesList").appendChild(li);
+        document.getElementById("noteText").value = "";
+      }
     });
 
-    // Form submissions for Update Status
-    document.getElementById('updateStatusForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      alert('Status updated successfully!');
-      updateStatusModal.hide();
+    function scheduleSiteVisit(propertyId) {
+      alert(`Site visit scheduled for ${propertyId} (This is a placeholder action)`);
+    }
+
+    // Search function
+    document.getElementById('searchInput').addEventListener('keyup', function () {
+      const filter = this.value.toLowerCase();
+      const rows = document.querySelectorAll('#buyersTable tbody tr');
+
+      rows.forEach(row => {
+        const propertyId = row.querySelector('.profile-id')?.textContent.toLowerCase() || '';
+        const title = row.querySelector('.title')?.textContent.toLowerCase() || '';
+        const location = row.querySelector('.location')?.textContent.toLowerCase() || '';
+        const owner = row.querySelector('.owner')?.textContent.toLowerCase() || '';
+
+        if (
+          propertyId.includes(filter) ||
+          title.includes(filter) ||
+          location.includes(filter) ||
+          owner.includes(filter)
+        ) {
+          row.style.display = '';
+        } else {
+          row.style.display = 'none';
+        }
+      });
     });
   </script>
+
 </body>
 
 </html>
