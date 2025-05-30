@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Property Listing Form</title>
   <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <!-- GSAP -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
@@ -14,18 +14,28 @@
 <body class="bg-light">
   <div class="container py-5">
     <h1 class="mb-4 text-primary fw-bold text-center">List Your Property</h1>
-    <form id="propertyForm" class="bg-white p-4 rounded shadow-sm">
-      <div class="row gy-3">
+    <form id="propertyForm" class="bg-white p-4 rounded shadow-sm" novalidate>
+      <div class="row g-3">
+
         <!-- Property Type -->
         <div class="col-md-4">
           <label for="propertyType" class="form-label">Property Type</label>
           <select class="form-select" id="propertyType" required>
             <option value="" disabled selected>Select property type</option>
-            <option>Flat</option>
+            <option>1 BHK</option>
+            <option>2 BHK</option>
+            <option>3 BHK</option>
+            <option>4 BHK</option>
+            <option>5 BHK+</option>
+            <option>Studio Apartment</option>
+            <option>Apartment</option>
+            <option>Independent House</option>
             <option>Bungalow</option>
-            <option>Office</option>
-            <option>Commercial</option>
-            <option>Land</option>
+            <option>Villa</option>
+            <option>Row House</option>
+            <option>Duplex</option>
+            <option>Penthouse</option>
+            <option>Farmhouse</option>
           </select>
         </div>
 
@@ -40,7 +50,7 @@
           </select>
         </div>
 
-        <!-- Locality with Auto-suggest -->
+        <!-- Locality -->
         <div class="col-md-4 position-relative">
           <label for="locality" class="form-label">Locality (Ward-based Mumbai regions)</label>
           <input type="text" class="form-control" id="locality" placeholder="Start typing locality..." autocomplete="off" required />
@@ -65,26 +75,26 @@
           <input type="text" class="form-control" id="landmark" placeholder="Nearby landmark" />
         </div>
 
-        <!-- Area inputs group -->
-        <fieldset class="col-12">
+        <!-- Area -->
+        <div class="col-12">
           <legend class="h5 text-secondary mb-3">Area (in sqft)</legend>
           <div class="row g-3">
             <div class="col-md-4">
               <label for="areaCarpet" class="form-label">Carpet Area</label>
-              <input type="number" min="0" class="form-control" id="areaCarpet" placeholder="e.g., 900" />
+              <input type="number" min="0" class="form-control" id="areaCarpet" placeholder="e.g., 900" required />
             </div>
             <div class="col-md-4">
               <label for="areaBuiltup" class="form-label">Built-up Area</label>
-              <input type="number" min="0" class="form-control" id="areaBuiltup" placeholder="e.g., 1100" />
+              <input type="number" min="0" class="form-control" id="areaBuiltup" placeholder="e.g., 1100" required />
             </div>
             <div class="col-md-4">
               <label for="areaPlot" class="form-label">Plot Area</label>
-              <input type="number" min="0" class="form-control" id="areaPlot" placeholder="e.g., 1200" />
+              <input type="number" min="0" class="form-control" id="areaPlot" placeholder="e.g., 1200" required />
             </div>
           </div>
-        </fieldset>
+        </div>
 
-        <!-- Price and Negotiable Toggle -->
+        <!-- Price and Negotiable -->
         <div class="col-md-8">
           <label for="price" class="form-label">Price (INR)</label>
           <input type="number" min="0" class="form-control" id="price" placeholder="Enter price" required />
@@ -96,8 +106,8 @@
           </div>
         </div>
 
-        <!-- Amenities Checklist -->
-        <fieldset class="col-12">
+        <!-- Amenities -->
+        <div class="col-12">
           <legend class="h5 text-secondary mb-3">Amenities</legend>
           <div class="row row-cols-2 row-cols-md-4 g-2">
             <div class="form-check col">
@@ -133,10 +143,10 @@
               <label class="form-check-label" for="amenityClubhouse">Clubhouse</label>
             </div>
           </div>
-        </fieldset>
+        </div>
 
-        <!-- Owner/Agent Linked -->
-        <fieldset class="col-md-6">
+        <!-- Linked To -->
+        <div class="col-md-6">
           <legend class="h5 text-secondary mb-3">Linked To</legend>
           <div class="form-check">
             <input class="form-check-input" type="radio" name="linkedTo" id="linkedOwner" value="Owner" required />
@@ -146,7 +156,7 @@
             <input class="form-check-input" type="radio" name="linkedTo" id="linkedAgent" value="Agent" required />
             <label class="form-check-label" for="linkedAgent">Agent</label>
           </div>
-        </fieldset>
+        </div>
 
         <!-- Source -->
         <div class="col-md-6">
@@ -158,21 +168,20 @@
           </select>
         </div>
 
-        <!-- Upload Images / Videos -->
+        <!-- Uploads -->
         <div class="col-md-6">
           <label for="imagesVideos" class="form-label">Upload Images/Videos</label>
           <input class="form-control" type="file" id="imagesVideos" accept="image/*,video/*" multiple />
           <small class="form-text text-muted">You can upload up to 10 images/videos (max 5MB each).</small>
         </div>
 
-        <!-- Upload Documents -->
         <div class="col-md-6">
           <label for="documentsUpload" class="form-label">Upload Documents (Title Deed, OC, etc.)</label>
           <input class="form-control" type="file" id="documentsUpload" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" multiple />
           <small class="form-text text-muted">Supported formats: PDF, DOC, Images</small>
         </div>
 
-        <!-- Submit Button -->
+        <!-- Submit -->
         <div class="col-12 text-center mt-4">
           <button type="submit" class="btn btn-primary btn-lg px-5">Submit Listing</button>
         </div>
@@ -180,144 +189,73 @@
     </form>
   </div>
 
-  <!-- Bootstrap JS (Popper included) -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
   <script>
-    // List of ward-based Mumbai regions for auto-suggest
-    const mumbaiLocalities = [
-      'Andheri East',
-      'Andheri West',
-      'Borivali West',
-      'Borivali East',
-      'Dahisar East',
-      'Dahisar West',
-      'Goregaon East',
-      'Goregaon West',
-      'Malad East',
-      'Malad West',
-      'Kurla West',
-      'Kurla East',
-      'Chembur',
-      'Bandra East',
-      'Bandra West',
-      'Mumbai Central',
-      'Dadar East',
-      'Dadar West',
-      'Vile Parle East',
-      'Vile Parle West',
-      'Powai',
-      'Vikhroli East',
-      'Vikhroli West',
-      'Sion East',
-      'Sion West',
-      'Colaba',
-      'Churchgate',
-      'Fort',
-      'Byculla',
-      'Wadala East',
-      'Wadala West',
-    ];
-
-    const localityInput = document.getElementById('locality');
-    const suggestionsBox = document.getElementById('localitySuggestions');
-
-    localityInput.addEventListener('input', () => {
-      const inputVal = localityInput.value.trim().toLowerCase();
-      suggestionsBox.innerHTML = '';
-      if (inputVal.length === 0) {
-        suggestionsBox.style.display = 'none';
-        return;
-      }
-      const filtered = mumbaiLocalities.filter(loc =>
-        loc.toLowerCase().startsWith(inputVal)
-      );
-      if (filtered.length === 0) {
-        suggestionsBox.style.display = 'none';
-        return;
-      }
-      filtered.forEach(loc => {
-        const li = document.createElement('li');
-        li.classList.add('list-group-item', 'list-group-item-action', 'py-1', 'small');
-        li.textContent = loc;
-        li.addEventListener('click', () => {
-          localityInput.value = loc;
-          suggestionsBox.style.display = 'none';
-        });
-        suggestionsBox.appendChild(li);
-      });
-      suggestionsBox.style.display = 'block';
-    });
-
-    document.addEventListener('click', (e) => {
-      if (!localityInput.contains(e.target) && !suggestionsBox.contains(e.target)) {
-        suggestionsBox.style.display = 'none';
-      }
-    });
-
-    // GSAP animations
-    window.addEventListener('load', () => {
-      gsap.from('#propertyForm', {
-        duration: 1,
-        y: 50,
-        opacity: 0,
-        ease: 'power3.out',
-      });
-      gsap.from('h1', {
-        duration: 1,
-        y: -50,
-        opacity: 0,
-        ease: 'power3.out',
-      });
-    });
-
-    const inputs = document.querySelectorAll('input, select, textarea');
-    inputs.forEach(input => {
-      input.addEventListener('focus', () => {
-        gsap.to(input, {
-          duration: 0.3,
-          boxShadow: '0 0 8px rgba(13, 110, 253, 0.7)',
-          ease: 'power1.out',
-        });
-      });
-      input.addEventListener('blur', () => {
-        gsap.to(input, {
-          duration: 0.3,
-          boxShadow: 'none',
-          ease: 'power1.out',
-        });
-      });
-    });
-
-    // Form submit handling
-    document.getElementById('propertyForm').addEventListener('submit', (e) => {
+    document.getElementById('propertyForm').addEventListener('submit', function (e) {
       e.preventDefault();
-      // Simple validation and form data processing simulation
-      const form = e.target;
-      if (!form.checkValidity()) {
-        form.reportValidity();
-        return;
-      }
-      alert('Property listing submitted successfully!');
-      form.reset();
-    });
+      let isValid = true;
 
-    document.getElementById('imagesVideos').addEventListener('change', function () {
-      const files = this.files;
-      if (files.length > 10) {
-        alert('You can upload a maximum of 10 files.');
-        this.value = '';
-        return;
+      // Validate Locality
+      const locality = document.getElementById('locality');
+      if (locality.value.trim() === '') {
+        isValid = false;
+        alert('Locality is required.');
       }
-      for (let i = 0; i < files.length; i++) {
-        if (files[i].size > 5 * 1024 * 1024) {
-          alert(`File "${files[i].name}" exceeds the 5MB size limit.`);
-          this.value = '';
-          return;
+
+      // Validate Address
+      const address = document.getElementById('address');
+      if (address.value.trim() === '') {
+        isValid = false;
+        alert('Address is required.');
+      }
+
+      // Validate Pincode
+      const pincode = document.getElementById('pincode');
+      const pincodePattern = /^[0-9]{6}$/;
+      if (!pincodePattern.test(pincode.value)) {
+        isValid = false;
+        alert('Pincode must be a 6-digit number.');
+      }
+
+      // Validate Area
+      const areaCarpet = document.getElementById('areaCarpet');
+      const areaBuiltup = document.getElementById('areaBuiltup');
+      const areaPlot = document.getElementById('areaPlot');
+      if (areaCarpet.value < 0 || areaBuiltup.value < 0 || areaPlot.value < 0) {
+        isValid = false;
+        alert('Area values must be non-negative.');
+      }
+
+      // Validate Price
+      const price = document.getElementById('price');
+      if (price.value <= 0) {
+        isValid = false;
+        alert('Price must be a positive number.');
+      }
+
+      // Validate File Uploads
+      const idProof = document.getElementById('idProof');
+      if (idProof.files.length === 0) {
+        isValid = false;
+        alert('Please upload an ID proof.');
+      } else {
+        const validTypes = ['application/pdf', 'image/jpeg'];
+        for (let i = 0; i < idProof.files.length; i++) {
+          if (!validTypes.includes(idProof.files[i].type)) {
+            isValid = false;
+            alert('Only PDF and JPEG files are allowed for ID proof.');
+            break;
+          }
         }
+      }
+
+      // If all validations pass
+      if (isValid) {
+        alert('Form submitted successfully!');
+        // Here you can add the logic to submit the form data
       }
     });
   </script>
+
 </body>
 
 </html>
