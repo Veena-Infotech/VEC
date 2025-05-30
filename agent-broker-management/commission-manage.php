@@ -1,282 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Commission Management - Bootstrap Hover Effects</title>
-
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-
-  <!-- Bootstrap Icons -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
-
-  <!-- jsPDF -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <meta charset="UTF-8">
+  <title>Commission Management</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 </head>
-
 <body class="bg-light">
 
-  <div class="container py-5">
-    <div class="card shadow mx-auto" style="max-width: 820px;">
-      <div class="card-header bg-primary text-white text-center py-4 fw-bold fs-3">
-        <i class="bi bi-graph-up me-2"></i>Commission Management
-      </div>
-      <div class="card-body p-4">
-        <form id="commissionForm" novalidate>
-          <div class="row g-4">
-            <!-- Commission Type -->
-            <div class="col-md-6">
-              <div class="form-floating">
-                <select class="form-select shadow-sm" id="commissionType" required aria-label="Commission Type" data-bs-toggle="collapse" data-bs-target="#dealPercentCollapse" aria-expanded="false" aria-controls="dealPercentCollapse">
-                  <option value="standard" selected>Standard (10%)</option>
-                  <option value="deal">Deal-Specific (%)</option>
+<div class="container py-5">
+  <div class="row g-4">
+    <!-- Form Section -->
+    <div class="col-lg-7">
+      <div class="card border-0 shadow">
+        <div class="card-header bg-primary text-white">
+          <h5 class="mb-0"><i class="bi bi-cash-coin me-2"></i>Commission Entry</h5>
+        </div>
+        <div class="card-body">
+          <form id="commissionForm">
+            <!-- Deal Info -->
+            <div class="row g-3 mb-4">
+              <div class="col-md-6">
+                <label class="form-label">Deal ID</label>
+                <input type="text" class="form-control" id="dealId" required>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Client Name</label>
+                <input type="text" class="form-control" id="clientName" required>
+              </div>
+            </div>
+
+            <!-- Commission Details -->
+            <div class="row g-3 mb-4">
+              <div class="col-md-4">
+                <label class="form-label">Commission Type</label>
+                <select class="form-select" id="commissionType">
+                  <option value="standard">Standard (10%)</option>
+                  <option value="custom">Deal-Specific</option>
                 </select>
-                <label for="commissionType"><i class="bi bi-percent"></i> Commission Type</label>
+              </div>
+              <div class="col-md-4">
+                <label class="form-label">Commission %</label>
+                <input type="number" class="form-control" id="commissionPercent" value="10" readonly>
+              </div>
+              <div class="col-md-4">
+                <label class="form-label">Deal Amount (₹)</label>
+                <input type="number" class="form-control" id="dealAmount" required>
               </div>
             </div>
 
-            <!-- Deal Percent -->
-            <div class="col-md-6 collapse fade" id="dealPercentCollapse">
-              <div class="form-floating">
-                <input type="number" min="0" max="100" step="0.01" class="form-control shadow-sm" id="dealPercent" placeholder="Deal Percent" />
-                <label for="dealPercent"><i class="bi bi-calculator"></i> Deal-Specific %</label>
-              </div>
-            </div>
-
-            <!-- Commission Amount -->
-            <div class="col-md-6">
-              <div class="form-floating">
-                <input type="number" min="0" step="0.01" class="form-control shadow-sm" id="commissionAmount" placeholder="Commission Amount" required />
-                <label for="commissionAmount"><i class="bi bi-currency-rupee"></i> Commission Amount</label>
-              </div>
-            </div>
-
-            <!-- Commission Status -->
-            <div class="col-md-6">
-              <div class="form-floating">
-                <select class="form-select shadow-sm" id="commissionStatus" required>
-                  <option value="unpaid" selected>Unpaid</option>
-                  <option value="paid">Paid</option>
+            <!-- Tax and Payment -->
+            <div class="row g-3 mb-4">
+              <div class="col-md-4">
+                <label class="form-label">GST Applicable?</label>
+                <select class="form-select" id="gstApplicable">
+                  <option value="yes">Yes (18%)</option>
+                  <option value="no">No</option>
                 </select>
-                <label for="commissionStatus"><i class="bi bi-check-circle"></i> Status</label>
+              </div>
+              <div class="col-md-4">
+                <label class="form-label">Commission Status</label>
+                <select class="form-select" id="status">
+                  <option value="Paid">Paid</option>
+                  <option value="Unpaid" selected>Unpaid</option>
+                </select>
+              </div>
+              <div class="col-md-4">
+                <label class="form-label">Total Payable (₹)</label>
+                <input type="text" class="form-control bg-body-secondary" id="totalPayable" readonly>
               </div>
             </div>
 
-            <!-- GST Checkbox -->
-            <div class="col-12">
-              <div class="form-check form-switch">
-                <input class="form-check-input shadow-sm" type="checkbox" id="applyGST" />
-                <label class="form-check-label fw-semibold" for="applyGST"><i class="bi bi-receipt"></i> Apply GST (18%)</label>
-              </div>
+            <!-- Actions -->
+            <div class="d-flex justify-content-end gap-2">
+              <button type="button" class="btn btn-outline-primary" onclick="calculate()">
+                <i class="bi bi-calculator"></i> Calculate
+              </button>
+              <button type="button" class="btn btn-success" onclick="generateReceipt()">
+                <i class="bi bi-printer"></i> Generate Receipt
+              </button>
             </div>
-          </div>
-
-          <div class="card mt-5 border-primary shadow-sm" onmouseover="this.classList.add('shadow-lg')" onmouseout="this.classList.remove('shadow-lg')">
-            <div class="card-header bg-primary bg-opacity-10 text-primary fw-semibold fs-5 d-flex justify-content-between align-items-center">
-              <span><i class="bi bi-calculator me-2"></i>Calculation Summary</span>
-              <span id="summaryBadge" class="badge rounded-pill bg-primary">Updated</span>
-            </div>
-            <ul class="list-group list-group-flush fs-6">
-              <li class="list-group-item d-flex justify-content-between align-items-center">
-                <span><i class="bi bi-percent me-2"></i> Commission Percentage</span>
-                <span id="displayCommissionPercent">10%</span>
-              </li>
-              <li class="list-group-item d-flex justify-content-between align-items-center">
-                <span><i class="bi bi-currency-rupee me-2"></i> Commission Amount</span>
-                <span id="displayCommissionAmount">₹0.00</span>
-              </li>
-              <li class="list-group-item d-flex justify-content-between align-items-center">
-                <span><i class="bi bi-receipt me-2"></i> GST Amount</span>
-                <span id="displayGST">₹0.00</span>
-              </li>
-              <li class="list-group-item d-flex justify-content-between align-items-center fw-bold text-primary">
-                <span><i class="bi bi-wallet2 me-2"></i> Total Payable</span>
-                <span id="displayTotal">₹0.00</span>
-              </li>
-              <li class="list-group-item d-flex justify-content-between align-items-center">
-                <span><i class="bi bi-clipboard-check me-2"></i> Status</span>
-                <span id="displayStatus"><span class="badge bg-warning text-dark">Unpaid</span></span>
-              </li>
-            </ul>
-          </div>
-
-          <div class="d-flex justify-content-end gap-3 mt-4">
-            <button type="button" class="btn btn-outline-primary btn-lg shadow-sm" id="generateReceiptBtn" disabled onmouseover="this.classList.add('shadow-lg')" onmouseout="this.classList.remove('shadow-lg')">
-              <i class="bi bi-file-earmark-arrow-down-fill me-2"></i>Generate Receipt PDF
-            </button>
-            <button type="button" class="btn btn-primary btn-lg shadow-sm" id="generateAdviceBtn" disabled onmouseover="this.classList.add('shadow-lg')" onmouseout="this.classList.remove('shadow-lg')">
-              <i class="bi bi-file-earmark-text-fill me-2"></i>Generate Payment Advice PDF
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
-
-    <!-- Toast Container -->
-    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 1080;">
-      <div id="pdfToast" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
-        <div class="d-flex">
-          <div class="toast-body">PDF generated successfully!</div>
-          <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+          </form>
         </div>
       </div>
     </div>
 
-    <!-- Bootstrap JS Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Live Summary -->
+    <div class="col-lg-5">
+      <div class="card h-100 border-start border-4 border-primary shadow">
+        <div class="card-body">
+          <h6 class="text-primary"><i class="bi bi-clipboard-data me-2"></i>Live Summary</h6>
+          <ul class="list-group list-group-flush small mt-3">
+            <li class="list-group-item"><strong>Deal ID:</strong> <span id="previewDealId">-</span></li>
+            <li class="list-group-item"><strong>Client:</strong> <span id="previewClient">-</span></li>
+            <li class="list-group-item"><strong>Deal Amount:</strong> ₹<span id="previewAmount">-</span></li>
+            <li class="list-group-item"><strong>Commission %:</strong> <span id="previewPercent">-</span>%</li>
+            <li class="list-group-item"><strong>Status:</strong> <span id="previewStatus">-</span></li>
+            <li class="list-group-item"><strong>GST:</strong> <span id="previewGST">-</span></li>
+            <li class="list-group-item text-end"><strong>Total Payable:</strong> ₹<span id="previewTotal">-</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 
-    <script>
-      (() => {
-        const commissionType = document.getElementById('commissionType');
-        const dealPercentCollapse = new bootstrap.Collapse(document.getElementById('dealPercentCollapse'), {
-          toggle: false
-        });
-        const dealPercentInput = document.getElementById('dealPercent');
-        const commissionAmountInput = document.getElementById('commissionAmount');
-        const commissionStatus = document.getElementById('commissionStatus');
-        const applyGST = document.getElementById('applyGST');
+  <!-- Receipt Section -->
+  <div class="card mt-5 shadow d-none d-print-block" id="receiptCard">
+    <div class="card-header bg-dark text-white">
+      <h6 class="mb-0"><i class="bi bi-file-earmark-text me-2"></i>Commission Payment Advice</h6>
+    </div>
+    <div class="card-body">
+      <div class="mb-2"><strong>Deal ID:</strong> <span id="rDealId"></span></div>
+      <div class="mb-2"><strong>Client Name:</strong> <span id="rClientName"></span></div>
+      <div class="mb-2"><strong>Commission %:</strong> <span id="rPercent"></span>%</div>
+      <div class="mb-2"><strong>Deal Amount:</strong> ₹<span id="rAmount"></span></div>
+      <div class="mb-2"><strong>Status:</strong> <span id="rStatus"></span></div>
+      <div class="mb-2"><strong>GST Included:</strong> <span id="rGST"></span></div>
+      <hr>
+      <h5 class="text-end"><strong>Total Payable:</strong> ₹<span id="rTotal"></span></h5>
+    </div>
+  </div>
+</div>
 
-        const displayCommissionPercent = document.getElementById('displayCommissionPercent');
-        const displayCommissionAmount = document.getElementById('displayCommissionAmount');
-        const displayGST = document.getElementById('displayGST');
-        const displayTotal = document.getElementById('displayTotal');
-        const displayStatus = document.getElementById('displayStatus');
+<!-- JavaScript Logic -->
+<script>
+  const commissionType = document.getElementById('commissionType');
+  const commissionPercent = document.getElementById('commissionPercent');
 
-        const generateReceiptBtn = document.getElementById('generateReceiptBtn');
-        const generateAdviceBtn = document.getElementById('generateAdviceBtn');
-        const pdfToastEl = document.getElementById('pdfToast');
-        const pdfToast = new bootstrap.Toast(pdfToastEl);
+  commissionType.addEventListener('change', () => {
+    if (commissionType.value === 'standard') {
+      commissionPercent.value = 10;
+      commissionPercent.readOnly = true;
+    } else {
+      commissionPercent.readOnly = false;
+      commissionPercent.focus();
+    }
+  });
 
-        const STANDARD_PERCENT = 10;
+  function calculate() {
+    const dealAmount = parseFloat(document.getElementById('dealAmount').value) || 0;
+    const percent = parseFloat(commissionPercent.value) || 0;
+    const gstYes = document.getElementById('gstApplicable').value === 'yes';
+    const status = document.getElementById('status').value;
 
-        function updateDealPercentCollapse() {
-          if (commissionType.value === 'deal') {
-            dealPercentCollapse.show();
-            dealPercentInput.required = true;
-          } else {
-            dealPercentCollapse.hide();
-            dealPercentInput.required = false;
-            dealPercentInput.value = '';
-            dealPercentInput.classList.remove('is-invalid');
-          }
-        }
+    const commission = (dealAmount * percent) / 100;
+    const gst = gstYes ? commission * 0.18 : 0;
+    const total = commission + gst;
 
-        function formatCurrency(num) {
-          return '₹' + num.toFixed(2);
-        }
+    document.getElementById('totalPayable').value = total.toFixed(2);
 
-        function computeValues() {
-          let percent = STANDARD_PERCENT;
-          if (commissionType.value === 'deal') {
-            let dealVal = parseFloat(dealPercentInput.value);
-            if (!isNaN(dealVal) && dealVal >= 0 && dealVal <= 100) {
-              percent = dealVal;
-              dealPercentInput.classList.remove('is-invalid');
-            } else {
-              percent = 0;
-              if (dealPercentInput.required) {
-                dealPercentInput.classList.add('is-invalid');
-              }
-            }
-          }
+    // Update Preview
+    document.getElementById('previewDealId').textContent = document.getElementById('dealId').value;
+    document.getElementById('previewClient').textContent = document.getElementById('clientName').value;
+    document.getElementById('previewAmount').textContent = dealAmount.toFixed(2);
+    document.getElementById('previewPercent').textContent = percent.toFixed(2);
+    document.getElementById('previewStatus').textContent = status;
+    document.getElementById('previewGST').textContent = gstYes ? 'Yes (18%)' : 'No';
+    document.getElementById('previewTotal').textContent = total.toFixed(2);
+  }
 
-          const amount = parseFloat(commissionAmountInput.value);
-          if (isNaN(amount) || amount < 0) {
-            displayCommissionAmount.textContent = '₹0.00';
-            displayGST.textContent = '₹0.00';
-            displayTotal.textContent = '₹0.00';
-            displayCommissionPercent.textContent = percent + '%';
-            generateReceiptBtn.disabled = true;
-            generateAdviceBtn.disabled = true;
-            return;
-          }
+  function generateReceipt() {
+    calculate();
+    document.getElementById('rDealId').textContent = document.getElementById('dealId').value;
+    document.getElementById('rClientName').textContent = document.getElementById('clientName').value;
+    document.getElementById('rPercent').textContent = document.getElementById('commissionPercent').value;
+    document.getElementById('rAmount').textContent = document.getElementById('dealAmount').value;
+    document.getElementById('rGST').textContent = document.getElementById('gstApplicable').value === 'yes' ? 'Yes (18%)' : 'No';
+    document.getElementById('rStatus').textContent = document.getElementById('status').value;
+    document.getElementById('rTotal').textContent = document.getElementById('totalPayable').value;
 
-          const commissionCalculated = (amount * percent) / 100;
-          const gstApplied = applyGST.checked ? commissionCalculated * 0.18 : 0;
-          const totalPayable = commissionCalculated + gstApplied;
+    document.getElementById('receiptCard').classList.remove('d-none');
+    window.print();
+  }
+</script>
 
-          displayCommissionPercent.textContent = percent.toFixed(2) + '%';
-          displayCommissionAmount.textContent = formatCurrency(commissionCalculated);
-          displayGST.textContent = formatCurrency(gstApplied);
-          displayTotal.textContent = formatCurrency(totalPayable);
-
-          if (commissionStatus.value === 'paid') {
-            displayStatus.innerHTML = '<span class="badge bg-success">Paid</span>';
-          } else {
-            displayStatus.innerHTML = '<span class="badge bg-warning text-dark">Unpaid</span>';
-          }
-
-          const validDealPercent = (commissionType.value === 'deal') ? (percent > 0 && percent <= 100) : true;
-          generateReceiptBtn.disabled = !(amount > 0 && validDealPercent);
-          generateAdviceBtn.disabled = !(amount > 0 && validDealPercent);
-        }
-
-        function generatePDF(type) {
-          const {
-            jsPDF
-          } = window.jspdf;
-          const doc = new jsPDF();
-
-          doc.setFontSize(20);
-          doc.setTextColor('#0d6efd');
-          doc.text("Commission " + type, 14, 20);
-
-          doc.setFontSize(12);
-          doc.setTextColor(0, 0, 0);
-
-          const dateStr = new Date().toLocaleDateString();
-
-          doc.text(`Date: ${dateStr}`, 14, 30);
-          doc.text(`Commission Type: ${commissionType.options[commissionType.selectedIndex].text}`, 14, 40);
-          const percent = (commissionType.value === 'deal') ? dealPercentInput.value.trim() + '%' : STANDARD_PERCENT + '%';
-          doc.text(`Commission Percentage: ${percent}`, 14, 50);
-
-          const amountNum = parseFloat(commissionAmountInput.value);
-          let commissionValue = (amountNum * parseFloat(percent)) / 100;
-          if (isNaN(commissionValue)) commissionValue = 0;
-          doc.text(`Commission Amount: ₹${commissionValue.toFixed(2)}`, 14, 60);
-
-          const gstVal = applyGST.checked ? commissionValue * 0.18 : 0;
-          doc.text(`GST (18%): ₹${gstVal.toFixed(2)}`, 14, 70);
-
-          const totalPayable = commissionValue + gstVal;
-          doc.setFontSize(14);
-          doc.text(`Total Payable: ₹${totalPayable.toFixed(2)}`, 14, 80);
-
-          doc.setFontSize(12);
-          doc.text(`Status: ${commissionStatus.options[commissionStatus.selectedIndex].text}`, 14, 90);
-
-          doc.setFontSize(10);
-          if (type === 'Receipt') {
-            doc.text('Thank you for the payment.', 14, 110);
-          } else if (type === 'Payment Advice') {
-            doc.text('Please process the payment as per above details.', 14, 110);
-          }
-
-          doc.save(`Commission_${type}_${dateStr.replace(/\//g, '-')}.pdf`);
-          pdfToast.show();
-        }
-
-        // Event listeners
-        commissionType.addEventListener('change', () => {
-          updateDealPercentCollapse();
-          computeValues();
-        });
-        dealPercentInput.addEventListener('input', computeValues);
-        commissionAmountInput.addEventListener('input', computeValues);
-        commissionStatus.addEventListener('change', computeValues);
-        applyGST.addEventListener('change', computeValues);
-
-        generateReceiptBtn.addEventListener('click', () => generatePDF('Receipt'));
-        generateAdviceBtn.addEventListener('click', () => generatePDF('Payment Advice'));
-
-        // Initialize
-        updateDealPercentCollapse();
-        computeValues();
-      })();
-    </script>
 </body>
-
 </html>
