@@ -5,209 +5,127 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Customer Closure Log</title>
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
-  <!-- GSAP for animations -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <!-- jsPDF for PDF generation -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 
-<body>
+<body class="bg-body-tertiary">
 
-  <div class="container py-4">
-    <!-- Header -->
-    <header class="text-center mb-4">
-      <h1 class="display-6 fw-bold">Customer Closure Log</h1>
-      <p class="text-muted fst-italic">Capture final transactions, commissions, and future service interests clearly</p>
-    </header>
+  <div class="container py-5">
+    <div class="card shadow-sm border-0">
+      <div class="card-header bg-primary text-white text-center">
+        <h4 class="mb-0"><i class="bi bi-file-earmark-text me-2"></i>Customer Closure Log</h4>
+      </div>
 
-    <main class="row gx-4">
-      <!-- Left Column: Form -->
-      <section class="col-lg-7 mb-4">
-        <form id="closureForm" class="card p-4 shadow-sm">
-          <!-- Property & Transaction Section -->
+      <div class="card-body p-4">
+        <form id="closureForm">
+
+          <!-- Section: Property Info -->
           <div class="mb-4">
-            <h3 class="h5 mb-3">
-              <i class="bi bi-building-fill-check me-2"></i> Property & Transaction
-            </h3>
+            <h5 class="text-secondary"><i class="bi bi-house-fill me-2"></i>Property Finalized</h5>
+            <textarea class="form-control" rows="2" placeholder="Enter property matched and finalized details..." required></textarea>
+          </div>
 
-            <div class="form-floating mb-3">
-              <input type="text" class="form-control" id="propertyMatched" placeholder="Property matched" required>
-              <label for="propertyMatched">Property Matched & Finalized *</label>
+          <!-- Section: Transaction and Commission -->
+          <div class="row g-4 mb-4">
+            <div class="col-md-6">
+              <label class="form-label fw-semibold"><i class="bi bi-currency-dollar me-1"></i>Final Transaction Value</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-cash-coin"></i></span>
+                <input type="number" class="form-control" placeholder="Enter value" required />
+              </div>
             </div>
 
-            <div class="input-group mb-3">
-              <span class="input-group-text">₹</span>
-              <div class="form-floating flex-grow-1">
-                <input type="number" class="form-control" id="finalTransaction" placeholder="Transaction value" required>
-                <label for="finalTransaction">Final Transaction *</label>
+            <div class="col-md-6">
+              <label class="form-label fw-semibold"><i class="bi bi-person-vcard me-1"></i>Commission to Agent/Broker</label>
+              <div class="input-group mb-2">
+                <span class="input-group-text"><i class="bi bi-wallet2"></i></span>
+                <input type="number" class="form-control" placeholder="Enter commission" />
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="includeTax" />
+                <label class="form-check-label" for="includeTax">Include Tax (if applicable)</label>
               </div>
             </div>
           </div>
 
-          <!-- Agent & Commission Info Section -->
+          <!-- Section: Services -->
           <div class="mb-4">
-            <h3 class="h5 mb-3 text-success">
-              <i class="bi bi-currency-dollar me-2"></i> Agent & Commission Info
-            </h3>
-
-            <label for="agentName" class="form-label fw-semibold text-success mb-1">
-              <i class="bi bi-person-badge me-2"></i> Sales Agent *
-            </label>
-            <select id="agentName" class="form-select mb-3" required>
-              <option value="" selected disabled>Select Agent</option>
-              <option>Agent Amy</option>
-              <option>Broker Bob</option>
-              <option>Agent Chris</option>
-              <option>Broker Diana</option>
-            </select>
-
-            <div class="input-group mb-3">
-              <span class="input-group-text">₹</span>
-              <div class="form-floating flex-grow-1">
-                <input type="number" class="form-control" id="commissionAmount" placeholder="Commission" required>
-                <label for="commissionAmount">Commission Amount *</label>
+            <h5 class="text-secondary"><i class="bi bi-sliders2-vertical me-2"></i>Next Services Interested</h5>
+            <div class="row">
+              <div class="col-md-4">
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" id="resaleService" />
+                  <label class="form-check-label" for="resaleService">Resale</label>
+                </div>
               </div>
-            </div>
-
-            <div class="form-check form-switch mb-3">
-              <input class="form-check-input" type="checkbox" id="taxToggle">
-              <label class="form-check-label" for="taxToggle">
-                <i class="bi bi-percent-circle me-1"></i> Include Tax
-              </label>
-            </div>
-
-            <div class="input-group mb-3 d-none" id="taxFieldContainer">
-              <span class="input-group-text">₹</span>
-              <div class="form-floating flex-grow-1">
-                <input type="number" class="form-control" id="taxAmount" placeholder="Tax">
-                <label for="taxAmount">Tax Amount</label>
+              <div class="col-md-4">
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" id="interiorService" />
+                  <label class="form-check-label" for="interiorService">Interior</label>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" id="pmcService" />
+                  <label class="form-check-label" for="pmcService">PMC</label>
+                </div>
               </div>
             </div>
           </div>
 
-          <!-- Next Service Interest Section -->
-          <div class="mb-4">
-            <h3 class="h5 mb-3 text-primary">
-              <i class="bi bi-arrow-repeat me-2"></i> Next Service Interest
-            </h3>
-
-            <div class="d-flex flex-wrap gap-2">
-              <input type="radio" class="btn-check" name="nextService" id="servicePMC" value="PMC" required>
-              <label class="btn btn-outline-primary rounded-pill btn-sm px-3 fw-semibold" for="servicePMC">PMC</label>
-
-              <input type="radio" class="btn-check" name="nextService" id="serviceResale" value="RESALE">
-              <label class="btn btn-outline-primary rounded-pill btn-sm px-3 fw-semibold" for="serviceResale">RESALE</label>
-
-              <input type="radio" class="btn-check" name="nextService" id="serviceRental" value="RENTAL">
-              <label class="btn btn-outline-primary rounded-pill btn-sm px-3 fw-semibold" for="serviceRental">RENTAL</label>
+          <!-- Section: Assign Agent -->
+          <div class="mb-4 row align-items-end">
+            <div class="col-md-6">
+              <label class="form-label fw-semibold"><i class="bi bi-person-bounding-box me-1"></i>Assign to Agent</label>
+              <select class="form-select" id="assignAgent" required>
+                <option selected disabled>Select agent</option>
+                <option>Agent A</option>
+                <option>Agent B</option>
+                <option>Agent C</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <div id="assignAlert" class="alert alert-info d-none mb-0">
+                <i class="bi bi-check-circle me-1"></i>Assigned successfully. CRM & Task Module triggered.
+              </div>
             </div>
           </div>
 
           <!-- Action Buttons -->
-          <div class="d-flex flex-wrap gap-2 justify-content-center mt-4">
-            <button type="button" id="crmTrigger" class="btn btn-outline-info">
-              <i class="bi bi-box-arrow-in-down-right me-1"></i> CRM Link
-            </button>
-            <button type="button" id="taskTrigger" class="btn btn-outline-success">
-              <i class="bi bi-list-task me-1"></i> Task
-            </button>
-            <button type="submit" class="btn btn-outline-primary">
-              <i class="bi bi-save me-1"></i> Save
-            </button>
-            <button type="button" id="downloadPdf" class="btn btn-outline-danger">
-              <i class="bi bi-file-earmark-pdf-fill me-1"></i> PDF
-            </button>
+          <div class="row pt-3 border-top">
+            <div class="col-12 col-md-6 mb-2 mb-md-0">
+              <button type="submit" class="btn btn-success w-100">
+                <i class="bi bi-send-check me-1"></i>Submit & Trigger CRM
+              </button>
+            </div>
+            <div class="col-12 col-md-6">
+              <button type="button" class="btn btn-outline-dark w-100" id="downloadPDF">
+                <i class="bi bi-filetype-pdf me-1"></i>Download Closure Log
+              </button>
+            </div>
           </div>
         </form>
-      </section>
-
-      <!-- Right Column: Summary -->
-      <aside class="col-lg-5">
-        <div class="card p-4 shadow-sm sticky-top" style="top: 80px;">
-          <h3 class="h5 mb-3 text-secondary">
-            <i class="bi bi-card-list me-2"></i> Closure Summary
-          </h3>
-          <dl class="row">
-            <dt class="col-7">Property:</dt>
-            <dd class="col-5 text-end" id="summaryProperty">-</dd>
-
-            <dt class="col-7">Transaction (₹):</dt>
-            <dd class="col-5 text-end" id="summaryTransaction">-</dd>
-
-            <dt class="col-7">Agent:</dt>
-            <dd class="col-5 text-end" id="summaryAgent">-</dd>
-
-            <dt class="col-7">Commission (₹):</dt>
-            <dd class="col-5 text-end" id="summaryCommission">-</dd>
-
-            <dt class="col-7">Tax Included:</dt>
-            <dd class="col-5 text-end" id="summaryTaxIncluded">No</dd>
-
-            <dt class="col-7">Tax (₹):</dt>
-            <dd class="col-5 text-end" id="summaryTaxAmount">-</dd>
-
-            <dt class="col-7">Next Service:</dt>
-            <dd class="col-5 text-end" id="summaryNextService">-</dd>
-
-            <dt class="col-7 border-top pt-2">Total Payout:</dt>
-            <dd class="col-5 border-top pt-2 fw-bold" id="summaryTotalPayout">-</dd>
-          </dl>
-        </div>
-      </aside>
-    </main>
+      </div>
+    </div>
   </div>
 
-  <!-- JavaScript for Interactivity -->
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Interaction Logic -->
   <script>
-    // GSAP Animations
-    gsap.from("header h1", {
-      y: -30,
-      opacity: 0,
-      duration: 1
-    });
-    gsap.from("header p", {
-      y: 30,
-      opacity: 0,
-      duration: 1,
-      delay: 0.2
-    });
-    gsap.from("#closureForm", {
-      opacity: 0,
-      y: 20,
-      duration: 1
-    });
-    gsap.from(".sticky-top", {
-      opacity: 0,
-      y: 20,
-      delay: 0.3,
-      duration: 1
+    document.getElementById("assignAgent").addEventListener("change", () => {
+      document.getElementById("assignAlert").classList.remove("d-none");
     });
 
-    // Toggle Tax field
-    const taxToggle = document.getElementById("taxToggle");
-    const taxFieldContainer = document.getElementById("taxFieldContainer");
-    taxToggle.addEventListener("change", () => {
-      if (taxToggle.checked) {
-        taxFieldContainer.classList.remove("d-none");
-        gsap.fromTo(taxFieldContainer, {
-          opacity: 0
-        }, {
-          opacity: 1,
-          duration: 0.3
-        });
-      } else {
-        gsap.to(taxFieldContainer, {
-          opacity: 0,
-          duration: 0.3,
-          onComplete: () => {
-            taxFieldContainer.classList.add("d-none");
-          }
-        });
-      }
+    document.getElementById("closureForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      alert("Closure log saved and CRM + Task system triggered.");
+    });
+
+    document.getElementById("downloadPDF").addEventListener("click", function() {
+      alert("PDF download initiated. (To implement: use html2pdf.js or similar)");
     });
   </script>
 
