@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Add Customer</title>
@@ -8,6 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
+
 <body class="bg-light">
   <div class="container py-5">
     <div class="card shadow-lg border-0">
@@ -15,7 +17,7 @@
         <h2 class="mb-4 text-primary fw-bold text-center">Add Customer</h2>
         <form id="customerForm" class="needs-validation" novalidate>
           <div class="row g-3">
-             <div class="col-md-6">
+            <div class="col-md-6">
               <label class="form-label">Full Name</label>
               <input type="text" class="form-control" required placeholder="Enter full name">
             </div>
@@ -130,7 +132,14 @@
     customerType.addEventListener('change', () => {
       sellerFields.style.display = customerType.value === 'Seller' ? 'block' : 'none';
       tenantFields.style.display = customerType.value === 'Tenant' ? 'block' : 'none';
-      gsap.fromTo('#sellerFields, #tenantFields', {opacity: 0, y: -20}, {opacity: 1, y: 0, duration: 0.5});
+      gsap.fromTo('#sellerFields, #tenantFields', {
+        opacity: 0,
+        y: -20
+      }, {
+        opacity: 1,
+        y: 0,
+        duration: 0.5
+      });
     });
 
     budgetRange.addEventListener('input', () => {
@@ -154,12 +163,26 @@
       if (hasMatch) {
         const matchModal = new bootstrap.Modal(document.getElementById('matchModal'));
         matchModal.show();
-        gsap.fromTo('#matchModal .modal-content', {opacity: 0, scale: 0.8}, {opacity: 1, scale: 1, duration: 0.5});
+        gsap.fromTo('#matchModal .modal-content', {
+          opacity: 0,
+          scale: 0.8
+        }, {
+          opacity: 1,
+          scale: 1,
+          duration: 0.5
+        });
       } else {
         const toastEl = document.getElementById('noMatchToast');
         const toast = new bootstrap.Toast(toastEl);
         toast.show();
-        gsap.fromTo(toastEl, {opacity: 0, x: 100}, {opacity: 1, x: 0, duration: 0.5});
+        gsap.fromTo(toastEl, {
+          opacity: 0,
+          x: 100
+        }, {
+          opacity: 1,
+          x: 0,
+          duration: 0.5
+        });
       }
     }
 
@@ -173,6 +196,101 @@
         ease: "power2.out"
       });
     });
+
+    function handleSubmit() {
+      const form = document.getElementById('customerForm');
+      const fullName = form.querySelector('input[type="text"]').value.trim();
+      const customerType = document.getElementById('customerType').value;
+      const contactNumber = form.querySelector('input[type="tel"]').value.trim();
+      const email = form.querySelector('input[type="email"]').value.trim();
+      const fileInput = document.getElementById('idProof');
+      const file = fileInput.files[0];
+      const validTypes = ['application/pdf', 'image/jpeg'];
+
+      // Full Name Validation
+      if (!fullName || !/^[a-zA-Z\s]+$/.test(fullName)) {
+        alert("Please enter a valid full name (letters and spaces only).");
+        return;
+      }
+
+      // Customer Type Validation
+      if (customerType === "") {
+        alert("Please select a customer type.");
+        return;
+      }
+
+      // Contact Number Validation
+      if (!/^\d{10}$/.test(contactNumber)) {
+        alert("Please enter a valid 10-digit contact number (numbers only).");
+        return;
+      }
+
+      // Email Validation
+      if (!/\S+@\S+\.\S+/.test(email)) {
+        alert("Please enter a valid email address.");
+        return;
+      }
+
+      // File Upload Validation
+      if (!file) {
+        alert("Please upload an ID proof.");
+        return;
+      }
+      if (!validTypes.includes(file.type)) {
+        alert("Only PDF and JPEG files are allowed.");
+        return;
+      }
+
+      // Budget Range Validation
+      const budgetValue = document.getElementById('budgetRange').value;
+      if (budgetValue < 100000 || budgetValue > 10000000) {
+        alert("Please select a budget within the range of ₹100,000 to ₹10,000,000.");
+        return;
+      }
+
+      // Dynamic Fields Validation
+      if (customerType === 'Seller') {
+        const ownedPropertyDetails = form.querySelector('#sellerFields textarea').value.trim();
+        if (!ownedPropertyDetails) {
+          alert("Please enter owned property details.");
+          return;
+        }
+      } else if (customerType === 'Tenant') {
+        const rentalDuration = form.querySelector('#tenantFields input[type="text"]').value.trim();
+        if (!rentalDuration) {
+          alert("Please enter rental duration.");
+          return;
+        }
+      }
+
+      // If all validations pass, proceed with the submission
+      const hasMatch = Math.random() < 0.5; // Simulated match result
+      if (hasMatch) {
+        const matchModal = new bootstrap.Modal(document.getElementById('matchModal'));
+        matchModal.show();
+        gsap.fromTo('#matchModal .modal-content', {
+          opacity: 0,
+          scale: 0.8
+        }, {
+          opacity: 1,
+          scale: 1,
+          duration: 0.5
+        });
+      } else {
+        const toastEl = document.getElementById('noMatchToast');
+        const toast = new bootstrap.Toast(toastEl);
+        toast.show();
+        gsap.fromTo(toastEl, {
+          opacity: 0,
+          x: 100
+        }, {
+          opacity: 1,
+          x: 0,
+          duration: 0.5
+        });
+      }
+    }
   </script>
 </body>
+
 </html>
