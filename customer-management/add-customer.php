@@ -8,9 +8,12 @@
   <!-- Bootstrap 5 CDN -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+
 </head>
 
 <body class="bg-light">
+  <?php include '../navbar.php'; ?>
   <div class="container py-5">
     <div class="card shadow-lg border-0">
       <div class="card-body p-4">
@@ -291,6 +294,8 @@
       }
     }
   </script>
+  <?php include '../footer.php'; ?>
+
 </body>
 
 </html>

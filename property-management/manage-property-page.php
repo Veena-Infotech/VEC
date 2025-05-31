@@ -22,6 +22,7 @@
 </head>
 
 <body class="bg-light">
+  <?php include '../navbar.php'; ?>
   <div class="container my-5">
     <h2 class="text-center mb-4"><i class="bi bi-house-gear"></i> Property Management</h2>
     <form class="row g-3 mb-4" id="filterForm">
@@ -191,6 +192,8 @@
         });
       });
     </script>
+  <?php include '../footer.php'; ?>
+
 </body>
 
 </html>

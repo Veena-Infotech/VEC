@@ -10,6 +10,7 @@
 </head>
 
 <body class="bg-light">
+    <?php include '../navbar.php'; ?>
 
     <div class="container py-5">
         <div class="mb-4">
@@ -165,6 +166,8 @@
             });
         });
     </script>
+  <?php include '../footer.php'; ?>
+
 
 </body>
 

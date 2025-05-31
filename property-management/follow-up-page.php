@@ -31,6 +31,7 @@
 </head>
 
 <body class="bg-light text-dark">
+  <?php include '../navbar.php'; ?>
 
   <!-- Title Section -->
   <div class="py-4 text-center bg-white shadow-sm mb-5">
@@ -204,6 +205,8 @@
       });
     });
   </script>
+  <?php include '../footer.php'; ?>
+
 
 </body>
 

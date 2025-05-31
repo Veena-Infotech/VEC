@@ -6,8 +6,11 @@
   <title>Manage Customer</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+
 </head>
 <body class="bg-body-tertiary">
+  <?php include '../navbar.php'; ?>
   <div class="container py-5">
     <h1 class="mb-4 text-dark fw-bold text-center">Manage Customer</h1>
 
@@ -194,5 +197,7 @@
   </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <?php include '../footer.php'; ?>
+
 </body>
 </html>

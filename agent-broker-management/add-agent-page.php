@@ -19,6 +19,9 @@
 </head>
 
 <body class="bg-light text-dark">
+   <?php include '../navbar.php'; ?>
+
+
 
   <main class="container py-5">
     <section class="card shadow-lg rounded-4 p-4 mx-auto" id="agentFormSection" style="max-width: 800px;">

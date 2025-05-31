@@ -13,6 +13,7 @@
 </head>
 
 <body class="bg-light">
+  <?php include '../navbar.php'; ?>
 
   <div class="container my-5">
     <h2 class="text-center mb-4"><i class="bi bi-archive"></i> Archived Properties</h2>
@@ -219,6 +220,8 @@
         modal.hide();
       });
     </script>
+  <?php include '../footer.php'; ?>
+
 </body>
 
 </html>

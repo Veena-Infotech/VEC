@@ -8,7 +8,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 </head>
 <body class="bg-light">
-
+<?php include '../navbar.php'; ?>
 <div class="container py-5">
   <div class="row g-4">
     <!-- Form Section -->
@@ -174,6 +174,8 @@
     window.print();
   }
 </script>
+  <?php include '../footer.php'; ?>
+
 
 </body>
 </html>

@@ -15,6 +15,7 @@
 </head>
 
 <body class="bg-body-tertiary">
+  <?php include '../navbar.php'; ?>
 
   <div class="container py-5">
     <!-- Header Card -->
@@ -133,6 +134,8 @@
       delay: 0.6
     });
   </script>
+  <?php include '../footer.php'; ?>
+
 </body>
 
 </html>
