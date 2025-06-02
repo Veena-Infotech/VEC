@@ -19,26 +19,34 @@
 
   <div class="container py-5">
     <!-- Header Card -->
-    <div class="card border-0 shadow mb-4">
-      <div class="card-body d-flex justify-content-between align-items-center">
-        <h3 class="card-title fw-bold mb-0" id="pageTitle">
-          <i class="bi bi-house-door-fill me-2"></i>
-          Agent Linked Properties
-        </h3>
-        <button class="btn btn-outline-secondary btn-lg" id="addPropertyBtn" data-bs-toggle="tooltip" data-bs-placement="left" title="Quickly add a new property for the agent">
-          <i class="bi bi-plus-circle me-1"></i> Add Property
-        </button>
+    <div class="card-body d-flex justify-content-between align-items-center flex-wrap gap-2">
+      <h3 class="card-title fw-bold mb-0" id="pageTitle">
+        <i class="bi bi-house-door-fill me-2"></i>
+        Agent Linked Properties
+      </h3>
+      <div class="d-flex align-items-center gap-2">
+        <div class="d-flex align-items-center gap-2">
+          <input type="text" class="form-control" placeholder="Search..." id="searchInput" />
+
+        </div>
+        <div>
+          <a href="/VEC/property-management/add-property-page.php">
+            <button class="btn btn-outline-secondary btn-md" id="addPropertyBtn">
+              Add Property
+            </button>
+          </a>
+        </div>
       </div>
     </div>
 
     <!-- Properties Table Card -->
-    <div class="card shadow-sm border-0">
+    <div class="card border-0 mt-2">
       <div class="card-header fw-semibold sticky-top">
         Linked Property List
       </div>
       <div class="card-body p-0">
         <div class="table-responsive">
-          <table class="table table-striped table-hover align-middle mb-0 text-center">
+          <table class="table table-striped table-hover align-middle mb-0 text-center" id="propertyTableBody">
             <thead class="table-light">
               <tr>
                 <th>#</th>
@@ -47,67 +55,66 @@
                 <th>Lead Source</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody id="tableBody">
               <tr>
                 <th scope="row">1</th>
                 <td>Sunset Villa</td>
                 <td><span class="badge rounded-pill px-3 border text-dark">Completed</span></td>
-                <td><i class="bi bi-facebook me-1"></i>Facebook Ads</td>
+                <td>Facebook Ads</td>
               </tr>
               <tr>
                 <th scope="row">2</th>
                 <td>Downtown Loft</td>
                 <td><span class="badge rounded-pill px-3 border text-dark">Pending</span></td>
-                <td><i class="bi bi-people-fill me-1"></i>Referral</td>
+                <td>Referral</td>
               </tr>
               <tr>
                 <th scope="row">3</th>
-                <td>Seaside Apartment</td>
-                <td><span class="badge rounded-pill px-3 border text-dark">Cancelled</span></td>
-                <td><i class="bi bi-globe me-1"></i>Website</td>
+                <td>Dubai Loft</td>
+                <td><span class="badge rounded-pill px-3 border text-dark">Approved</span></td>
+                <td>Reference</td>
               </tr>
+              <tr>
+                <th scope="row">4</th>
+                <td>Downtown City</td>
+                <td><span class="badge rounded-pill px-3 border text-dark">Done</span></td>
+                <td>Instagram</td>
+              </tr>
+              <tr>
+                <th scope="row">5</th>
+                <td>Khoparkhanaire City</td>
+                <td><span class="badge rounded-pill px-3 border text-dark">Done</span></td>
+                <td>Instagram</td>
+              </tr>
+              <tr>
+                <th scope="row">6</th>
+                <td>Versova City</td>
+                <td><span class="badge rounded-pill px-3 border text-dark">Done</span></td>
+                <td>Instagram</td>
+              </tr>
+              <!-- Add more rows here -->
             </tbody>
+
           </table>
+          <!-- Pagination -->
+          <div class="d-flex justify-content-end mt-4">
+            <nav aria-label="Page navigation">
+              <ul class="pagination" id="pagination"></ul>
+            </nav>
+          </div>
+
         </div>
       </div>
     </div>
 
     <!-- Pagination -->
-    <div class="d-flex justify-content-end mt-4">
-      <nav aria-label="Page navigation">
-        <ul class="pagination">
-          <li class="page-item disabled">
-            <a class="page-link rounded-pill px-3" href="#" tabindex="-1" aria-disabled="true" aria-label="Previous">
-              &laquo;
-            </a>
-          </li>
-          <li class="page-item active" aria-current="page">
-            <a class="page-link rounded-pill px-3" href="#">1</a>
-          </li>
-          <li class="page-item">
-            <a class="page-link rounded-pill px-3" href="#">2</a>
-          </li>
-          <li class="page-item">
-            <a class="page-link rounded-pill px-3" href="#">3</a>
-          </li>
-          <li class="page-item">
-            <a class="page-link rounded-pill px-3" href="#" aria-label="Next">
-              &raquo;
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </div>
+
 
   </div>
 
   <!-- Bootstrap JS Bundle and Tooltips -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    // Tooltip initialization
-    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
-    [...tooltipTriggerList].forEach(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
-  </script>
+
 
   <!-- GSAP Animations -->
   <script>
@@ -134,6 +141,93 @@
       delay: 0.6
     });
   </script>
+  <script>
+    const rowsPerPage = 5;
+    let currentPage = 1;
+
+    const tableBody = document.getElementById('tableBody');
+    const allRows = Array.from(tableBody.querySelectorAll('tr'));
+    const searchInput = document.getElementById('searchInput');
+    const pagination = document.getElementById('pagination');
+
+    function filterRows(query) {
+      return allRows.filter(row => {
+        return Array.from(row.cells).some(cell =>
+          cell.textContent.toLowerCase().includes(query.toLowerCase())
+        );
+      });
+    }
+
+    function renderTable(filteredRows) {
+      tableBody.innerHTML = '';
+      const start = (currentPage - 1) * rowsPerPage;
+      const paginatedRows = filteredRows.slice(start, start + rowsPerPage);
+      paginatedRows.forEach(row => tableBody.appendChild(row));
+    }
+
+    function renderPagination(filteredRows) {
+      pagination.innerHTML = '';
+      const pageCount = Math.ceil(filteredRows.length / rowsPerPage);
+
+      const createPageItem = (text, disabled = false, active = false) => {
+        const li = document.createElement('li');
+        li.className = `page-item ${disabled ? 'disabled' : ''} ${active ? 'active' : ''}`;
+        li.innerHTML = `<a class="page-link rounded-pill px-3 mx-1" href="#">${text}</a>`;
+        return li;
+      };
+
+      const prev = createPageItem('«', currentPage === 1);
+      prev.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (currentPage > 1) {
+          currentPage--;
+          updateTable();
+        }
+      });
+      pagination.appendChild(prev);
+
+      for (let i = 1; i <= pageCount; i++) {
+        const page = createPageItem(i, false, currentPage === i);
+        page.addEventListener('click', (e) => {
+          e.preventDefault();
+          currentPage = i;
+          updateTable();
+        });
+        pagination.appendChild(page);
+      }
+
+      const next = createPageItem('»', currentPage === pageCount);
+      next.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (currentPage < pageCount) {
+          currentPage++;
+          updateTable();
+        }
+      });
+      pagination.appendChild(next);
+    }
+
+    function updateTable() {
+      const query = searchInput.value.trim();
+      const filteredRows = filterRows(query);
+      const totalPages = Math.ceil(filteredRows.length / rowsPerPage);
+
+      if (currentPage > totalPages) currentPage = 1;
+
+      renderTable(filteredRows);
+      renderPagination(filteredRows);
+    }
+
+    searchInput.addEventListener('input', () => {
+      currentPage = 1;
+      updateTable();
+    });
+
+    // Initial render
+    updateTable();
+  </script>
+
+
   <?php include '../footer.php'; ?>
 
 </body>
