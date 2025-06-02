@@ -16,15 +16,18 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <!-- Bootstrap Bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Select2 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
 </head>
 
 <body class="bg-light text-dark">
-   <?php include '../navbar.php'; ?>
+  <?php include '../navbar.php'; ?>
 
 
 
   <main class="container py-5">
-    <section class="card shadow-lg rounded-4 p-4 mx-auto" id="agentFormSection" style="max-width: 800px;">
+    <section class="card rounded-1 p-4 mx-auto" id="agentFormSection" style="max-width: 800px;">
       <h2 class="fs-4 mb-4 text-center">Agent Onboarding Form</h2>
       <form id="agentForm">
         <div class="row mb-3">
@@ -59,62 +62,27 @@
         </div>
 
         <div class="mb-3">
-          <label class="form-label fw-bold">Area of Operation (Select up to 10)</label>
-          <div id="areaOfOperationCheckboxes" class="row row-cols-2 g-2">
-            <!-- Each checkbox -->
-            <div class="form-check col">
-              <input class="form-check-input area-checkbox" type="checkbox" value="Locality1" id="loc1">
-              <label class="form-check-label" for="loc1">Locality 1</label>
-            </div>
-            <div class="form-check col">
-              <input class="form-check-input area-checkbox" type="checkbox" value="Locality2" id="loc2">
-              <label class="form-check-label" for="loc2">Locality 2</label>
-            </div>
-            <div class="form-check col">
-              <input class="form-check-input area-checkbox" type="checkbox" value="Locality3" id="loc3">
-              <label class="form-check-label" for="loc3">Locality 3</label>
-            </div>
-            <div class="form-check col">
-              <input class="form-check-input area-checkbox" type="checkbox" value="Locality4" id="loc4">
-              <label class="form-check-label" for="loc4">Locality 4</label>
-            </div>
-            <div class="form-check col">
-              <input class="form-check-input area-checkbox" type="checkbox" value="Locality5" id="loc5">
-              <label class="form-check-label" for="loc5">Locality 5</label>
-            </div>
-            <div class="form-check col">
-              <input class="form-check-input area-checkbox" type="checkbox" value="Locality6" id="loc6">
-              <label class="form-check-label" for="loc6">Locality 6</label>
-            </div>
-            <div class="form-check col">
-              <input class="form-check-input area-checkbox" type="checkbox" value="Locality7" id="loc7">
-              <label class="form-check-label" for="loc7">Locality 7</label>
-            </div>
-            <div class="form-check col">
-              <input class="form-check-input area-checkbox" type="checkbox" value="Locality8" id="loc8">
-              <label class="form-check-label" for="loc8">Locality 8</label>
-            </div>
-            <div class="form-check col">
-              <input class="form-check-input area-checkbox" type="checkbox" value="Locality9" id="loc9">
-              <label class="form-check-label" for="loc9">Locality 9</label>
-            </div>
-            <div class="form-check col">
-              <input class="form-check-input area-checkbox" type="checkbox" value="Locality10" id="loc10">
-              <label class="form-check-label" for="loc10">Locality 10</label>
-            </div>
-            <div class="form-check col">
-              <input class="form-check-input area-checkbox" type="checkbox" value="Locality11" id="loc11">
-              <label class="form-check-label" for="loc11">Locality 11</label>
-            </div>
-            <div class="form-check col">
-              <input class="form-check-input area-checkbox" type="checkbox" value="Locality12" id="loc12">
-              <label class="form-check-label" for="loc12">Locality 12</label>
-            </div>
-          </div>
-          <div id="selection-warning" class="form-text text-danger d-none">
+          <label for="areaOfOperation" class="form-label fw-bold d-flex flex-column">Area of Operation (Select up to 10)</label>
+          <select class="form-select" id="areaOfOperation" multiple name="areaOfOperation[]" style="width: 100%;">
+            <option value="Locality1">Locality 1</option>
+            <option value="Locality2">Locality 2</option>
+            <option value="Locality3">Locality 3</option>
+            <option value="Locality4">Locality 4</option>
+            <option value="Locality5">Locality 5</option>
+            <option value="Locality6">Locality 6</option>
+            <option value="Locality7">Locality 7</option>
+            <option value="Locality8">Locality 8</option>
+            <option value="Locality9">Locality 9</option>
+            <option value="Locality10">Locality 10</option>
+            <option value="Locality11">Locality 11</option>
+            <option value="Locality12">Locality 12</option>
+          </select>
+          <div id="selection-warning" class="form-text text-danger d-none mt-1">
             You can only select up to 10 localities.
           </div>
         </div>
+
+
         <div class="form-text mb-3">Max 10 areas can be selected.</div>
 
         <div class="mb-3">
@@ -127,10 +95,10 @@
           <input type="file" class="form-control" id="agreementUpload" accept=".pdf,.jpg,.jpeg,.png" required />
         </div>
 
-        <button type="submit" class="btn btn-dark w-100">Submit</button>
+        <button type="submit" class="btn btn-primary w-100">Submit</button>
       </form>
 
-      <button class="btn btn-outline-dark mt-3 w-100" onclick="addPropertyForAgent()">Add Property for Agent</button>
+      <button class="btn btn-outline-primary mt-3 w-100">Add Property for Agent</button>
     </section>
   </main>
 
@@ -168,41 +136,6 @@
         const agreementFile = document.getElementById('agreementUpload');
         const areaChecked = document.querySelectorAll('.area-checkbox:checked').length;
 
-        if (!validateName(name)) {
-          alert("Please enter a valid name (letters and spaces only).");
-          $('#agentName').focus();
-          return false;
-        }
-
-        if (!validateContact(contact) || contact.length !== 10) {
-          alert("Please enter a valid 10-digit contact number (numbers only).");
-          $('#contact').focus();
-          return false;
-        }
-
-        if (!validateFile(panFile)) {
-          alert("Please upload a valid PAN file.");
-          $('#panUpload').focus();
-          return false;
-        }
-
-        if (!validateFile(aadharFile)) {
-          alert("Please upload a valid Aadhar file.");
-          $('#aadharUpload').focus();
-          return false;
-        }
-
-        if (!validateFile(agreementFile)) {
-          alert("Please upload a valid agreement file.");
-          $('#agreementUpload').focus();
-          return false;
-        }
-
-        if (areaChecked === 0) {
-          alert("Please select at least one area of operation.");
-          document.querySelector('.area-checkbox').focus();
-          return false;
-        }
 
         return true;
       }
@@ -249,11 +182,36 @@
         });
       });
     });
-
-    function addPropertyForAgent() {
-      alert('Redirecting to Add Property for Agent...');
-    }
   </script>
+
+  <script>
+    $(document).ready(function() {
+      $('#areaOfOperation').select2({
+        placeholder: 'Select localities',
+        width: '100',
+        maximumSelectionLength: 10
+      });
+
+      $('#areaOfOperation').on('select2:select select2:unselect', function(e) {
+        const selected = $(this).val() || [];
+        const warning = $('#selection-warning');
+
+        if (selected.length >= 10) {
+          warning.removeClass('d-none');
+        } else {
+          warning.addClass('d-none');
+        }
+      });
+    });
+  </script>
+
+  <?php include '../footer.php'; ?>
+
+
+  <!-- jQuery + Select2 JS -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
 </body>
 
 </html>

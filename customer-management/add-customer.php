@@ -47,16 +47,16 @@
             </div>
             <div class="col-md-6">
               <label class="form-label">Budget Range</label>
-              <input type="range" class="form-range" min="100000" max="10000000" step="50000" id="budgetRange">
+              <input type="range" class="form-range" min="100000" max="10000000" step="50000" id="budgetRange" required>
               <div class="fw-medium">Budget: <span id="budgetDisplay">₹100000</span></div>
             </div>
             <div class="col-md-6">
               <label class="form-label">Preferred Localities / Areas</label>
-              <input type="text" class="form-control" placeholder="Enter preferred localities or areas">
+              <input type="text" class="form-control" placeholder="Enter preferred localities or areas" required>
             </div>
             <div class="col-md-6">
               <label class="form-label">Purpose</label>
-              <select class="form-select">
+              <select class="form-select" required>
                 <option>Investment</option>
                 <option>Self-use</option>
                 <option>Rental</option>
@@ -64,15 +64,15 @@
             </div>
             <div class="col-md-6">
               <label class="form-label">Type of Property Interested In</label>
-              <input type="text" class="form-control" placeholder="e.g. Apartment, Villa, Commercial">
+              <input type="text" class="form-control" required placeholder="e.g. Apartment, Villa, Commercial">
             </div>
             <div class="col-md-6">
               <label class="form-label">Agent Linked</label>
-              <input type="text" class="form-control" placeholder="Enter agent name or ID">
+              <input type="text" class="form-control" required placeholder="Enter agent name or ID">
             </div>
             <div class="col-md-6">
               <label class="form-label">Status</label>
-              <select class="form-select">
+              <select class="form-select" required>
                 <option>Looking</option>
                 <option>On Hold</option>
                 <option>Closed Deal</option>
@@ -80,15 +80,14 @@
             </div>
             <div class="col-12" id="sellerFields" style="display:none;">
               <label class="form-label">Owned Property Details</label>
-              <textarea class="form-control" placeholder="Enter owned property details..."></textarea>
+              <textarea class="form-control" placeholder="Enter owned property details..." required></textarea>
             </div>
             <div class="col-12" id="tenantFields" style="display:none;">
               <label class="form-label">Rental Duration</label>
-              <input type="text" class="form-control" placeholder="e.g. 6 months, 1 year">
+              <input type="text" class="form-control" placeholder="e.g. 6 months, 1 year" required>
             </div>
-            <!-- Submit -->
-            <div class="col-12 text-center mt-4">
-              <button type="submit" class="btn btn-primary btn-lg px-5">Submit Listing</button>
+            <div class="col-12 text-center">
+              <button type="submit" class="btn btn-primary px-5 py-2 rounded-pill mt-3">Submit</button>
             </div>
           </div>
         </form>
@@ -127,33 +126,40 @@
   <!-- Bootstrap Bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      gsap.from(".card", {
-        y: 50,
-        opacity: 0,
-        duration: 1,
-        ease: "power2.out"
-      });
+   
 
-      gsap.from(".card .form-label, .card .form-control, .card .form-select, .card textarea, .card input[type='range']", {
+    customerType.addEventListener('change', () => {
+      sellerFields.style.display = customerType.value === 'Seller' ? 'block' : 'none';
+      tenantFields.style.display = customerType.value === 'Tenant' ? 'block' : 'none';
+      gsap.fromTo('#sellerFields, #tenantFields', {
         opacity: 0,
-        y: 20,
-        duration: 0.6,
-        stagger: 0.1,
-        delay: 0.5,
-        ease: "power1.out"
-      });
-
-      gsap.from(".btn-primary", {
-        scale: 0.8,
-        opacity: 0,
-        delay: 1.2,
-        duration: 0.5,
-        ease: "back.out(1.7)"
+        y: -20
+      }, {
+        opacity: 1,
+        y: 0,
+        duration: 0.5
       });
     });
-  </script>
 
+    budgetRange.addEventListener('input', () => {
+      budgetDisplay.textContent = '₹' + budgetRange.value;
+    });
+
+    
+
+    // Animate entire form entrance
+    window.addEventListener('load', () => {
+      gsap.from("form .form-control, form .form-select, form .form-range, form textarea, button", {
+        opacity: 0,
+        y: 30,
+        duration: 0.6,
+        stagger: 0.1,
+        ease: "power2.out"
+      });
+    });
+
+  
+  </script>
   <?php include '../footer.php'; ?>
 
 </body>
