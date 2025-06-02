@@ -19,8 +19,14 @@
     <h2 class="text-center mb-4"><i class="bi bi-archive"></i> Archived Properties</h2>
 
     <!-- Archived Properties Table -->
-    <div class="table-responsive mt-3">
+    <div class=" mt-3">
       <table class="table table-striped table-sm mb-0 text-center">
+        <div class="row mb-3">
+          <div class="col-md-6 mx-auto">
+            <input type="text" id="propertySearch" class="form-control" placeholder="Search archived properties...">
+          </div>
+        </div>
+
         <thead>
           <tr>
             <th class="border-top border-translucent ps-3" data-sort="property-id">
@@ -47,7 +53,7 @@
         <tbody class="list">
           <tr>
             <td class="align-middle ps-3 profile-id">PROP1001</td>
-            <td class="align-middle ps-3 title">Oceanfront Condo</td>
+            <td class="align-middle ps-3 title">Oceanfront Ward</td>
             <td class="align-middle location">Miami</td>
             <td class="align-middle owner">John Smith</td>
             <td class="align-middle ps-3 status">Pending</td>
@@ -205,7 +211,7 @@
       }
 
       // Event listener for restore confirmation
-      document.getElementById("confirmRestoreBtn").addEventListener("click", function () {
+      document.getElementById("confirmRestoreBtn").addEventListener("click", function() {
         // Implement restoration logic here
         showToast(`Property ${selectedPropertyId} has been restored.`);
         const modal = bootstrap.Modal.getInstance(document.getElementById("restoreModal"));
@@ -213,14 +219,33 @@
       });
 
       // Event listener for delete confirmation
-      document.getElementById("confirmDeleteBtn").addEventListener("click", function () {
+      document.getElementById("confirmDeleteBtn").addEventListener("click", function() {
         // Implement deletion logic here
         showToast(`Property ${selectedPropertyId} has been deleted.`);
         const modal = bootstrap.Modal.getInstance(document.getElementById("deleteModal"));
         modal.hide();
       });
     </script>
-  <?php include '../footer.php'; ?>
+    <?php include '../footer.php'; ?>
+
+    <script>
+      // Search functionality
+      document.getElementById("propertySearch").addEventListener("input", function() {
+        const searchTerm = this.value.toLowerCase();
+        const rows = document.querySelectorAll("tbody tr");
+
+        rows.forEach(row => {
+          const id = row.querySelector(".profile-id").textContent.toLowerCase();
+          const title = row.querySelector(".title").textContent.toLowerCase();
+          const location = row.querySelector(".location").textContent.toLowerCase();
+          const owner = row.querySelector(".owner").textContent.toLowerCase();
+
+          const matches = id.includes(searchTerm) || title.includes(searchTerm) || location.includes(searchTerm) || owner.includes(searchTerm);
+          row.style.display = matches ? "" : "none";
+        });
+      });
+    </script>
+
 
 </body>
 
