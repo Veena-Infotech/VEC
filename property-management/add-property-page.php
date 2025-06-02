@@ -17,7 +17,7 @@
   <?php include '../navbar.php'; ?>
   <div class="container py-5">
     <h1 class="mb-4 text-primary fw-bold text-center">List Your Property</h1>
-    <form id="propertyForm" class="bg-white p-4 rounded shadow-sm" novalidate>
+    <form id="propertyForm" class="bg-white p-4 rounded shadow-sm" >
       <div class="row g-3">
 
         <!-- Property Type -->
@@ -192,72 +192,7 @@
     </form>
   </div>
 
-  <script>
-    document.getElementById('propertyForm').addEventListener('submit', function (e) {
-      e.preventDefault();
-      let isValid = true;
 
-      // Validate Locality
-      const locality = document.getElementById('locality');
-      if (locality.value.trim() === '') {
-        isValid = false;
-        alert('Locality is required.');
-      }
-
-      // Validate Address
-      const address = document.getElementById('address');
-      if (address.value.trim() === '') {
-        isValid = false;
-        alert('Address is required.');
-      }
-
-      // Validate Pincode
-      const pincode = document.getElementById('pincode');
-      const pincodePattern = /^[0-9]{6}$/;
-      if (!pincodePattern.test(pincode.value)) {
-        isValid = false;
-        alert('Pincode must be a 6-digit number.');
-      }
-
-      // Validate Area
-      const areaCarpet = document.getElementById('areaCarpet');
-      const areaBuiltup = document.getElementById('areaBuiltup');
-      const areaPlot = document.getElementById('areaPlot');
-      if (areaCarpet.value < 0 || areaBuiltup.value < 0 || areaPlot.value < 0) {
-        isValid = false;
-        alert('Area values must be non-negative.');
-      }
-
-      // Validate Price
-      const price = document.getElementById('price');
-      if (price.value <= 0) {
-        isValid = false;
-        alert('Price must be a positive number.');
-      }
-
-      // Validate File Uploads
-      const idProof = document.getElementById('idProof');
-      if (idProof.files.length === 0) {
-        isValid = false;
-        alert('Please upload an ID proof.');
-      } else {
-        const validTypes = ['application/pdf', 'image/jpeg'];
-        for (let i = 0; i < idProof.files.length; i++) {
-          if (!validTypes.includes(idProof.files[i].type)) {
-            isValid = false;
-            alert('Only PDF and JPEG files are allowed for ID proof.');
-            break;
-          }
-        }
-      }
-
-      // If all validations pass
-      if (isValid) {
-        alert('Form submitted successfully!');
-        // Here you can add the logic to submit the form data
-      }
-    });
-  </script>
   <?php include '../footer.php'; ?>
 
 

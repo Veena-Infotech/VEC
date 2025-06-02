@@ -15,7 +15,7 @@
 <body class="bg-light">
   <?php include '../navbar.php'; ?>
   <div class="container py-5">
-    <div class="card shadow-lg border-0">
+    <div class="card  border-0">
       <div class="card-body p-4">
         <h2 class="mb-4 text-primary fw-bold text-center">Add Customer</h2>
         <form id="customerForm" class="needs-validation" novalidate>
