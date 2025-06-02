@@ -12,19 +12,13 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
   <!-- GSAP -->
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
-  <style>
-    .dropdown-menu {
-      max-height: 300px;
-      overflow-y: auto;
-    }
-  </style>
 </head>
 
 <body class="bg-light text-dark">
   <?php include '../navbar.php'; ?>
 
   <!-- Title Section -->
-  <div class="py-4 text-center ">
+  <div class="py-4 text-center">
     <div class="fs-2 fw-semibold">
       <i class="bi bi-building"></i> Follow Up Management
     </div>
@@ -37,8 +31,9 @@
       <span class="input-group-text"><i class="bi bi-search"></i></span>
       <input type="text" id="searchInput" class="form-control" placeholder="Search by ID, title, location, or owner..." />
     </div>
+
     <!-- Interested Buyers/Tenants Section -->
-    <section class="mb-5 rounded" style="position: relative; overflow: visible;">
+    <section class="mb-5 rounded position-relative overflow-visible">
       <div class="table-responsive">
         <table class="table table-striped table-hover align-middle text-center" id="buyersTable">
           <thead class="table-secondary">
@@ -52,6 +47,7 @@
             </tr>
           </thead>
           <tbody class="list">
+            <!-- Sample Row -->
             <tr>
               <td class="profile-id">PROP1001</td>
               <td class="title">Oceanfront Condo</td>
@@ -66,11 +62,16 @@
                 </select>
               </td>
               <td>
-                <div class="dropdown" style="position: static;">
+                <div class="dropdown">
                   <button class="btn btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown">
                     <i class="bi bi-three-dots"></i>
                   </button>
-                  <ul class="dropdown-menu dropdown-menu-end">
+                  <ul class="dropdown-menu dropdown-menu-end overflow-auto" style="max-height: 300px;">
+                    <li>
+                      <a class="dropdown-item" href="http://localhost/VEC/property-management/edit-property.php?id=PROP1001">
+                        <i class="bi bi-pencil-square me-2"></i> Edit
+                      </a>
+                    </li>
                     <li>
                       <a class="dropdown-item" href="#!" onclick="viewClosureSummary('PROP1001')">
                         <i class="bi bi-eye me-2"></i> View
@@ -86,9 +87,7 @@
                         <i class="bi bi-chat-dots me-2"></i> Add Note
                       </a>
                     </li>
-                    <li>
-                      <hr class="dropdown-divider" />
-                    </li>
+                    <li><hr class="dropdown-divider" /></li>
                     <li>
                       <a class="dropdown-item text-danger" href="#!" onclick="confirmDelete('PROP1001')">
                         <i class="bi bi-trash3 me-2"></i> Delete
@@ -98,155 +97,11 @@
                 </div>
               </td>
             </tr>
-
-            <tr>
-              <td class="profile-id">PROP1002</td>
-              <td class="title">Sea views</td>
-              <td class="location">Miami</td>
-              <td class="owner">John Smith</td>
-              <td>
-                <select class="form-select form-select-sm">
-                  <option>Interested</option>
-                  <option>Visited</option>
-                  <option>Negotiating</option>
-                  <option>Finalized</option>
-                </select>
-              </td>
-              <td>
-                <div class="dropdown" style="position: static;">
-                  <button class="btn btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                    <i class="bi bi-three-dots"></i>
-                  </button>
-                  <ul class="dropdown-menu dropdown-menu-end">
-                    <li>
-                      <a class="dropdown-item" href="#!" onclick="viewClosureSummary('PROP1001')">
-                        <i class="bi bi-eye me-2"></i> View
-                      </a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#!" onclick="scheduleSiteVisit('PROP1001')">
-                        <i class="bi bi-calendar-event me-2"></i> Schedule Site Visit
-                      </a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#!" data-bs-toggle="modal" data-bs-target="#notesModal" onclick="openNotes('PROP1001')">
-                        <i class="bi bi-chat-dots me-2"></i> Add Note
-                      </a>
-                    </li>
-                    <li>
-                      <hr class="dropdown-divider" />
-                    </li>
-                    <li>
-                      <a class="dropdown-item text-danger" href="#!" onclick="confirmDelete('PROP1001')">
-                        <i class="bi bi-trash3 me-2"></i> Delete
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </td>
-            </tr>
-
-            <tr>
-              <td class="profile-id">PROP1003</td>
-              <td class="title">GTA Vice city</td>
-              <td class="location">Miami</td>
-              <td class="owner">John Smith</td>
-              <td>
-                <select class="form-select form-select-sm">
-                  <option>Interested</option>
-                  <option>Visited</option>
-                  <option>Negotiating</option>
-                  <option>Finalized</option>
-                </select>
-              </td>
-              <td>
-                <div class="dropdown" style="position: static;">
-                  <button class="btn btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                    <i class="bi bi-three-dots"></i>
-                  </button>
-                  <ul class="dropdown-menu dropdown-menu-end">
-                    <li>
-                      <a class="dropdown-item" href="#!" onclick="viewClosureSummary('PROP1001')">
-                        <i class="bi bi-eye me-2"></i> View
-                      </a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#!" onclick="scheduleSiteVisit('PROP1001')">
-                        <i class="bi bi-calendar-event me-2"></i> Schedule Site Visit
-                      </a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#!" data-bs-toggle="modal" data-bs-target="#notesModal" onclick="openNotes('PROP1001')">
-                        <i class="bi bi-chat-dots me-2"></i> Add Note
-                      </a>
-                    </li>
-                    <li>
-                      <hr class="dropdown-divider" />
-                    </li>
-                    <li>
-                      <a class="dropdown-item text-danger" href="#!" onclick="confirmDelete('PROP1001')">
-                        <i class="bi bi-trash3 me-2"></i> Delete
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </td>
-            </tr>
-
-            <tr>
-              <td class="profile-id">PROP1004</td>
-              <td class="title">Gta sanandreas</td>
-              <td class="location">Miami</td>
-              <td class="owner">John Smith</td>
-              <td>
-                <select class="form-select form-select-sm">
-                  <option>Interested</option>
-                  <option>Visited</option>
-                  <option>Negotiating</option>
-                  <option>Finalized</option>
-                </select>
-              </td>
-              <td>
-                <div class="dropdown" style="position: static;">
-                  <button class="btn btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                    <i class="bi bi-three-dots"></i>
-                  </button>
-                  <ul class="dropdown-menu dropdown-menu-end">
-                    <li>
-                      <a class="dropdown-item" href="#!" onclick="viewClosureSummary('PROP1001')">
-                        <i class="bi bi-eye me-2"></i> View
-                      </a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#!" onclick="scheduleSiteVisit('PROP1001')">
-                        <i class="bi bi-calendar-event me-2"></i> Schedule Site Visit
-                      </a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#!" data-bs-toggle="modal" data-bs-target="#notesModal" onclick="openNotes('PROP1001')">
-                        <i class="bi bi-chat-dots me-2"></i> Add Note
-                      </a>
-                    </li>
-                    <li>
-                      <hr class="dropdown-divider" />
-                    </li>
-                    <li>
-                      <a class="dropdown-item text-danger" href="#!" onclick="confirmDelete('PROP1001')">
-                        <i class="bi bi-trash3 me-2"></i> Delete
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </td>
-            </tr>
-
-            <!-- Add more rows as needed -->
-
+            <!-- Duplicate rows for other properties, change PROP1001 to respective IDs -->
           </tbody>
         </table>
       </div>
     </section>
-
   </main>
 
   <!-- Notes Modal -->
@@ -318,7 +173,16 @@
       alert(`Site visit scheduled for ${propertyId} (This is a placeholder action)`);
     }
 
-    // Search function
+    function confirmDelete(propertyId) {
+      if (confirm(`Are you sure you want to delete property ${propertyId}?`)) {
+        alert(`Deleted ${propertyId} (This is a placeholder action)`);
+      }
+    }
+
+    function viewClosureSummary(propertyId) {
+      alert(`Viewing closure summary for ${propertyId} (This is a placeholder action)`);
+    }
+
     document.getElementById('searchInput').addEventListener('keyup', function() {
       const filter = this.value.toLowerCase();
       const rows = document.querySelectorAll('#buyersTable tbody tr');
