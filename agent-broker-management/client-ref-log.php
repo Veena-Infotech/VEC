@@ -16,7 +16,7 @@
 
   <div class="container mt-4">
     <!-- Header -->
-    <div class=" text-black p-4 rounded mb-4 shadow-sm text-center" id="header">
+    <div class=" text-black p-4 rounded mb-4  text-center" id="header">
       <h2 class="mb-0">Client Referral Log</h2>
       <small>Track client referrals, matching properties, and commissions</small>
     </div>
@@ -41,7 +41,7 @@
       <div class="tab-pane fade show active" id="clients">
         <div class="d-flex justify-content-between mb-2 align-items-center">
           <h5>Clients Referred by Agent</h5>
-          <button class="btn btn-outline-primary btn-sm">+ Add New Client</button>
+          <a href="http://localhost/VEC/customer-management/add-customer.php" class="btn btn-outline-primary btn-sm">+ Add New Client</a>
         </div>
 
         <div class="table-responsive">
@@ -64,8 +64,8 @@
                 <td>john.smith@example.com</td>
                 <td>(555) 123-4567</td>
                 <td>2023-09-15</td>
-                <td><span class="badge bg-success">Active</span></td>
-                <td><button class="btn btn-outline-primary btn-sm">View</button> <button class="btn btn-outline-secondary btn-sm">Edit</button></td>
+                <td><span class="badge text-dark">Active</span></td>
+                <td><button class="btn btn-outline-primary btn-sm">View</button> <a href="http://localhost/VEC/customer-management/edit-customer.php" class="btn btn-outline-secondary btn-sm">Edit</a>              </td>
               </tr>
               <tr>
                 <td>2</td>
@@ -73,17 +73,16 @@
                 <td>emmaj@example.com</td>
                 <td>(555) 987-6543</td>
                 <td>2023-10-02</td>
-                <td><span class="badge bg-dark">Closed</span></td>
-                <td><button class="btn btn-outline-primary btn-sm">View</button> <button class="btn btn-outline-secondary btn-sm">Edit</button></td>
-              </tr>
+                <td><span class="badge text-dark">Closed</span></td>
+                <td><button class="btn btn-outline-primary btn-sm">View</button> <a href="http://localhost/VEC/customer-management/edit-customer.php" class="btn btn-outline-secondary btn-sm">Edit</a></td>
               <tr>
                 <td>3</td>
                 <td>Michael Davis</td>
                 <td>michael.d@example.com</td>
                 <td>(555) 456-7890</td>
                 <td>2023-10-10</td>
-                <td><span class="badge bg-success">Active</span></td>
-                <td><button class="btn btn-outline-primary btn-sm">View</button> <button class="btn btn-outline-secondary btn-sm">Edit</button></td>
+                <td><span class="badge text-dark">Active</span></td>
+                <td><button class="btn btn-outline-primary btn-sm">View</button> <a href="http://localhost/VEC/customer-management/edit-customer.php" class="btn btn-outline-secondary btn-sm">Edit</a></td>
               </tr>
               <tr>
                 <td>4</td>
@@ -91,8 +90,8 @@
                 <td>sophia.r@example.com</td>
                 <td>(555) 234-5678</td>
                 <td>2023-11-05</td>
-                <td><span class="badge bg-warning text-dark">Pending</span></td>
-                <td><button class="btn btn-outline-primary btn-sm">View</button> <button class="btn btn-outline-secondary btn-sm">Edit</button></td>
+                <td><span class="badge text-dark">Pending</span></td>
+                <td><button class="btn btn-outline-primary btn-sm">View</button> <a href="http://localhost/VEC/customer-management/edit-customer.php" class="btn btn-outline-secondary btn-sm">Edit</a> </td>
               </tr>
               <tr>
                 <td>5</td>
@@ -100,8 +99,8 @@
                 <td>robert.w@example.com</td>
                 <td>(555) 876-5432</td>
                 <td>2023-11-20</td>
-                <td><span class="badge bg-success">Active</span></td>
-                <td><button class="btn btn-outline-primary btn-sm">View</button> <button class="btn btn-outline-secondary btn-sm">Edit</button></td>
+                <td><span class="badge text-dark">Active</span></td>
+                <td><button class="btn btn-outline-primary btn-sm">View</button> <a href="http://localhost/VEC/customer-management/edit-customer.php" class="btn btn-outline-secondary btn-sm">Edit</a> </td>
               </tr>
             </tbody>
           </table>
@@ -110,19 +109,19 @@
         <!-- Summary Cards -->
         <div class="row text-white mt-4" id="cards">
           <div class="col-md-4 mb-2">
-            <div class="bg-primary p-3 rounded text-center shadow-sm summary-card">
+            <div class="bg-primary p-3 rounded text-center ">
               <h5>Total Clients</h5>
               <h3>5</h3>
             </div>
           </div>
           <div class="col-md-4 mb-2">
-            <div class="bg-success p-3 rounded text-center shadow-sm summary-card">
+            <div class="bg-success p-3 rounded text-center">
               <h5>Active Properties</h5>
               <h3>5</h3>
             </div>
           </div>
           <div class="col-md-4 mb-2">
-            <div class="bg-info p-3 rounded text-center shadow-sm summary-card">
+            <div class="bg-info p-3 rounded text-center">
               <h5>Total Commission</h5>
               <h3>$47,400</h3>
             </div>
@@ -152,7 +151,7 @@
                 <td>Miami, FL</td>
                 <td>$850,000</td>
                 <td>John Smith</td>
-                <td><span class="badge bg-warning text-dark">Viewing Scheduled</span></td>
+                <td><span class="badge text-dark">Viewing Scheduled</span></td>
               </tr>
               <tr>
                 <td>2</td>
@@ -160,7 +159,7 @@
                 <td>Chicago, IL</td>
                 <td>$450,000</td>
                 <td>Emma Johnson</td>
-                <td><span class="badge bg-success">Interested</span></td>
+                <td><span class="badge text-dark">Interested</span></td>
               </tr>
               <tr>
                 <td>3</td>
@@ -168,7 +167,7 @@
                 <td>New York, NY</td>
                 <td>$1,200,000</td>
                 <td>Michael Davis</td>
-                <td><span class="badge bg-primary">Negotiating</span></td>
+                <td><span class="badge text-dark">Negotiating</span></td>
               </tr>
             </tbody>
           </table>
