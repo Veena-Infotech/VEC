@@ -98,26 +98,7 @@
     </div>
   </div>
 
-  <div class="modal fade" id="editModal" tabindex="-1">
-    <div class="modal-dialog">
-      <form class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Edit Property</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-        </div>
-        <div class="modal-body"><input type="text" class="form-control mb-2" placeholder="Title" value="Sea View Villa">
-          <input type="text" class="form-control mb-2" placeholder="Location" value="Goa">
-          <input type="text" class="form-control mb-2" placeholder="Owner" value="Jane Smith">
-          <select class="form-select mb-2">
-            <option>Available</option>
-            <option>Sold</option>
-            <option>Rented</option>
-            <option>Archived</option>
-          </select>
-        </div>
-        <div class="modal-footer"><button class="btn btn-primary" onclick="showToast('Updated Successfully')" type="button">Save</button></div>
-      </form>
-    </div>
-  </div>
+  
 
   <div class="modal fade" id="previewModal" tabindex="-1">
     <div class="modal-dialog modal-lg">
