@@ -18,7 +18,7 @@
   <?php include '../navbar.php'; ?>
 
   <!-- Title Section -->
-  <div class="py-4 text-center ">
+  <div class="py-4 text-center bg-white">
     <div class="fs-2 fw-semibold">
       <i class="bi bi-building"></i> Follow Up Management
     </div>
@@ -29,7 +29,14 @@
   <main class="container mb-5">
 
     <!-- Interested Buyers/Tenants Section -->
-    <section class="mb-5 rounded">
+    <section class="mb-5 bg-white rounded">
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-4 gap-2">
+        <h2 class="fs-4 mb-0"><i class="bi bi-people pe-2"></i> Interested Buyers/Tenants</h2>
+        <div class="w-100 w-md-auto">
+          <input type="text" id="searchInput" class="form-control form-control-sm" placeholder="Search by Property ID, Title, Location, or Owner...">
+        </div>
+      </div>
+
       <div class="table-responsive">
         <table class="table table-striped table-hover align-middle text-center" id="buyersTable">
           <thead class="table-secondary">
