@@ -65,7 +65,7 @@
                 <td>(555) 123-4567</td>
                 <td>2023-09-15</td>
                 <td><span class="badge text-dark">Active</span></td>
-                <td><button class="btn btn-outline-primary btn-sm">View</button> <a href="http://localhost/VEC/customer-management/edit-customer.php" class="btn btn-outline-secondary btn-sm">Edit</a>              </td>
+                <td><a href="http://localhost/VEC/customer-management/view-customer.php" class="btn btn-outline-primary btn-sm">View</a> <a href="http://localhost/VEC/customer-management/edit-customer.php" class="btn btn-outline-secondary btn-sm">Edit</a>              </td>
               </tr>
               <tr>
                 <td>2</td>
@@ -74,7 +74,7 @@
                 <td>(555) 987-6543</td>
                 <td>2023-10-02</td>
                 <td><span class="badge text-dark">Closed</span></td>
-                <td><button class="btn btn-outline-primary btn-sm">View</button> <a href="http://localhost/VEC/customer-management/edit-customer.php" class="btn btn-outline-secondary btn-sm">Edit</a></td>
+                <td><a href="http://localhost/VEC/customer-management/view-customer.php" class="btn btn-outline-primary btn-sm">View</a> <a href="http://localhost/VEC/customer-management/edit-customer.php" class="btn btn-outline-secondary btn-sm">Edit</a></td>
               <tr>
                 <td>3</td>
                 <td>Michael Davis</td>
@@ -82,7 +82,7 @@
                 <td>(555) 456-7890</td>
                 <td>2023-10-10</td>
                 <td><span class="badge text-dark">Active</span></td>
-                <td><button class="btn btn-outline-primary btn-sm">View</button> <a href="http://localhost/VEC/customer-management/edit-customer.php" class="btn btn-outline-secondary btn-sm">Edit</a></td>
+                <td><a href="http://localhost/VEC/customer-management/view-customer.php" class="btn btn-outline-primary btn-sm">View</a> <a href="http://localhost/VEC/customer-management/edit-customer.php" class="btn btn-outline-secondary btn-sm">Edit</a></td>
               </tr>
               <tr>
                 <td>4</td>
@@ -91,7 +91,7 @@
                 <td>(555) 234-5678</td>
                 <td>2023-11-05</td>
                 <td><span class="badge text-dark">Pending</span></td>
-                <td><button class="btn btn-outline-primary btn-sm">View</button> <a href="http://localhost/VEC/customer-management/edit-customer.php" class="btn btn-outline-secondary btn-sm">Edit</a> </td>
+                <td><a href="http://localhost/VEC/customer-management/view-customer.php" class="btn btn-outline-primary btn-sm">View</a> <a href="http://localhost/VEC/customer-management/edit-customer.php" class="btn btn-outline-secondary btn-sm">Edit</a> </td>
               </tr>
               <tr>
                 <td>5</td>
@@ -100,7 +100,7 @@
                 <td>(555) 876-5432</td>
                 <td>2023-11-20</td>
                 <td><span class="badge text-dark">Active</span></td>
-                <td><button class="btn btn-outline-primary btn-sm">View</button> <a href="http://localhost/VEC/customer-management/edit-customer.php" class="btn btn-outline-secondary btn-sm">Edit</a> </td>
+                <td><a href="http://localhost/VEC/customer-management/view-customer.php" class="btn btn-outline-primary btn-sm">View</a> <a href="http://localhost/VEC/customer-management/edit-customer.php" class="btn btn-outline-secondary btn-sm">Edit</a> </td>
               </tr>
             </tbody>
           </table>
