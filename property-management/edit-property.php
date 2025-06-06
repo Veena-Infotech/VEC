@@ -17,7 +17,7 @@
   <?php include '../navbar.php'; ?>
   <div class="container py-5">
     <h1 class="mb-4 text-primary fw-bold text-center">Edit Your Property</h1>
-    <form name="propertyForm" class="bg-white p-4 rounded shadow-sm">
+    <form id="propertyForm" class="bg-white p-4 rounded shadow-sm">
       <div class="row g-3">
 
         <!-- Property Type -->

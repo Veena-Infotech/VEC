@@ -18,7 +18,7 @@
           <h5 class="mb-0"><i class="bi bi-cash-coin me-2"></i>Commission Entry</h5>
         </div>
         <div class="card-body">
-          <form name="commissionForm">
+          <form id="commissionForm">
             <!-- Deal Info -->
             <div class="row g-3 mb-4">
               <div class="col-md-6">

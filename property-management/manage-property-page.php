@@ -16,7 +16,7 @@
   <?php include '../navbar.php'; ?>
   <div class="container my-5">
     <h2 class="text-center mb-4"><i class="bi bi-house-gear"></i> Property Management</h2>
-    <form name="filterForm" class="row g-3 mb-4">
+    <form id="filterForm" class="row g-3 mb-4">
       <div class="col-md-4">
         <label for="filterLocation" class="form-label">Location</label>
         <input type="text" class="form-control" id="filterLocation" name="location" placeholder="Location" />

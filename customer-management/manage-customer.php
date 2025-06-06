@@ -22,7 +22,7 @@
         Search & Filter Customers
       </div>
       <div class="card-body">
-        <form class="row g-3" name="filterForm">
+        <form class="row g-3" id="filterForm">
           <div class="col-md-3">
             <label for="filterType" class="form-label text-secondary">Type</label>
             <select id="filterType" name="filterType" class="form-select border-muted">

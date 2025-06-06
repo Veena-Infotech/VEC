@@ -29,7 +29,7 @@
   <main class="container py-5">
     <section class="card rounded-1 p-4 mx-auto" id="agentFormSection" style="max-width: 800px;">
       <h2 class="fs-4 mb-4 text-center">Agent Onboarding Form</h2>
-      <form name="agentForm">
+      <form id="agentForm">
         <div class="row mb-3">
           <div class="col-md-6">
             <label for="agentName" class="form-label fw-bold">Name</label>

@@ -18,7 +18,7 @@
     <div class="card  border-0">
       <div class="card-body p-4">
         <h2 class="mb-4 text-primary fw-bold text-center">Edit Customer</h2>
-        <form name="customerForm" class="needs-validation">
+        <form id="customerForm" class="needs-validation">
           <div class="row g-3">
             <div class="col-md-6">
               <label class="form-label">Full Name</label>
