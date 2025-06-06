@@ -26,7 +26,7 @@
       </h3>
       <div class="d-flex align-items-center gap-2">
         <div class="d-flex align-items-center gap-2">
-          <input type="text" class="form-control" placeholder="Search..." id="searchInput" />
+          <input type="text" class="form-control" placeholder="Search..." id="searchInput" name="searchInput" />
 
         </div>
         <div>

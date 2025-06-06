@@ -29,8 +29,9 @@
   <main class="container mb-5">
     <div class="input-group mb-3">
       <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" id="searchInput" class="form-control" placeholder="Search by ID, title, location, or owner..." />
+      <input type="text" id="searchInput" name="searchInput" class="form-control" placeholder="Search by ID, title, location, or owner..." />
     </div>
+
 
     <!-- Interested Buyers/Tenants Section -->
     <section class="mb-5 rounded position-relative overflow-visible">
@@ -87,7 +88,9 @@
                         <i class="bi bi-chat-dots me-2"></i> Add Note
                       </a>
                     </li>
-                    <li><hr class="dropdown-divider" /></li>
+                    <li>
+                      <hr class="dropdown-divider" />
+                    </li>
                     <li>
                       <a class="dropdown-item text-danger" href="#!" onclick="confirmDelete('PROP1001')">
                         <i class="bi bi-trash3 me-2"></i> Delete
@@ -116,9 +119,11 @@
           <form id="noteForm">
             <div class="mb-3">
               <label for="noteText" class="form-label">Note</label>
-              <textarea class="form-control" id="noteText" rows="4" placeholder="Enter communication note..."></textarea>
+              <textarea class="form-control" id="noteText" name="noteText" rows="4" placeholder="Enter communication note..."></textarea>
             </div>
-            <button type="submit" class="btn btn-primary"><i class="bi bi-save2"></i> Save Note</button>
+            <button type="submit" class="btn btn-primary">
+              <i class="bi bi-save2"></i> Save Note
+            </button>
           </form>
           <hr />
           <h6>Previous Notes</h6>
@@ -202,7 +207,7 @@
       });
     });
   </script>
- 
+
   <?php include '../footer.php'; ?>
 </body>
 
