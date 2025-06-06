@@ -29,31 +29,31 @@
   <main class="container py-5">
     <section class="card rounded-1 p-4 mx-auto" id="agentFormSection" style="max-width: 800px;">
       <h2 class="fs-4 mb-4 text-center">Agent Onboarding Form</h2>
-      <form id="agentForm">
+      <form name="agentForm">
         <div class="row mb-3">
           <div class="col-md-6">
             <label for="agentName" class="form-label fw-bold">Name</label>
-            <input type="text" class="form-control" id="agentName" required placeholder="Enter Your Name" />
+            <input type="text" class="form-control" name="agentName" required placeholder="Enter Your Name" />
           </div>
           <div class="col-md-6">
             <label for="contact" class="form-label fw-bold">Contact</label>
-            <input type="tel" class="form-control" id="contact" required pattern="[0-9]{10}" title="Please enter a valid 10-digit phone number." placeholder="Enter your contact number" />
+            <input type="tel" class="form-control" name="contact" required pattern="[0-9]{10}" title="Please enter a valid 10-digit phone number." placeholder="Enter your contact number" />
           </div>
         </div>
 
         <div class="mb-3">
           <label for="panUpload" class="form-label fw-bold">PAN Upload</label>
-          <input type="file" class="form-control" id="panUpload" accept=".pdf,.jpg,.jpeg,.png" required />
+          <input type="file" class="form-control" name="panUpload" accept=".pdf,.jpg,.jpeg,.png" required />
         </div>
 
         <div class="mb-3">
           <label for="aadharUpload" class="form-label fw-bold">Aadhar Upload</label>
-          <input type="file" class="form-control" id="aadharUpload" accept=".pdf,.jpg,.jpeg,.png" required />
+          <input type="file" class="form-control" name="aadharUpload" accept=".pdf,.jpg,.jpeg,.png" required />
         </div>
 
         <div class="mb-3">
           <label for="specialization" class="form-label fw-bold">Specialization</label>
-          <select class="form-select" id="specialization" required>
+          <select class="form-select" name="specialization" required>
             <option value="">Select Specialization</option>
             <option value="Rental">Rental</option>
             <option value="Sale">Sale</option>
@@ -63,7 +63,7 @@
 
         <div class="mb-3">
           <label for="areaOfOperation" class="form-label fw-bold d-flex flex-column">Area of Operation (Select up to 10)</label>
-          <select class="form-select" id="areaOfOperation" multiple name="areaOfOperation[]" style="width: 100%;">
+          <select class="form-select" name="areaOfOperation" multiple name="areaOfOperation[]" style="width: 100%;">
             <option value="Locality1">Locality 1</option>
             <option value="Locality2">Locality 2</option>
             <option value="Locality3">Locality 3</option>
@@ -87,12 +87,12 @@
 
         <div class="mb-3">
           <label for="builderTieUps" class="form-label fw-bold">Preferred Builder Tie-ups (if any)</label>
-          <input type="text" class="form-control" id="builderTieUps" placeholder="Enter your preferred builder tie-ups" />
+          <input type="text" class="form-control" name="builderTieUps" placeholder="Enter your preferred builder tie-ups" />
         </div>
 
         <div class="mb-3">
           <label for="agreementUpload" class="form-label fw-bold">Agreement Upload (Commission Agreement)</label>
-          <input type="file" class="form-control" id="agreementUpload" accept=".pdf,.jpg,.jpeg,.png" required />
+          <input type="file" class="form-control" name="agreementUpload" accept=".pdf,.jpg,.jpeg,.png" required />
         </div>
 
         <button type="submit" class="btn btn-primary w-100">Submit</button>

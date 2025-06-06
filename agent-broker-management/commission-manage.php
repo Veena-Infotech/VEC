@@ -18,16 +18,16 @@
           <h5 class="mb-0"><i class="bi bi-cash-coin me-2"></i>Commission Entry</h5>
         </div>
         <div class="card-body">
-          <form id="commissionForm">
+          <form name="commissionForm">
             <!-- Deal Info -->
             <div class="row g-3 mb-4">
               <div class="col-md-6">
                 <label class="form-label">Deal ID</label>
-                <input type="text" class="form-control" id="dealId" required>
+                <input type="text" class="form-control" name="dealId" required>
               </div>
               <div class="col-md-6">
                 <label class="form-label">Client Name</label>
-                <input type="text" class="form-control" id="clientName" required>
+                <input type="text" class="form-control" name="clientName" required>
               </div>
             </div>
 
@@ -35,18 +35,18 @@
             <div class="row g-3 mb-4">
               <div class="col-md-4">
                 <label class="form-label">Commission Type</label>
-                <select class="form-select" id="commissionType">
+                <select class="form-select" name="commissionType">
                   <option value="standard">Standard (10%)</option>
                   <option value="custom">Deal-Specific</option>
                 </select>
               </div>
               <div class="col-md-4">
                 <label class="form-label">Commission %</label>
-                <input type="number" class="form-control" id="commissionPercent" value="10" readonly>
+                <input type="number" class="form-control" name="commissionPercent" value="10" readonly>
               </div>
               <div class="col-md-4">
                 <label class="form-label">Deal Amount (₹)</label>
-                <input type="number" class="form-control" id="dealAmount" required>
+                <input type="number" class="form-control" name="dealAmount" required>
               </div>
             </div>
 
@@ -54,21 +54,21 @@
             <div class="row g-3 mb-4">
               <div class="col-md-4">
                 <label class="form-label">GST Applicable?</label>
-                <select class="form-select" id="gstApplicable">
+                <select class="form-select" name="gstApplicable">
                   <option value="yes">Yes (18%)</option>
                   <option value="no">No</option>
                 </select>
               </div>
               <div class="col-md-4">
                 <label class="form-label">Commission Status</label>
-                <select class="form-select" id="status">
+                <select class="form-select" name="status">
                   <option value="Paid">Paid</option>
                   <option value="Unpaid" selected>Unpaid</option>
                 </select>
               </div>
               <div class="col-md-4">
                 <label class="form-label">Total Payable (₹)</label>
-                <input type="text" class="form-control bg-body-secondary" id="totalPayable" readonly>
+                <input type="text" class="form-control bg-body-secondary" name="totalPayable" readonly>
               </div>
             </div>
 

@@ -18,15 +18,15 @@
     <div class="card  border-0">
       <div class="card-body p-4">
         <h2 class="mb-4 text-primary fw-bold text-center">Edit Customer</h2>
-        <form id="customerForm" class="needs-validation" >
+        <form name="customerForm" class="needs-validation">
           <div class="row g-3">
             <div class="col-md-6">
               <label class="form-label">Full Name</label>
-              <input type="text" class="form-control" required placeholder="Enter full name">
+              <input type="text" name="fullName" class="form-control" required placeholder="Enter full name">
             </div>
             <div class="col-md-6">
               <label class="form-label">Customer Type</label>
-              <select class="form-select" id="customerType" required>
+              <select class="form-select" id="customerType" name="customerType" required>
                 <option value="">Select</option>
                 <option value="Buyer">Buyer</option>
                 <option value="Seller">Seller</option>
@@ -35,28 +35,28 @@
             </div>
             <div class="col-md-6">
               <label class="form-label">Contact Number</label>
-              <input type="tel" class="form-control" required placeholder="Enter contact number">
+              <input type="tel" name="contactNumber" class="form-control" required placeholder="Enter contact number">
             </div>
             <div class="col-md-6">
               <label class="form-label">Email</label>
-              <input type="email" class="form-control" required placeholder="Enter email">
+              <input type="email" name="email" class="form-control" required placeholder="Enter email">
             </div>
             <div class="col-md-6">
               <label class="form-label">Upload ID Proof (PDF/JPEG only)</label>
-              <input type="file" class="form-control" id="idProof" accept=".pdf,.jpeg,.jpg" required placeholder="Upload ID proof">
+              <input type="file" name="idProof" class="form-control" id="idProof" accept=".pdf,.jpeg,.jpg" required>
             </div>
             <div class="col-md-6">
               <label class="form-label">Budget Range</label>
-              <input type="range" class="form-range" min="100000" max="10000000" step="50000" id="budgetRange">
+              <input type="range" name="budgetRange" class="form-range" min="100000" max="10000000" step="50000" id="budgetRange">
               <div class="fw-medium">Budget: <span id="budgetDisplay">₹100000</span></div>
             </div>
             <div class="col-md-6">
               <label class="form-label">Preferred Localities / Areas</label>
-              <input type="text" class="form-control" placeholder="Enter preferred localities or areas">
+              <input type="text" name="preferredLocalities" class="form-control" placeholder="Enter preferred localities or areas">
             </div>
             <div class="col-md-6">
               <label class="form-label">Purpose</label>
-              <select class="form-select">
+              <select class="form-select" name="purpose">
                 <option>Investment</option>
                 <option>Self-use</option>
                 <option>Rental</option>
@@ -64,15 +64,15 @@
             </div>
             <div class="col-md-6">
               <label class="form-label">Type of Property Interested In</label>
-              <input type="text" class="form-control" placeholder="e.g. Apartment, Villa, Commercial">
+              <input type="text" name="propertyType" class="form-control" placeholder="e.g. Apartment, Villa, Commercial">
             </div>
             <div class="col-md-6">
               <label class="form-label">Agent Linked</label>
-              <input type="text" class="form-control" placeholder="Enter agent name or ID">
+              <input type="text" name="agentLinked" class="form-control" placeholder="Enter agent name or ID">
             </div>
             <div class="col-md-6">
               <label class="form-label">Status</label>
-              <select class="form-select">
+              <select class="form-select" name="status">
                 <option>Looking</option>
                 <option>On Hold</option>
                 <option>Closed Deal</option>
@@ -80,11 +80,11 @@
             </div>
             <div class="col-12" id="sellerFields" style="display:none;">
               <label class="form-label">Owned Property Details</label>
-              <textarea class="form-control" placeholder="Enter owned property details..."></textarea>
+              <textarea class="form-control" name="ownedPropertyDetails" placeholder="Enter owned property details..."></textarea>
             </div>
             <div class="col-12" id="tenantFields" style="display:none;">
               <label class="form-label">Rental Duration</label>
-              <input type="text" class="form-control" placeholder="e.g. 6 months, 1 year">
+              <input type="text" name="rentalDuration" class="form-control" placeholder="e.g. 6 months, 1 year">
             </div>
             <!-- Submit -->
             <div class="col-12 text-center mt-4">

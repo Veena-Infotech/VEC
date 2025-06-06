@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -9,6 +10,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
 
 </head>
+
 <body class="bg-body-tertiary">
   <?php include '../navbar.php'; ?>
   <div class="container py-5">
@@ -20,10 +22,10 @@
         Search & Filter Customers
       </div>
       <div class="card-body">
-        <form class="row g-3">
+        <form class="row g-3" name="filterForm">
           <div class="col-md-3">
             <label for="filterType" class="form-label text-secondary">Type</label>
-            <select id="filterType" class="form-select border-muted">
+            <select id="filterType" name="filterType" class="form-select border-muted">
               <option value="" selected>All Types</option>
               <option value="Buyer">Buyer</option>
               <option value="Seller">Seller</option>
@@ -32,7 +34,7 @@
           </div>
           <div class="col-md-3">
             <label for="filterBudget" class="form-label text-secondary">Budget</label>
-            <select id="filterBudget" class="form-select border-muted">
+            <select id="filterBudget" name="filterBudget" class="form-select border-muted">
               <option value="" selected>All Budgets</option>
               <option value="low">&lt; $100,000</option>
               <option value="medium">$100,000 - $500,000</option>
@@ -41,7 +43,7 @@
           </div>
           <div class="col-md-3">
             <label for="filterLocation" class="form-label text-secondary">Location</label>
-            <select id="filterLocation" class="form-select border-muted">
+            <select id="filterLocation" name="filterLocation" class="form-select border-muted">
               <option value="" selected>All Locations</option>
               <option value="New York">New York</option>
               <option value="San Francisco">San Francisco</option>
@@ -60,14 +62,24 @@
   </div>
 
   <script>
-    gsap.from("h1", { duration: 1, y: -40, opacity: 0, ease: "power2.out" });
-    gsap.from(".card", { duration: 0.8, opacity: 0, y: 20, stagger: 0.2, delay: 0.3 });
+    gsap.from("h1", {
+      duration: 1,
+      y: -40,
+      opacity: 0,
+      ease: "power2.out"
+    });
+    gsap.from(".card", {
+      duration: 0.8,
+      opacity: 0,
+      y: 20,
+      stagger: 0.2,
+      delay: 0.3
+    });
 
     const customerContainer = document.getElementById("customerContainer");
 
     // Sample customer data
-    const customers = [
-      {
+    const customers = [{
         name: "John Doe",
         type: "Buyer",
         budget: "medium",
@@ -93,23 +105,23 @@
       }
     ];
 
-   function renderCustomers(filteredCustomers) {
-  customerContainer.innerHTML = "";
+    function renderCustomers(filteredCustomers) {
+      customerContainer.innerHTML = "";
 
-  if (filteredCustomers.length === 0) {
-    customerContainer.innerHTML = `<div class="alert alert-warning">No matching customers found.</div>`;
-    return;
-  }
+      if (filteredCustomers.length === 0) {
+        customerContainer.innerHTML = `<div class="alert alert-warning">No matching customers found.</div>`;
+        return;
+      }
 
-  filteredCustomers.forEach((customer, index) => {
-    const card = document.createElement("div");
-    card.className = "card shadow-sm mb-4 border-muted bg-white";
+      filteredCustomers.forEach((customer, index) => {
+        const card = document.createElement("div");
+        card.className = "card shadow-sm mb-4 border-muted bg-white";
 
-    const noteInputId = `noteInput-${index}`;
-    const notesListId = `notesList-${index}`;
-    const addNoteBtnId = `addNoteBtn-${index}`;
+        const noteInputId = `noteInput-${index}`;
+        const notesListId = `notesList-${index}`;
+        const addNoteBtnId = `addNoteBtn-${index}`;
 
-    card.innerHTML = `
+        card.innerHTML = `
       <div class="card-header d-flex justify-content-between align-items-center bg-light text-dark fw-semibold border-bottom border-muted">
         <span>Customer: <strong>${customer.name}</strong></span>
         <select class="form-select form-select-sm w-auto border-muted">
@@ -142,40 +154,48 @@
       </div>
     `;
 
-    customerContainer.appendChild(card);
+        customerContainer.appendChild(card);
 
-    // Set up note functionality per customer card
-    const noteInput = card.querySelector(`#${noteInputId}`);
-    const notesList = card.querySelector(`#${notesListId}`);
-    const addNoteBtn = card.querySelector(`#${addNoteBtnId}`);
+        // Set up note functionality per customer card
+        const noteInput = card.querySelector(`#${noteInputId}`);
+        const notesList = card.querySelector(`#${notesListId}`);
+        const addNoteBtn = card.querySelector(`#${addNoteBtnId}`);
 
-    const addNote = () => {
-      const text = noteInput.value.trim();
-      if (!text) return;
+        const addNote = () => {
+          const text = noteInput.value.trim();
+          if (!text) return;
 
-      const timestamp = new Date().toLocaleString();
-      const noteItem = document.createElement("div");
-      noteItem.className = "border border-muted rounded bg-white p-2 mb-2";
-      noteItem.innerHTML = `
+          const timestamp = new Date().toLocaleString();
+          const noteItem = document.createElement("div");
+          noteItem.className = "border border-muted rounded bg-white p-2 mb-2";
+          noteItem.innerHTML = `
         <div class="d-flex justify-content-between">
           <div class="text-secondary">${text}</div>
           <small class="text-muted">${timestamp}</small>
         </div>
       `;
-      notesList.prepend(noteItem);
-      noteInput.value = "";
+          notesList.prepend(noteItem);
+          noteInput.value = "";
 
-      gsap.from(noteItem, { duration: 0.5, opacity: 0, y: 20 });
-    };
+          gsap.from(noteItem, {
+            duration: 0.5,
+            opacity: 0,
+            y: 20
+          });
+        };
 
-    addNoteBtn.addEventListener("click", addNote);
-    noteInput.addEventListener("keypress", e => {
-      if (e.key === "Enter") addNote();
-    });
+        addNoteBtn.addEventListener("click", addNote);
+        noteInput.addEventListener("keypress", e => {
+          if (e.key === "Enter") addNote();
+        });
 
-    gsap.from(card, { duration: 0.4, opacity: 0, y: 20 });
-  });
-}
+        gsap.from(card, {
+          duration: 0.4,
+          opacity: 0,
+          y: 20
+        });
+      });
+    }
 
 
     document.getElementById("btnFilter").addEventListener("click", () => {
@@ -200,4 +220,5 @@
   <?php include '../footer.php'; ?>
 
 </body>
+
 </html>

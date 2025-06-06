@@ -16,18 +16,18 @@
   <?php include '../navbar.php'; ?>
   <div class="container my-5">
     <h2 class="text-center mb-4"><i class="bi bi-house-gear"></i> Property Management</h2>
-    <form class="row g-3 mb-4" id="filterForm">
+    <form name="filterForm" class="row g-3 mb-4">
       <div class="col-md-4">
         <label for="filterLocation" class="form-label">Location</label>
-        <input type="text" class="form-control" id="filterLocation" placeholder="Location" />
+        <input type="text" class="form-control" id="filterLocation" name="location" placeholder="Location" />
       </div>
       <div class="col-md-4">
         <label for="filterOwner" class="form-label">Owner</label>
-        <input type="text" class="form-control" id="filterOwner" placeholder="Owner" />
+        <input type="text" class="form-control" id="filterOwner" name="owner" placeholder="Owner" />
       </div>
       <div class="col-md-3">
         <label for="filterStatus" class="form-label">Status</label>
-        <select class="form-select" id="filterStatus">
+        <select class="form-select" id="filterStatus" name="status">
           <option value="">All</option>
           <option>Available</option>
           <option>Sold</option>
@@ -39,6 +39,7 @@
         <button type="button" class="btn btn-primary w-100" id="applyFilters">Apply</button>
       </div>
     </form>
+
     <div class="table-responsive">
       <table id="propertyTable" class="table table-striped table-hover align-middle">
         <thead class="table-light">
