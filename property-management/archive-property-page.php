@@ -19,6 +19,10 @@
 
   <!-- Custom styles for this template-->
   <link href="../css/sb-admin-2.min.css" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
 
 </head>
 
@@ -357,8 +361,9 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-4 text-gray-800">
-            <div class="container py-5">
+          <h3 class="h3 mb-4 text-gray-800">
+
+            <div class="container py-5 small">
               <div class="text-center mb-5">
                 <h2 class="fw-bold"><i class="bi bi-archive-fill text-primary me-2"></i>Archived Properties</h2>
                 <p class="text-muted">Review and manage previously archived listings.</p>
@@ -367,18 +372,18 @@
               <!-- Search Input -->
               <div class="row justify-content-center mb-4">
                 <div class="col-md-6">
-                  <div class="input-group shadow-sm">
+                  <div class="input-group shadow-sm input-group-sm">
                     <span class="input-group-text bg-primary text-white"><i class="bi bi-search"></i></span>
-                    <input type="text" id="propertySearch" class="form-control" placeholder="Search archived properties...">
+                    <input type="text" id="propertySearch" class="form-control form-control-sm" placeholder="Search archived properties...">
                   </div>
                 </div>
               </div>
 
               <!-- Table Card -->
-              <div class="card shadow-sm border-0">
+              <div class="card shadow-sm border-0 mt-4">
                 <div class="card-body p-0">
                   <div class="table-responsive">
-                    <table class="table table-hover align-middle mb-0 text-center">
+                    <table class="table table-hover table-sm align-middle mb-0 text-center small"> <!-- .small moved here -->
                       <thead class="table-light">
                         <tr>
                           <th><i class="bi bi-hash me-1"></i>Property ID</th>
@@ -401,7 +406,7 @@
                               <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
                                 <i class="bi bi-three-dots"></i>
                               </button>
-                              <ul class="dropdown-menu dropdown-menu-end">
+                              <ul class="dropdown-menu dropdown-menu-end small"> <!-- small class here too -->
                                 <li><a class="dropdown-item" href="#!" onclick="viewClosureSummary('PROP1001')"><i class="bi bi-eye me-2"></i>View</a></li>
                                 <li><a class="dropdown-item" href="#!" onclick="confirmRestore('PROP1001')"><i class="bi bi-box-arrow-up-right me-2"></i>Restore</a></li>
                                 <li>
@@ -423,7 +428,7 @@
                               <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
                                 <i class="bi bi-three-dots"></i>
                               </button>
-                              <ul class="dropdown-menu dropdown-menu-end">
+                              <ul class="dropdown-menu dropdown-menu-end small"> <!-- small class here too -->
                                 <li><a class="dropdown-item" href="#!" onclick="viewClosureSummary('PROP1002')"><i class="bi bi-eye me-2"></i>View</a></li>
                                 <li><a class="dropdown-item" href="#!" onclick="confirmRestore('PROP1002')"><i class="bi bi-box-arrow-up-right me-2"></i>Restore</a></li>
                                 <li>
@@ -440,7 +445,7 @@
                 </div>
               </div>
 
-              <!-- Modals and Toast remain same (you already included them) -->
+
 
               <?php include '../footer.php'; ?>
 
@@ -501,7 +506,8 @@
                 });
               </script>
             </div>
-          </h1>
+
+          </h3>
 
         </div>
         <!-- /.container-fluid -->
