@@ -14,109 +14,106 @@
 
 <body class="bg-light">
   <?php include '../navbar.php'; ?>
-  <div class="container my-5">
-    <h2 class="text-center mb-4"><i class="bi bi-house-gear"></i> Property Management</h2>
-    <form id="filterForm" class="row g-3 mb-4">
-      <div class="col-md-4">
-        <label for="filterLocation" class="form-label">Location</label>
-        <input type="text" class="form-control" id="filterLocation" name="location" placeholder="Location" />
-      </div>
-      <div class="col-md-4">
-        <label for="filterOwner" class="form-label">Owner</label>
-        <input type="text" class="form-control" id="filterOwner" name="owner" placeholder="Owner" />
-      </div>
-      <div class="col-md-3">
-        <label for="filterStatus" class="form-label">Status</label>
-        <select class="form-select" id="filterStatus" name="status">
-          <option value="">All</option>
-          <option>Available</option>
-          <option>Sold</option>
-          <option>Rented</option>
-          <option>Archived</option>
-        </select>
-      </div>
-      <div class="col-md-1 d-flex align-items-end">
-        <button type="button" class="btn btn-primary w-100" id="applyFilters">Apply</button>
-      </div>
-    </form>
 
-    <div class="table-responsive">
-      <table id="propertyTable" class="table table-striped table-hover align-middle">
-        <thead class="table-light">
-          <tr>
-            <th>Property ID</th>
-            <th>Title</th>
-            <th>Location</th>
-            <th>Owner</th>
-            <th>Status</th>
-            <th>Agent</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>PROP001</td>
-            <td>Sea View Villa</td>
-            <td>Goa</td>
-            <td>Jane Smith</td>
-            <td><span class="badge bg-success">Available</span></td>
-            <td>Team A</td>
-            <td class="position-relative">
-              <div class="btn-group">
-                <a href="http://localhost/VEC/property-management/edit-property.php" class="btn btn-sm btn-outline-secondary">
-                  <i class="bi bi-pencil-square"></i>
-                </a>
-                <button class="btn btn-sm btn-outline-info" onclick="openPreviewModal()"><i class="bi bi-images"></i></button>
-                <button class="btn btn-sm btn-outline-warning dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-gear"></i></button>
-                <ul class="dropdown-menu dropdown-menu-end">
-                  <li><a class="dropdown-item" href="#" onclick="assignAgent('PROP001')"><i class="bi bi-person-plus"></i> Assign Agent</a></li>
-                  <li><a class="dropdown-item" href="#" onclick="showToast('Marked as Sold')"><i class="bi bi-check-circle"></i> Mark as Sold</a></li>
-                  <li><a class="dropdown-item" href="#" onclick="showToast('Marked as Rented')"><i class="bi bi-house-door"></i> Mark as Rented</a></li>
-                  <li><a class="dropdown-item" href="#" onclick="showToast('Archived')"><i class="bi bi-archive"></i> Archive</a></li>
-                </ul>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>PROP002</td>
-            <td>Vanish View Villa</td>
-            <td>Chennai</td>
-            <td>Mushraf Smith</td>
-            <td><span class="badge bg-success">Available</span></td>
-            <td>Team B</td>
-            <td class="position-relative">
-              <div class="btn-group">
-                <a href="http://localhost/VEC/property-management/edit-property.php" class="btn btn-sm btn-outline-secondary">
-                  <i class="bi bi-pencil-square"></i>
-                </a>
-                <button class="btn btn-sm btn-outline-info" onclick="openPreviewModal()"><i class="bi bi-images"></i></button>
-                <button class="btn btn-sm btn-outline-warning dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-gear"></i></button>
-                <ul class="dropdown-menu dropdown-menu-end">
-                  <li><a class="dropdown-item" href="#" onclick="assignAgent('PROP002')"><i class="bi bi-person-plus"></i> Assign Agent</a></li>
-                  <li><a class="dropdown-item" href="#" onclick="showToast('Marked as Sold')"><i class="bi bi-check-circle"></i> Mark as Sold</a></li>
-                  <li><a class="dropdown-item" href="#" onclick="showToast('Marked as Rented')"><i class="bi bi-house-door"></i> Mark as Rented</a></li>
-                  <li><a class="dropdown-item" href="#" onclick="showToast('Archived')"><i class="bi bi-archive"></i> Archive</a></li>
-                </ul>
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+  <div class="container py-3">
+    <div class="bg-white px-4 py-3 rounded shadow-sm border-start border-3 border-primary mb-4">
+      <div class="d-flex align-items-center gap-3">
+        <i class="bi bi-house-gear-fill text-primary fs-4"></i>
+        <div>
+          <h5 class="mb-1 fw-semibold">Property Management</h5>
+          <p class="mb-0 text-muted small">Manage, filter, and act on property listings</p>
+        </div>
+      </div>
     </div>
   </div>
 
+
+  <div class="card shadow-sm mb-4">
+    <div class="card-body">
+      <form id="filterForm" class="row g-3 align-items-middle">
+        <div class="col-md-4">
+          <label for="filterLocation" class="form-label"><i class="bi bi-geo-alt"></i> Location</label>
+          <input type="text" class="form-control" id="filterLocation" name="location" placeholder="Enter location" />
+        </div>
+        <div class="col-md-4">
+          <label for="filterOwner" class="form-label"><i class="bi bi-person"></i> Owner</label>
+          <input type="text" class="form-control" id="filterOwner" name="owner" placeholder="Enter owner name" />
+        </div>
+        <div class="col-md-3">
+          <label for="filterStatus" class="form-label"><i class="bi bi-filter-circle"></i> Status</label>
+          <select class="form-select" id="filterStatus" name="status">
+            <option value="">All</option>
+            <option>Available</option>
+            <option>Sold</option>
+            <option>Rented</option>
+            <option>Archived</option>
+          </select>
+        </div>
+        <div class="col-md-1">
+          <button type="button" class="btn btn-outline-primary w-100" id="applyFilters"><i class="bi bi-funnel"></i></button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="table-responsive shadow-sm">
+    <table id="propertyTable" class="table table-hover table-borderless align-middle">
+      <thead class="table-primary">
+        <tr class="text-nowrap">
+          <th>Property ID</th>
+          <th>Title</th>
+          <th>Location</th>
+          <th>Owner</th>
+          <th>Status</th>
+          <th>Agent</th>
+          <th class="text-center">Actions</th>
+        </tr>
+      </thead>
+      <tbody class="bg-white">
+        <tr>
+          <td>PROP001</td>
+          <td>Sea View Villa</td>
+          <td>Goa</td>
+          <td>Jane Smith</td>
+          <td><span class="badge bg-success">Available</span></td>
+          <td>Team A</td>
+          <td class="text-center">
+            <div class="btn-group">
+              <a href="edit-property.php" class="btn btn-sm btn-outline-secondary" title="Edit"><i class="bi bi-pencil-square"></i></a>
+              <button class="btn btn-sm btn-outline-info" onclick="openPreviewModal()" title="Preview"><i class="bi bi-images"></i></button>
+              <button class="btn btn-sm btn-outline-warning dropdown-toggle" data-bs-toggle="dropdown" title="More Actions"><i class="bi bi-gear"></i></button>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="#" onclick="assignAgent('PROP001')"><i class="bi bi-person-plus"></i> Assign Agent</a></li>
+                <li><a class="dropdown-item" href="#" onclick="showToast('Marked as Sold')"><i class="bi bi-check-circle"></i> Mark as Sold</a></li>
+                <li><a class="dropdown-item" href="#" onclick="showToast('Marked as Rented')"><i class="bi bi-house-door"></i> Mark as Rented</a></li>
+                <li><a class="dropdown-item text-danger" href="#" onclick="showToast('Archived')"><i class="bi bi-archive"></i> Archive</a></li>
+              </ul>
+            </div>
+          </td>
+        </tr>
+        <!-- Add more rows similarly -->
+      </tbody>
+    </table>
+  </div>
+  </div>
+
+  <!-- Preview Modal -->
   <div class="modal fade" id="previewModal" tabindex="-1">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content shadow">
         <div class="modal-header">
           <h5 class="modal-title">Property Preview</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
         </div>
-        <div class="modal-body">
+        <div class="modal-body p-0">
           <div id="carouselImages" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
-              <div class="carousel-item active"><img src="https://via.placeholder.com/800x400" class="d-block w-100" alt="..." /></div>
-              <div class="carousel-item"><img src="https://via.placeholder.com/800x400/ddd" class="d-block w-100" alt="..." /></div>
+              <div class="carousel-item active">
+                <img src="https://via.placeholder.com/800x400" class="d-block w-100" alt="..." />
+              </div>
+              <div class="carousel-item">
+                <img src="https://via.placeholder.com/800x400/ddd" class="d-block w-100" alt="..." />
+              </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselImages" data-bs-slide="prev">
               <span class="carousel-control-prev-icon"></span>
@@ -130,6 +127,7 @@
     </div>
   </div>
 
+  <!-- Toast -->
   <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 1080">
     <div id="confirmationToast" class="toast align-items-center text-white bg-success border-0" role="alert">
       <div class="d-flex">
@@ -144,10 +142,6 @@
     function showToast(message) {
       document.getElementById("toastMessage").innerText = message;
       new bootstrap.Toast(document.getElementById("confirmationToast")).show();
-    }
-
-    function openEditModal(id) {
-      new bootstrap.Modal(document.getElementById("editModal")).show();
     }
 
     function openPreviewModal() {
@@ -188,6 +182,7 @@
       });
     });
   </script>
+
   <?php include '../footer.php'; ?>
 </body>
 
