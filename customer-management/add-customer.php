@@ -2,251 +2,597 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <title>Add Customer</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Bootstrap 5 CDN -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>VEC</title>
+
+  <!-- Custom fonts for this template-->
+  <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link
+    href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+    rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+  <link href="../css/sb-admin-2.min.css" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
 
 </head>
 
-<body class="bg-light">
-  <?php include '../navbar.php'; ?>
-  <div class="container py-5">
-    <div class="card  border-0">
-      <div class="card-body p-4">
-        <h2 class="mb-4 text-primary fw-bold text-center">Add Customer</h2>
-        <!-- |enctype="multipart/form-data"|  <-- is for file uploading  -->
-        <form id="customerForm" class="needs-validation" method="post" enctype="multipart/form-data">
-          <div class="row g-3">
-            <div class="col-md-6">
-              <label class="form-label">Full Name</label>
-              <input type="text" class="form-control" name="full_name" required placeholder="Enter full name">
-            </div>
-            <div class="col-md-6">
-              <label class="form-label">Customer Type</label>
-              <select class="form-select" name="customerType" id="customerType" required>
-                <option value="">Select</option>
-                <option value="Buyer">Buyer</option>
-                <option value="Seller">Seller</option>
-                <option value="Tenant">Tenant</option>
-              </select>
-            </div>
-            <div class="col-md-6">
-              <label class="form-label">Contact Number</label>
-              <input type="tel" class="form-control" name="contact" required placeholder="Enter contact number">
-            </div>
-            <div class="col-md-6">
-              <label class="form-label">Email</label>
-              <input type="email" name="email" class="form-control" required placeholder="Enter email">
-            </div>
+<body id="page-top">
 
-            <div class="col-md-6">
-              <label class="form-label">Upload ID Proof (PDF/JPEG only)</label>
-              <input type="file" class="form-control" name="uploadFile" id="idProof" accept=".pdf,.jpeg,.jpg" required placeholder="Upload ID proof">
-            </div>
+  <!-- Page Wrapper -->
+  <div id="wrapper">
 
-            <div class="col-md-6">
-              <label class="form-label">Budget Range</label>
-              <input type="range" class="form-range" min="100000" max="10000000" step="50000" name="budgetRange" id="budgetRange" required>
-              <div class="fw-medium">Budget: <span id="budgetDisplay">₹100000</span></div>
-            </div>
-            <div class="col-md-6">
-              <label class="form-label">Preferred Localities / Areas</label>
-              <input type="text" name="area" class="form-control" placeholder="Enter preferred localities or areas" required>
-            </div>
-            <div class="col-md-6">
-              <label class="form-label">Purpose</label>
-              <select class="form-select" name="purpose" required>
-                <option value="Investment">Investment</option>
-                <option value="Self-use">Self-use</option>
-                <option value="Rental">Rental</option>
-              </select>
-            </div>
-            <div class="col-md-6">
-              <label class="form-label">Type of Property Interested In</label>
-              <input type="text" name="property_type" class="form-control" required placeholder="e.g. Apartment, Villa, Commercial">
-            </div>
-            <div class="col-md-6">
-              <label class="form-label">Agent Linked</label>
-              <input type="text" name="agent_linked" class="form-control" required placeholder="Enter agent name or ID">
-            </div>
-            <div class="col-md-6">
-              <label class="form-label">Status</label>
-              <select class="form-select" name="status" required>
-                <option value="Looking">Looking</option>
-                <option value="OnHold">On Hold</option>
-                <option value="Closed Deal">Closed Deal</option>
-              </select>
-            </div>
-            <div class="col-12" id="sellerFields" style="display:none;">
-              <label class="form-label">Owned Property Details</label>
-              <textarea class="form-control"  name="owned_property" id="owned_property" placeholder="Enter wned property details..." required></textarea>
-            </div>
-            <div class="col-12" id="tenantFields" style="display:none;">
-              <label class="form-label">Rental Duration</label>
-              <input type="text" class="form-control" name="tenant_duration" id="tenant_duration" placeholder="e.g. 6 months, 1 year" required>
-            </div>
-            <div class="col-12 text-center">
-              <button type="submit" name="add_customer_btn" class="btn btn-primary px-5 py-2 rounded-pill mt-3">Submit</button>
-            </div>
-          </div>
-        </form>
+    <!-- Sidebar -->
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+      <!-- Sidebar - Brand -->
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+        <div class="sidebar-brand-icon rotate-n-15">
+          <i class="fas fa-laugh-wink"></i>
+        </div>
+        <div class="sidebar-brand-text mx-3">VEC</div>
+      </a>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0">
+
+      <!-- Nav Item - Dashboard -->
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Dashboard</span></a>
+      </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+
+      <!-- Heading -->
+      <div class="sidebar-heading">
+        Interface
       </div>
+
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+          aria-expanded="true" aria-controls="collapseTwo">
+          <i class="fas fa-fw fa-cog"></i>
+          <span>Property</span>
+        </a>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Custom Components:</h6>
+            <a class="collapse-item" href="buttons.html">Add Property</a>
+            <a class="collapse-item" href="cards.html">Manage Property</a>
+            <a class="collapse-item" href="cards.html">Archive Property</a>
+            <a class="collapse-item" href="cards.html">Property Follow-up</a>
+          </div>
+        </div>
+      </li>
+
+      <!-- Nav Item - Utilities Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+          aria-expanded="true" aria-controls="collapseUtilities">
+          <i class="fas fa-fw fa-wrench"></i>
+          <span>Customers</span>
+        </a>
+        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+          data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Custom Utilities:</h6>
+            <a class="collapse-item" href="utilities-color.html">Add Customer</a>
+            <a class="collapse-item" href="utilities-border.html">Manage Customer</a>
+            <a class="collapse-item" href="utilities-animation.html">Customer Closure log</a>
+            <a class="collapse-item" href="utilities-other.html">Other</a>
+          </div>
+        </div>
+      </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+
+      <!-- Heading -->
+      <div class="sidebar-heading">
+        Agent
+      </div>
+
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item active">
+        <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true"
+          aria-controls="collapsePages">
+          <i class="fas fa-fw fa-folder"></i>
+          <span>Agent</span>
+        </a>
+        <div id="collapsePages" class="collapse show" aria-labelledby="headingPages"
+          data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Login Screens:</h6>
+            <a class="collapse-item" href="login.html">Add Agent</a>
+            <a class="collapse-item" href="register.html">Agent Properties</a>
+            <a class="collapse-item" href="forgot-password.html">Client Referrals</a>
+            <div class="collapse-divider"></div>
+            <h6 class="collapse-header">Other Pages:</h6>
+            <a class="collapse-item" href="404.html">Commission and <br> Agreement Logs</a>
+            <a class="collapse-item active" href="blank.html">Blank Page</a>
+          </div>
+        </div>
+      </li>
+
+      <!-- Nav Item - Charts -->
+      <li class="nav-item">
+        <a class="nav-link" href="charts.html">
+          <i class="fas fa-fw fa-chart-area"></i>
+          <span>Meetings and Follow-up</span></a>
+      </li>
+
+
+
+      <!-- Divider -->
+      <hr class="sidebar-divider d-none d-md-block">
+
+      <!-- Sidebar Toggler (Sidebar) -->
+      <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+      </div>
+
+    </ul>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+        <!-- Topbar -->
+        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+          <!-- Sidebar Toggle (Topbar) -->
+          <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+            <i class="fa fa-bars"></i>
+          </button>
+
+          <!-- Topbar Search -->
+          <form
+            class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+            <div class="input-group">
+              <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                aria-label="Search" aria-describedby="basic-addon2">
+              <div class="input-group-append">
+                <button class="btn btn-primary" type="button">
+                  <i class="fas fa-search fa-sm"></i>
+                </button>
+              </div>
+            </div>
+          </form>
+
+          <!-- Topbar Navbar -->
+          <ul class="navbar-nav ml-auto">
+
+            <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+            <li class="nav-item dropdown no-arrow d-sm-none">
+              <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-search fa-fw"></i>
+              </a>
+              <!-- Dropdown - Messages -->
+              <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                aria-labelledby="searchDropdown">
+                <form class="form-inline mr-auto w-100 navbar-search">
+                  <div class="input-group">
+                    <input type="text" class="form-control bg-light border-0 small"
+                      placeholder="Search for..." aria-label="Search"
+                      aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                      <button class="btn btn-primary" type="button">
+                        <i class="fas fa-search fa-sm"></i>
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </li>
+
+            <!-- Nav Item - Alerts -->
+            <li class="nav-item dropdown no-arrow mx-1">
+              <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-bell fa-fw"></i>
+                <!-- Counter - Alerts -->
+                <span class="badge badge-danger badge-counter">3+</span>
+              </a>
+              <!-- Dropdown - Alerts -->
+              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                aria-labelledby="alertsDropdown">
+                <h6 class="dropdown-header">
+                  Alerts Center
+                </h6>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="mr-3">
+                    <div class="icon-circle bg-primary">
+                      <i class="fas fa-file-alt text-white"></i>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="small text-gray-500">December 12, 2019</div>
+                    <span class="font-weight-bold">A new monthly report is ready to download!</span>
+                  </div>
+                </a>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="mr-3">
+                    <div class="icon-circle bg-success">
+                      <i class="fas fa-donate text-white"></i>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="small text-gray-500">December 7, 2019</div>
+                    $290.29 has been deposited into your account!
+                  </div>
+                </a>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="mr-3">
+                    <div class="icon-circle bg-warning">
+                      <i class="fas fa-exclamation-triangle text-white"></i>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="small text-gray-500">December 2, 2019</div>
+                    Spending Alert: We've noticed unusually high spending for your account.
+                  </div>
+                </a>
+                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+              </div>
+            </li>
+
+            <!-- Nav Item - Messages -->
+            <li class="nav-item dropdown no-arrow mx-1">
+              <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-envelope fa-fw"></i>
+                <!-- Counter - Messages -->
+                <span class="badge badge-danger badge-counter">7</span>
+              </a>
+              <!-- Dropdown - Messages -->
+              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                aria-labelledby="messagesDropdown">
+                <h6 class="dropdown-header">
+                  Message Center
+                </h6>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="dropdown-list-image mr-3">
+                    <img class="rounded-circle" src="img/undraw_profile_1.svg"
+                      alt="...">
+                    <div class="status-indicator bg-success"></div>
+                  </div>
+                  <div class="font-weight-bold">
+                    <div class="text-truncate">Hi there! I am wondering if you can help me with a
+                      problem I've been having.</div>
+                    <div class="small text-gray-500">Emily Fowler · 58m</div>
+                  </div>
+                </a>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="dropdown-list-image mr-3">
+                    <img class="rounded-circle" src="img/undraw_profile_2.svg"
+                      alt="...">
+                    <div class="status-indicator"></div>
+                  </div>
+                  <div>
+                    <div class="text-truncate">I have the photos that you ordered last month, how
+                      would you like them sent to you?</div>
+                    <div class="small text-gray-500">Jae Chun · 1d</div>
+                  </div>
+                </a>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="dropdown-list-image mr-3">
+                    <img class="rounded-circle" src="img/undraw_profile_3.svg"
+                      alt="...">
+                    <div class="status-indicator bg-warning"></div>
+                  </div>
+                  <div>
+                    <div class="text-truncate">Last month's report looks great, I am very happy with
+                      the progress so far, keep up the good work!</div>
+                    <div class="small text-gray-500">Morgan Alvarez · 2d</div>
+                  </div>
+                </a>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="dropdown-list-image mr-3">
+                    <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60"
+                      alt="...">
+                    <div class="status-indicator bg-success"></div>
+                  </div>
+                  <div>
+                    <div class="text-truncate">Am I a good boy? The reason I ask is because someone
+                      told me that people say this to all dogs, even if they aren't good...</div>
+                    <div class="small text-gray-500">Chicken the Dog · 2w</div>
+                  </div>
+                </a>
+                <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
+              </div>
+            </li>
+
+            <div class="topbar-divider d-none d-sm-block"></div>
+
+            <!-- Nav Item - User Information -->
+            <li class="nav-item dropdown no-arrow">
+              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                <img class="img-profile rounded-circle"
+                  src="img/undraw_profile.svg">
+              </a>
+              <!-- Dropdown - User Information -->
+              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                aria-labelledby="userDropdown">
+                <a class="dropdown-item" href="#">
+                  <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Profile
+                </a>
+                <a class="dropdown-item" href="#">
+                  <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Settings
+                </a>
+                <a class="dropdown-item" href="#">
+                  <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Activity Log
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Logout
+                </a>
+              </div>
+            </li>
+
+          </ul>
+
+        </nav>
+        <!-- End of Topbar -->
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+          <!-- Page Heading -->
+          <h1 class="h3 mb-4 text-gray-800">
+            <div class="container py-5">
+              <h1 class="mb-4 text-primary fw-bold text-center fs-3">Edit Your Property</h1>
+
+              <form id="propertyForm" class="bg-white p-4 rounded shadow-sm small">
+                <div class="row g-3">
+
+                  <!-- Property Type -->
+                  <div class="col-md-4">
+                    <label class="form-label">Property Type</label>
+                    <select class="form-select" name="propertyType" required>
+                      <option value="" disabled selected>Select property type</option>
+                      <option>1 BHK</option>
+                      <option>2 BHK</option>
+                      <option>3 BHK</option>
+                      <option>4 BHK</option>
+                      <option>5 BHK+</option>
+                      <option>Studio Apartment</option>
+                      <option>Apartment</option>
+                      <option>Independent House</option>
+                      <option>Bungalow</option>
+                      <option>Villa</option>
+                      <option>Row House</option>
+                      <option>Duplex</option>
+                      <option>Penthouse</option>
+                      <option>Farmhouse</option>
+                    </select>
+                  </div>
+
+                  <!-- Transaction Type -->
+                  <div class="col-md-4">
+                    <label class="form-label">Transaction Type</label>
+                    <select class="form-select" name="transactionType" required>
+                      <option value="" disabled selected>Select transaction type</option>
+                      <option>Buy</option>
+                      <option>Sell</option>
+                      <option>Rent</option>
+                    </select>
+                  </div>
+
+                  <!-- Locality -->
+                  <div class="col-md-4 position-relative small">
+                    <label class="form-label">Locality (Ward-based Mumbai regions)</label>
+                    <input type="text" class="form-control form-control-sm" name="locality" placeholder="Start typing locality..." autocomplete="off" required />
+                    <ul class="list-group list-group-sm position-absolute w-100" style="z-index: 1050; max-height: 180px; overflow-y: auto; display: none;"></ul>
+                  </div>
+
+
+                  <!-- Address -->
+                  <div class="col-md-6">
+                    <label class="form-label">Address</label>
+                    <input type="text" class="form-control" name="address" placeholder="Enter full address" required />
+                  </div>
+
+                  <!-- Pincode -->
+                  <div class="col-md-3">
+                    <label class="form-label">Pincode</label>
+                    <input type="text" class="form-control" name="pincode" placeholder="Enter pincode" pattern="[0-9]{6}" title="6 digit pincode" required />
+                  </div>
+
+                  <!-- Landmark -->
+                  <div class="col-md-3">
+                    <label class="form-label">Landmark</label>
+                    <input type="text" class="form-control" name="landmark" placeholder="Nearby landmark" />
+                  </div>
+
+                  <!-- Area -->
+                  <div class="col-12">
+                    <legend class="h6 text-secondary mb-3">Area (in sqft)</legend>
+                    <div class="row g-3">
+                      <div class="col-md-4">
+                        <label class="form-label">Carpet Area</label>
+                        <input type="number" min="0" class="form-control" name="areaCarpet" placeholder="e.g., 900" required />
+                      </div>
+                      <div class="col-md-4">
+                        <label class="form-label">Built-up Area</label>
+                        <input type="number" min="0" class="form-control" name="areaBuiltup" placeholder="e.g., 1100" required />
+                      </div>
+                      <div class="col-md-4">
+                        <label class="form-label">Plot Area</label>
+                        <input type="number" min="0" class="form-control" name="areaPlot" placeholder="e.g., 1200" required />
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Price and Negotiable -->
+                  <div class="col-md-8">
+                    <label class="form-label">Price (INR)</label>
+                    <input type="number" min="0" class="form-control" name="price" placeholder="Enter price" required />
+                  </div>
+                  <div class="col-md-4 d-flex align-items-center">
+                    <div class="form-check form-switch mt-4">
+                      <input class="form-check-input" type="checkbox" name="negotiable" />
+                      <label class="form-check-label">Negotiable</label>
+                    </div>
+                  </div>
+
+                  <!-- Amenities -->
+                  <div class="col-12">
+                    <legend class="h6 text-secondary mb-3">Amenities</legend>
+                    <div class="row row-cols-2 row-cols-md-4 g-2">
+                      <div class="form-check col">
+                        <input class="form-check-input" type="checkbox" name="amenities" value="Lift" />
+                        <label class="form-check-label">Lift</label>
+                      </div>
+                      <div class="form-check col">
+                        <input class="form-check-input" type="checkbox" name="amenities" value="Parking" />
+                        <label class="form-check-label">Parking</label>
+                      </div>
+                      <div class="form-check col">
+                        <input class="form-check-input" type="checkbox" name="amenities" value="Security" />
+                        <label class="form-check-label">Security</label>
+                      </div>
+                      <div class="form-check col">
+                        <input class="form-check-input" type="checkbox" name="amenities" value="Garden" />
+                        <label class="form-check-label">Garden</label>
+                      </div>
+                      <div class="form-check col">
+                        <input class="form-check-input" type="checkbox" name="amenities" value="Gym" />
+                        <label class="form-check-label">Gym</label>
+                      </div>
+                      <div class="form-check col">
+                        <input class="form-check-input" type="checkbox" name="amenities" value="Swimming Pool" />
+                        <label class="form-check-label">Swimming Pool</label>
+                      </div>
+                      <div class="form-check col">
+                        <input class="form-check-input" type="checkbox" name="amenities" value="Power Backup" />
+                        <label class="form-check-label">Power Backup</label>
+                      </div>
+                      <div class="form-check col">
+                        <input class="form-check-input" type="checkbox" name="amenities" value="Clubhouse" />
+                        <label class="form-check-label">Clubhouse</label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Linked To -->
+                  <div class="col-md-6">
+                    <legend class="h6 text-secondary mb-3">Linked To</legend>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="linkedTo" value="Owner" required />
+                      <label class="form-check-label">Owner</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="linkedTo" value="Agent" required />
+                      <label class="form-check-label">Agent</label>
+                    </div>
+                  </div>
+
+                  <!-- Source -->
+                  <div class="col-md-6">
+                    <label class="form-label">Source</label>
+                    <select class="form-select" name="source" required>
+                      <option value="" disabled selected>Select source</option>
+                      <option>Direct Client</option>
+                      <option>Agent Referral</option>
+                    </select>
+                  </div>
+
+                  <!-- Uploads -->
+                  <div class="col-md-6">
+                    <label class="form-label">Upload Images/Videos</label>
+                    <input class="form-control" type="file" name="mediaFiles" accept="image/*,video/*" multiple />
+                    <small class="form-text text-muted">You can upload up to 10 images/videos (max 5MB each).</small>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label class="form-label">Upload Documents (Title Deed, OC, etc.)</label>
+                    <input class="form-control" type="file" name="documents" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" multiple />
+                    <small class="form-text text-muted">Supported formats: PDF, DOC, Images</small>
+                  </div>
+
+                  <!-- Submit -->
+                  <div class="col-12 text-center mt-4">
+                    <button type="submit" class="btn btn-primary btn-sm px-4">Submit Listing</button>
+                  </div>
+
+                </div>
+              </form>
+            </div>
+
+
+
+            <?php include '../footer.php'; ?>
+          </h1>
+
+        </div>
+        <!-- /.container-fluid -->
+
+      </div>
+      <!-- End of Main Content -->
+
     </div>
+    <!-- End of Content Wrapper -->
+
   </div>
+  <!-- End of Page Wrapper -->
 
-  <!-- php add customer code -->
-  <?php
-  include '../PhpFiles/connection.php';  //connecting the database
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
 
- 
-
-  if (isset($_POST['add_customer_btn'])) {
-    $name = $_POST['full_name'];
-    $contact = $_POST['contact'];
-    //  $file = $_POST[''];
-    $area = $_POST['area'];
-    $property_type = $_POST['property_type'];
-    $status = $_POST['status'];
-    $customer_type = $_POST['customerType'];
-    $email = $_POST['email'];
-    $budget = $_POST['budgetRange'];
-    $purpose = $_POST['purpose'];
-    $agent_linked = $_POST['agent_linked'];
-    $owned_property = $_POST['owned_property'];
-    $rental_duration = $_POST['tenant_duration'];
-
-    // spliting full name as 1st_name and last_name
-    $full_name = trim($_POST['full_name']);
-    $name_parts = explode(" ", $full_name);
-
-    // Simple logic:
-    $f_name = $name_parts[0]; // First word as first name
-    $l_name = isset($name_parts[1]) ? $name_parts[1] : ''; // Second word or blank
-
-    // generate unique id manually
-    $uid = uniqid('customer_', true);
-
-    // file uploading
-     $src = "../Uploads/";
-    if (isset($_FILES['uploadFile']) && $_FILES['uploadFile']['error'] == 0) {
-      $file = basename($_FILES['uploadFile']['name']);
-      $srcPath = $src . $file;
-
-      // to move file 
-      if (move_uploaded_file($_FILES['uploadFile']['tmp_name'], $srcPath)) {
-
-        $query = "INSERT INTO `tbl_add_customer` (`uid`, `f_name`, `l_name`, `customer_type`, `contact`, `email`, `upload_file_name`,`upload_file_path`, `budget`, `area`, `property_type`, `status`, `purpose`, `agent_linked`, `owned_property`, `rental_duration`) VALUES ('$uid', '$f_name', '$l_name', '$customer_type', '$contact', '$email', '$file', '$srcPath', '$budget', '$area', '$property_type', '$status', '$purpose', '$agent_linked', '$owned_property', '$rental_duration')";
-
-        $result = mysqli_query($conn, $query) or die("Query Unsuccessful" . mysqli_errno($conn) . "");
-
-        if ($result) {
-          echo "<script> alert('Succesfully Added Customer'); window.location.href = 'add-customer.php' </script>";
-        } else {
-          echo "<script> alert('Failed : '" . mysqli_error($conn) . "); window.location.href = 'add-customer.php' </script> ";
-        }
-      }
-    }
-  }
-  ?>
-
-  <!-- Property Match Modal -->
-  <div class="modal fade" id="matchModal" tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered">
+  <!-- Logout Modal-->
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">Property Match Found</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
         </div>
-        <div class="modal-body">
-          <p>We found a matching property for this customer!</p>
-        </div>
+        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+          <a class="btn btn-primary" href="login.html">Logout</a>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- No Match Toast -->
-  <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
-    <div id="noMatchToast" class="toast align-items-center text-bg-warning border-0" role="alert">
-      <div class="d-flex">
-        <div class="toast-body">No property match found!</div>
-        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
-      </div>
-    </div>
-  </div>
+  <!-- Bootstrap core JavaScript-->
+  <script src="../vendor/jquery/jquery.min.js"></script>
+  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Bootstrap Bundle -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    customerType.addEventListener('change', () => {
-      sellerFields.style.display = customerType.value === 'Seller' ? 'block' : 'none';
-      tenantFields.style.display = customerType.value === 'Tenant' ? 'block' : 'none';
-      gsap.fromTo('#sellerFields, #tenantFields', {
-        opacity: 0,
-        y: -20
-      }, {
-        opacity: 1,
-        y: 0,
-        duration: 0.5
-      });
-    });
+  <!-- Core plugin JavaScript-->
+  <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
 
-    budgetRange.addEventListener('input', () => {
-      budgetDisplay.textContent = '₹' + budgetRange.value;
-    });
-
-
-
-    // Animate entire form entrance
-    window.addEventListener('load', () => {
-      gsap.from("form .form-control, form .form-select, form .form-range, form textarea, button", {
-        opacity: 0,
-        y: 30,
-        duration: 0.6,
-        stagger: 0.1,
-        ease: "power2.out"
-      });
-    });
-  </script>
-
-  <script>
-  document.getElementById("customerType").addEventListener("change", function () {
-    const type = this.value;
-
-    const sellerFields = document.getElementById("sellerFields");
-    const tenantFields = document.getElementById("tenantFields");
-
-    // Clear previous values and requirements
-    document.getElementById("owned_property").value = "";
-    document.getElementById("owned_property").removeAttribute("required");
-
-    document.getElementById("tenant_duration").value = "";
-    document.getElementById("tenant_duration").removeAttribute("required");
-
-    // Toggle based on selected type
-    if (type === "Seller") {
-      sellerFields.style.display = "block";
-      tenantFields.style.display = "none";
-      document.getElementById("owned_property").setAttribute("required", true);
-    } else if (type === "Tenant") {
-      sellerFields.style.display = "none";
-      tenantFields.style.display = "block";
-      document.getElementById("tenant_duration").setAttribute("required", true);
-    } else {
-      sellerFields.style.display = "none";
-      tenantFields.style.display = "none";
-    }
-  });
-</script>
-
-
-  <?php include '../footer.php'; ?>
+  <!-- Custom scripts for all pages-->
+  <script src="../js/sb-admin-2.min.js"></script>
 
 </body>
 
