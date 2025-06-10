@@ -361,6 +361,7 @@
           <h2 class="fs-3 mb-4 text-center text-primary">
             <i class="bi bi-person-plus-fill me-2"></i>Agent Onboarding Form
           </h2>
+
           <h1 class="h3 mb-4 text-gray-800">
             <section class="card rounded-1 p-4 mx-auto small" id="agentFormSection" style="max-width: 800px;">
               <form id="agentForm">
