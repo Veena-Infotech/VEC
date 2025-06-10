@@ -357,35 +357,36 @@
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
-
           <!-- Page Heading -->
+          <h2 class="fs-3 mb-4 text-center text-primary">
+            <i class="bi bi-person-plus-fill me-2"></i>Agent Onboarding Form
+          </h2>
           <h1 class="h3 mb-4 text-gray-800">
             <section class="card rounded-1 p-4 mx-auto small" id="agentFormSection" style="max-width: 800px;">
-              <h2 class="fs-4 mb-4 text-center text-primary">Agent Onboarding Form</h2>
               <form id="agentForm">
                 <div class="row mb-3 mt-2 mb-2">
                   <div class="col-md-6">
-                    <label for="agentName" class="form-label text-muted">Name</label>
+                    <label for="agentName" class="form-label text-muted small">Name</label>
                     <input type="text" class="form-control" name="agentName" required placeholder="Enter Your Name" />
                   </div>
                   <div class="col-md-6">
-                    <label for="contact" class="form-label text-muted">Contact</label>
+                    <label for="contact" class="form-label text-muted small">Contact</label>
                     <input type="tel" class="form-control" name="contact" required pattern="[0-9]{10}" title="Please enter a valid 10-digit phone number." placeholder="Enter your contact number" />
                   </div>
                 </div>
 
                 <div class="mb-3 mt-2 mb-2">
-                  <label for="panUpload" class="form-label text-muted">PAN Upload</label>
+                  <label for="panUpload" class="form-label text-muted small">PAN Upload</label>
                   <input type="file" class="form-control" name="panUpload" accept=".pdf,.jpg,.jpeg,.png" required />
                 </div>
 
                 <div class="mb-3 mt-2 mb-2">
-                  <label for="aadharUpload" class="form-label text-muted">Aadhar Upload</label>
+                  <label for="aadharUpload" class="form-label text-muted small">Aadhar Upload</label>
                   <input type="file" class="form-control" name="aadharUpload" accept=".pdf,.jpg,.jpeg,.png" required />
                 </div>
 
                 <div class="mb-3 mt-2 mb-2">
-                  <label for="specialization" class="form-label text-muted">Specialization</label>
+                  <label for="specialization" class="form-label text-muted small">Specialization</label>
                   <select class="form-select" name="specialization" required>
                     <option value="">Select Specialization</option>
                     <option value="Rental">Rental</option>
@@ -395,8 +396,8 @@
                 </div>
 
                 <div class="mb-3 mt-2 mb-2">
-                  <label for="areaOfOperation" class="form-label text-muted d-flex flex-column">Area of Operation (Select up to 10)</label>
-                  <select class="form-select" name="areaOfOperation" multiple name="areaOfOperation[]" style="width: 100%;">
+                  <label for="areaOfOperation" class="form-label text-muted d-flex flex-column small">Area of Operation (Select up to 10)</label>
+                  <select class="form-select" name="areaOfOperation[]" multiple style="width: 100%;">
                     <option value="Locality1">Locality 1</option>
                     <option value="Locality2">Locality 2</option>
                     <option value="Locality3">Locality 3</option>
@@ -410,20 +411,20 @@
                     <option value="Locality11">Locality 11</option>
                     <option value="Locality12">Locality 12</option>
                   </select>
-                  <div id="selection-warning" class="form-text text-danger d-none mt-1">
+                  <div id="selection-warning" class="form-text text-danger d-none mt-1 small">
                     You can only select up to 10 localities.
                   </div>
                 </div>
 
-                <div class="form-text mb-3 mt-2 mb-2 text-muted">Max 10 areas can be selected.</div>
+                <div class="form-text mb-3 mt-2 mb-2 text-muted small">Max 10 areas can be selected.</div>
 
                 <div class="mb-3 mt-2 mb-2">
-                  <label for="builderTieUps" class="form-label text-muted">Preferred Builder Tie-ups (if any)</label>
+                  <label for="builderTieUps" class="form-label text-muted small">Preferred Builder Tie-ups (if any)</label>
                   <input type="text" class="form-control" name="builderTieUps" placeholder="Enter your preferred builder tie-ups" />
                 </div>
 
                 <div class="mb-3 mt-2 mb-2">
-                  <label for="agreementUpload" class="form-label text-muted">Agreement Upload (Commission Agreement)</label>
+                  <label for="agreementUpload" class="form-label text-muted small">Agreement Upload (Commission Agreement)</label>
                   <input type="file" class="form-control" name="agreementUpload" accept=".pdf,.jpg,.jpeg,.png" required />
                 </div>
 
@@ -432,6 +433,7 @@
 
               <button class="btn btn-outline-primary mt-3 w-100 small">Add Property for Agent</button>
             </section>
+
 
 
             </main>

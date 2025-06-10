@@ -364,7 +364,7 @@
    <div class="container mt-4 small">
   <!-- Header -->
   <div class="text-black p-4 rounded mb-4 text-center" id="header">
-    <h2 class="mb-0 fs-5">Client Referral Log</h2>
+    <h2 class="mb-0 fs-5 text-primary">Client Referral Log</h2>
     <small class="text-muted">Track client referrals, matching properties, and commissions</small>
   </div>
 
@@ -585,6 +585,8 @@
 
 
             <!-- GSAP Animations -->
+             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
             <script>
               // Initial entrance
               gsap.from("#header", {

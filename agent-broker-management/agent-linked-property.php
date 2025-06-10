@@ -359,95 +359,98 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-4 text-gray-800">
-           <div class="container py-5 small">
-  <!-- Header Card -->
-  <div class="card-body d-flex justify-content-between align-items-center flex-wrap gap-2">
-    <h3 class="card-title fw-semibold mb-0 text-primary" id="pageTitle">
-      <i class="bi bi-house-door-fill me-2"></i>
-      Agent Linked Properties
-    </h3>
-    <div class="d-flex align-items-center gap-2">
-      <div class="d-flex align-items-center gap-2">
-        <input type="text" class="form-control form-control-sm" placeholder="Search..." id="searchInput" name="searchInput" />
-      </div>
-      <div>
-        <a href="/VEC/property-management/add-property-page.php">
-          <button class="btn btn-outline-primary btn-sm" id="addPropertyBtn">
-            Add Property
-          </button>
-        </a>
-      </div>
-    </div>
-  </div>
+          <h3 class="h3 mb-4 text-gray-800">
+            <div class="container py-5 small">
+              <!-- Header Card -->
 
-  <!-- Properties Table Card -->
-  <div class="card border-0 mt-4">
-    <div class="card-header fw-semibold sticky-top small">
-      Linked Property List
-    </div>
-    <div class="card-body p-0">
-      <div class="table-responsive">
-        <table class="table table-striped table-hover align-middle mb-0 text-center small" id="propertyTableBody">
-          <thead class="table-light">
-            <tr>
-              <th>#</th>
-              <th>Property Name</th>
-              <th>Status</th>
-              <th>Lead Source</th>
-            </tr>
-          </thead>
-          <tbody id="tableBody">
-            <tr>
-              <th scope="row">1</th>
-              <td>Sunset Villa</td>
-              <td><span class="badge rounded-pill px-3 border text-dark">Completed</span></td>
-              <td>Facebook Ads</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Downtown Loft</td>
-              <td><span class="badge rounded-pill px-3 border text-dark">Pending</span></td>
-              <td>Referral</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>Dubai Loft</td>
-              <td><span class="badge rounded-pill px-3 border text-dark">Approved</span></td>
-              <td>Reference</td>
-            </tr>
-            <tr>
-              <th scope="row">4</th>
-              <td>Downtown City</td>
-              <td><span class="badge rounded-pill px-3 border text-dark">Done</span></td>
-              <td>Instagram</td>
-            </tr>
-            <tr>
-              <th scope="row">5</th>
-              <td>Khoparkhanaire City</td>
-              <td><span class="badge rounded-pill px-3 border text-dark">Done</span></td>
-              <td>Instagram</td>
-            </tr>
-            <tr>
-              <th scope="row">6</th>
-              <td>Versova City</td>
-              <td><span class="badge rounded-pill px-3 border text-dark">Done</span></td>
-              <td>Instagram</td>
-            </tr>
-          </tbody>
-        </table>
+              <h2 class="fs-3 mb-4 text-center text-primary">
+                <i class="bi bi-house-door-fill me-2"></i>Agent Linked Properties
+              </h2>
 
-        <!-- Pagination -->
-        <div class="d-flex justify-content-end mt-4">
-          <nav aria-label="Page navigation">
-            <ul class="pagination pagination-sm" id="pagination"></ul>
-          </nav>
-        </div>
 
-      </div>
-    </div>
-  </div>
-</div>
+              <!-- Properties Table Card -->
+              <div class="card border-0 mt-4 mb-3">
+                <div class="card-header fw-semibold sticky-top small d-flex justify-content-between align-items-center">
+                  <span>Linked Property List</span>
+
+                  <div class="d-flex align-items-center gap-2">
+                    <input type="text" class="form-control form-control-sm mr-3" placeholder="Search..." id="searchInput" name="searchInput" />
+                    <div>
+                      <a href="/VEC/property-management/add-property-page.php">
+                        <button class="btn btn-outline-primary btn-sm" id="addPropertyBtn">
+                          Add Property
+                        </button>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="card-body p-0 mt-3">
+                  <div class="table-responsive ">
+                    <div class="small">
+                      <table class="table table-striped table-hover align-middle mb-0  text-center" id="propertyTableBody">
+                        <thead class="table-light">
+                          <tr>
+                            <th>#</th>
+                            <th>Property Name</th>
+                            <th>Status</th>
+                            <th>Lead Source</th>
+                          </tr>
+                        </thead>
+                        <tbody id="tableBody">
+                          <tr>
+                            <th scope="row">1</th>
+                            <td>Sunset Villa</td>
+                            <td><span class="badge rounded-pill px-3 border text-dark">Completed</span></td>
+                            <td>Facebook Ads</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">2</th>
+                            <td>Downtown Loft</td>
+                            <td><span class="badge rounded-pill px-3 border text-dark">Pending</span></td>
+                            <td>Referral</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">3</th>
+                            <td>Dubai Loft</td>
+                            <td><span class="badge rounded-pill px-3 border text-dark">Approved</span></td>
+                            <td>Reference</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">4</th>
+                            <td>Downtown City</td>
+                            <td><span class="badge rounded-pill px-3 border text-dark">Done</span></td>
+                            <td>Instagram</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">5</th>
+                            <td>Khoparkhanaire City</td>
+                            <td><span class="badge rounded-pill px-3 border text-dark">Done</span></td>
+                            <td>Instagram</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">6</th>
+                            <td>Versova City</td>
+                            <td><span class="badge rounded-pill px-3 border text-dark">Done</span></td>
+                            <td>Instagram</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+
+
+                    <!-- Pagination -->
+                    <div class="d-flex justify-content-end mt-4">
+                      <nav aria-label="Page navigation">
+                        <ul class="pagination pagination-sm" id="pagination"></ul>
+                      </nav>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
 
 
             <!-- Bootstrap JS Bundle and Tooltips -->
@@ -567,7 +570,7 @@
 
 
             <?php include '../footer.php'; ?>
-          </h1>
+          </h3>
 
         </div>
         <!-- /.container-fluid -->
