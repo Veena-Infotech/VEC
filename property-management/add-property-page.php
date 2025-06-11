@@ -173,7 +173,7 @@
                         <div class="container py-4">
                             <h1 class="mb-4 text-primary fw-bold text-center fs-3">Add Your Property</h1>
 
-                            <form id="propertyForm" class="bg-white p-4 rounded shadow-sm small mb-2">
+                            <form id="propertyForm" class="bg-white p-4 rounded shadow-sm small mb-2" method="post" enctype="multipart/form-data">
                                 <div class="row gy-4">
 
                                     <!-- Property Type -->
@@ -181,20 +181,20 @@
                                         <label for="propertyType" class="form-label">Property Type</label>
                                         <select class="form-select" id="propertyType" name="propertyType" required>
                                             <option value="" disabled selected>Select property type</option>
-                                            <option>1 BHK</option>
-                                            <option>2 BHK</option>
-                                            <option>3 BHK</option>
-                                            <option>4 BHK</option>
-                                            <option>5 BHK+</option>
-                                            <option>Studio Apartment</option>
-                                            <option>Apartment</option>
-                                            <option>Independent House</option>
-                                            <option>Bungalow</option>
-                                            <option>Villa</option>
-                                            <option>Row House</option>
-                                            <option>Duplex</option>
-                                            <option>Penthouse</option>
-                                            <option>Farmhouse</option>
+                                            <option value="1 BHK">1 BHK</option>
+                                            <option value="2 BHK">2 BHK</option>
+                                            <option value="3 BHK">3 BHK</option>
+                                            <option value="4 BHK">4 BHK</option>
+                                            <option value="5 BHK+">5 BHK+</option>
+                                            <option value="Studio Apartment">Studio Apartment</option>
+                                            <option value="Apartment">Apartment</option>
+                                            <option value="Independent House">Independent House</option>
+                                            <option value="Bungalow">Bungalow</option>
+                                            <option value="Villa">Villa</option>
+                                            <option value="Row House">Row House</option>
+                                            <option value="Duplex">Duplex</option>
+                                            <option value="Penthouse">Penthouse</option>
+                                            <option value="Farmhouse">Farmhouse</option>
                                         </select>
                                     </div>
 
@@ -203,9 +203,9 @@
                                         <label for="transactionType" class="form-label">Transaction Type</label>
                                         <select class="form-select" id="transactionType" name="transactionType" required>
                                             <option value="" disabled selected>Select transaction type</option>
-                                            <option>Buy</option>
-                                            <option>Sell</option>
-                                            <option>Rent</option>
+                                            <option value="Buy">Buy</option>
+                                            <option value="Sell">Sell</option>
+                                            <option value="Rent">Rent</option>
                                         </select>
                                     </div>
 
@@ -320,8 +320,8 @@
                                         <label for="source" class="form-label">Source</label>
                                         <select class="form-select" id="source" name="source" required>
                                             <option value="" disabled selected>Select source</option>
-                                            <option>Direct Client</option>
-                                            <option>Agent Referral</option>
+                                            <option value="Direct Client">Direct Client</option>
+                                            <option value="Agent Referral">Agent Referral</option>
                                         </select>
                                     </div>
 
@@ -340,11 +340,117 @@
 
                                     <!-- Submit -->
                                     <div class="col-12 text-center">
-                                        <button type="submit" class="btn btn-primary btn-sm px-4">Submit Listing</button>
+                                        <button type="submit" class="btn btn-primary btn-sm px-4" name="add-property-btn">Submit Listing</button>
                                     </div>
 
                                 </div>
                             </form>
+                            <?php
+                            
+include '../PhpFiles/connection.php';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Required fields
+    $requiredFields = ['propertyType', 'transactionType', 'locality', 'address', 'pincode', 'landmark', 'carpetArea', 'builtupArea', 'plotArea', 'price', 'linkedTo', 'source'];
+
+    foreach ($requiredFields as $field) {
+        if (empty($_POST[$field])) {
+            die("Missing required field: $field");
+        }
+    }
+
+    // Collect fields
+    $propertyType    = $_POST['propertyType'];
+    $transactionType = $_POST['transactionType'];
+    $locality        = $_POST['locality'];
+    $address         = $_POST['address'];
+    $pincode         = $_POST['pincode'];
+    $landmark        = $_POST['landmark'];
+    $carpetArea      = $_POST['carpetArea'];
+    $builtupArea     = $_POST['builtupArea'];
+    $plotArea        = $_POST['plotArea'];
+    $price           = $_POST['price'];
+    $isNegotiable    = isset($_POST['isNegotiable']) ? 1 : 0;
+    $linkedTo        = $_POST['linkedTo'];
+    $source          = $_POST['source'];
+    $amenities       = isset($_POST['amenities']) ? implode(', ', $_POST['amenities']) : '';
+
+    // generating unique ids
+    $uid             = uniqid('property_', true);
+
+    // file storing
+    $uploadDir       = '../Uploads/';
+    $imgFiles        = [];
+    $imgPaths        = [];
+    $docNames        = [];
+    $docPaths        = [];
+
+    if (!file_exists($uploadDir)) {
+        mkdir($uploadDir, 0777, true);
+    }
+
+    // Upload images/videos
+    if (!empty($_FILES['imagesVideos']['name'][0])) {
+        foreach ($_FILES['imagesVideos']['tmp_name'] as $i => $tmpName) {
+            $fileName = basename($_FILES['imagesVideos']['name'][$i]);
+            $filePath = $uploadDir . uniqid() . '_' . $fileName;
+
+            if (move_uploaded_file($tmpName, $filePath)) {
+                $imgFiles[] = $fileName;
+                $imgPaths[] = $filePath;
+            }
+        }
+    }
+
+    // Upload documents
+    if (!empty($_FILES['documents']['name'][0])) {
+        foreach ($_FILES['documents']['tmp_name'] as $i => $tmpName) {
+            $fileName = basename($_FILES['documents']['name'][$i]);
+            $filePath = $uploadDir . uniqid() . '_' . $fileName;
+
+            if (move_uploaded_file($tmpName, $filePath)) {
+                $docNames[] = $fileName;
+                $docPaths[] = $filePath;
+            }
+        }
+    }
+
+    // Convert to strings
+    $imgFileStr = implode(', ', $imgFiles);
+    $imgPathStr = implode(', ', $imgPaths);
+    $docNameStr = implode(', ', $docNames);
+    $docPathStr = implode(', ', $docPaths);
+
+    // INSERT QUERY
+   $sql = "INSERT INTO tbl_add_property 
+    (`uid`, `property_type`, `transaction_type`, `locality`, `address`, `pincode`, `landmark`, `carpet_area`, `built_up_area`, `plot_area`, `price`, `is_negotiable`, `amenities`, `linked_to`, `source`, `img_name`, `img_path`, `document_name`, `document_path`) 
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+    $stmt = $conn->prepare($sql);
+
+    if (!$stmt) {
+        die("Prepare failed: " . $conn->error);
+    }
+
+   $stmt->bind_param(
+    "ssssssissiiisssssss",
+    $uid, $propertyType, $transactionType, $locality, $address,
+    $pincode, $landmark, $carpetArea, $builtupArea, $plotArea,
+    $price, $isNegotiable, $amenities, $linkedTo, $source,
+    $imgFileStr, $imgPathStr, $docNameStr, $docPathStr
+);
+
+
+    if ($stmt->execute()) {
+        echo "<script>alert('Property listed successfully'); window.location.href = 'add-property-page.php';</script>";
+    } else {
+        echo "Execute failed: " . $stmt->error;
+    }
+
+    $stmt->close();
+    $conn->close();
+}
+                            ?>
                         </div>
                 </div>
             
