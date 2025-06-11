@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -7,14 +8,13 @@
   <!-- Bootstrap CSS CDN -->
   <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-  />
+    rel="stylesheet" />
   <!-- Bootstrap Icons CDN -->
   <link
     href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
-    rel="stylesheet"
-  />
+    rel="stylesheet" />
 </head>
+
 <body class="bg-white text-body">
   <?php include '../navbar.php'; ?>
   <main class="container-lg py-5">
@@ -127,8 +127,7 @@
               type="button"
               data-bs-toggle="modal"
               data-bs-target="#addMeetingModal"
-              aria-label="Add new meeting"
-            >
+              aria-label="Add new meeting">
               <i class="bi bi-plus-lg"></i> Add Meeting
             </button>
           </div>
@@ -137,16 +136,14 @@
             <article
               class="mb-4 border rounded-3 p-4 shadow-sm"
               tabindex="0"
-              aria-label="Meeting Rate Negotiation details"
-            >
+              aria-label="Meeting Rate Negotiation details">
               <header class="d-flex justify-content-between align-items-center mb-3">
                 <h3 class="h5 fw-semibold mb-0">Rate Negotiation</h3>
                 <button
                   class="btn btn-sm btn-outline-secondary"
                   data-bs-toggle="modal"
                   data-bs-target="#rescheduleModal"
-                  aria-label="Reschedule Rate Negotiation meeting"
-                >
+                  aria-label="Reschedule Rate Negotiation meeting">
                   <i class="bi bi-arrow-clockwise"></i> Reschedule
                 </button>
               </header>
@@ -175,16 +172,14 @@
             <article
               class="mb-4 border rounded-3 p-4 shadow-sm"
               tabindex="0"
-              aria-label="Meeting Site Visit details"
-            >
+              aria-label="Meeting Site Visit details">
               <header class="d-flex justify-content-between align-items-center mb-3">
                 <h3 class="h5 fw-semibold mb-0">Site Visit</h3>
                 <button
                   class="btn btn-sm btn-outline-secondary"
                   data-bs-toggle="modal"
                   data-bs-target="#rescheduleModal"
-                  aria-label="Reschedule Site Visit meeting"
-                >
+                  aria-label="Reschedule Site Visit meeting">
                   <i class="bi bi-arrow-clockwise"></i> Reschedule
                 </button>
               </header>
@@ -212,16 +207,14 @@
             <article
               class="border rounded-3 p-4 shadow-sm"
               tabindex="0"
-              aria-label="Meeting Client Follow-Up details"
-            >
+              aria-label="Meeting Client Follow-Up details">
               <header class="d-flex justify-content-between align-items-center mb-3">
                 <h3 class="h5 fw-semibold mb-0">Client Follow-Up</h3>
                 <button
                   class="btn btn-sm btn-outline-secondary"
                   data-bs-toggle="modal"
                   data-bs-target="#rescheduleModal"
-                  aria-label="Reschedule Client Follow-Up meeting"
-                >
+                  aria-label="Reschedule Client Follow-Up meeting">
                   <i class="bi bi-arrow-clockwise"></i> Reschedule
                 </button>
               </header>
@@ -330,13 +323,36 @@
     </div>
   </div>
 
-   <?php include '../footer.php'; ?>
+  <!-- Footer -->
+  <footer class="sticky-footer bg-white text-dark py-4 mt-auto">
+    <hr class="border-top border-dark opacity-25 mb-4" />
+
+    <div class="container text-center">
+      <div class="mb-3">
+        <p class="mb-1 fw-semibold">© 2025 Veena Group. All Rights Reserved.</p>
+        <p class="mb-3 small">Empowering Mumbai’s Real Estate Market through Smart Digital Solutions.</p>
+      </div>
+
+      <nav class="mb-3 d-flex justify-content-center gap-4 flex-wrap">
+        <a href="#" class="text-decoration-none text-primary fw-semibold small">Privacy Policy</a>
+        <a href="#" class="text-decoration-none text-primary fw-semibold small">Terms of Service</a>
+        <a href="#" class="text-decoration-none text-primary fw-semibold small">Contact Us</a>
+      </nav>
+
+      <div class="d-flex justify-content-center gap-3">
+        <a href="#" class="text-primary fs-5" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="text-primary fs-5" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="text-primary fs-5" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+
+    </div>
+  </footer>
+  <!-- End of Footer -->
 
   <!-- Bootstrap JS Bundle CDN (with Popper) -->
   <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-    defer
-  ></script>
+    defer></script>
 </body>
-</html>
 
+</html>

@@ -30,106 +30,106 @@
   <div id="wrapper">
 
     <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
-            <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
-                </div>
-                <div class="sidebar-brand-text mx-3">VEC</div>
-            </a>
+      <!-- Sidebar - Brand -->
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+        <div class="sidebar-brand-icon rotate-n-15">
+          <i class="fas fa-laugh-wink"></i>
+        </div>
+        <div class="sidebar-brand-text mx-3">VEC</div>
+      </a>
 
-            <!-- Divider -->
-            <hr class="sidebar-divider my-0">
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0">
 
-            <!-- Nav Item - Dashboard -->
-            <li class="nav-item">
-                <a class="nav-link" href="index.html">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span></a>
-            </li>
+      <!-- Nav Item - Dashboard -->
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Dashboard</span></a>
+      </li>
 
-            <!-- Divider -->
-            <hr class="sidebar-divider">
+      <!-- Divider -->
+      <hr class="sidebar-divider">
 
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                Pages
-            </div>
+      <!-- Heading -->
+      <div class="sidebar-heading">
+        Pages
+      </div>
 
-            <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Property</span>
-                </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="/VEC/property-management/add-property-page.php">Add Property</a>
-                        <a class="collapse-item" href="/VEC/property-management/manage-property-page.php">Manage Property</a>
-                        <a class="collapse-item" href="/VEC/property-management/archive-property-page.php">Archive Property</a>
-                        <a class="collapse-item" href="/VEC/property-management/follow-up-page.php">Property Follow-up</a>
-                    </div>
-                </div>
-            </li>
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+          aria-expanded="true" aria-controls="collapseTwo">
+          <i class="fas fa-fw fa-cog"></i>
+          <span>Property</span>
+        </a>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="/VEC/property-management/add-property-page.php">Add Property</a>
+            <a class="collapse-item" href="/VEC/property-management/manage-property-page.php">Manage Property</a>
+            <a class="collapse-item" href="/VEC/property-management/archive-property-page.php">Archive Property</a>
+            <a class="collapse-item" href="/VEC/property-management/follow-up-page.php">Property Follow-up</a>
+          </div>
+        </div>
+      </li>
 
-            <!-- Nav Item - Utilities Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                    aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-fw fa-wrench"></i>
-                    <span>Customers</span>
-                </a>
-                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="/VEC/customer-management/add-customer.php">Add Customer</a>
-                        <a class="collapse-item" href="/VEC/customer-management/manage-customer.php">Manage Customer</a>
-                        <a class="collapse-item" href="/VEC/customer-management/customer-closer-log.php">Customer Closure log</a>
-                    </div>
-                </div>
-            </li>
-
-        
-            <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item ">
-                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true"
-                    aria-controls="collapsePages">
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span>Agent</span>
-                </a>
-                <div id="collapsePages" class="collapse show" aria-labelledby="headingPages"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item active" href="/VEC/agent-broker-management/add-agent-page.php ">Add Agent</a>
-                        <a class="collapse-item" href="/VEC/agent-broker-management/agent-linked-property.php">Agent Properties</a>
-                        <a class="collapse-item" href="/VEC/agent-broker-management/client-ref-log.php">Client Referrals</a>
-                        <a class="collapse-item" href="/VEC/agent-broker-management/commission-manage.php">Commission and <br> Agreement Logs</a>
-                    </div>
-                </div>
-            </li>
-
-            <!-- Nav Item - Charts -->
-            <li class="nav-item">
-                <a class="nav-link" href="charts.html">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Meetings and Follow-up</span></a>
-            </li>
+      <!-- Nav Item - Utilities Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+          aria-expanded="true" aria-controls="collapseUtilities">
+          <i class="fas fa-fw fa-wrench"></i>
+          <span>Customers</span>
+        </a>
+        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+          data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="/VEC/customer-management/add-customer.php">Add Customer</a>
+            <a class="collapse-item" href="/VEC/customer-management/manage-customer.php">Manage Customer</a>
+            <a class="collapse-item" href="/VEC/customer-management/customer-closer-log.php">Customer Closure log</a>
+          </div>
+        </div>
+      </li>
 
 
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item ">
+        <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true"
+          aria-controls="collapsePages">
+          <i class="fas fa-fw fa-folder"></i>
+          <span>Agent</span>
+        </a>
+        <div id="collapsePages" class="collapse show" aria-labelledby="headingPages"
+          data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item active" href="/VEC/agent-broker-management/add-agent-page.php ">Add Agent</a>
+            <a class="collapse-item" href="/VEC/agent-broker-management/agent-linked-property.php">Agent Properties</a>
+            <a class="collapse-item" href="/VEC/agent-broker-management/client-ref-log.php">Client Referrals</a>
+            <a class="collapse-item" href="/VEC/agent-broker-management/commission-manage.php">Commission and <br> Agreement Logs</a>
+          </div>
+        </div>
+      </li>
 
-            <!-- Divider -->
-            <hr class="sidebar-divider d-none d-md-block">
+      <!-- Nav Item - Charts -->
+      <li class="nav-item">
+        <a class="nav-link" href="charts.html">
+          <i class="fas fa-fw fa-chart-area"></i>
+          <span>Meetings and Follow-up</span></a>
+      </li>
 
-            <!-- Sidebar Toggler (Sidebar) -->
-            <div class="text-center d-none d-md-inline">
-                <button class="rounded-circle border-0" id="sidebarToggle"></button>
-            </div>
 
-        </ul>
-        <!-- End of Sidebar -->
+
+      <!-- Divider -->
+      <hr class="sidebar-divider d-none d-md-block">
+
+      <!-- Sidebar Toggler (Sidebar) -->
+      <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+      </div>
+
+    </ul>
+    <!-- End of Sidebar -->
 
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
@@ -349,198 +349,225 @@
           </h2>
 
           <h1 class="h3 mb-4 text-gray-800"> </h1>
-            <section class="card rounded-1 p-4 mx-auto small" id="agentFormSection" style="max-width: 800px;">
-              <form id="agentForm">
-                <div class="row mb-3 mt-2 mb-2">
-                  <div class="col-md-6">
-                    <label for="agentName" class="form-label text-muted small">Name</label>
-                    <input type="text" class="form-control" name="agentName" required placeholder="Enter Your Name" />
-                  </div>
-                  <div class="col-md-6">
-                    <label for="contact" class="form-label text-muted small">Contact</label>
-                    <input type="tel" class="form-control" name="contact" required pattern="[0-9]{10}" title="Please enter a valid 10-digit phone number." placeholder="Enter your contact number" />
-                  </div>
+          <section class="card rounded-1 p-4 mx-auto small" id="agentFormSection" style="max-width: 800px;">
+            <form id="agentForm">
+              <div class="row mb-3 mt-2 mb-2">
+                <div class="col-md-6">
+                  <label for="agentName" class="form-label text-muted small">Name</label>
+                  <input type="text" class="form-control" name="agentName" required placeholder="Enter Your Name" />
                 </div>
-
-                <div class="mb-3 mt-2 mb-2">
-                  <label for="panUpload" class="form-label text-muted small">PAN Upload</label>
-                  <input type="file" class="form-control" name="panUpload" accept=".pdf,.jpg,.jpeg,.png" required />
+                <div class="col-md-6">
+                  <label for="contact" class="form-label text-muted small">Contact</label>
+                  <input type="tel" class="form-control" name="contact" required pattern="[0-9]{10}" title="Please enter a valid 10-digit phone number." placeholder="Enter your contact number" />
                 </div>
+              </div>
 
-                <div class="mb-3 mt-2 mb-2">
-                  <label for="aadharUpload" class="form-label text-muted small">Aadhar Upload</label>
-                  <input type="file" class="form-control" name="aadharUpload" accept=".pdf,.jpg,.jpeg,.png" required />
+              <div class="mb-3 mt-2 mb-2">
+                <label for="panUpload" class="form-label text-muted small">PAN Upload</label>
+                <input type="file" class="form-control" name="panUpload" accept=".pdf,.jpg,.jpeg,.png" required />
+              </div>
+
+              <div class="mb-3 mt-2 mb-2">
+                <label for="aadharUpload" class="form-label text-muted small">Aadhar Upload</label>
+                <input type="file" class="form-control" name="aadharUpload" accept=".pdf,.jpg,.jpeg,.png" required />
+              </div>
+
+              <div class="mb-3 mt-2 mb-2">
+                <label for="specialization" class="form-label text-muted small">Specialization</label>
+                <select class="form-select" name="specialization" required>
+                  <option value="">Select Specialization</option>
+                  <option value="Rental">Rental</option>
+                  <option value="Sale">Sale</option>
+                  <option value="Commercial">Commercial</option>
+                </select>
+              </div>
+
+              <div class="mb-3 mt-2 mb-2">
+                <label for="areaOfOperation" class="form-label text-muted d-flex flex-column small">Area of Operation (Select up to 10)</label>
+                <select class="form-select" name="areaOfOperation[]" multiple style="width: 100%;">
+                  <option value="Locality1">Locality 1</option>
+                  <option value="Locality2">Locality 2</option>
+                  <option value="Locality3">Locality 3</option>
+                  <option value="Locality4">Locality 4</option>
+                  <option value="Locality5">Locality 5</option>
+                  <option value="Locality6">Locality 6</option>
+                  <option value="Locality7">Locality 7</option>
+                  <option value="Locality8">Locality 8</option>
+                  <option value="Locality9">Locality 9</option>
+                  <option value="Locality10">Locality 10</option>
+                  <option value="Locality11">Locality 11</option>
+                  <option value="Locality12">Locality 12</option>
+                </select>
+                <div id="selection-warning" class="form-text text-danger d-none mt-1 small">
+                  You can only select up to 10 localities.
                 </div>
+              </div>
 
-                <div class="mb-3 mt-2 mb-2">
-                  <label for="specialization" class="form-label text-muted small">Specialization</label>
-                  <select class="form-select" name="specialization" required>
-                    <option value="">Select Specialization</option>
-                    <option value="Rental">Rental</option>
-                    <option value="Sale">Sale</option>
-                    <option value="Commercial">Commercial</option>
-                  </select>
-                </div>
+              <div class="form-text mb-3 mt-2 mb-2 text-muted small">Max 10 areas can be selected.</div>
 
-                <div class="mb-3 mt-2 mb-2">
-                  <label for="areaOfOperation" class="form-label text-muted d-flex flex-column small">Area of Operation (Select up to 10)</label>
-                  <select class="form-select" name="areaOfOperation[]" multiple style="width: 100%;">
-                    <option value="Locality1">Locality 1</option>
-                    <option value="Locality2">Locality 2</option>
-                    <option value="Locality3">Locality 3</option>
-                    <option value="Locality4">Locality 4</option>
-                    <option value="Locality5">Locality 5</option>
-                    <option value="Locality6">Locality 6</option>
-                    <option value="Locality7">Locality 7</option>
-                    <option value="Locality8">Locality 8</option>
-                    <option value="Locality9">Locality 9</option>
-                    <option value="Locality10">Locality 10</option>
-                    <option value="Locality11">Locality 11</option>
-                    <option value="Locality12">Locality 12</option>
-                  </select>
-                  <div id="selection-warning" class="form-text text-danger d-none mt-1 small">
-                    You can only select up to 10 localities.
-                  </div>
-                </div>
+              <div class="mb-3 mt-2 mb-2">
+                <label for="builderTieUps" class="form-label text-muted small">Preferred Builder Tie-ups (if any)</label>
+                <input type="text" class="form-control" name="builderTieUps" placeholder="Enter your preferred builder tie-ups" />
+              </div>
 
-                <div class="form-text mb-3 mt-2 mb-2 text-muted small">Max 10 areas can be selected.</div>
+              <div class="mb-3 mt-2 mb-2">
+                <label for="agreementUpload" class="form-label text-muted small">Agreement Upload (Commission Agreement)</label>
+                <input type="file" class="form-control" name="agreementUpload" accept=".pdf,.jpg,.jpeg,.png" required />
+              </div>
 
-                <div class="mb-3 mt-2 mb-2">
-                  <label for="builderTieUps" class="form-label text-muted small">Preferred Builder Tie-ups (if any)</label>
-                  <input type="text" class="form-control" name="builderTieUps" placeholder="Enter your preferred builder tie-ups" />
-                </div>
+              <button type="submit" class="btn btn-primary w-100 small mt-2 mb-2">Submit</button>
+            </form>
 
-                <div class="mb-3 mt-2 mb-2">
-                  <label for="agreementUpload" class="form-label text-muted small">Agreement Upload (Commission Agreement)</label>
-                  <input type="file" class="form-control" name="agreementUpload" accept=".pdf,.jpg,.jpeg,.png" required />
-                </div>
-
-                <button type="submit" class="btn btn-primary w-100 small mt-2 mb-2">Submit</button>
-              </form>
-
-              <button class="btn btn-outline-primary mt-3 w-100 small">Add Property for Agent</button>
-            </section>
+            <button class="btn btn-outline-primary mt-3 w-100 small">Add Property for Agent</button>
+          </section>
 
 
 
-            </main>
+          </main>
 
-            <script>
-              $(document).ready(function() {
-                // Animate form on load
-                gsap.from("#agentFormSection", {
-                  duration: 1,
-                  y: -50,
-                  opacity: 0,
-                  ease: "power2.out"
-                });
+          <script>
+            $(document).ready(function() {
+              // Animate form on load
+              gsap.from("#agentFormSection", {
+                duration: 1,
+                y: -50,
+                opacity: 0,
+                ease: "power2.out"
+              });
 
-                // Validate helper functions
-                function validateName(name) {
-                  return /^[A-Za-z\s]+$/.test(name.trim());
-                }
+              // Validate helper functions
+              function validateName(name) {
+                return /^[A-Za-z\s]+$/.test(name.trim());
+              }
 
-                function validateContact(contact) {
-                  return /^[0-9]+$/.test(contact);
-                }
+              function validateContact(contact) {
+                return /^[0-9]+$/.test(contact);
+              }
 
-                function validateFile(fileInput) {
-                  if (!fileInput || !fileInput.files || !fileInput.files[0]) return false;
-                  const file = fileInput.files[0];
-                  const allowedTypes = ['application/pdf', 'image/jpeg', 'image/png'];
-                  return allowedTypes.includes(file.type);
-                }
+              function validateFile(fileInput) {
+                if (!fileInput || !fileInput.files || !fileInput.files[0]) return false;
+                const file = fileInput.files[0];
+                const allowedTypes = ['application/pdf', 'image/jpeg', 'image/png'];
+                return allowedTypes.includes(file.type);
+              }
 
-                function stepWiseValidation() {
-                  const name = $('#agentName').val().trim();
-                  const contact = $('#contact').val().trim();
-                  const panFile = document.getElementById('panUpload');
-                  const aadharFile = document.getElementById('aadharUpload');
-                  const agreementFile = document.getElementById('agreementUpload');
-                  const areaChecked = document.querySelectorAll('.area-checkbox:checked').length;
+              function stepWiseValidation() {
+                const name = $('#agentName').val().trim();
+                const contact = $('#contact').val().trim();
+                const panFile = document.getElementById('panUpload');
+                const aadharFile = document.getElementById('aadharUpload');
+                const agreementFile = document.getElementById('agreementUpload');
+                const areaChecked = document.querySelectorAll('.area-checkbox:checked').length;
 
 
-                  return true;
-                }
+                return true;
+              }
 
-                $('#agentForm').on('submit', function(e) {
-                  e.preventDefault();
+              $('#agentForm').on('submit', function(e) {
+                e.preventDefault();
 
-                  if (stepWiseValidation()) {
-                    gsap.to("#agentFormSection", {
-                      duration: 0.5,
-                      scale: 0.95,
-                      ease: "power2.out",
-                      onComplete: function() {
-                        gsap.to("#agentFormSection", {
-                          duration: 0.5,
-                          opacity: 0,
-                          onComplete: function() {
-                            alert('Agent added successfully!');
-                            $('#agentForm')[0].reset();
-                            gsap.to("#agentFormSection", {
-                              duration: 0.5,
-                              scale: 1,
-                              opacity: 1
-                            });
-                          }
-                        });
-                      }
-                    });
-                  }
-                });
-
-                // Limit area selection checkboxes to 10
-                const checkboxes = document.querySelectorAll('.area-checkbox');
-                const warning = document.getElementById('selection-warning');
-
-                checkboxes.forEach(cb => {
-                  cb.addEventListener('change', () => {
-                    const checked = document.querySelectorAll('.area-checkbox:checked').length;
-                    if (checked > 10) {
-                      cb.checked = false;
-                      warning.classList.remove('d-none');
-                      setTimeout(() => warning.classList.add('d-none'), 2000);
+                if (stepWiseValidation()) {
+                  gsap.to("#agentFormSection", {
+                    duration: 0.5,
+                    scale: 0.95,
+                    ease: "power2.out",
+                    onComplete: function() {
+                      gsap.to("#agentFormSection", {
+                        duration: 0.5,
+                        opacity: 0,
+                        onComplete: function() {
+                          alert('Agent added successfully!');
+                          $('#agentForm')[0].reset();
+                          gsap.to("#agentFormSection", {
+                            duration: 0.5,
+                            scale: 1,
+                            opacity: 1
+                          });
+                        }
+                      });
                     }
                   });
-                });
+                }
               });
-            </script>
 
-            <script>
-              $(document).ready(function() {
-                $('#areaOfOperation').select2({
-                  placeholder: 'Select localities',
-                  width: '100',
-                  maximumSelectionLength: 10
-                });
+              // Limit area selection checkboxes to 10
+              const checkboxes = document.querySelectorAll('.area-checkbox');
+              const warning = document.getElementById('selection-warning');
 
-                $('#areaOfOperation').on('select2:select select2:unselect', function(e) {
-                  const selected = $(this).val() || [];
-                  const warning = $('#selection-warning');
-
-                  if (selected.length >= 10) {
-                    warning.removeClass('d-none');
-                  } else {
-                    warning.addClass('d-none');
+              checkboxes.forEach(cb => {
+                cb.addEventListener('change', () => {
+                  const checked = document.querySelectorAll('.area-checkbox:checked').length;
+                  if (checked > 10) {
+                    cb.checked = false;
+                    warning.classList.remove('d-none');
+                    setTimeout(() => warning.classList.add('d-none'), 2000);
                   }
                 });
               });
-            </script>
+            });
+          </script>
+
+          <script>
+            $(document).ready(function() {
+              $('#areaOfOperation').select2({
+                placeholder: 'Select localities',
+                width: '100',
+                maximumSelectionLength: 10
+              });
+
+              $('#areaOfOperation').on('select2:select select2:unselect', function(e) {
+                const selected = $(this).val() || [];
+                const warning = $('#selection-warning');
+
+                if (selected.length >= 10) {
+                  warning.removeClass('d-none');
+                } else {
+                  warning.addClass('d-none');
+                }
+              });
+            });
+          </script>
 
 
 
-            <!-- jQuery + Select2 JS -->
-            <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-         
+
+
+          <!-- jQuery + Select2 JS -->
+          <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+          <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
 
         </div>
         <!-- /.container-fluid -->
 
       </div>
       <!-- End of Main Content -->
+      <!-- Footer -->
+      <footer class="sticky-footer bg-white text-dark py-4 mt-auto">
+        <hr class="border-top border-dark opacity-25 mb-4" />
 
+        <div class="container text-center">
+          <div class="mb-3">
+            <p class="mb-1 fw-semibold">© 2025 Veena Group. All Rights Reserved.</p>
+            <p class="mb-3 small">Empowering Mumbai’s Real Estate Market through Smart Digital Solutions.</p>
+          </div>
+
+           <nav class="mb-3 d-flex justify-content-center gap-4 flex-wrap">
+            <a href="#" class="text-decoration-none text-primary fw-semibold small">Privacy Policy</a>
+            <a href="#" class="text-decoration-none text-primary fw-semibold small">Terms of Service</a>
+            <a href="#" class="text-decoration-none text-primary fw-semibold small">Contact Us</a>
+          </nav>
+
+          <div class="d-flex justify-content-center gap-3">
+            <a href="#" class="text-primary fs-5" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-primary fs-5" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="text-primary fs-5" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+
+        </div>
+      </footer>
+
+      <!-- End of Footer -->
 
 
     </div>

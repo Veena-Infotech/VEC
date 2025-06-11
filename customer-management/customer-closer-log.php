@@ -30,107 +30,107 @@
   <!-- Page Wrapper -->
   <div id="wrapper">
 
-  <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+    <!-- Sidebar -->
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
-            <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
-                </div>
-                <div class="sidebar-brand-text mx-3">VEC</div>
-            </a>
+      <!-- Sidebar - Brand -->
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+        <div class="sidebar-brand-icon rotate-n-15">
+          <i class="fas fa-laugh-wink"></i>
+        </div>
+        <div class="sidebar-brand-text mx-3">VEC</div>
+      </a>
 
-            <!-- Divider -->
-            <hr class="sidebar-divider my-0">
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0">
 
-            <!-- Nav Item - Dashboard -->
-            <li class="nav-item">
-                <a class="nav-link" href="index.html">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span></a>
-            </li>
+      <!-- Nav Item - Dashboard -->
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Dashboard</span></a>
+      </li>
 
-            <!-- Divider -->
-            <hr class="sidebar-divider">
+      <!-- Divider -->
+      <hr class="sidebar-divider">
 
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                Pages
-            </div>
+      <!-- Heading -->
+      <div class="sidebar-heading">
+        Pages
+      </div>
 
-            <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Property</span>
-                </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="/VEC/property-management/add-property-page.php">Add Property</a>
-                        <a class="collapse-item" href="/VEC/property-management/manage-property-page.php">Manage Property</a>
-                        <a class="collapse-item" href="/VEC/property-management/archive-property-page.php">Archive Property</a>
-                        <a class="collapse-item" href="/VEC/property-management/follow-up-page.php">Property Follow-up</a>
-                    </div>
-                </div>
-            </li>
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+          aria-expanded="true" aria-controls="collapseTwo">
+          <i class="fas fa-fw fa-cog"></i>
+          <span>Property</span>
+        </a>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="/VEC/property-management/add-property-page.php">Add Property</a>
+            <a class="collapse-item" href="/VEC/property-management/manage-property-page.php">Manage Property</a>
+            <a class="collapse-item" href="/VEC/property-management/archive-property-page.php">Archive Property</a>
+            <a class="collapse-item" href="/VEC/property-management/follow-up-page.php">Property Follow-up</a>
+          </div>
+        </div>
+      </li>
 
-            <!-- Nav Item - Utilities Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                    aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-fw fa-wrench"></i>
-                    <span>Customers</span>
-                </a>
-                <div id="collapseUtilities" class="collapse show" aria-labelledby="headingUtilities"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="/VEC/customer-management/add-customer.php">Add Customer</a>
-                        <a class="collapse-item" href="/VEC/customer-management/manage-customer.php">Manage Customer</a>
-                        <a class="collapse-item active" href="/VEC/customer-management/customer-closer-log.php">Customer Closure log</a>
-                    </div>
-                </div>
-            </li>
-
-        
-            <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item ">
-                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true"
-                    aria-controls="collapsePages">
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span>Agent</span>
-                </a>
-                <div id="collapsePages" class="collapse " aria-labelledby="headingPages"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="/VEC/agent-broker-management/add-agent-page.php">Add Agent</a>
-                        <a class="collapse-item" href="/VEC/agent-broker-management/agent-linked-property.php">Agent Properties</a>
-                        <a class="collapse-item" href="/VEC/agent-broker-management/client-ref-log.php">Client Referrals</a>
-                        <a class="collapse-item" href="/VEC/agent-broker-management/commission-manage.php">Commission and <br> Agreement Logs</a>
-                    </div>
-                </div>
-            </li>
-
-            <!-- Nav Item - Charts -->
-            <li class="nav-item">
-                <a class="nav-link" href="charts.html">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Meetings and Follow-up</span></a>
-            </li>
+      <!-- Nav Item - Utilities Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+          aria-expanded="true" aria-controls="collapseUtilities">
+          <i class="fas fa-fw fa-wrench"></i>
+          <span>Customers</span>
+        </a>
+        <div id="collapseUtilities" class="collapse show" aria-labelledby="headingUtilities"
+          data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="/VEC/customer-management/add-customer.php">Add Customer</a>
+            <a class="collapse-item" href="/VEC/customer-management/manage-customer.php">Manage Customer</a>
+            <a class="collapse-item active" href="/VEC/customer-management/customer-closer-log.php">Customer Closure log</a>
+          </div>
+        </div>
+      </li>
 
 
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item ">
+        <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true"
+          aria-controls="collapsePages">
+          <i class="fas fa-fw fa-folder"></i>
+          <span>Agent</span>
+        </a>
+        <div id="collapsePages" class="collapse " aria-labelledby="headingPages"
+          data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="/VEC/agent-broker-management/add-agent-page.php">Add Agent</a>
+            <a class="collapse-item" href="/VEC/agent-broker-management/agent-linked-property.php">Agent Properties</a>
+            <a class="collapse-item" href="/VEC/agent-broker-management/client-ref-log.php">Client Referrals</a>
+            <a class="collapse-item" href="/VEC/agent-broker-management/commission-manage.php">Commission and <br> Agreement Logs</a>
+          </div>
+        </div>
+      </li>
 
-            <!-- Divider -->
-            <hr class="sidebar-divider d-none d-md-block">
+      <!-- Nav Item - Charts -->
+      <li class="nav-item">
+        <a class="nav-link" href="charts.html">
+          <i class="fas fa-fw fa-chart-area"></i>
+          <span>Meetings and Follow-up</span></a>
+      </li>
 
-            <!-- Sidebar Toggler (Sidebar) -->
-            <div class="text-center d-none d-md-inline">
-                <button class="rounded-circle border-0" id="sidebarToggle"></button>
-            </div>
 
-        </ul>
-        <!-- End of Sidebar -->
+
+      <!-- Divider -->
+      <hr class="sidebar-divider d-none d-md-block">
+
+      <!-- Sidebar Toggler (Sidebar) -->
+      <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+      </div>
+
+    </ul>
+    <!-- End of Sidebar -->
 
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
@@ -346,135 +346,161 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-       
-            <div class="container py-3 small">
-              <div class="card border-0 ">
-                <div class="card-header border-bottom text-center py-2">
-                  <h6 class="mb-0 fw-semibold fs-3"><i class="bi bi-journal-text me-2"></i>Customer Closure Log</h6>
-                </div>
 
-                <div class="card-body p-3 mt-4">
-                  <form id="closureForm" name="closureForm" novalidate>
+          <div class="container py-3 small">
+            <div class="card border-0 ">
+              <div class="card-header border-bottom text-center py-2">
+                <h6 class="mb-0 fw-semibold fs-3"><i class="bi bi-journal-text me-2"></i>Customer Closure Log</h6>
+              </div>
 
-                    <!-- Property Details -->
-                    <div class="mb-2">
-                      <label class="form-label fw-semibold small"><i class="bi bi-building-fill-check me-2"></i>Property Finalized</label>
-                      <textarea class="form-control form-control-sm" name="propertyFinalized" rows="2" placeholder="Details of finalized property" required></textarea>
-                    </div>
+              <div class="card-body p-3 mt-4">
+                <form id="closureForm" name="closureForm" novalidate>
 
-                    <!-- Transaction & Commission -->
-                    <div class="row g-2 mb-2">
-                      <div class="col-md-6">
-                        <label class="form-label fw-semibold small">Final Transaction Value</label>
-                        <div class="input-group input-group-sm">
-                          <span class="input-group-text"><i class="bi bi-cash"></i></span>
-                          <input type="number" class="form-control" name="transactionValue" placeholder="Amount" required>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <label class="form-label fw-semibold small">Agent/Broker Commission</label>
-                        <div class="input-group input-group-sm mb-1">
-                          <span class="input-group-text"><i class="bi bi-wallet2"></i></span>
-                          <input type="number" class="form-control" name="commissionAmount" placeholder="Commission">
-                        </div>
-                        <div class="form-check small">
-                          <input class="form-check-input" type="checkbox" id="taxToggle" name="includeTax">
-                          <label class="form-check-label" for="taxToggle">Include Tax</label>
-                        </div>
+                  <!-- Property Details -->
+                  <div class="mb-2">
+                    <label class="form-label fw-semibold small"><i class="bi bi-building-fill-check me-2"></i>Property Finalized</label>
+                    <textarea class="form-control form-control-sm" name="propertyFinalized" rows="2" placeholder="Details of finalized property" required></textarea>
+                  </div>
+
+                  <!-- Transaction & Commission -->
+                  <div class="row g-2 mb-2">
+                    <div class="col-md-6">
+                      <label class="form-label fw-semibold small">Final Transaction Value</label>
+                      <div class="input-group input-group-sm">
+                        <span class="input-group-text"><i class="bi bi-cash"></i></span>
+                        <input type="number" class="form-control" name="transactionValue" placeholder="Amount" required>
                       </div>
                     </div>
-
-                    <!-- Next Services Interest -->
-                    <div class="mb-2">
-                      <label class="form-label fw-semibold small">Next Services Interested</label>
-                      <div class="row">
-                        <div class="col-4">
-                          <div class="form-check form-switch small">
-                            <input class="form-check-input" type="checkbox" id="resaleToggle" name="interestedResale">
-                            <label class="form-check-label" for="resaleToggle">Resale</label>
-                          </div>
-                        </div>
-                        <div class="col-4">
-                          <div class="form-check form-switch small">
-                            <input class="form-check-input" type="checkbox" id="interiorToggle" name="interestedInterior">
-                            <label class="form-check-label" for="interiorToggle">Interior</label>
-                          </div>
-                        </div>
-                        <div class="col-4">
-                          <div class="form-check form-switch small">
-                            <input class="form-check-input" type="checkbox" id="pmcToggle" name="interestedPMC">
-                            <label class="form-check-label" for="pmcToggle">PMC</label>
-                          </div>
-                        </div>
+                    <div class="col-md-6">
+                      <label class="form-label fw-semibold small">Agent/Broker Commission</label>
+                      <div class="input-group input-group-sm mb-1">
+                        <span class="input-group-text"><i class="bi bi-wallet2"></i></span>
+                        <input type="number" class="form-control" name="commissionAmount" placeholder="Commission">
+                      </div>
+                      <div class="form-check small">
+                        <input class="form-check-input" type="checkbox" id="taxToggle" name="includeTax">
+                        <label class="form-check-label" for="taxToggle">Include Tax</label>
                       </div>
                     </div>
+                  </div>
 
-                    <!-- Agent Assignment -->
-                    <div class="row mb-2 align-items-end">
-                      <div class="col-md-6">
-                        <label class="form-label fw-semibold small">Assign Agent</label>
-                        <select class="form-select form-select-sm" id="assignAgent" name="assignedAgent" required>
-                          <option selected disabled value="">Select agent</option>
-                          <option>Agent A</option>
-                          <option>Agent B</option>
-                          <option>Agent C</option>
-                        </select>
+                  <!-- Next Services Interest -->
+                  <div class="mb-2">
+                    <label class="form-label fw-semibold small">Next Services Interested</label>
+                    <div class="row">
+                      <div class="col-4">
+                        <div class="form-check form-switch small">
+                          <input class="form-check-input" type="checkbox" id="resaleToggle" name="interestedResale">
+                          <label class="form-check-label" for="resaleToggle">Resale</label>
+                        </div>
                       </div>
-                      <div class="col-md-6">
-                        <div id="assignAlert" class="alert alert-info d-none mb-0 py-1 px-2 small">
-                          <i class="bi bi-check-circle me-1"></i>Assigned! CRM & Task triggered.
+                      <div class="col-4">
+                        <div class="form-check form-switch small">
+                          <input class="form-check-input" type="checkbox" id="interiorToggle" name="interestedInterior">
+                          <label class="form-check-label" for="interiorToggle">Interior</label>
+                        </div>
+                      </div>
+                      <div class="col-4">
+                        <div class="form-check form-switch small">
+                          <input class="form-check-input" type="checkbox" id="pmcToggle" name="interestedPMC">
+                          <label class="form-check-label" for="pmcToggle">PMC</label>
                         </div>
                       </div>
                     </div>
+                  </div>
 
-                    <!-- Buttons -->
-                    <div class="row pt-2 border-top mt-3">
-                      <div class="col-md-6 mb-2 mb-md-0">
-                        <button type="submit" class="btn btn-success w-100 btn-sm" name="submitForm">
-                          <i class="bi bi-check2-circle me-1"></i>Submit & CRM
-                        </button>
-                      </div>
-                      <div class="col-md-6">
-                        <button type="button" id="downloadPDF" name="downloadPDF" class="btn btn-outline-dark w-100 btn-sm">
-                          <i class="bi bi-filetype-pdf me-1"></i>Download Log
-                        </button>
+                  <!-- Agent Assignment -->
+                  <div class="row mb-2 align-items-end">
+                    <div class="col-md-6">
+                      <label class="form-label fw-semibold small">Assign Agent</label>
+                      <select class="form-select form-select-sm" id="assignAgent" name="assignedAgent" required>
+                        <option selected disabled value="">Select agent</option>
+                        <option>Agent A</option>
+                        <option>Agent B</option>
+                        <option>Agent C</option>
+                      </select>
+                    </div>
+                    <div class="col-md-6">
+                      <div id="assignAlert" class="alert alert-info d-none mb-0 py-1 px-2 small">
+                        <i class="bi bi-check-circle me-1"></i>Assigned! CRM & Task triggered.
                       </div>
                     </div>
+                  </div>
 
-                  </form>
-                </div>
+                  <!-- Buttons -->
+                  <div class="row pt-2 border-top mt-3">
+                    <div class="col-md-6 mb-2 mb-md-0">
+                      <button type="submit" class="btn btn-success w-100 btn-sm" name="submitForm">
+                        <i class="bi bi-check2-circle me-1"></i>Submit & CRM
+                      </button>
+                    </div>
+                    <div class="col-md-6">
+                      <button type="button" id="downloadPDF" name="downloadPDF" class="btn btn-outline-dark w-100 btn-sm">
+                        <i class="bi bi-filetype-pdf me-1"></i>Download Log
+                      </button>
+                    </div>
+                  </div>
+
+                </form>
               </div>
             </div>
+          </div>
 
 
-            <!-- Bootstrap Bundle JS -->
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+          <!-- Bootstrap Bundle JS -->
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-            <!-- JS Interactions -->
-            <script>
-              // Show alert on agent assignment
-              document.getElementById("assignAgent").addEventListener("change", () => {
-                document.getElementById("assignAlert").classList.remove("d-none");
-              });
+          <!-- JS Interactions -->
+          <script>
+            // Show alert on agent assignment
+            document.getElementById("assignAgent").addEventListener("change", () => {
+              document.getElementById("assignAlert").classList.remove("d-none");
+            });
 
-              // Form submit triggers CRM logic
-              document.getElementById("closureForm").addEventListener("submit", function(e) {
-                e.preventDefault();
-                alert("Closure log submitted. CRM and Task module triggered.");
-              });
+            // Form submit triggers CRM logic
+            document.getElementById("closureForm").addEventListener("submit", function(e) {
+              e.preventDefault();
+              alert("Closure log submitted. CRM and Task module triggered.");
+            });
 
-              // Simulated PDF download
-              document.getElementById("downloadPDF").addEventListener("click", () => {
-                alert("PDF download initiated. (To implement: use html2pdf.js or similar)");
-              });
-            </script>
-            
+            // Simulated PDF download
+            document.getElementById("downloadPDF").addEventListener("click", () => {
+              alert("PDF download initiated. (To implement: use html2pdf.js or similar)");
+            });
+          </script>
+
 
         </div>
         <!-- /.container-fluid -->
 
       </div>
-      <!-- End of Main Content -->>
+      <!-- End of Main Content -->
+
+      <!-- Footer -->
+      <footer class="sticky-footer bg-white text-dark py-4 mt-auto">
+        <hr class="border-top border-dark opacity-25 mb-4" />
+
+        <div class="container text-center">
+          <div class="mb-3">
+            <p class="mb-1 fw-semibold">© 2025 Veena Group. All Rights Reserved.</p>
+            <p class="mb-3 small">Empowering Mumbai’s Real Estate Market through Smart Digital Solutions.</p>
+          </div>
+
+           <nav class="mb-3 d-flex justify-content-center gap-4 flex-wrap">
+            <a href="#" class="text-decoration-none text-primary fw-semibold small">Privacy Policy</a>
+            <a href="#" class="text-decoration-none text-primary fw-semibold small">Terms of Service</a>
+            <a href="#" class="text-decoration-none text-primary fw-semibold small">Contact Us</a>
+          </nav>
+
+          <div class="d-flex justify-content-center gap-3">
+            <a href="#" class="text-primary fs-5" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-primary fs-5" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="text-primary fs-5" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+
+        </div>
+      </footer>
+      <!-- End of Footer -->
 
     </div>
     <!-- End of Content Wrapper -->
@@ -482,7 +508,7 @@
   </div>
   <!-- End of Page Wrapper -->
 
- 
+
 
 
   <!-- Bootstrap core JavaScript-->

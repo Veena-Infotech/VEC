@@ -33,106 +33,106 @@
   <div id="wrapper">
 
     <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
-            <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
-                </div>
-                <div class="sidebar-brand-text mx-3">VEC</div>
-            </a>
+      <!-- Sidebar - Brand -->
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+        <div class="sidebar-brand-icon rotate-n-15">
+          <i class="fas fa-laugh-wink"></i>
+        </div>
+        <div class="sidebar-brand-text mx-3">VEC</div>
+      </a>
 
-            <!-- Divider -->
-            <hr class="sidebar-divider my-0">
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0">
 
-            <!-- Nav Item - Dashboard -->
-            <li class="nav-item">
-                <a class="nav-link" href="index.html">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span></a>
-            </li>
+      <!-- Nav Item - Dashboard -->
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Dashboard</span></a>
+      </li>
 
-            <!-- Divider -->
-            <hr class="sidebar-divider">
+      <!-- Divider -->
+      <hr class="sidebar-divider">
 
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                Pages
-            </div>
+      <!-- Heading -->
+      <div class="sidebar-heading">
+        Pages
+      </div>
 
-            <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Property</span>
-                </a>
-                <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="/VEC/property-management/add-property-page.php">Add Property</a>
-                        <a class="collapse-item active" href="/VEC/property-management/manage-property-page.php">Manage Property</a>
-                        <a class="collapse-item" href="/VEC/property-management/archive-property-page.php">Archive Property</a>
-                        <a class="collapse-item" href="/VEC/property-management/follow-up-page.php">Property Follow-up</a>
-                    </div>
-                </div>
-            </li>
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+          aria-expanded="true" aria-controls="collapseTwo">
+          <i class="fas fa-fw fa-cog"></i>
+          <span>Property</span>
+        </a>
+        <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="/VEC/property-management/add-property-page.php">Add Property</a>
+            <a class="collapse-item active" href="/VEC/property-management/manage-property-page.php">Manage Property</a>
+            <a class="collapse-item" href="/VEC/property-management/archive-property-page.php">Archive Property</a>
+            <a class="collapse-item" href="/VEC/property-management/follow-up-page.php">Property Follow-up</a>
+          </div>
+        </div>
+      </li>
 
-            <!-- Nav Item - Utilities Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                    aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-fw fa-wrench"></i>
-                    <span>Customers</span>
-                </a>
-                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="/VEC/customer-management/add-customer.php">Add Customer</a>
-                        <a class="collapse-item" href="/VEC/customer-management/manage-customer.php">Manage Customer</a>
-                        <a class="collapse-item" href="/VEC/customer-management/customer-closer-log.php">Customer Closure log</a>
-                    </div>
-                </div>
-            </li>
-
-        
-            <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item ">
-                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true"
-                    aria-controls="collapsePages">
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span>Agent</span>
-                </a>
-                <div id="collapsePages" class="collapse " aria-labelledby="headingPages"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="/VEC/agent-broker-management/add-agent-page.php">Add Agent</a>
-                        <a class="collapse-item" href="/VEC/agent-broker-management/agent-linked-property.php">Agent Properties</a>
-                        <a class="collapse-item" href="/VEC/agent-broker-management/client-ref-log.php">Client Referrals</a>
-                        <a class="collapse-item" href="/VEC/agent-broker-management/commission-manage.php">Commission and <br> Agreement Logs</a>
-                    </div>
-                </div>
-            </li>
-
-            <!-- Nav Item - Charts -->
-            <li class="nav-item">
-                <a class="nav-link" href="charts.html">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Meetings and Follow-up</span></a>
-            </li>
+      <!-- Nav Item - Utilities Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+          aria-expanded="true" aria-controls="collapseUtilities">
+          <i class="fas fa-fw fa-wrench"></i>
+          <span>Customers</span>
+        </a>
+        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+          data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="/VEC/customer-management/add-customer.php">Add Customer</a>
+            <a class="collapse-item" href="/VEC/customer-management/manage-customer.php">Manage Customer</a>
+            <a class="collapse-item" href="/VEC/customer-management/customer-closer-log.php">Customer Closure log</a>
+          </div>
+        </div>
+      </li>
 
 
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item ">
+        <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true"
+          aria-controls="collapsePages">
+          <i class="fas fa-fw fa-folder"></i>
+          <span>Agent</span>
+        </a>
+        <div id="collapsePages" class="collapse " aria-labelledby="headingPages"
+          data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="/VEC/agent-broker-management/add-agent-page.php">Add Agent</a>
+            <a class="collapse-item" href="/VEC/agent-broker-management/agent-linked-property.php">Agent Properties</a>
+            <a class="collapse-item" href="/VEC/agent-broker-management/client-ref-log.php">Client Referrals</a>
+            <a class="collapse-item" href="/VEC/agent-broker-management/commission-manage.php">Commission and <br> Agreement Logs</a>
+          </div>
+        </div>
+      </li>
 
-            <!-- Divider -->
-            <hr class="sidebar-divider d-none d-md-block">
+      <!-- Nav Item - Charts -->
+      <li class="nav-item">
+        <a class="nav-link" href="charts.html">
+          <i class="fas fa-fw fa-chart-area"></i>
+          <span>Meetings and Follow-up</span></a>
+      </li>
 
-            <!-- Sidebar Toggler (Sidebar) -->
-            <div class="text-center d-none d-md-inline">
-                <button class="rounded-circle border-0" id="sidebarToggle"></button>
-            </div>
 
-        </ul>
-        <!-- End of Sidebar -->
+
+      <!-- Divider -->
+      <hr class="sidebar-divider d-none d-md-block">
+
+      <!-- Sidebar Toggler (Sidebar) -->
+      <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+      </div>
+
+    </ul>
+    <!-- End of Sidebar -->
 
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
@@ -349,146 +349,146 @@
 
           <!-- Page Heading -->
           <h3 class="h3 mb-4 text-gray-800"> </h3>
-            <div class="container py-3 small">
-              <div class="text-center me-4 mt-2 mb-4">
-                <i class="bi bi-house-gear-fill text-primary fs-4 d-block mb-2"></i>
-                <h5 class="fw-semibold fs-4 mb-1">Property Management</h5>
-                <p class="text-muted small mb-0">Manage, filter, and act on property listings</p>
-              </div>
-
-
-              <div class="card shadow-sm mb-4 border-0 mt-2">
-                <div class="card-body p-3">
-                  <form id="filterForm" class="row g-3 align-items-end small">
-                    <div class="col-md-4">
-                      <label for="filterLocation" class="form-label fw-semibold text-secondary">
-                        <i class="bi bi-geo-alt me-1"></i> Location
-                      </label>
-                      <input type="text" class="form-control form-control-sm" id="filterLocation" name="location" placeholder="Enter location" />
-                    </div>
-                    <div class="col-md-4">
-                      <label for="filterOwner" class="form-label fw-semibold text-secondary">
-                        <i class="bi bi-person me-1"></i> Owner
-                      </label>
-                      <input type="text" class="form-control form-control-sm" id="filterOwner" name="owner" placeholder="Enter owner name" />
-                    </div>
-                    <div class="col-md-3">
-                      <label for="filterStatus" class="form-label fw-semibold text-secondary">
-                        <i class="bi bi-filter-circle me-1"></i> Status
-                      </label>
-                      <select class="form-select form-select-sm" id="filterStatus" name="status">
-                        <option value="">All</option>
-                        <option>Available</option>
-                        <option>Sold</option>
-                        <option>Rented</option>
-                        <option>Archived</option>
-                      </select>
-                    </div>
-                    <div class="col-md-1 d-flex align-items-end">
-                      <button type="button" class="btn btn-outline-primary btn-sm w-100" id="applyFilters" title="Apply Filters">
-                        <i class="bi bi-funnel"></i>
-                      </button>
-                    </div>
-                  </form>
-                </div>
-              </div>
-
-              <div class="table-responsive shadow-sm">
-                <table id="propertyTable" class="table table-hover table-borderless align-middle mb-0 text-nowrap small">
-                  <thead class="table-primary">
-                    <tr>
-                      <th>Property ID</th>
-                      <th>Title</th>
-                      <th>Location</th>
-                      <th>Owner</th>
-                      <th>Status</th>
-                      <th>Agent</th>
-                      <th class="text-center">Actions</th>
-                    </tr>
-                  </thead>
-                  <tbody class="bg-white">
-                    <tr>
-                      <td>PROP001</td>
-                      <td>Sea View Villa</td>
-                      <td>Goa</td>
-                      <td>Jane Smith</td>
-                      <td><span class="badge bg-success">Available</span></td>
-                      <td>Team A</td>
-                      <td class="text-center">
-                        <div class="btn-group btn-group-sm">
-                          <a href="edit-property.php" class="btn btn-outline-secondary" title="Edit">
-                            <i class="bi bi-pencil-square"></i>
-                          </a>
-                          <button class="btn btn-outline-info" onclick="openPreviewModal()" title="Preview">
-                            <i class="bi bi-images"></i>
-                          </button>
-                          <button class="btn btn-outline-warning dropdown-toggle" data-bs-toggle="dropdown" title="More Actions"></button>
-                          <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" href="#" onclick="assignAgent('PROP001')"><i class="bi bi-person-plus"></i> Assign Agent</a></li>
-                            <li><a class="dropdown-item" href="#" onclick="showToast('Marked as Sold')"><i class="bi bi-check-circle"></i> Mark as Sold</a></li>
-                            <li><a class="dropdown-item" href="#" onclick="showToast('Marked as Rented')"><i class="bi bi-house-door"></i> Mark as Rented</a></li>
-                            <li><a class="dropdown-item text-danger" href="#" onclick="showToast('Archived')"><i class="bi bi-archive"></i> Archive</a></li>
-                          </ul>
-                        </div>
-                      </td>
-                    </tr>
-                    <!-- Add more rows similarly -->
-                  </tbody>
-                </table>
-              </div>
+          <div class="container py-3 small">
+            <div class="text-center me-4 mt-2 mb-4">
+              <i class="bi bi-house-gear-fill text-primary fs-4 d-block mb-2"></i>
+              <h5 class="fw-semibold fs-4 mb-1">Property Management</h5>
+              <p class="text-muted small mb-0">Manage, filter, and act on property listings</p>
             </div>
 
 
+            <div class="card shadow-sm mb-4 border-0 mt-2">
+              <div class="card-body p-3">
+                <form id="filterForm" class="row g-3 align-items-end small">
+                  <div class="col-md-4">
+                    <label for="filterLocation" class="form-label fw-semibold text-secondary">
+                      <i class="bi bi-geo-alt me-1"></i> Location
+                    </label>
+                    <input type="text" class="form-control form-control-sm" id="filterLocation" name="location" placeholder="Enter location" />
+                  </div>
+                  <div class="col-md-4">
+                    <label for="filterOwner" class="form-label fw-semibold text-secondary">
+                      <i class="bi bi-person me-1"></i> Owner
+                    </label>
+                    <input type="text" class="form-control form-control-sm" id="filterOwner" name="owner" placeholder="Enter owner name" />
+                  </div>
+                  <div class="col-md-3">
+                    <label for="filterStatus" class="form-label fw-semibold text-secondary">
+                      <i class="bi bi-filter-circle me-1"></i> Status
+                    </label>
+                    <select class="form-select form-select-sm" id="filterStatus" name="status">
+                      <option value="">All</option>
+                      <option>Available</option>
+                      <option>Sold</option>
+                      <option>Rented</option>
+                      <option>Archived</option>
+                    </select>
+                  </div>
+                  <div class="col-md-1 d-flex align-items-end">
+                    <button type="button" class="btn btn-outline-primary btn-sm w-100" id="applyFilters" title="Apply Filters">
+                      <i class="bi bi-funnel"></i>
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <div class="table-responsive shadow-sm">
+              <table id="propertyTable" class="table table-hover table-borderless align-middle mb-0 text-nowrap small">
+                <thead class="table-primary">
+                  <tr>
+                    <th>Property ID</th>
+                    <th>Title</th>
+                    <th>Location</th>
+                    <th>Owner</th>
+                    <th>Status</th>
+                    <th>Agent</th>
+                    <th class="text-center">Actions</th>
+                  </tr>
+                </thead>
+                <tbody class="bg-white">
+                  <tr>
+                    <td>PROP001</td>
+                    <td>Sea View Villa</td>
+                    <td>Goa</td>
+                    <td>Jane Smith</td>
+                    <td><span class="badge bg-success">Available</span></td>
+                    <td>Team A</td>
+                    <td class="text-center">
+                      <div class="btn-group btn-group-sm">
+                        <a href="edit-property.php" class="btn btn-outline-secondary" title="Edit">
+                          <i class="bi bi-pencil-square"></i>
+                        </a>
+                        <button class="btn btn-outline-info" onclick="openPreviewModal()" title="Preview">
+                          <i class="bi bi-images"></i>
+                        </button>
+                        <button class="btn btn-outline-warning dropdown-toggle" data-bs-toggle="dropdown" title="More Actions"></button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                          <li><a class="dropdown-item" href="#" onclick="assignAgent('PROP001')"><i class="bi bi-person-plus"></i> Assign Agent</a></li>
+                          <li><a class="dropdown-item" href="#" onclick="showToast('Marked as Sold')"><i class="bi bi-check-circle"></i> Mark as Sold</a></li>
+                          <li><a class="dropdown-item" href="#" onclick="showToast('Marked as Rented')"><i class="bi bi-house-door"></i> Mark as Rented</a></li>
+                          <li><a class="dropdown-item text-danger" href="#" onclick="showToast('Archived')"><i class="bi bi-archive"></i> Archive</a></li>
+                        </ul>
+                      </div>
+                    </td>
+                  </tr>
+                  <!-- Add more rows similarly -->
+                </tbody>
+              </table>
+            </div>
+          </div>
 
 
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-            <script>
-              function showToast(message) {
-                document.getElementById("toastMessage").innerText = message;
-                new bootstrap.Toast(document.getElementById("confirmationToast")).show();
-              }
 
-              function openPreviewModal() {
-                new bootstrap.Modal(document.getElementById("previewModal")).show();
-              }
 
-              function assignAgent(id) {
-                const agents = ["Team A", "Team B", "Team C"];
-                let agent = prompt("Assign to agent/team:", agents.join(", "));
-                if (agent) showToast(`Assigned to ${agent}`);
-              }
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+          <script>
+            function showToast(message) {
+              document.getElementById("toastMessage").innerText = message;
+              new bootstrap.Toast(document.getElementById("confirmationToast")).show();
+            }
 
-              gsap.from("table", {
-                scrollTrigger: {
-                  trigger: "table",
-                  start: "top 90%",
-                },
-                y: 50,
-                opacity: 0,
-                duration: 1,
-              });
+            function openPreviewModal() {
+              new bootstrap.Modal(document.getElementById("previewModal")).show();
+            }
 
-              document.addEventListener("DOMContentLoaded", function() {
-                document.getElementById("applyFilters").addEventListener("click", function() {
-                  const locationVal = document.getElementById("filterLocation").value.toLowerCase();
-                  const ownerVal = document.getElementById("filterOwner").value.toLowerCase();
-                  const statusVal = document.getElementById("filterStatus").value.toLowerCase();
+            function assignAgent(id) {
+              const agents = ["Team A", "Team B", "Team C"];
+              let agent = prompt("Assign to agent/team:", agents.join(", "));
+              if (agent) showToast(`Assigned to ${agent}`);
+            }
 
-                  document.querySelectorAll("#propertyTable tbody tr").forEach((row) => {
-                    const location = row.cells[2].innerText.toLowerCase();
-                    const owner = row.cells[3].innerText.toLowerCase();
-                    const status = row.cells[4].innerText.toLowerCase();
-                    const matchLoc = location.includes(locationVal);
-                    const matchOwner = owner.includes(ownerVal);
-                    const matchStatus = statusVal === "" || status.includes(statusVal);
-                    row.style.display = matchLoc && matchOwner && matchStatus ? "" : "none";
-                  });
+            gsap.from("table", {
+              scrollTrigger: {
+                trigger: "table",
+                start: "top 90%",
+              },
+              y: 50,
+              opacity: 0,
+              duration: 1,
+            });
+
+            document.addEventListener("DOMContentLoaded", function() {
+              document.getElementById("applyFilters").addEventListener("click", function() {
+                const locationVal = document.getElementById("filterLocation").value.toLowerCase();
+                const ownerVal = document.getElementById("filterOwner").value.toLowerCase();
+                const statusVal = document.getElementById("filterStatus").value.toLowerCase();
+
+                document.querySelectorAll("#propertyTable tbody tr").forEach((row) => {
+                  const location = row.cells[2].innerText.toLowerCase();
+                  const owner = row.cells[3].innerText.toLowerCase();
+                  const status = row.cells[4].innerText.toLowerCase();
+                  const matchLoc = location.includes(locationVal);
+                  const matchOwner = owner.includes(ownerVal);
+                  const matchStatus = statusVal === "" || status.includes(statusVal);
+                  row.style.display = matchLoc && matchOwner && matchStatus ? "" : "none";
                 });
               });
-            </script>
+            });
+          </script>
 
 
-        
+
 
         </div>
         <!-- /.container-fluid -->
@@ -497,15 +497,30 @@
       <!-- End of Main Content -->
 
       <!-- Footer -->
-      <footer class="sticky-footer bg-white">
-        <div class="container my-auto">
-          <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Your Website 2020</span>
+      <footer class="sticky-footer bg-white text-dark py-4 mt-auto">
+        <hr class="border-top border-dark opacity-25 mb-4" />
+
+        <div class="container text-center">
+          <div class="mb-3">
+            <p class="mb-1 fw-semibold">© 2025 Veena Group. All Rights Reserved.</p>
+            <p class="mb-3 small">Empowering Mumbai’s Real Estate Market through Smart Digital Solutions.</p>
           </div>
+
+          <nav class="mb-3 d-flex justify-content-center gap-4 flex-wrap">
+            <a href="#" class="text-decoration-none text-primary fw-semibold small">Privacy Policy</a>
+            <a href="#" class="text-decoration-none text-primary fw-semibold small">Terms of Service</a>
+            <a href="#" class="text-decoration-none text-primary fw-semibold small">Contact Us</a>
+          </nav>
+
+          <div class="d-flex justify-content-center gap-3">
+            <a href="#" class="text-primary fs-5" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-primary fs-5" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="text-primary fs-5" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+
         </div>
       </footer>
       <!-- End of Footer -->
-
     </div>
     <!-- End of Content Wrapper -->
 

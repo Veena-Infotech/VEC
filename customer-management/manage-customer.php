@@ -31,107 +31,107 @@
   <!-- Page Wrapper -->
   <div id="wrapper">
 
-   <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+    <!-- Sidebar -->
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
-            <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
-                </div>
-                <div class="sidebar-brand-text mx-3">VEC</div>
-            </a>
+      <!-- Sidebar - Brand -->
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+        <div class="sidebar-brand-icon rotate-n-15">
+          <i class="fas fa-laugh-wink"></i>
+        </div>
+        <div class="sidebar-brand-text mx-3">VEC</div>
+      </a>
 
-            <!-- Divider -->
-            <hr class="sidebar-divider my-0">
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0">
 
-            <!-- Nav Item - Dashboard -->
-            <li class="nav-item">
-                <a class="nav-link" href="index.html">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span></a>
-            </li>
+      <!-- Nav Item - Dashboard -->
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Dashboard</span></a>
+      </li>
 
-            <!-- Divider -->
-            <hr class="sidebar-divider">
+      <!-- Divider -->
+      <hr class="sidebar-divider">
 
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                Pages
-            </div>
+      <!-- Heading -->
+      <div class="sidebar-heading">
+        Pages
+      </div>
 
-            <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Property</span>
-                </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="/VEC/property-management/add-property-page.php">Add Property</a>
-                        <a class="collapse-item" href="/VEC/property-management/manage-property-page.php">Manage Property</a>
-                        <a class="collapse-item" href="/VEC/property-management/archive-property-page.php">Archive Property</a>
-                        <a class="collapse-item" href="/VEC/property-management/follow-up-page.php">Property Follow-up</a>
-                    </div>
-                </div>
-            </li>
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+          aria-expanded="true" aria-controls="collapseTwo">
+          <i class="fas fa-fw fa-cog"></i>
+          <span>Property</span>
+        </a>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="/VEC/property-management/add-property-page.php">Add Property</a>
+            <a class="collapse-item" href="/VEC/property-management/manage-property-page.php">Manage Property</a>
+            <a class="collapse-item" href="/VEC/property-management/archive-property-page.php">Archive Property</a>
+            <a class="collapse-item" href="/VEC/property-management/follow-up-page.php">Property Follow-up</a>
+          </div>
+        </div>
+      </li>
 
-            <!-- Nav Item - Utilities Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                    aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-fw fa-wrench"></i>
-                    <span>Customers</span>
-                </a>
-                <div id="collapseUtilities" class="collapse show" aria-labelledby="headingUtilities"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="/VEC/customer-management/add-customer.php">Add Customer</a>
-                        <a class="collapse-item active" href="/VEC/customer-management/manage-customer.php">Manage Customer</a>
-                        <a class="collapse-item" href="/VEC/customer-management/customer-closer-log.php">Customer Closure log</a>
-                    </div>
-                </div>
-            </li>
-
-        
-            <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item ">
-                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true"
-                    aria-controls="collapsePages">
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span>Agent</span>
-                </a>
-                <div id="collapsePages" class="collapse " aria-labelledby="headingPages"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="/VEC/agent-broker-management/add-agent-page.php">Add Agent</a>
-                        <a class="collapse-item" href="/VEC/agent-broker-management/agent-linked-property.php">Agent Properties</a>
-                        <a class="collapse-item" href="/VEC/agent-broker-management/client-ref-log.php">Client Referrals</a>
-                        <a class="collapse-item" href="/VEC/agent-broker-management/commission-manage.php">Commission and <br> Agreement Logs</a>
-                    </div>
-                </div>
-            </li>
-
-            <!-- Nav Item - Charts -->
-            <li class="nav-item">
-                <a class="nav-link" href="charts.html">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Meetings and Follow-up</span></a>
-            </li>
+      <!-- Nav Item - Utilities Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+          aria-expanded="true" aria-controls="collapseUtilities">
+          <i class="fas fa-fw fa-wrench"></i>
+          <span>Customers</span>
+        </a>
+        <div id="collapseUtilities" class="collapse show" aria-labelledby="headingUtilities"
+          data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="/VEC/customer-management/add-customer.php">Add Customer</a>
+            <a class="collapse-item active" href="/VEC/customer-management/manage-customer.php">Manage Customer</a>
+            <a class="collapse-item" href="/VEC/customer-management/customer-closer-log.php">Customer Closure log</a>
+          </div>
+        </div>
+      </li>
 
 
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item ">
+        <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true"
+          aria-controls="collapsePages">
+          <i class="fas fa-fw fa-folder"></i>
+          <span>Agent</span>
+        </a>
+        <div id="collapsePages" class="collapse " aria-labelledby="headingPages"
+          data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="/VEC/agent-broker-management/add-agent-page.php">Add Agent</a>
+            <a class="collapse-item" href="/VEC/agent-broker-management/agent-linked-property.php">Agent Properties</a>
+            <a class="collapse-item" href="/VEC/agent-broker-management/client-ref-log.php">Client Referrals</a>
+            <a class="collapse-item" href="/VEC/agent-broker-management/commission-manage.php">Commission and <br> Agreement Logs</a>
+          </div>
+        </div>
+      </li>
 
-            <!-- Divider -->
-            <hr class="sidebar-divider d-none d-md-block">
+      <!-- Nav Item - Charts -->
+      <li class="nav-item">
+        <a class="nav-link" href="charts.html">
+          <i class="fas fa-fw fa-chart-area"></i>
+          <span>Meetings and Follow-up</span></a>
+      </li>
 
-            <!-- Sidebar Toggler (Sidebar) -->
-            <div class="text-center d-none d-md-inline">
-                <button class="rounded-circle border-0" id="sidebarToggle"></button>
-            </div>
 
-        </ul>
-        <!-- End of Sidebar -->
+
+      <!-- Divider -->
+      <hr class="sidebar-divider d-none d-md-block">
+
+      <!-- Sidebar Toggler (Sidebar) -->
+      <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+      </div>
+
+    </ul>
+    <!-- End of Sidebar -->
 
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
@@ -347,116 +347,116 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-            <div class="container py-5 small">
-              <h1 class="mb-4 text-dark fw-bold text-center small">Manage Customer</h1>
+          <div class="container py-5 small">
+            <h1 class="mb-4 text-dark fw-bold text-center small">Manage Customer</h1>
 
-              <!-- Filter Card -->
-              <div class="card shadow-sm mb-4 border-muted bg-white">
-                <div class="card-header bg-light text-dark fw-semibold border-bottom border-muted small">
-                  Search & Filter Customers
-                </div>
-                <div class="card-body">
-                  <form class="row g-3" id="filterForm">
-                    <div class="col-md-3">
-                      <label for="filterType" class="form-label text-secondary small">Type</label>
-                      <select id="filterType" name="filterType" class="form-select border-muted form-select-sm">
-                        <option value="" selected>All Types</option>
-                        <option value="Buyer">Buyer</option>
-                        <option value="Seller">Seller</option>
-                        <option value="Investor">Investor</option>
-                      </select>
-                    </div>
-                    <div class="col-md-3">
-                      <label for="filterBudget" class="form-label text-secondary small">Budget</label>
-                      <select id="filterBudget" name="filterBudget" class="form-select border-muted form-select-sm">
-                        <option value="" selected>All Budgets</option>
-                        <option value="low">&lt; $100,000</option>
-                        <option value="medium">$100,000 - $500,000</option>
-                        <option value="high">&gt; $500,000</option>
-                      </select>
-                    </div>
-                    <div class="col-md-3">
-                      <label for="filterLocation" class="form-label text-secondary small">Location</label>
-                      <select id="filterLocation" name="filterLocation" class="form-select border-muted form-select-sm">
-                        <option value="" selected>All Locations</option>
-                        <option value="New York">New York</option>
-                        <option value="San Francisco">San Francisco</option>
-                        <option value="Miami">Miami</option>
-                      </select>
-                    </div>
-                    <div class="col-md-3 d-flex align-items-end">
-                      <button type="button" id="btnFilter" class="btn btn-outline-dark w-100 btn-sm">Apply Filters</button>
-                    </div>
-                  </form>
-                </div>
+            <!-- Filter Card -->
+            <div class="card shadow-sm mb-4 border-muted bg-white">
+              <div class="card-header bg-light text-dark fw-semibold border-bottom border-muted small">
+                Search & Filter Customers
               </div>
-
-              <!-- Customer Info Section -->
-              <div id="customerContainer"></div>
+              <div class="card-body">
+                <form class="row g-3" id="filterForm">
+                  <div class="col-md-3">
+                    <label for="filterType" class="form-label text-secondary small">Type</label>
+                    <select id="filterType" name="filterType" class="form-select border-muted form-select-sm">
+                      <option value="" selected>All Types</option>
+                      <option value="Buyer">Buyer</option>
+                      <option value="Seller">Seller</option>
+                      <option value="Investor">Investor</option>
+                    </select>
+                  </div>
+                  <div class="col-md-3">
+                    <label for="filterBudget" class="form-label text-secondary small">Budget</label>
+                    <select id="filterBudget" name="filterBudget" class="form-select border-muted form-select-sm">
+                      <option value="" selected>All Budgets</option>
+                      <option value="low">&lt; $100,000</option>
+                      <option value="medium">$100,000 - $500,000</option>
+                      <option value="high">&gt; $500,000</option>
+                    </select>
+                  </div>
+                  <div class="col-md-3">
+                    <label for="filterLocation" class="form-label text-secondary small">Location</label>
+                    <select id="filterLocation" name="filterLocation" class="form-select border-muted form-select-sm">
+                      <option value="" selected>All Locations</option>
+                      <option value="New York">New York</option>
+                      <option value="San Francisco">San Francisco</option>
+                      <option value="Miami">Miami</option>
+                    </select>
+                  </div>
+                  <div class="col-md-3 d-flex align-items-end">
+                    <button type="button" id="btnFilter" class="btn btn-outline-dark w-100 btn-sm">Apply Filters</button>
+                  </div>
+                </form>
+              </div>
             </div>
 
+            <!-- Customer Info Section -->
+            <div id="customerContainer"></div>
+          </div>
 
-            <script>
-              gsap.from("h1", {
-                duration: 1,
-                y: -40,
-                opacity: 0,
-                ease: "power2.out"
-              });
-              gsap.from(".card", {
-                duration: 0.8,
-                opacity: 0,
-                y: 20,
-                stagger: 0.2,
-                delay: 0.3
-              });
 
-              const customerContainer = document.getElementById("customerContainer");
+          <script>
+            gsap.from("h1", {
+              duration: 1,
+              y: -40,
+              opacity: 0,
+              ease: "power2.out"
+            });
+            gsap.from(".card", {
+              duration: 0.8,
+              opacity: 0,
+              y: 20,
+              stagger: 0.2,
+              delay: 0.3
+            });
 
-              // Sample customer data
-              const customers = [{
-                  name: "John Doe",
-                  type: "Buyer",
-                  budget: "medium",
-                  location: "New York",
-                  status: "Looking",
-                  agent: "Agent A"
-                },
-                {
-                  name: "Jane Smith",
-                  type: "Seller",
-                  budget: "high",
-                  location: "San Francisco",
-                  status: "On Hold",
-                  agent: "Agent B"
-                },
-                {
-                  name: "Ali Khan",
-                  type: "Investor",
-                  budget: "low",
-                  location: "Miami",
-                  status: "Closed Deal",
-                  agent: "Agent C"
-                }
-              ];
+            const customerContainer = document.getElementById("customerContainer");
 
-              function renderCustomers(filteredCustomers) {
-                customerContainer.innerHTML = "";
+            // Sample customer data
+            const customers = [{
+                name: "John Doe",
+                type: "Buyer",
+                budget: "medium",
+                location: "New York",
+                status: "Looking",
+                agent: "Agent A"
+              },
+              {
+                name: "Jane Smith",
+                type: "Seller",
+                budget: "high",
+                location: "San Francisco",
+                status: "On Hold",
+                agent: "Agent B"
+              },
+              {
+                name: "Ali Khan",
+                type: "Investor",
+                budget: "low",
+                location: "Miami",
+                status: "Closed Deal",
+                agent: "Agent C"
+              }
+            ];
 
-                if (filteredCustomers.length === 0) {
-                  customerContainer.innerHTML = `<div class="alert alert-warning">No matching customers found.</div>`;
-                  return;
-                }
+            function renderCustomers(filteredCustomers) {
+              customerContainer.innerHTML = "";
 
-                filteredCustomers.forEach((customer, index) => {
-                  const card = document.createElement("div");
-                  card.className = "card shadow-sm mb-4 border-muted bg-white";
+              if (filteredCustomers.length === 0) {
+                customerContainer.innerHTML = `<div class="alert alert-warning">No matching customers found.</div>`;
+                return;
+              }
 
-                  const noteInputId = `noteInput-${index}`;
-                  const notesListId = `notesList-${index}`;
-                  const addNoteBtnId = `addNoteBtn-${index}`;
+              filteredCustomers.forEach((customer, index) => {
+                const card = document.createElement("div");
+                card.className = "card shadow-sm mb-4 border-muted bg-white";
 
-                  card.innerHTML = `
+                const noteInputId = `noteInput-${index}`;
+                const notesListId = `notesList-${index}`;
+                const addNoteBtnId = `addNoteBtn-${index}`;
+
+                card.innerHTML = `
       <div class="card-header d-flex justify-content-between align-items-center bg-light text-dark fw-semibold border-bottom border-muted">
         <span>Customer: <strong>${customer.name}</strong></span>
         <select class="form-select form-select-sm w-auto border-muted">
@@ -489,70 +489,70 @@
       </div>
     `;
 
-                  customerContainer.appendChild(card);
+                customerContainer.appendChild(card);
 
-                  // Set up note functionality per customer card
-                  const noteInput = card.querySelector(`#${noteInputId}`);
-                  const notesList = card.querySelector(`#${notesListId}`);
-                  const addNoteBtn = card.querySelector(`#${addNoteBtnId}`);
+                // Set up note functionality per customer card
+                const noteInput = card.querySelector(`#${noteInputId}`);
+                const notesList = card.querySelector(`#${notesListId}`);
+                const addNoteBtn = card.querySelector(`#${addNoteBtnId}`);
 
-                  const addNote = () => {
-                    const text = noteInput.value.trim();
-                    if (!text) return;
+                const addNote = () => {
+                  const text = noteInput.value.trim();
+                  if (!text) return;
 
-                    const timestamp = new Date().toLocaleString();
-                    const noteItem = document.createElement("div");
-                    noteItem.className = "border border-muted rounded bg-white p-2 mb-2";
-                    noteItem.innerHTML = `
+                  const timestamp = new Date().toLocaleString();
+                  const noteItem = document.createElement("div");
+                  noteItem.className = "border border-muted rounded bg-white p-2 mb-2";
+                  noteItem.innerHTML = `
         <div class="d-flex justify-content-between">
           <div class="text-secondary">${text}</div>
           <small class="text-muted">${timestamp}</small>
         </div>
       `;
-                    notesList.prepend(noteItem);
-                    noteInput.value = "";
+                  notesList.prepend(noteItem);
+                  noteInput.value = "";
 
-                    gsap.from(noteItem, {
-                      duration: 0.5,
-                      opacity: 0,
-                      y: 20
-                    });
-                  };
-
-                  addNoteBtn.addEventListener("click", addNote);
-                  noteInput.addEventListener("keypress", e => {
-                    if (e.key === "Enter") addNote();
-                  });
-
-                  gsap.from(card, {
-                    duration: 0.4,
+                  gsap.from(noteItem, {
+                    duration: 0.5,
                     opacity: 0,
                     y: 20
                   });
+                };
+
+                addNoteBtn.addEventListener("click", addNote);
+                noteInput.addEventListener("keypress", e => {
+                  if (e.key === "Enter") addNote();
                 });
-              }
 
-
-              document.getElementById("btnFilter").addEventListener("click", () => {
-                const type = document.getElementById("filterType").value;
-                const budget = document.getElementById("filterBudget").value;
-                const location = document.getElementById("filterLocation").value;
-
-                const filtered = customers.filter(c =>
-                  (type === "" || c.type === type) &&
-                  (budget === "" || c.budget === budget) &&
-                  (location === "" || c.location === location)
-                );
-
-                renderCustomers(filtered);
+                gsap.from(card, {
+                  duration: 0.4,
+                  opacity: 0,
+                  y: 20
+                });
               });
+            }
 
-              // Initial render
-              renderCustomers(customers);
-            </script>
 
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-          
+            document.getElementById("btnFilter").addEventListener("click", () => {
+              const type = document.getElementById("filterType").value;
+              const budget = document.getElementById("filterBudget").value;
+              const location = document.getElementById("filterLocation").value;
+
+              const filtered = customers.filter(c =>
+                (type === "" || c.type === type) &&
+                (budget === "" || c.budget === budget) &&
+                (location === "" || c.location === location)
+              );
+
+              renderCustomers(filtered);
+            });
+
+            // Initial render
+            renderCustomers(customers);
+          </script>
+
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 
         </div>
         <!-- /.container-fluid -->
@@ -560,6 +560,31 @@
       </div>
       <!-- End of Main Content -->
 
+      <!-- Footer -->
+      <footer class="sticky-footer bg-white text-dark py-4 mt-auto">
+        <hr class="border-top border-dark opacity-25 mb-4" />
+
+        <div class="container text-center">
+          <div class="mb-3">
+            <p class="mb-1 fw-semibold">© 2025 Veena Group. All Rights Reserved.</p>
+            <p class="mb-3 small">Empowering Mumbai’s Real Estate Market through Smart Digital Solutions.</p>
+          </div>
+
+          <nav class="mb-3 d-flex justify-content-center gap-4 flex-wrap">
+            <a href="#" class="text-decoration-none text-primary fw-semibold small">Privacy Policy</a>
+            <a href="#" class="text-decoration-none text-primary fw-semibold small">Terms of Service</a>
+            <a href="#" class="text-decoration-none text-primary fw-semibold small">Contact Us</a>
+          </nav>
+
+          <div class="d-flex justify-content-center gap-3">
+            <a href="#" class="text-primary fs-5" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-primary fs-5" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="text-primary fs-5" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+
+        </div>
+      </footer>
+      <!-- End of Footer -->
 
 
     </div>
@@ -568,7 +593,7 @@
   </div>
   <!-- End of Page Wrapper -->
 
- 
+
   <!-- Logout Modal-->
 
 
