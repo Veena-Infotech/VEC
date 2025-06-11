@@ -474,30 +474,30 @@
             <!-- End of Main Content -->
 
             <!-- Footer -->
-            <footer class="sticky-footer bg-white text-dark py-4 mt-auto">
-                <hr class="border-top border-dark opacity-25 mb-4" />
+                 <!-- Footer -->
+      <footer class="sticky-footer bg-white text-dark py-4 mt-auto">
+        <hr class="border-top border-dark opacity-25 mb-4" />
 
-                <div class="container text-center">
-                    <div class="mb-3">
-                        <p class="mb-1 fw-semibold">© 2025 Veena Group. All Rights Reserved.</p>
-                        <p class="mb-3 small">Empowering Mumbai’s Real Estate Market through Smart Digital Solutions.</p>
-                    </div>
+        <div class="container text-center">
+          <div class="mb-3">
+            <p class="mb-1 fw-semibold">© 2025 Veena Group. All Rights Reserved.</p>
+            <p class="mb-3 small">Empowering Mumbai’s Real Estate Market through Smart Digital Solutions.</p>
+          </div>
 
-                    <nav class="mb-3 d-flex justify-content-center gap-4 flex-wrap">
-                        <a href="#" class="text-decoration-none text-primary fw-semibold small">Privacy Policy</a>
-                        <a href="#" class="text-decoration-none text-primary fw-semibold small">Terms of Service</a>
-                        <a href="#" class="text-decoration-none text-primary fw-semibold small">Contact Us</a>
-                    </nav>
+          <nav class="mb-3 d-flex justify-content-center gap-4 flex-wrap">
+            <a href="#" class="text-decoration-none text-primary fw-semibold small">Privacy Policy</a>
+            <a href="#" class="text-decoration-none text-primary fw-semibold small">Terms of Service</a>
+            <a href="#" class="text-decoration-none text-primary fw-semibold small">Contact Us</a>
+          </nav>
 
-                    <div class="d-flex justify-content-center gap-3">
-                        <a href="#" class="text-primary fs-5" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="text-primary fs-5" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="text-primary fs-5" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
+          <div class="d-flex justify-content-center gap-3">
+            <a href="#" class="text-primary fs-5" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-primary fs-5" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="text-primary fs-5" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          </div>
 
-
-                </div>
-            </footer>
+        </div>
+      </footer>
             <!-- End of Footer -->
 
         </div>
