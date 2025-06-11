@@ -28,122 +28,107 @@
 
   <!-- Page Wrapper -->
   <div id="wrapper">
+<!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
-    <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-laugh-wink"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">VEC</div>
+            </a>
 
-      <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-        <div class="sidebar-brand-icon rotate-n-15">
-          <i class="fas fa-laugh-wink"></i>
-        </div>
-        <div class="sidebar-brand-text mx-3">VEC</div>
-      </a>
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
 
-      <!-- Divider -->
-      <hr class="sidebar-divider my-0">
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span></a>
+            </li>
 
-      <!-- Nav Item - Dashboard -->
-      <li class="nav-item">
-        <a class="nav-link" href="index.html">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Dashboard</span></a>
-      </li>
+            <!-- Divider -->
+            <hr class="sidebar-divider">
 
-      <!-- Divider -->
-      <hr class="sidebar-divider">
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Pages
+            </div>
 
-      <!-- Heading -->
-      <div class="sidebar-heading">
-        Interface
-      </div>
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Property</span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="/VEC/property-management/add-property-page.php">Add Property</a>
+                        <a class="collapse-item" href="/VEC/property-management/manage-property-page.php">Manage Property</a>
+                        <a class="collapse-item" href="/VEC/property-management/archive-property-page.php">Archive Property</a>
+                        <a class="collapse-item" href="/VEC/property-management/follow-up-page.php">Property Follow-up</a>
+                    </div>
+                </div>
+            </li>
 
-      <!-- Nav Item - Pages Collapse Menu -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-          aria-expanded="true" aria-controls="collapseTwo">
-          <i class="fas fa-fw fa-cog"></i>
-          <span>Property</span>
-        </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Custom Components:</h6>
-            <a class="collapse-item" href="buttons.html">Add Property</a>
-            <a class="collapse-item" href="cards.html">Manage Property</a>
-            <a class="collapse-item" href="cards.html">Archive Property</a>
-            <a class="collapse-item" href="cards.html">Property Follow-up</a>
-          </div>
-        </div>
-      </li>
+            <!-- Nav Item - Utilities Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+                    aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    <span>Customers</span>
+                </a>
+                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="/VEC/customer-management/add-customer.php">Add Customer</a>
+                        <a class="collapse-item" href="/VEC/customer-management/manage-customer.php">Manage Customer</a>
+                        <a class="collapse-item" href="/VEC/customer-management/customer-closer-log.php">Customer Closure log</a>
+                    </div>
+                </div>
+            </li>
 
-      <!-- Nav Item - Utilities Collapse Menu -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-          aria-expanded="true" aria-controls="collapseUtilities">
-          <i class="fas fa-fw fa-wrench"></i>
-          <span>Customers</span>
-        </a>
-        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-          data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Custom Utilities:</h6>
-            <a class="collapse-item" href="utilities-color.html">Add Customer</a>
-            <a class="collapse-item" href="utilities-border.html">Manage Customer</a>
-            <a class="collapse-item" href="utilities-animation.html">Customer Closure log</a>
-            <a class="collapse-item" href="utilities-other.html">Other</a>
-          </div>
-        </div>
-      </li>
+        
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item ">
+                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true"
+                    aria-controls="collapsePages">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Agent</span>
+                </a>
+                <div id="collapsePages" class="collapse show" aria-labelledby="headingPages"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="/VEC/agent-broker-management/add-agent-page.php">Add Agent</a>
+                        <a class="collapse-item" href="/VEC/agent-broker-management/agent-linked-property.php">Agent Properties</a>
+                        <a class="collapse-item active" href="/VEC/agent-broker-management/client-ref-log.php">Client Referrals</a>
+                        <a class="collapse-item" href="/VEC/agent-broker-management/commission-manage.php">Commission and <br> Agreement Logs</a>
+                    </div>
+                </div>
+            </li>
 
-      <!-- Divider -->
-      <hr class="sidebar-divider">
-
-      <!-- Heading -->
-      <div class="sidebar-heading">
-        Agent
-      </div>
-
-      <!-- Nav Item - Pages Collapse Menu -->
-      <li class="nav-item active">
-        <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true"
-          aria-controls="collapsePages">
-          <i class="fas fa-fw fa-folder"></i>
-          <span>Agent</span>
-        </a>
-        <div id="collapsePages" class="collapse show" aria-labelledby="headingPages"
-          data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Login Screens:</h6>
-            <a class="collapse-item" href="login.html">Add Agent</a>
-            <a class="collapse-item" href="register.html">Agent Properties</a>
-            <a class="collapse-item" href="forgot-password.html">Client Referrals</a>
-            <div class="collapse-divider"></div>
-            <h6 class="collapse-header">Other Pages:</h6>
-            <a class="collapse-item" href="404.html">Commission and <br> Agreement Logs</a>
-            <a class="collapse-item active" href="blank.html">Blank Page</a>
-          </div>
-        </div>
-      </li>
-
-      <!-- Nav Item - Charts -->
-      <li class="nav-item">
-        <a class="nav-link" href="charts.html">
-          <i class="fas fa-fw fa-chart-area"></i>
-          <span>Meetings and Follow-up</span></a>
-      </li>
+            <!-- Nav Item - Charts -->
+            <li class="nav-item">
+                <a class="nav-link" href="charts.html">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>Meetings and Follow-up</span></a>
+            </li>
 
 
 
-      <!-- Divider -->
-      <hr class="sidebar-divider d-none d-md-block">
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
 
-      <!-- Sidebar Toggler (Sidebar) -->
-      <div class="text-center d-none d-md-inline">
-        <button class="rounded-circle border-0" id="sidebarToggle"></button>
-      </div>
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
 
-    </ul>
-    <!-- End of Sidebar -->
+        </ul>
+        <!-- End of Sidebar -->
 
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
@@ -358,234 +343,233 @@
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
-          <!-- Page Heading -->
-          <h1 class="h3 mb-4 text-gray-800">
+          
 
-   <div class="container mt-4 small">
-  <!-- Header -->
-  <div class="text-black p-4 rounded mb-4 text-center" id="header">
-    <h2 class="mb-0 fs-5 text-primary">Client Referral Log</h2>
-    <small class="text-muted">Track client referrals, matching properties, and commissions</small>
-  </div>
+            <div class="container mt-4 small">
+              <!-- Header -->
+              <div class="text-black p-4 rounded mb-4 text-center" id="header">
+                <h2 class="mb-0 fs-5 text-primary">Client Referral Log</h2>
+                <small class="text-muted">Track client referrals, matching properties, and commissions</small>
+              </div>
 
-  <!-- Tabs -->
-  <ul class="nav nav-tabs mb-3 small" id="tabs">
-    <li class="nav-item">
-      <a class="nav-link active" data-bs-toggle="tab" href="#clients">Clients Referred</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" data-bs-toggle="tab" href="#properties">Matching Properties</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" data-bs-toggle="tab" href="#commission">Deal Closure & Commission</a>
-    </li>
-  </ul>
+              <!-- Tabs -->
+              <ul class="nav nav-tabs mb-3 small" id="tabs">
+                <li class="nav-item">
+                  <a class="nav-link active" data-bs-toggle="tab" href="#clients">Clients Referred</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-bs-toggle="tab" href="#properties">Matching Properties</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-bs-toggle="tab" href="#commission">Deal Closure & Commission</a>
+                </li>
+              </ul>
 
-  <!-- Tab Content -->
-  <div class="tab-content">
-    <!-- Clients Referred -->
-    <div class="tab-pane fade show active" id="clients">
-      <div class="d-flex justify-content-between mb-2 align-items-center">
-        <h5 class="fs-6 mb-0">Clients Referred by Agent</h5>
-        <a href="http://localhost/VEC/customer-management/add-customer.php" class="btn btn-outline-primary btn-sm small">+ Add New Client</a>
-      </div>
+              <!-- Tab Content -->
+              <div class="tab-content">
+                <!-- Clients Referred -->
+                <div class="tab-pane fade show active" id="clients">
+                  <div class="d-flex justify-content-between mb-2 align-items-center">
+                    <h5 class="fs-6 mb-0">Clients Referred by Agent</h5>
+                    <a href="http://localhost/VEC/customer-management/add-customer.php" class="btn btn-outline-primary btn-sm small">+ Add New Client</a>
+                  </div>
 
-      <div class="table-responsive">
-        <table class="table table-bordered table-sm align-middle shadow-sm small" id="clientTable">
-          <thead class="table-light">
-            <tr>
-              <th>#</th>
-              <th>Client Name</th>
-              <th>Email</th>
-              <th>Phone</th>
-              <th>Referral Date</th>
-              <th>Status</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>John Smith</td>
-              <td>john.smith@example.com</td>
-              <td>(555) 123-4567</td>
-              <td>2023-09-15</td>
-              <td><span class="badge bg-light text-dark small">Active</span></td>
-              <td>
-                <a href="http://localhost/VEC/customer-management/view-customer.php" class="btn btn-outline-primary btn-sm small">View</a>
-                <a href="http://localhost/VEC/customer-management/edit-customer.php" class="btn btn-outline-secondary btn-sm small">Edit</a>
-              </td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Emma Johnson</td>
-              <td>emmaj@example.com</td>
-              <td>(555) 987-6543</td>
-              <td>2023-10-02</td>
-              <td><span class="badge bg-light text-dark small">Closed</span></td>
-              <td>
-                <a href="http://localhost/VEC/customer-management/view-customer.php" class="btn btn-outline-primary btn-sm small">View</a>
-                <a href="http://localhost/VEC/customer-management/edit-customer.php" class="btn btn-outline-secondary btn-sm small">Edit</a>
-              </td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Michael Davis</td>
-              <td>michael.d@example.com</td>
-              <td>(555) 456-7890</td>
-              <td>2023-10-10</td>
-              <td><span class="badge bg-light text-dark small">Active</span></td>
-              <td>
-                <a href="http://localhost/VEC/customer-management/view-customer.php" class="btn btn-outline-primary btn-sm small">View</a>
-                <a href="http://localhost/VEC/customer-management/edit-customer.php" class="btn btn-outline-secondary btn-sm small">Edit</a>
-              </td>
-            </tr>
-            <tr>
-              <td>4</td>
-              <td>Sophia Rodriguez</td>
-              <td>sophia.r@example.com</td>
-              <td>(555) 234-5678</td>
-              <td>2023-11-05</td>
-              <td><span class="badge bg-light text-dark small">Pending</span></td>
-              <td>
-                <a href="http://localhost/VEC/customer-management/view-customer.php" class="btn btn-outline-primary btn-sm small">View</a>
-                <a href="http://localhost/VEC/customer-management/edit-customer.php" class="btn btn-outline-secondary btn-sm small">Edit</a>
-              </td>
-            </tr>
-            <tr>
-              <td>5</td>
-              <td>Robert Wilson</td>
-              <td>robert.w@example.com</td>
-              <td>(555) 876-5432</td>
-              <td>2023-11-20</td>
-              <td><span class="badge bg-light text-dark small">Active</span></td>
-              <td>
-                <a href="http://localhost/VEC/customer-management/view-customer.php" class="btn btn-outline-primary btn-sm small">View</a>
-                <a href="http://localhost/VEC/customer-management/edit-customer.php" class="btn btn-outline-secondary btn-sm small">Edit</a>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+                  <div class="table-responsive">
+                    <table class="table table-bordered table-sm align-middle shadow-sm small" id="clientTable">
+                      <thead class="table-light">
+                        <tr>
+                          <th>#</th>
+                          <th>Client Name</th>
+                          <th>Email</th>
+                          <th>Phone</th>
+                          <th>Referral Date</th>
+                          <th>Status</th>
+                          <th>Actions</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1</td>
+                          <td>John Smith</td>
+                          <td>john.smith@example.com</td>
+                          <td>(555) 123-4567</td>
+                          <td>2023-09-15</td>
+                          <td><span class="badge bg-light text-dark small">Active</span></td>
+                          <td>
+                            <a href="http://localhost/VEC/customer-management/view-customer.php" class="btn btn-outline-primary btn-sm small">View</a>
+                            <a href="http://localhost/VEC/customer-management/edit-customer.php" class="btn btn-outline-secondary btn-sm small">Edit</a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>2</td>
+                          <td>Emma Johnson</td>
+                          <td>emmaj@example.com</td>
+                          <td>(555) 987-6543</td>
+                          <td>2023-10-02</td>
+                          <td><span class="badge bg-light text-dark small">Closed</span></td>
+                          <td>
+                            <a href="http://localhost/VEC/customer-management/view-customer.php" class="btn btn-outline-primary btn-sm small">View</a>
+                            <a href="http://localhost/VEC/customer-management/edit-customer.php" class="btn btn-outline-secondary btn-sm small">Edit</a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>3</td>
+                          <td>Michael Davis</td>
+                          <td>michael.d@example.com</td>
+                          <td>(555) 456-7890</td>
+                          <td>2023-10-10</td>
+                          <td><span class="badge bg-light text-dark small">Active</span></td>
+                          <td>
+                            <a href="http://localhost/VEC/customer-management/view-customer.php" class="btn btn-outline-primary btn-sm small">View</a>
+                            <a href="http://localhost/VEC/customer-management/edit-customer.php" class="btn btn-outline-secondary btn-sm small">Edit</a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>4</td>
+                          <td>Sophia Rodriguez</td>
+                          <td>sophia.r@example.com</td>
+                          <td>(555) 234-5678</td>
+                          <td>2023-11-05</td>
+                          <td><span class="badge bg-light text-dark small">Pending</span></td>
+                          <td>
+                            <a href="http://localhost/VEC/customer-management/view-customer.php" class="btn btn-outline-primary btn-sm small">View</a>
+                            <a href="http://localhost/VEC/customer-management/edit-customer.php" class="btn btn-outline-secondary btn-sm small">Edit</a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>5</td>
+                          <td>Robert Wilson</td>
+                          <td>robert.w@example.com</td>
+                          <td>(555) 876-5432</td>
+                          <td>2023-11-20</td>
+                          <td><span class="badge bg-light text-dark small">Active</span></td>
+                          <td>
+                            <a href="http://localhost/VEC/customer-management/view-customer.php" class="btn btn-outline-primary btn-sm small">View</a>
+                            <a href="http://localhost/VEC/customer-management/edit-customer.php" class="btn btn-outline-secondary btn-sm small">Edit</a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
 
-      <!-- Summary Cards -->
-      <div class="row text-white mt-4" id="cards">
-        <div class="col-md-4 mb-2">
-          <div class="bg-primary p-3 rounded text-center small">
-            <h6 class="fs-6 mb-1">Total Clients</h6>
-            <h5 class="fs-5 mb-0">5</h5>
-          </div>
-        </div>
-        <div class="col-md-4 mb-2">
-          <div class="bg-success p-3 rounded text-center small">
-            <h6 class="fs-6 mb-1">Active Properties</h6>
-            <h5 class="fs-5 mb-0">5</h5>
-          </div>
-        </div>
-        <div class="col-md-4 mb-2">
-          <div class="bg-info p-3 rounded text-center small">
-            <h6 class="fs-6 mb-1">Total Commission</h6>
-            <h5 class="fs-5 mb-0">$47,400</h5>
-          </div>
-        </div>
-      </div>
-    </div>
+                  <!-- Summary Cards -->
+                  <div class="row text-white mt-4" id="cards">
+                    <div class="col-md-4 mb-2">
+                      <div class="bg-primary p-3 rounded text-center small">
+                        <h6 class="fs-6 mb-1">Total Clients</h6>
+                        <h5 class="fs-5 mb-0">5</h5>
+                      </div>
+                    </div>
+                    <div class="col-md-4 mb-2">
+                      <div class="bg-success p-3 rounded text-center small">
+                        <h6 class="fs-6 mb-1">Active Properties</h6>
+                        <h5 class="fs-5 mb-0">5</h5>
+                      </div>
+                    </div>
+                    <div class="col-md-4 mb-2">
+                      <div class="bg-info p-3 rounded text-center small">
+                        <h6 class="fs-6 mb-1">Total Commission</h6>
+                        <h5 class="fs-5 mb-0">$47,400</h5>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
-    <!-- Matching Properties -->
-    <div class="tab-pane fade" id="properties">
-      <h5 class="mt-3 fs-6">Matching Properties</h5>
-      <div class="table-responsive mt-2">
-        <table class="table table-bordered table-sm align-middle shadow-sm small">
-          <thead class="table-light">
-            <tr>
-              <th>#</th>
-              <th>Property</th>
-              <th>Location</th>
-              <th>Price</th>
-              <th>Client</th>
-              <th>Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Sunset Villa</td>
-              <td>Miami, FL</td>
-              <td>$850,000</td>
-              <td>John Smith</td>
-              <td><span class="badge bg-light text-dark small">Viewing Scheduled</span></td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Lakefront Condo</td>
-              <td>Chicago, IL</td>
-              <td>$450,000</td>
-              <td>Emma Johnson</td>
-              <td><span class="badge bg-light text-dark small">Interested</span></td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Urban Loft</td>
-              <td>New York, NY</td>
-              <td>$1,200,000</td>
-              <td>Michael Davis</td>
-              <td><span class="badge bg-light text-dark small">Negotiating</span></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
+                <!-- Matching Properties -->
+                <div class="tab-pane fade" id="properties">
+                  <h5 class="mt-3 fs-6">Matching Properties</h5>
+                  <div class="table-responsive mt-2">
+                    <table class="table table-bordered table-sm align-middle shadow-sm small">
+                      <thead class="table-light">
+                        <tr>
+                          <th>#</th>
+                          <th>Property</th>
+                          <th>Location</th>
+                          <th>Price</th>
+                          <th>Client</th>
+                          <th>Status</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1</td>
+                          <td>Sunset Villa</td>
+                          <td>Miami, FL</td>
+                          <td>$850,000</td>
+                          <td>John Smith</td>
+                          <td><span class="badge bg-light text-dark small">Viewing Scheduled</span></td>
+                        </tr>
+                        <tr>
+                          <td>2</td>
+                          <td>Lakefront Condo</td>
+                          <td>Chicago, IL</td>
+                          <td>$450,000</td>
+                          <td>Emma Johnson</td>
+                          <td><span class="badge bg-light text-dark small">Interested</span></td>
+                        </tr>
+                        <tr>
+                          <td>3</td>
+                          <td>Urban Loft</td>
+                          <td>New York, NY</td>
+                          <td>$1,200,000</td>
+                          <td>Michael Davis</td>
+                          <td><span class="badge bg-light text-dark small">Negotiating</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
 
-    <!-- Deal Closure & Commission -->
-    <div class="tab-pane fade" id="commission">
-      <h5 class="mt-3 fs-6">Deal Closures & Commissions</h5>
-      <div class="table-responsive mt-2">
-        <table class="table table-bordered table-sm align-middle shadow-sm small">
-          <thead class="table-light">
-            <tr>
-              <th>#</th>
-              <th>Client</th>
-              <th>Property</th>
-              <th>Deal Date</th>
-              <th>Commission %</th>
-              <th>Commission Amount</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>John Smith</td>
-              <td>Sunset Villa</td>
-              <td>2023-12-01</td>
-              <td>5%</td>
-              <td>$42,500</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Emma Johnson</td>
-              <td>Lakefront Condo</td>
-              <td>2023-12-15</td>
-              <td>4%</td>
-              <td>$18,000</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Michael Davis</td>
-              <td>Urban Loft</td>
-              <td>2024-01-05</td>
-              <td>6%</td>
-              <td>$72,000</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-</div>
+                <!-- Deal Closure & Commission -->
+                <div class="tab-pane fade" id="commission">
+                  <h5 class="mt-3 fs-6">Deal Closures & Commissions</h5>
+                  <div class="table-responsive mt-2">
+                    <table class="table table-bordered table-sm align-middle shadow-sm small">
+                      <thead class="table-light">
+                        <tr>
+                          <th>#</th>
+                          <th>Client</th>
+                          <th>Property</th>
+                          <th>Deal Date</th>
+                          <th>Commission %</th>
+                          <th>Commission Amount</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1</td>
+                          <td>John Smith</td>
+                          <td>Sunset Villa</td>
+                          <td>2023-12-01</td>
+                          <td>5%</td>
+                          <td>$42,500</td>
+                        </tr>
+                        <tr>
+                          <td>2</td>
+                          <td>Emma Johnson</td>
+                          <td>Lakefront Condo</td>
+                          <td>2023-12-15</td>
+                          <td>4%</td>
+                          <td>$18,000</td>
+                        </tr>
+                        <tr>
+                          <td>3</td>
+                          <td>Michael Davis</td>
+                          <td>Urban Loft</td>
+                          <td>2024-01-05</td>
+                          <td>6%</td>
+                          <td>$72,000</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
 
 
             <!-- GSAP Animations -->
-             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
             <script>
               // Initial entrance
@@ -644,18 +628,12 @@
                 });
               });
             </script>
-            <?php include '../footer.php'; ?>
-          </h1>
+            
 
         </div>
-        <!-- /.container-fluid -->
 
       </div>
-      <!-- End of Main Content -->
-
-
     </div>
-    <!-- End of Content Wrapper -->
 
   </div>
   <!-- End of Page Wrapper -->
@@ -666,24 +644,7 @@
   </a>
 
   <!-- Logout Modal-->
-  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
-          </button>
-        </div>
-        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-        <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="login.html">Logout</a>
-        </div>
-      </div>
-    </div>
-  </div>
+
 
   <!-- Bootstrap core JavaScript-->
   <script src="../vendor/jquery/jquery.min.js"></script>

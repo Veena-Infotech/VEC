@@ -31,121 +31,107 @@
   <!-- Page Wrapper -->
   <div id="wrapper">
 
-    <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+  <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
-      <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-        <div class="sidebar-brand-icon rotate-n-15">
-          <i class="fas fa-laugh-wink"></i>
-        </div>
-        <div class="sidebar-brand-text mx-3">VEC</div>
-      </a>
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-laugh-wink"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">VEC</div>
+            </a>
 
-      <!-- Divider -->
-      <hr class="sidebar-divider my-0">
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
 
-      <!-- Nav Item - Dashboard -->
-      <li class="nav-item">
-        <a class="nav-link" href="index.html">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Dashboard</span></a>
-      </li>
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span></a>
+            </li>
 
-      <!-- Divider -->
-      <hr class="sidebar-divider">
+            <!-- Divider -->
+            <hr class="sidebar-divider">
 
-      <!-- Heading -->
-      <div class="sidebar-heading">
-        Interface
-      </div>
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Pages
+            </div>
 
-      <!-- Nav Item - Pages Collapse Menu -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-          aria-expanded="true" aria-controls="collapseTwo">
-          <i class="fas fa-fw fa-cog"></i>
-          <span>Property</span>
-        </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Custom Components:</h6>
-            <a class="collapse-item" href="buttons.html">Add Property</a>
-            <a class="collapse-item" href="cards.html">Manage Property</a>
-            <a class="collapse-item" href="cards.html">Archive Property</a>
-            <a class="collapse-item" href="cards.html">Property Follow-up</a>
-          </div>
-        </div>
-      </li>
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Property</span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="/VEC/property-management/add-property-page.php">Add Property</a>
+                        <a class="collapse-item" href="/VEC/property-management/manage-property-page.php">Manage Property</a>
+                        <a class="collapse-item" href="/VEC/property-management/archive-property-page.php">Archive Property</a>
+                        <a class="collapse-item" href="/VEC/property-management/follow-up-page.php">Property Follow-up</a>
+                    </div>
+                </div>
+            </li>
 
-      <!-- Nav Item - Utilities Collapse Menu -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-          aria-expanded="true" aria-controls="collapseUtilities">
-          <i class="fas fa-fw fa-wrench"></i>
-          <span>Customers</span>
-        </a>
-        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-          data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Custom Utilities:</h6>
-            <a class="collapse-item" href="utilities-color.html">Add Customer</a>
-            <a class="collapse-item" href="utilities-border.html">Manage Customer</a>
-            <a class="collapse-item" href="utilities-animation.html">Customer Closure log</a>
-            <a class="collapse-item" href="utilities-other.html">Other</a>
-          </div>
-        </div>
-      </li>
+            <!-- Nav Item - Utilities Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+                    aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    <span>Customers</span>
+                </a>
+                <div id="collapseUtilities" class="collapse show" aria-labelledby="headingUtilities"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item active" href="/VEC/customer-management/add-customer.php">Add Customer</a>
+                        <a class="collapse-item" href="/VEC/customer-management/manage-customer.php">Manage Customer</a>
+                        <a class="collapse-item" href="/VEC/customer-management/customer-closer-log.php">Customer Closure log</a>
+                    </div>
+                </div>
+            </li>
 
-      <!-- Divider -->
-      <hr class="sidebar-divider">
+        
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item ">
+                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true"
+                    aria-controls="collapsePages">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Agent</span>
+                </a>
+                <div id="collapsePages" class="collapse " aria-labelledby="headingPages"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="/VEC/agent-broker-management/add-agent-page.php">Add Agent</a>
+                        <a class="collapse-item" href="/VEC/agent-broker-management/agent-linked-property.php">Agent Properties</a>
+                        <a class="collapse-item" href="/VEC/agent-broker-management/client-ref-log.php">Client Referrals</a>
+                        <a class="collapse-item" href="/VEC/agent-broker-management/commission-manage.php">Commission and <br> Agreement Logs</a>
+                    </div>
+                </div>
+            </li>
 
-      <!-- Heading -->
-      <div class="sidebar-heading">
-        Agent
-      </div>
-
-      <!-- Nav Item - Pages Collapse Menu -->
-      <li class="nav-item active">
-        <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true"
-          aria-controls="collapsePages">
-          <i class="fas fa-fw fa-folder"></i>
-          <span>Agent</span>
-        </a>
-        <div id="collapsePages" class="collapse show" aria-labelledby="headingPages"
-          data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Login Screens:</h6>
-            <a class="collapse-item" href="login.html">Add Agent</a>
-            <a class="collapse-item" href="register.html">Agent Properties</a>
-            <a class="collapse-item" href="forgot-password.html">Client Referrals</a>
-            <div class="collapse-divider"></div>
-            <h6 class="collapse-header">Other Pages:</h6>
-            <a class="collapse-item" href="404.html">Commission and <br> Agreement Logs</a>
-            <a class="collapse-item active" href="blank.html">Blank Page</a>
-          </div>
-        </div>
-      </li>
-
-      <!-- Nav Item - Charts -->
-      <li class="nav-item">
-        <a class="nav-link" href="charts.html">
-          <i class="fas fa-fw fa-chart-area"></i>
-          <span>Meetings and Follow-up</span></a>
-      </li>
+            <!-- Nav Item - Charts -->
+            <li class="nav-item">
+                <a class="nav-link" href="charts.html">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>Meetings and Follow-up</span></a>
+            </li>
 
 
 
-      <!-- Divider -->
-      <hr class="sidebar-divider d-none d-md-block">
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
 
-      <!-- Sidebar Toggler (Sidebar) -->
-      <div class="text-center d-none d-md-inline">
-        <button class="rounded-circle border-0" id="sidebarToggle"></button>
-      </div>
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
 
-    </ul>
-    <!-- End of Sidebar -->
+        </ul>
+        <!-- End of Sidebar -->
 
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
@@ -361,191 +347,188 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-4 text-gray-800">
-            <div class="container py-5">
-              <h1 class="mb-4 text-primary fw-bold text-center fs-3">Edit Your Property</h1>
+          <div class="container py-5">
+            <h1 class="mb-4 text-primary fw-bold text-center fs-3">Edit Your Property</h1>
 
-              <form id="propertyForm" class="bg-white p-4 rounded shadow-sm small">
-                <div class="row g-3">
+            <form id="propertyForm" class="bg-white p-4 rounded shadow-sm small">
+              <div class="row g-3">
 
-                  <!-- Property Type -->
-                  <div class="col-md-4">
-                    <label class="form-label">Property Type</label>
-                    <select class="form-select" name="propertyType" required>
-                      <option value="" disabled selected>Select property type</option>
-                      <option>1 BHK</option>
-                      <option>2 BHK</option>
-                      <option>3 BHK</option>
-                      <option>4 BHK</option>
-                      <option>5 BHK+</option>
-                      <option>Studio Apartment</option>
-                      <option>Apartment</option>
-                      <option>Independent House</option>
-                      <option>Bungalow</option>
-                      <option>Villa</option>
-                      <option>Row House</option>
-                      <option>Duplex</option>
-                      <option>Penthouse</option>
-                      <option>Farmhouse</option>
-                    </select>
-                  </div>
-
-                  <!-- Transaction Type -->
-                  <div class="col-md-4">
-                    <label class="form-label">Transaction Type</label>
-                    <select class="form-select" name="transactionType" required>
-                      <option value="" disabled selected>Select transaction type</option>
-                      <option>Buy</option>
-                      <option>Sell</option>
-                      <option>Rent</option>
-                    </select>
-                  </div>
-
-                  <!-- Locality -->
-                  <div class="col-md-4 position-relative small">
-                    <label class="form-label">Locality (Ward-based Mumbai regions)</label>
-                    <input type="text" class="form-control form-control-sm" name="locality" placeholder="Start typing locality..." autocomplete="off" required />
-                    <ul class="list-group list-group-sm position-absolute w-100" style="z-index: 1050; max-height: 180px; overflow-y: auto; display: none;"></ul>
-                  </div>
-
-
-                  <!-- Address -->
-                  <div class="col-md-6">
-                    <label class="form-label">Address</label>
-                    <input type="text" class="form-control" name="address" placeholder="Enter full address" required />
-                  </div>
-
-                  <!-- Pincode -->
-                  <div class="col-md-3">
-                    <label class="form-label">Pincode</label>
-                    <input type="text" class="form-control" name="pincode" placeholder="Enter pincode" pattern="[0-9]{6}" title="6 digit pincode" required />
-                  </div>
-
-                  <!-- Landmark -->
-                  <div class="col-md-3">
-                    <label class="form-label">Landmark</label>
-                    <input type="text" class="form-control" name="landmark" placeholder="Nearby landmark" />
-                  </div>
-
-                  <!-- Area -->
-                  <div class="col-12">
-                    <legend class="h6 text-secondary mb-3">Area (in sqft)</legend>
-                    <div class="row g-3">
-                      <div class="col-md-4">
-                        <label class="form-label">Carpet Area</label>
-                        <input type="number" min="0" class="form-control" name="areaCarpet" placeholder="e.g., 900" required />
-                      </div>
-                      <div class="col-md-4">
-                        <label class="form-label">Built-up Area</label>
-                        <input type="number" min="0" class="form-control" name="areaBuiltup" placeholder="e.g., 1100" required />
-                      </div>
-                      <div class="col-md-4">
-                        <label class="form-label">Plot Area</label>
-                        <input type="number" min="0" class="form-control" name="areaPlot" placeholder="e.g., 1200" required />
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Price and Negotiable -->
-                  <div class="col-md-8">
-                    <label class="form-label">Price (INR)</label>
-                    <input type="number" min="0" class="form-control" name="price" placeholder="Enter price" required />
-                  </div>
-                  <div class="col-md-4 d-flex align-items-center">
-                    <div class="form-check form-switch mt-4">
-                      <input class="form-check-input" type="checkbox" name="negotiable" />
-                      <label class="form-check-label">Negotiable</label>
-                    </div>
-                  </div>
-
-                  <!-- Amenities -->
-                  <div class="col-12">
-                    <legend class="h6 text-secondary mb-3">Amenities</legend>
-                    <div class="row row-cols-2 row-cols-md-4 g-2">
-                      <div class="form-check col">
-                        <input class="form-check-input" type="checkbox" name="amenities" value="Lift" />
-                        <label class="form-check-label">Lift</label>
-                      </div>
-                      <div class="form-check col">
-                        <input class="form-check-input" type="checkbox" name="amenities" value="Parking" />
-                        <label class="form-check-label">Parking</label>
-                      </div>
-                      <div class="form-check col">
-                        <input class="form-check-input" type="checkbox" name="amenities" value="Security" />
-                        <label class="form-check-label">Security</label>
-                      </div>
-                      <div class="form-check col">
-                        <input class="form-check-input" type="checkbox" name="amenities" value="Garden" />
-                        <label class="form-check-label">Garden</label>
-                      </div>
-                      <div class="form-check col">
-                        <input class="form-check-input" type="checkbox" name="amenities" value="Gym" />
-                        <label class="form-check-label">Gym</label>
-                      </div>
-                      <div class="form-check col">
-                        <input class="form-check-input" type="checkbox" name="amenities" value="Swimming Pool" />
-                        <label class="form-check-label">Swimming Pool</label>
-                      </div>
-                      <div class="form-check col">
-                        <input class="form-check-input" type="checkbox" name="amenities" value="Power Backup" />
-                        <label class="form-check-label">Power Backup</label>
-                      </div>
-                      <div class="form-check col">
-                        <input class="form-check-input" type="checkbox" name="amenities" value="Clubhouse" />
-                        <label class="form-check-label">Clubhouse</label>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Linked To -->
-                  <div class="col-md-6">
-                    <legend class="h6 text-secondary mb-3">Linked To</legend>
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="linkedTo" value="Owner" required />
-                      <label class="form-check-label">Owner</label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="linkedTo" value="Agent" required />
-                      <label class="form-check-label">Agent</label>
-                    </div>
-                  </div>
-
-                  <!-- Source -->
-                  <div class="col-md-6">
-                    <label class="form-label">Source</label>
-                    <select class="form-select" name="source" required>
-                      <option value="" disabled selected>Select source</option>
-                      <option>Direct Client</option>
-                      <option>Agent Referral</option>
-                    </select>
-                  </div>
-
-                  <!-- Uploads -->
-                  <div class="col-md-6">
-                    <label class="form-label">Upload Images/Videos</label>
-                    <input class="form-control" type="file" name="mediaFiles" accept="image/*,video/*" multiple />
-                    <small class="form-text text-muted">You can upload up to 10 images/videos (max 5MB each).</small>
-                  </div>
-
-                  <div class="col-md-6">
-                    <label class="form-label">Upload Documents (Title Deed, OC, etc.)</label>
-                    <input class="form-control" type="file" name="documents" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" multiple />
-                    <small class="form-text text-muted">Supported formats: PDF, DOC, Images</small>
-                  </div>
-
-                  <!-- Submit -->
-                  <div class="col-12 text-center mt-4">
-                    <button type="submit" class="btn btn-primary btn-sm px-4">Submit Listing</button>
-                  </div>
-
+                <!-- Property Type -->
+                <div class="col-md-4">
+                  <label class="form-label">Property Type</label>
+                  <select class="form-select" name="propertyType" required>
+                    <option value="" disabled selected>Select property type</option>
+                    <option>1 BHK</option>
+                    <option>2 BHK</option>
+                    <option>3 BHK</option>
+                    <option>4 BHK</option>
+                    <option>5 BHK+</option>
+                    <option>Studio Apartment</option>
+                    <option>Apartment</option>
+                    <option>Independent House</option>
+                    <option>Bungalow</option>
+                    <option>Villa</option>
+                    <option>Row House</option>
+                    <option>Duplex</option>
+                    <option>Penthouse</option>
+                    <option>Farmhouse</option>
+                  </select>
                 </div>
-              </form>
-            </div>
+
+                <!-- Transaction Type -->
+                <div class="col-md-4">
+                  <label class="form-label">Transaction Type</label>
+                  <select class="form-select" name="transactionType" required>
+                    <option value="" disabled selected>Select transaction type</option>
+                    <option>Buy</option>
+                    <option>Sell</option>
+                    <option>Rent</option>
+                  </select>
+                </div>
+
+                <!-- Locality -->
+                <div class="col-md-4 position-relative small">
+                  <label class="form-label">Locality (Ward-based Mumbai regions)</label>
+                  <input type="text" class="form-control form-control-sm" name="locality" placeholder="Start typing locality..." autocomplete="off" required />
+                  <ul class="list-group list-group-sm position-absolute w-100" style="z-index: 1050; max-height: 180px; overflow-y: auto; display: none;"></ul>
+                </div>
+
+
+                <!-- Address -->
+                <div class="col-md-6">
+                  <label class="form-label">Address</label>
+                  <input type="text" class="form-control" name="address" placeholder="Enter full address" required />
+                </div>
+
+                <!-- Pincode -->
+                <div class="col-md-3">
+                  <label class="form-label">Pincode</label>
+                  <input type="text" class="form-control" name="pincode" placeholder="Enter pincode" pattern="[0-9]{6}" title="6 digit pincode" required />
+                </div>
+
+                <!-- Landmark -->
+                <div class="col-md-3">
+                  <label class="form-label">Landmark</label>
+                  <input type="text" class="form-control" name="landmark" placeholder="Nearby landmark" />
+                </div>
+
+                <!-- Area -->
+                <div class="col-12">
+                  <legend class="h6 text-secondary mb-3">Area (in sqft)</legend>
+                  <div class="row g-3">
+                    <div class="col-md-4">
+                      <label class="form-label">Carpet Area</label>
+                      <input type="number" min="0" class="form-control" name="areaCarpet" placeholder="e.g., 900" required />
+                    </div>
+                    <div class="col-md-4">
+                      <label class="form-label">Built-up Area</label>
+                      <input type="number" min="0" class="form-control" name="areaBuiltup" placeholder="e.g., 1100" required />
+                    </div>
+                    <div class="col-md-4">
+                      <label class="form-label">Plot Area</label>
+                      <input type="number" min="0" class="form-control" name="areaPlot" placeholder="e.g., 1200" required />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Price and Negotiable -->
+                <div class="col-md-8">
+                  <label class="form-label">Price (INR)</label>
+                  <input type="number" min="0" class="form-control" name="price" placeholder="Enter price" required />
+                </div>
+                <div class="col-md-4 d-flex align-items-center">
+                  <div class="form-check form-switch mt-4">
+                    <input class="form-check-input" type="checkbox" name="negotiable" />
+                    <label class="form-check-label">Negotiable</label>
+                  </div>
+                </div>
+
+                <!-- Amenities -->
+                <div class="col-12">
+                  <legend class="h6 text-secondary mb-3">Amenities</legend>
+                  <div class="row row-cols-2 row-cols-md-4 g-2">
+                    <div class="form-check col">
+                      <input class="form-check-input" type="checkbox" name="amenities" value="Lift" />
+                      <label class="form-check-label">Lift</label>
+                    </div>
+                    <div class="form-check col">
+                      <input class="form-check-input" type="checkbox" name="amenities" value="Parking" />
+                      <label class="form-check-label">Parking</label>
+                    </div>
+                    <div class="form-check col">
+                      <input class="form-check-input" type="checkbox" name="amenities" value="Security" />
+                      <label class="form-check-label">Security</label>
+                    </div>
+                    <div class="form-check col">
+                      <input class="form-check-input" type="checkbox" name="amenities" value="Garden" />
+                      <label class="form-check-label">Garden</label>
+                    </div>
+                    <div class="form-check col">
+                      <input class="form-check-input" type="checkbox" name="amenities" value="Gym" />
+                      <label class="form-check-label">Gym</label>
+                    </div>
+                    <div class="form-check col">
+                      <input class="form-check-input" type="checkbox" name="amenities" value="Swimming Pool" />
+                      <label class="form-check-label">Swimming Pool</label>
+                    </div>
+                    <div class="form-check col">
+                      <input class="form-check-input" type="checkbox" name="amenities" value="Power Backup" />
+                      <label class="form-check-label">Power Backup</label>
+                    </div>
+                    <div class="form-check col">
+                      <input class="form-check-input" type="checkbox" name="amenities" value="Clubhouse" />
+                      <label class="form-check-label">Clubhouse</label>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Linked To -->
+                <div class="col-md-6">
+                  <legend class="h6 text-secondary mb-3">Linked To</legend>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="linkedTo" value="Owner" required />
+                    <label class="form-check-label">Owner</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="linkedTo" value="Agent" required />
+                    <label class="form-check-label">Agent</label>
+                  </div>
+                </div>
+
+                <!-- Source -->
+                <div class="col-md-6">
+                  <label class="form-label">Source</label>
+                  <select class="form-select" name="source" required>
+                    <option value="" disabled selected>Select source</option>
+                    <option>Direct Client</option>
+                    <option>Agent Referral</option>
+                  </select>
+                </div>
+
+                <!-- Uploads -->
+                <div class="col-md-6">
+                  <label class="form-label">Upload Images/Videos</label>
+                  <input class="form-control" type="file" name="mediaFiles" accept="image/*,video/*" multiple />
+                  <small class="form-text text-muted">You can upload up to 10 images/videos (max 5MB each).</small>
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label">Upload Documents (Title Deed, OC, etc.)</label>
+                  <input class="form-control" type="file" name="documents" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" multiple />
+                  <small class="form-text text-muted">Supported formats: PDF, DOC, Images</small>
+                </div>
+
+                <!-- Submit -->
+                <div class="col-12 text-center mt-4">
+                  <button type="submit" class="btn btn-primary btn-sm px-4">Submit Listing</button>
+                </div>
+
+              </div>
+            </form>
+          </div>
 
 
 
-            <?php include '../footer.php'; ?>
-          </h1>
 
         </div>
         <!-- /.container-fluid -->
@@ -557,32 +540,11 @@
     <!-- End of Content Wrapper -->
 
   </div>
-  <!-- End of Page Wrapper -->
 
-  <!-- Scroll to Top Button-->
-  <a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-  </a>
+
 
   <!-- Logout Modal-->
-  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
-          </button>
-        </div>
-        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-        <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="login.html">Logout</a>
-        </div>
-      </div>
-    </div>
-  </div>
+
 
   <!-- Bootstrap core JavaScript-->
   <script src="../vendor/jquery/jquery.min.js"></script>
