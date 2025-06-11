@@ -631,25 +631,16 @@
 
 
         </div>
-
-      </div>
-    </div>
-
-  </div>
-  <!-- End of Page Wrapper -->
-
-  <!-- footer -->
-
-  <footer class="sticky-footer bg-white text-dark py-4 mt-auto">
+              <footer class="sticky-footer bg-white text-dark py-4 mt-auto">
     <hr class="border-top border-dark opacity-25 mb-4" />
 
     <div class="container text-center">
-      <div class="mb-3">
-        <p class="mb-1 fw-semibold">© 2025 Veena Group. All Rights Reserved.</p>
-        <p class="mb-3 small">Empowering Mumbai’s Real Estate Market through Smart Digital Solutions.</p>
-      </div>
+        <div class="mb-3">
+            <p class="mb-1 fw-semibold">© 2025 Veena Group. All Rights Reserved.</p>
+            <p class="mb-3 small">Empowering Mumbai’s Real Estate Market through Smart Digital Solutions.</p>
+        </div>
 
-      <nav class="mb-3 d-flex justify-content-center gap-4 flex-wrap">
+        <nav class="mb-3 d-flex justify-content-center gap-4 flex-wrap">
             <a href="#" class="text-decoration-none text-primary fw-semibold small">Privacy Policy</a>
             <a href="#" class="text-decoration-none text-primary fw-semibold small">Terms of Service</a>
             <a href="#" class="text-decoration-none text-primary fw-semibold small">Contact Us</a>
@@ -662,8 +653,18 @@
           </div>
 
     </div>
-  </footer>
+</footer>
+      <!-- End of Footer -->
+      </div>
+    </div>
+    
 
+  </div>
+  <!-- End of Main Content -->
+   
+  <!-- End of Page Wrapper -->
+
+ 
 
   <!-- Scroll to Top Button-->
   <a class="scroll-to-top rounded" href="#page-top">
