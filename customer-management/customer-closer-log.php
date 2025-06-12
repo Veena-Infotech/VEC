@@ -349,12 +349,12 @@
 
           <div class="container py-3 small">
             <div class="card border-0 ">
-              <div class="card-header border-bottom text-center py-2">
-                <h6 class="mb-0 fw-semibold fs-3"><i class="bi bi-journal-text me-2"></i>Customer Closure Log</h6>
+              <div class="card-header border-bottom text-center py-2 mb-3">
+                <h6 class="mb-0 fw-semibold fs-3 text-primary"><i class="bi bi-journal-text me-2"></i>Customer Closure Log</h6>
               </div>
 
-              <div class="card-body p-3 mt-4">
-                <form id="closureForm" name="closureForm" novalidate>
+              <div class="card-body p-3 mt-3">
+                <form id="closureForm" name="closureForm" validate>
 
                   <!-- Property Details -->
                   <div class="mb-2">
