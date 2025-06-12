@@ -347,209 +347,259 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <div class="container py-5 small">
-            <h1 class="mb-4 text-dark fw-bold text-center small">Manage Customer</h1>
 
-            <!-- Filter Card -->
-            <div class="card shadow-sm mb-4 border-muted bg-white">
-              <div class="card-header bg-light text-dark fw-semibold border-bottom border-muted small">
-                Search & Filter Customers
-              </div>
-              <div class="card-body">
-                <form class="row g-3" id="filterForm">
-                  <div class="col-md-3">
-                    <label for="filterType" class="form-label text-secondary small">Type</label>
-                    <select id="filterType" name="filterType" class="form-select border-muted form-select-sm">
-                      <option value="" selected>All Types</option>
-                      <option value="Buyer">Buyer</option>
-                      <option value="Seller">Seller</option>
-                      <option value="Investor">Investor</option>
-                    </select>
-                  </div>
-                  <div class="col-md-3">
-                    <label for="filterBudget" class="form-label text-secondary small">Budget</label>
-                    <select id="filterBudget" name="filterBudget" class="form-select border-muted form-select-sm">
-                      <option value="" selected>All Budgets</option>
-                      <option value="low">&lt; $100,000</option>
-                      <option value="medium">$100,000 - $500,000</option>
-                      <option value="high">&gt; $500,000</option>
-                    </select>
-                  </div>
-                  <div class="col-md-3">
-                    <label for="filterLocation" class="form-label text-secondary small">Location</label>
-                    <select id="filterLocation" name="filterLocation" class="form-select border-muted form-select-sm">
-                      <option value="" selected>All Locations</option>
-                      <option value="New York">New York</option>
-                      <option value="San Francisco">San Francisco</option>
-                      <option value="Miami">Miami</option>
-                    </select>
-                  </div>
-                  <div class="col-md-3 d-flex align-items-end">
-                    <button type="button" id="btnFilter" class="btn btn-outline-dark w-100 btn-sm">Apply Filters</button>
-                  </div>
-                </form>
+          <div class="container py-5">
+            <h2 class="text-center text-primary mb-4"><i class="bi bi-person-lines-fill me-2"></i>Manage Customers</h2>
+
+            <!-- Filter Controls -->
+            <div class="card mb-4 shadow-sm">
+              <div class="card-body row g-3">
+                <div class="col-md-3">
+                  <input type="text" id="filterType" class="form-control" placeholder="Filter by Type">
+                </div>
+                <div class="col-md-3">
+                  <input type="text" id="filterBudget" class="form-control" placeholder="Filter by Budget">
+                </div>
+                <div class="col-md-3">
+                  <input type="text" id="filterLocation" class="form-control" placeholder="Filter by Location">
+                </div>
+                <div class="col-md-3 d-grid">
+                  <button class="btn btn-primary" onclick="applyFilters()"><i class="bi bi-funnel-fill me-1"></i>Apply Filters</button>
+                </div>
               </div>
             </div>
 
-            <!-- Customer Info Section -->
-            <div id="customerContainer"></div>
+            <!-- Customer Table -->
+            <div class="card shadow-sm border-0">
+              <div class="table-responsive">
+                <table class="table table-hover table-striped text-center align-middle mb-0">
+                  <thead class="table-primary">
+                    <tr>
+                      <th>Name</th>
+                      <th>Type</th>
+                      <th>Budget</th>
+                      <th>Location</th>
+                      <th>Status</th>
+                      <th>Agent</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody id="customerTable">
+                    <!-- Rows will be inserted by JS -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+
+            <!-- Pagination Controls -->
+            <nav class="mt-4">
+              <ul class="pagination justify-content-end" id="pagination">
+                <!-- Dynamic pagination -->
+              </ul>
+            </nav>
           </div>
 
+          <!-- Bootstrap Bundle JS -->
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
           <script>
-            gsap.from("h1", {
-              duration: 1,
-              y: -40,
-              opacity: 0,
-              ease: "power2.out"
-            });
-            gsap.from(".card", {
-              duration: 0.8,
-              opacity: 0,
-              y: 20,
-              stagger: 0.2,
-              delay: 0.3
-            });
-
-            const customerContainer = document.getElementById("customerContainer");
-
-            // Sample customer data
             const customers = [{
-                name: "John Doe",
+                name: "Riya Sharma",
                 type: "Buyer",
-                budget: "medium",
-                location: "New York",
+                budget: "50L",
+                location: "Andheri",
                 status: "Looking",
-                agent: "Agent A"
+                agent: "Aman"
               },
               {
-                name: "Jane Smith",
-                type: "Seller",
-                budget: "high",
-                location: "San Francisco",
-                status: "On Hold",
-                agent: "Agent B"
-              },
-              {
-                name: "Ali Khan",
+                name: "Kunal Desai",
                 type: "Investor",
-                budget: "low",
-                location: "Miami",
+                budget: "1Cr",
+                location: "Borivali",
+                status: "On Hold",
+                agent: "Nikita"
+              },
+              {
+                name: "Meera Patel",
+                type: "Buyer",
+                budget: "75L",
+                location: "Thane",
                 status: "Closed Deal",
-                agent: "Agent C"
+                agent: "Sahil"
+              },
+              {
+                name: "Rajiv Menon",
+                type: "Tenant",
+                budget: "30K",
+                location: "Goregaon",
+                status: "Looking",
+                agent: "Aman"
+              },
+              {
+                name: "Nisha Rao",
+                type: "Buyer",
+                budget: "90L",
+                location: "Malad",
+                status: "On Hold",
+                agent: "Ritika"
+              },
+              {
+                name: "Arjun Kapoor",
+                type: "Investor",
+                budget: "2Cr",
+                location: "Bandra",
+                status: "Looking",
+                agent: "Kiran"
+              },
+              {
+                name: "Sneha Iyer",
+                type: "Buyer",
+                budget: "65L",
+                location: "Vashi",
+                status: "Closed Deal",
+                agent: "Nikita"
+              },
+              {
+                name: "Devansh Sinha",
+                type: "Tenant",
+                budget: "35K",
+                location: "Powai",
+                status: "Looking",
+                agent: "Sahil"
+              },
+              {
+                name: "Simran Mehta",
+                type: "Buyer",
+                budget: "55L",
+                location: "Kandivali",
+                status: "On Hold",
+                agent: "Ritika"
+              },
+              {
+                name: "Aditya Roy",
+                type: "Investor",
+                budget: "1.5Cr",
+                location: "Juhu",
+                status: "Closed Deal",
+                agent: "Kiran"
               }
             ];
 
-            function renderCustomers(filteredCustomers) {
-              customerContainer.innerHTML = "";
+            let filteredData = [...customers];
+            let currentPage = 1;
+            const rowsPerPage = 5;
 
-              if (filteredCustomers.length === 0) {
-                customerContainer.innerHTML = `<div class="alert alert-warning">No matching customers found.</div>`;
-                return;
-              }
+            function getBadge(status) {
+              const badgeClass = {
+                "Looking": "info",
+                "On Hold": "warning",
+                "Closed Deal": "success"
+              } [status] || "secondary";
+              return `<span class="badge bg-${badgeClass}">${status}</span>`;
+            }
 
-              filteredCustomers.forEach((customer, index) => {
-                const card = document.createElement("div");
-                card.className = "card shadow-sm mb-4 border-muted bg-white";
+            // Call this after renderTable finishes inserting the HTML
+            document.querySelectorAll('.dropdown-toggle').forEach(dropdownToggleEl => {
+              new bootstrap.Dropdown(dropdownToggleEl);
+            });
 
-                const noteInputId = `noteInput-${index}`;
-                const notesListId = `notesList-${index}`;
-                const addNoteBtnId = `addNoteBtn-${index}`;
+            function renderTable(data) {
+              const start = (currentPage - 1) * rowsPerPage;
+              const end = start + rowsPerPage;
+              const pageData = data.slice(start, end);
+              const tbody = document.getElementById("customerTable");
 
-                card.innerHTML = `
-      <div class="card-header d-flex justify-content-between align-items-center bg-light text-dark fw-semibold border-bottom border-muted">
-        <span>Customer: <strong>${customer.name}</strong></span>
-        <select class="form-select form-select-sm w-auto border-muted">
-          <option${customer.status === "Looking" ? " selected" : ""}>Looking</option>
-          <option${customer.status === "On Hold" ? " selected" : ""}>On Hold</option>
-          <option${customer.status === "Closed Deal" ? " selected" : ""}>Closed Deal</option>
-        </select>
-      </div>
-      <div class="card-body">
-        <p class="mb-2 text-secondary">Type: ${customer.type}</p>
-        <p class="mb-2 text-secondary">Budget: ${customer.budget}</p>
-        <p class="mb-2 text-secondary">Location: ${customer.location}</p>
+              tbody.innerHTML = pageData.length ?
+                pageData.map(c => `
+        <tr>
+          <td>${c.name}</td>
+          <td>${c.type}</td>
+          <td>${c.budget}</td>
+          <td>${c.location}</td>
+          <td>${c.status}</td>
+          <td>${c.agent}</td>
+          <td class="text-nowrap">
+            <div class="dropdown">
+              <button class="btn btn-sm btn-outline-dark dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                <i class="bi bi-three-dots-vertical"></i>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="#" onclick="alert('Status updated for ${c.name}')"><i class="bi bi-pencil-square me-2"></i>Update Status</a></li>
+                <li><a class="dropdown-item" href="#" onclick="alert('Matched properties for ${c.name}')"><i class="bi bi-house-door me-2"></i>Match Properties</a></li>
+                <li><a class="dropdown-item" href="#" onclick="alert('Note added for ${c.name} at ' + new Date().toLocaleTimeString())"><i class="bi bi-journal-text me-2"></i>Add Note</a></li>
+                <li><a class="dropdown-item" href="#" onclick="alert('Assigned agent for ${c.name}')"><i class="bi bi-person-check me-2"></i>Assign Agent</a></li>
+              </ul>
+            </div>
+          </td>
+        </tr>`).join("") :
+                `<tr><td colspan="7" class="text-muted">No records match your filters.</td></tr>`;
 
-        <div class="d-flex align-items-center gap-2 mb-3">
-          <label class="text-secondary mb-0">Assigned Agent:</label>
-          <select class="form-select form-select-sm border-muted" style="width: 200px;">
-            <option ${customer.agent === "Agent A" ? "selected" : ""}>Agent A</option>
-            <option ${customer.agent === "Agent B" ? "selected" : ""}>Agent B</option>
-            <option ${customer.agent === "Agent C" ? "selected" : ""}>Agent C</option>
-          </select>
-        </div>
-
-        <h6 class="text-secondary">Follow-up Notes</h6>
-        <div id="${notesListId}" class="bg-light border border-muted rounded p-3 mb-3" style="max-height: 180px; overflow-y: auto;"></div>
-
-        <div class="input-group">
-          <input type="text" id="${noteInputId}" class="form-control border-muted" placeholder="Add a follow-up note..." />
-          <button id="${addNoteBtnId}" class="btn btn-outline-dark" type="button">Add Note</button>
-        </div>
-      </div>
-    `;
-
-                customerContainer.appendChild(card);
-
-                // Set up note functionality per customer card
-                const noteInput = card.querySelector(`#${noteInputId}`);
-                const notesList = card.querySelector(`#${notesListId}`);
-                const addNoteBtn = card.querySelector(`#${addNoteBtnId}`);
-
-                const addNote = () => {
-                  const text = noteInput.value.trim();
-                  if (!text) return;
-
-                  const timestamp = new Date().toLocaleString();
-                  const noteItem = document.createElement("div");
-                  noteItem.className = "border border-muted rounded bg-white p-2 mb-2";
-                  noteItem.innerHTML = `
-        <div class="d-flex justify-content-between">
-          <div class="text-secondary">${text}</div>
-          <small class="text-muted">${timestamp}</small>
-        </div>
-      `;
-                  notesList.prepend(noteItem);
-                  noteInput.value = "";
-
-                  gsap.from(noteItem, {
-                    duration: 0.5,
-                    opacity: 0,
-                    y: 20
-                  });
-                };
-
-                addNoteBtn.addEventListener("click", addNote);
-                noteInput.addEventListener("keypress", e => {
-                  if (e.key === "Enter") addNote();
-                });
-
-                gsap.from(card, {
-                  duration: 0.4,
-                  opacity: 0,
-                  y: 20
-                });
+              // ✅ Initialize dropdowns after DOM is updated
+              document.querySelectorAll('.dropdown-toggle').forEach(el => {
+                new bootstrap.Dropdown(el);
               });
             }
 
 
-            document.getElementById("btnFilter").addEventListener("click", () => {
-              const type = document.getElementById("filterType").value;
-              const budget = document.getElementById("filterBudget").value;
-              const location = document.getElementById("filterLocation").value;
 
-              const filtered = customers.filter(c =>
-                (type === "" || c.type === type) &&
-                (budget === "" || c.budget === budget) &&
-                (location === "" || c.location === location)
+            function renderPagination(data) {
+              const totalPages = Math.ceil(data.length / rowsPerPage);
+              const pagination = document.getElementById("pagination");
+              pagination.innerHTML = "";
+
+              // Previous
+              pagination.innerHTML += `
+        <li class="page-item ${currentPage === 1 ? 'disabled' : ''}">
+          <button class="page-link" onclick="changePage(${currentPage - 1})">Previous</button>
+        </li>`;
+
+              // Page numbers
+              for (let i = 1; i <= totalPages; i++) {
+                pagination.innerHTML += `
+          <li class="page-item ${i === currentPage ? 'active' : ''}">
+            <button class="page-link" onclick="changePage(${i})">${i}</button>
+          </li>`;
+              }
+
+              // Next
+              pagination.innerHTML += `
+        <li class="page-item ${currentPage === totalPages ? 'disabled' : ''}">
+          <button class="page-link" onclick="changePage(${currentPage + 1})">Next</button>
+        </li>`;
+            }
+
+            function changePage(page) {
+              const totalPages = Math.ceil(filteredData.length / rowsPerPage);
+              if (page < 1 || page > totalPages) return;
+              currentPage = page;
+              renderTable(filteredData);
+              renderPagination(filteredData);
+            }
+
+            function applyFilters() {
+              const type = document.getElementById("filterType").value.toLowerCase();
+              const budget = document.getElementById("filterBudget").value.toLowerCase();
+              const location = document.getElementById("filterLocation").value.toLowerCase();
+
+              filteredData = customers.filter(c =>
+                c.type.toLowerCase().includes(type) &&
+                c.budget.toLowerCase().includes(budget) &&
+                c.location.toLowerCase().includes(location)
               );
 
-              renderCustomers(filtered);
-            });
+              currentPage = 1;
+              renderTable(filteredData);
+              renderPagination(filteredData);
+            }
 
             // Initial render
-            renderCustomers(customers);
+            renderTable(filteredData);
+            renderPagination(filteredData);
           </script>
+
+
+
 
           <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
