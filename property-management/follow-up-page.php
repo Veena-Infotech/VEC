@@ -171,160 +171,162 @@
 
           <!-- Page Heading -->
           <h1 class="h3 mb-4 text-gray-800"> </h1>
-          <div class="container py-4 text-center">
-            <h2 class="fs-5 fw-semibold mb-1 text-primary">
-              <i class="bi bi-journal-check me-2"></i> Follow Up Management
-            </h2>
-            <p class="fs-4 text-muted mb-0">
-              <i class="bi bi-clipboard-data me-2"></i> Manage Follow Ups for Property
-            </p>
-          </div>
-          <section class="mb-5 rounded position-relative overflow-visible">
-            <div class="table-responsive mt-4">
-              <table class="table table-hover table-sm align-middle text-center small" id="buyersTable">
-                <thead class=" border-bottom border-primary small">
-                  <tr>
-                    <th scope="col">Property ID</th>
-                    <th scope="col">Title</th>
-                    <th scope="col">Location</th>
-                    <th scope="col">Owner</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">Actions</th>
-                  </tr>
-                </thead>
-                <tbody class="list">
-                  <tr>
-                    <td class="profile-id text-black">PROP1001</td>
-                    <td class="title text-black">Oceanfront Condo</td>
-                    <td class="location text-black">Miami</td>
-                    <td class="owner text-sm text-black">John Smith</td>
-                    <td>
-                      <select class="form-select form-select-sm border-black text-black">
-                        <option>Interested</option>
-                        <option>Visited</option>
-                        <option>Negotiating</option>
-                        <option>Finalized</option>
-                      </select>
-                    </td>
-                    <td>
-                      <div class="dropdown">
-                        <button class="btn btn-sm btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                          <i class="bi bi-three-dots"></i>
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu-end small" style="max-height: 300px;">
-                          <li>
-                            <a class="dropdown-item text-black" href="http://localhost/VEC/property-management/edit-property.php?id=PROP1001">
-                              <i class="bi bi-pencil-square me-2"></i> Edit
-                            </a>
-                          </li>
-                          <li>
-                            <a class="dropdown-item text-black" href="#!" onclick="viewClosureSummary('PROP1001')">
-                              <i class="bi bi-eye me-2"></i> View
-                            </a>
-                          </li>
-                          <li>
-                            <a class="dropdown-item text-black" href="#!" onclick="scheduleSiteVisit('PROP1001')">
-                              <i class="bi bi-calendar-event me-2"></i> Schedule Site Visit
-                            </a>
-                          </li>
-                          <li>
-                            <a class="dropdown-item text-black" href="#!" data-bs-toggle="modal" data-bs-target="#notesModal" onclick="openNotes('PROP1001')">
-                              <i class="bi bi-chat-dots me-2"></i> Add Note
-                            </a>
-                          </li>
-                          <li>
-                            <hr class="dropdown-divider" />
-                          </li>
-                          <li>
-                            <a class="dropdown-item text-danger" href="#!" onclick="confirmDelete('PROP1001')">
-                              <i class="bi bi-trash3 me-2"></i> Delete
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </section>
+    <div class="container py-4">
+    <div class="text-center mb-4">
+      <h2 class="fw-bold text-primary"><i class="bi bi-clipboard-check me-2"></i>Property Follow-Up</h2>
+      <p class="text-muted">Track client interactions, statuses, and follow-ups</p>
+    </div>
+
+    <!-- Search -->
+    <div class="row g-2 mb-3">
+  <div class="col-md-8">
+    <input type="text" id="searchInput" name="searchInput"  class="form-control form-control-sm" placeholder="Search by Client Name or Notes">
+  </div>
+  <div class="col-md-4">
+    <select id="statusFilter" name="statusFilter" class="form-select form-select-sm">
+      <option value="">Filter by Status</option>
+      <option value="Interested">Interested</option>
+      <option value="Visited">Visited</option>
+      <option value="Negotiating">Negotiating</option>
+      <option value="Finalized">Finalized</option>
+    </select>
+  </div>
+</div>
 
 
+    <!-- Table -->
+    <div class="table-responsive">
+      <table class="table table-bordered table-hover table-sm bg-white">
+        <thead class="table-primary text-center">
+          <tr>
+            <th>Client Name</th>
+            <th>Contact</th>
+            <th>Status</th>
+            <th>Follow-Up Date</th>
+            <th>Notes</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+    </div>
 
-          <!-- Bootstrap Bundle JS -->
-          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Pagination -->
+    <div class="d-flex flex-column align-items-center mt-3">
+      <ul class="pagination pagination-sm mb-2" id="pagination"></ul>
+      <div>
+        <button class="btn btn-outline-primary btn-sm me-1" id="prevPage">
+          <i class="bi bi-chevron-left"></i> Previous
+        </button>
+        <button class="btn btn-outline-primary btn-sm" id="nextPage">
+          Next <i class="bi bi-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
 
-          <!-- GSAP Animations -->
-          <script>
-            gsap.from("header", {
-              duration: 1,
-              y: -100,
-              opacity: 0,
-              ease: "bounce",
-            });
+  <!-- JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script>
+    const data = [
+      { name: "Aman Gupta", contact: "9876543210", status: "Interested", followUp: "2025-06-10", notes: "Shared Bandra details." },
+      { name: "Neha Sharma", contact: "9876523450", status: "Visited", followUp: "2025-06-09", notes: "Visited Andheri site." },
+      { name: "Ravi Mehta", contact: "9765432109", status: "Negotiating", followUp: "2025-06-08", notes: "Wants lower price." },
+      { name: "Priya Nair", contact: "9876509876", status: "Finalized", followUp: "2025-06-07", notes: "Deal signed." },
+      { name: "Suresh Kumar", contact: "9898989898", status: "Interested", followUp: "2025-06-06", notes: "Interested in 2 BHK." },
+      { name: "Anjali Verma", contact: "9812345678", status: "Visited", followUp: "2025-06-05", notes: "Site review done." },
+      { name: "Karan Singh", contact: "9823456789", status: "Negotiating", followUp: "2025-06-04", notes: "Wants EMI options." },
+      { name: "Fatima Ali", contact: "9834567890", status: "Finalized", followUp: "2025-06-03", notes: "Final docs pending." },
+      { name: "Rajeev Saini", contact: "9845678901", status: "Interested", followUp: "2025-06-02", notes: "Asked for brochure." },
+      { name: "Meera Joshi", contact: "9856789012", status: "Visited", followUp: "2025-06-01", notes: "Liked flat plan." }
+    ];
 
-            gsap.from("section", {
-              duration: 1,
-              y: 50,
-              opacity: 0,
-              stagger: 0.3,
-              ease: "power1.out",
-            });
-          </script>
+    let currentPage = 1;
+    const rowsPerPage = 5;
 
-          <!-- Interactions & Search Script -->
-          <script>
-            function openNotes(propertyId) {
-              document.getElementById("noteText").value = "";
-              document.getElementById("notesList").innerHTML =
-                `<li class="list-group-item">No previous notes for ${propertyId}</li>`;
-            }
+    function getFilteredData() {
+      const query = document.getElementById("searchInput").value.toLowerCase();
+      return data.filter(entry =>
+        entry.name.toLowerCase().includes(query) || entry.notes.toLowerCase().includes(query)
+      );
+    }
 
-            document.getElementById("noteForm").addEventListener("submit", function(e) {
-              e.preventDefault();
-              const note = document.getElementById("noteText").value.trim();
-              if (note) {
-                const li = document.createElement("li");
-                li.className = "list-group-item";
-                li.textContent = note;
-                document.getElementById("notesList").appendChild(li);
-                document.getElementById("noteText").value = "";
-              }
-            });
+    function renderTable() {
+      const filtered = getFilteredData();
+      const start = (currentPage - 1) * rowsPerPage;
+      const end = start + rowsPerPage;
+      const sliced = filtered.slice(start, end);
 
-            function scheduleSiteVisit(propertyId) {
-              alert(`Site visit scheduled for ${propertyId} (This is a placeholder action)`);
-            }
+      const tbody = document.getElementById("tableBody");
+      tbody.innerHTML = "";
 
-            function confirmDelete(propertyId) {
-              if (confirm(`Are you sure you want to delete property ${propertyId}?`)) {
-                alert(`Deleted ${propertyId} (This is a placeholder action)`);
-              }
-            }
+      sliced.forEach((row, i) => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td>${row.name}</td>
+          <td>${row.contact}</td>
+          <td>${row.status}</td>
+          <td>${row.followUp}</td>
+          <td>${row.notes}</td>
+          <td class="text-center">
+            <button class="btn btn-sm btn-outline-success me-1" title="Schedule Site Visit">
+              <i class="bi bi-calendar-event"></i>
+            </button>
+            <button class="btn btn-sm btn-outline-primary" title="View Notes">
+              <i class="bi bi-chat-dots"></i>
+            </button>
+          </td>
+        `;
+        tbody.appendChild(tr);
+        gsap.from(tr, { opacity: 0, y: 20, duration: 0.4, delay: i * 0.05 });
+      });
 
-            function viewClosureSummary(propertyId) {
-              alert(`Viewing closure summary for ${propertyId} (This is a placeholder action)`);
-            }
+      renderPagination(filtered.length);
+    }
 
-            document.getElementById('searchInput').addEventListener('keyup', function() {
-              const filter = this.value.toLowerCase();
-              const rows = document.querySelectorAll('#buyersTable tbody tr');
+    function renderPagination(total) {
+      const totalPages = Math.ceil(total / rowsPerPage);
+      const pagination = document.getElementById("pagination");
+      pagination.innerHTML = "";
 
-              rows.forEach(row => {
-                const propertyId = row.querySelector('.profile-id')?.textContent.toLowerCase() || '';
-                const title = row.querySelector('.title')?.textContent.toLowerCase() || '';
-                const location = row.querySelector('.location')?.textContent.toLowerCase() || '';
-                const owner = row.querySelector('.owner')?.textContent.toLowerCase() || '';
+      for (let i = 1; i <= totalPages; i++) {
+        const li = document.createElement("li");
+        li.className = `page-item ${i === currentPage ? "active" : ""}`;
+        li.innerHTML = `<button class="page-link">${i}</button>`;
+        li.querySelector("button").addEventListener("click", () => {
+          currentPage = i;
+          renderTable();
+        });
+        pagination.appendChild(li);
+      }
 
-                row.style.display = (
-                  propertyId.includes(filter) ||
-                  title.includes(filter) ||
-                  location.includes(filter) ||
-                  owner.includes(filter)
-                ) ? '' : 'none';
-              });
-            });
-          </script>
+      document.getElementById("prevPage").disabled = currentPage === 1;
+      document.getElementById("nextPage").disabled = currentPage === totalPages || totalPages === 0;
+    }
+
+    document.getElementById("prevPage").addEventListener("click", () => {
+      if (currentPage > 1) {
+        currentPage--;
+        renderTable();
+      }
+    });
+
+    document.getElementById("nextPage").addEventListener("click", () => {
+      const totalPages = Math.ceil(getFilteredData().length / rowsPerPage);
+      if (currentPage < totalPages) {
+        currentPage++;
+        renderTable();
+      }
+    });
+
+    document.getElementById("searchInput").addEventListener("input", () => {
+      currentPage = 1;
+      renderTable();
+    });
+
+    renderTable();
+  </script>
         </div>
       </div>
 

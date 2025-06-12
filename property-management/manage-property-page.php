@@ -351,9 +351,11 @@
           <h3 class="h3 mb-4 text-gray-800"> </h3>
           <div class="container py-3 small">
             <div class="text-center me-4 mt-2 mb-4">
-              <i class="bi bi-house-gear-fill text-primary fs-4 d-block mb-2"></i>
-              <h5 class="fw-semibold fs-4 mb-1">Property Management</h5>
-              <p class="text-muted small mb-0">Manage, filter, and act on property listings</p>
+              <div class="d-flex justify-content-center align-items-center gap-2">
+                <i class="bi bi-house-gear-fill text-primary fs-4"></i>
+                <h5 class="fw-semibold fs- mb-0 text-primary">Property Management</h5>
+              </div>
+              <p class="text-muted small mb-0 mt-2">Manage, filter, and act on property listings</p>
             </div>
 
 
@@ -406,36 +408,19 @@
                     <th class="text-center">Actions</th>
                   </tr>
                 </thead>
-                <tbody class="bg-white">
-                  <tr>
-                    <td>PROP001</td>
-                    <td>Sea View Villa</td>
-                    <td>Goa</td>
-                    <td>Jane Smith</td>
-                    <td><span class="badge bg-success">Available</span></td>
-                    <td>Team A</td>
-                    <td class="text-center">
-                      <div class="btn-group btn-group-sm">
-                        <a href="edit-property.php" class="btn btn-outline-secondary" title="Edit">
-                          <i class="bi bi-pencil-square"></i>
-                        </a>
-                        <button class="btn btn-outline-info" onclick="openPreviewModal()" title="Preview">
-                          <i class="bi bi-images"></i>
-                        </button>
-                        <button class="btn btn-outline-warning dropdown-toggle" data-bs-toggle="dropdown" title="More Actions"></button>
-                        <ul class="dropdown-menu dropdown-menu-end">
-                          <li><a class="dropdown-item" href="#" onclick="assignAgent('PROP001')"><i class="bi bi-person-plus"></i> Assign Agent</a></li>
-                          <li><a class="dropdown-item" href="#" onclick="showToast('Marked as Sold')"><i class="bi bi-check-circle"></i> Mark as Sold</a></li>
-                          <li><a class="dropdown-item" href="#" onclick="showToast('Marked as Rented')"><i class="bi bi-house-door"></i> Mark as Rented</a></li>
-                          <li><a class="dropdown-item text-danger" href="#" onclick="showToast('Archived')"><i class="bi bi-archive"></i> Archive</a></li>
-                        </ul>
-                      </div>
-                    </td>
-                  </tr>
-                  <!-- Add more rows similarly -->
+                <tbody class="bg-white" id="propertyTableBody">
+                  <!-- Rows will be injected via JS -->
                 </tbody>
               </table>
             </div>
+
+            <nav class="d-flex justify-content-end mt-3">
+              <ul class="pagination pagination-sm mb-0" id="paginationContainer">
+                <!-- Pagination buttons will be injected via JS -->
+              </ul>
+            </nav>
+
+
           </div>
 
 
@@ -443,6 +428,151 @@
 
           <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
           <script>
+            const properties = [{
+                id: "PROP001",
+                title: "Sea View Villa",
+                location: "Goa",
+                owner: "Jane Smith",
+                status: "Available",
+                statusClass: "bg-success",
+                agent: "Team A"
+              },
+              {
+                id: "PROP002",
+                title: "City Center Apartment",
+                location: "Mumbai",
+                owner: "Rahul Mehta",
+                status: "Pending",
+                statusClass: "bg-warning text-dark",
+                agent: "Team B"
+              },
+              {
+                id: "PROP003",
+                title: "Lakefront Bungalow",
+                location: "Udaipur",
+                owner: "Anita Rao",
+                status: "Available",
+                statusClass: "bg-success",
+                agent: "Team C"
+              },
+              {
+                id: "PROP004",
+                title: "Mountain View Retreat",
+                location: "Manali",
+                owner: "Sunil Kapoor",
+                status: "Sold",
+                statusClass: "bg-danger",
+                agent: "Team A"
+              },
+              {
+                id: "PROP005",
+                title: "Luxury Penthouse",
+                location: "Bangalore",
+                owner: "Meena Iyer",
+                status: "Available",
+                statusClass: "bg-success",
+                agent: "Team D"
+              },
+              {
+                id: "PROP006",
+                title: "Business Park Office",
+                location: "Chennai",
+                owner: "Arjun Das",
+                status: "Pending",
+                statusClass: "bg-warning text-dark",
+                agent: "Team B"
+              },
+              {
+                id: "PROP007",
+                title: "Heritage Haveli",
+                location: "Jaipur",
+                owner: "Fatima Khan",
+                status: "Sold",
+                statusClass: "bg-danger",
+                agent: "Team E"
+              }
+            ];
+
+            const rowsPerPage = 5;
+            let currentPage = 1;
+
+            function renderTable() {
+              const start = (currentPage - 1) * rowsPerPage;
+              const end = start + rowsPerPage;
+              const paginatedData = properties.slice(start, end);
+
+              const tbody = document.getElementById("propertyTableBody");
+              tbody.innerHTML = "";
+
+              paginatedData.forEach((item) => {
+                const row = document.createElement("tr");
+
+                row.innerHTML = `
+        <td>${item.id}</td>
+        <td>${item.title}</td>
+        <td>${item.location}</td>
+        <td>${item.owner}</td>
+        <td><span class="badge ${item.statusClass}">${item.status}</span></td>
+        <td>${item.agent}</td>
+        <td class="text-center">
+          <div class="btn-group btn-group-sm">
+            <a href="edit-property.php" class="btn btn-outline-secondary" title="Edit">
+              <i class="bi bi-pencil-square"></i>
+            </a>
+            <button class="btn btn-outline-info" onclick="openPreviewModal()" title="Preview">
+              <i class="bi bi-images"></i>
+            </button>
+            <button class="btn btn-outline-warning dropdown-toggle" data-bs-toggle="dropdown" title="More Actions"></button>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" href="#"><i class="bi bi-person-plus"></i> Assign Agent</a></li>
+              <li><a class="dropdown-item" href="#"><i class="bi bi-check-circle"></i> Mark as Sold</a></li>
+              <li><a class="dropdown-item" href="#"><i class="bi bi-house-door"></i> Mark as Rented</a></li>
+              <li><a class="dropdown-item text-danger" href="#"><i class="bi bi-archive"></i> Archive</a></li>
+            </ul>
+          </div>
+        </td>
+      `;
+                tbody.appendChild(row);
+              });
+            }
+
+            function renderPagination() {
+              const totalPages = Math.ceil(properties.length / rowsPerPage);
+              const container = document.getElementById("paginationContainer");
+              container.innerHTML = "";
+
+              const createButton = (label, page, disabled = false, active = false) => {
+                const li = document.createElement("li");
+                li.className = `page-item ${disabled ? "disabled" : ""} ${active ? "active" : ""}`;
+                const btn = document.createElement("button");
+                btn.className = "page-link";
+                btn.textContent = label;
+                btn.onclick = () => {
+                  currentPage = page;
+                  renderTable();
+                  renderPagination();
+                };
+                li.appendChild(btn);
+                return li;
+              };
+
+              // Previous
+              container.appendChild(createButton("Previous", currentPage - 1, currentPage === 1));
+
+              // Page numbers
+              for (let i = 1; i <= totalPages; i++) {
+                container.appendChild(createButton(i, i, false, i === currentPage));
+              }
+
+              // Next
+              container.appendChild(createButton("Next", currentPage + 1, currentPage === totalPages));
+            }
+
+            document.addEventListener("DOMContentLoaded", () => {
+              renderTable();
+              renderPagination();
+            });
+
             function showToast(message) {
               document.getElementById("toastMessage").innerText = message;
               new bootstrap.Toast(document.getElementById("confirmationToast")).show();
@@ -484,6 +614,42 @@
                   row.style.display = matchLoc && matchOwner && matchStatus ? "" : "none";
                 });
               });
+            });
+
+            document.addEventListener("DOMContentLoaded", function() {
+              const table = document.getElementById("propertyTable");
+              const tbody = table.querySelector("tbody");
+              const allRows = Array.from(tbody.querySelectorAll("tr")); // store original rows
+
+              const filterLocation = document.getElementById("filterLocation");
+              const filterOwner = document.getElementById("filterOwner");
+              const filterStatus = document.getElementById("filterStatus");
+              const applyBtn = document.getElementById("applyFilters");
+
+              function applyFilters() {
+                const locationVal = filterLocation.value.trim().toLowerCase();
+                const ownerVal = filterOwner.value.trim().toLowerCase();
+                const statusVal = filterStatus.value.trim().toLowerCase();
+
+                tbody.innerHTML = ""; // Clear the table
+
+                allRows.forEach(row => {
+                  const location = row.cells[2].textContent.toLowerCase();
+                  const owner = row.cells[3].textContent.toLowerCase();
+                  const status = row.cells[4].textContent.toLowerCase();
+
+                  const locationMatch = location.includes(locationVal);
+                  const ownerMatch = owner.includes(ownerVal);
+                  const statusMatch = statusVal === "" || status.includes(statusVal);
+
+                  if (locationMatch && ownerMatch && statusMatch) {
+                    tbody.appendChild(row); // Show matching rows
+                  }
+                });
+              }
+
+              // Only filter when the button is clicked
+              applyBtn.addEventListener("click", applyFilters);
             });
           </script>
 

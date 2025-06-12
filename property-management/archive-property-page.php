@@ -348,158 +348,409 @@
 
           <!-- Page Heading -->
           <h3 class="h3 mb-4 text-gray-800"> </h3>
+          <div class="container py-5">
+            <h2 class="text-primary fw-bold text-center mb-2">
+              <i class="bi bi-archive-fill me-2"></i>Archived Properties
+            </h2>
 
-          <div class="container py-5 small">
-            <div class="text-center mb-5">
-              <h2 class="fw-bold"><i class="bi bi-archive-fill text-primary me-2"></i>Archived Properties</h2>
-              <p class="text-muted">Review and manage previously archived listings.</p>
-            </div>
+            <p class="text-muted text-center mb-4">Review and manage archived listings</p>
 
-            <!-- Search Input -->
+            <!-- Search -->
             <div class="row justify-content-center mb-4">
               <div class="col-md-6">
-                <div class="input-group shadow-sm input-group-sm">
-                  <span class="input-group-text bg-primary text-white"><i class="bi bi-search"></i></span>
-                  <input type="text" id="propertySearch" class="form-control form-control-sm" placeholder="Search archived properties...">
-                </div>
+                <input type="text" id="searchInput" class="form-control" placeholder="Search by property, location, agent...">
               </div>
             </div>
 
-            <!-- Table Card -->
-            <div class="card shadow-sm border-0 mt-4">
-              <div class="card-body p-0">
-                <div class="table-responsive">
-                  <table class="table table-hover table-sm align-middle mb-0 text-center small"> <!-- .small moved here -->
-                    <thead class="table-light">
-                      <tr>
-                        <th><i class="bi bi-hash me-1"></i>Property ID</th>
-                        <th><i class="bi bi-house-door me-1"></i>Title</th>
-                        <th><i class="bi bi-geo-alt me-1"></i>Location</th>
-                        <th><i class="bi bi-person me-1"></i>Owner</th>
-                        <th><i class="bi bi-info-circle me-1"></i>Status</th>
-                        <th><i class="bi bi-gear me-1"></i>Action</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>PROP1001</td>
-                        <td>Oceanfront Ward</td>
-                        <td>Miami</td>
-                        <td>John Smith</td>
-                        <td><span class="badge bg-warning-subtle text-warning">Pending</span></td>
-                        <td>
-                          <div class="dropdown">
-                            <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                              <i class="bi bi-three-dots"></i>
-                            </button>
-                            <ul class="dropdown-menu dropdown-menu-end small"> <!-- small class here too -->
-                              <li><a class="dropdown-item" href="#!" onclick="viewClosureSummary('PROP1001')"><i class="bi bi-eye me-2"></i>View</a></li>
-                              <li><a class="dropdown-item" href="#!" onclick="confirmRestore('PROP1001')"><i class="bi bi-box-arrow-up-right me-2"></i>Restore</a></li>
-                              <li>
-                                <hr class="dropdown-divider">
-                              </li>
-                              <li><a class="dropdown-item text-danger" href="#!" onclick="confirmDelete('PROP1001')"><i class="bi bi-trash3 me-2"></i>Delete</a></li>
-                            </ul>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>PROP1002</td>
-                        <td>Mountain Cabin</td>
-                        <td>Denver</td>
-                        <td>Jane Doe</td>
-                        <td><span class="badge bg-success-subtle text-success">Finalized</span></td>
-                        <td>
-                          <div class="dropdown">
-                            <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                              <i class="bi bi-three-dots"></i>
-                            </button>
-                            <ul class="dropdown-menu dropdown-menu-end small"> <!-- small class here too -->
-                              <li><a class="dropdown-item" href="#!" onclick="viewClosureSummary('PROP1002')"><i class="bi bi-eye me-2"></i>View</a></li>
-                              <li><a class="dropdown-item" href="#!" onclick="confirmRestore('PROP1002')"><i class="bi bi-box-arrow-up-right me-2"></i>Restore</a></li>
-                              <li>
-                                <hr class="dropdown-divider">
-                              </li>
-                              <li><a class="dropdown-item text-danger" href="#!" onclick="confirmDelete('PROP1002')"><i class="bi bi-trash3 me-2"></i>Delete</a></li>
-                            </ul>
-                          </div>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
+            <!-- Table -->
+            <div class="table-responsive">
+              <table class="table table-bordered table-hover text-center align-middle" id="propertyTable">
+                <thead class="table-primary">
+                  <tr>
+                    <th><i class="bi bi-house-door-fill me-1"></i>Property</th>
+                    <th><i class="bi bi-geo-alt-fill me-1"></i>Location</th>
+                    <th><i class="bi bi-person-fill me-1"></i>Sold To</th>
+                    <th><i class="bi bi-person-badge-fill me-1"></i>Agent</th>
+                    <th><i class="bi bi-cash-coin me-1"></i>Amount</th>
+                    <th><i class="bi bi-three-dots-vertical me-1"></i>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="tableBody">
+                  <!-- JS Injects Rows Here -->
+                </tbody>
+              </table>
             </div>
 
 
+           <nav class="mt-4">
+  <ul class="pagination justify-content-center" id="pagination">
+    <!-- JS will populate here -->
+  </ul>
+</nav>
 
-           
 
-            <!-- Bootstrap JS Bundle -->
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+          <!-- Bootstrap JS -->
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-            <script>
-              let selectedPropertyId = '';
-
-              function showToast(message) {
-                document.getElementById("toastMessage").innerText = message;
-                const toast = new bootstrap.Toast(document.getElementById("actionToast"));
-                toast.show();
+          <script>
+            const archivedProperties = [{
+                property: "Sea View Apartment",
+                location: "Bandra",
+                soldTo: "Mr. Mehta",
+                agent: "Anjali",
+                amount: "2.5Cr"
+              },
+              {
+                property: "Hilltop Villa",
+                location: "Lonavala",
+                soldTo: "Mrs. Kapoor",
+                agent: "Rohit",
+                amount: "3Cr"
+              },
+              {
+                property: "Luxury Flat",
+                location: "Juhu",
+                soldTo: "Mr. Shah",
+                agent: "Meera",
+                amount: "1.8Cr"
+              },
+              {
+                property: "Commercial Shop",
+                location: "Andheri",
+                soldTo: "ABC Pvt Ltd",
+                agent: "Karan",
+                amount: "1.2Cr"
+              },
+              {
+                property: "Studio Apartment",
+                location: "Thane",
+                soldTo: "Mr. Patil",
+                agent: "Nikita",
+                amount: "60L"
+              },
+              {
+                property: "Row House",
+                location: "Borivali",
+                soldTo: "Mr. Agarwal",
+                agent: "Ramesh",
+                amount: "1.1Cr"
+              },
+              {
+                property: "Office Space",
+                location: "Powai",
+                soldTo: "XYZ Ltd",
+                agent: "Amit",
+                amount: "2Cr"
+              },
+              {
+                property: "3BHK Flat",
+                location: "Vashi",
+                soldTo: "Ms. Joshi",
+                agent: "Sneha",
+                amount: "90L"
+              },
+              {
+                property: "Penthouse Suite",
+                location: "Worli",
+                soldTo: "Mr. Khanna",
+                agent: "Neha",
+                amount: "4.5Cr"
+              },
+              {
+                property: "1BHK Studio",
+                location: "Khar",
+                soldTo: "Ms. Batra",
+                agent: "Vikas",
+                amount: "75L"
+              },
+              {
+                property: "Industrial Shed",
+                location: "Navi Mumbai",
+                soldTo: "PQR Industries",
+                agent: "Alok",
+                amount: "3Cr"
+              },
+              {
+                property: "4BHK Duplex",
+                location: "Chembur",
+                soldTo: "Mr. Nair",
+                agent: "Sana",
+                amount: "2.7Cr"
+              },
+              {
+                property: "Retail Space",
+                location: "Kurla",
+                soldTo: "Fashion Hub",
+                agent: "Mona",
+                amount: "1.5Cr"
+              },
+              {
+                property: "Farmhouse",
+                location: "Karjat",
+                soldTo: "Mr. & Mrs. Shetty",
+                agent: "Dev",
+                amount: "5Cr"
+              },
+              {
+                property: "2BHK Apartment",
+                location: "Mulund",
+                soldTo: "Mr. Rao",
+                agent: "Sonia",
+                amount: "1Cr"
+              },
+              {
+                property: "Resort Land",
+                location: "Alibaug",
+                soldTo: "Mr. Varma",
+                agent: "Ravi",
+                amount: "6Cr"
+              },
+              {
+                property: "Studio Condo",
+                location: "Santacruz",
+                soldTo: "Ms. Pillai",
+                agent: "Zoya",
+                amount: "85L"
+              },
+              {
+                property: "Luxury Office",
+                location: "Lower Parel",
+                soldTo: "ABC Corp",
+                agent: "Deepak",
+                amount: "3.2Cr"
+              },
+              {
+                property: "Hilltop Villa",
+                location: "Lonavala",
+                soldTo: "Mrs. Kapoor",
+                agent: "Rohit",
+                amount: "3Cr"
+              },
+              {
+                property: "Luxury Flat",
+                location: "Juhu",
+                soldTo: "Mr. Shah",
+                agent: "Meera",
+                amount: "1.8Cr"
+              },
+              {
+                property: "Commercial Shop",
+                location: "Andheri",
+                soldTo: "ABC Pvt Ltd",
+                agent: "Karan",
+                amount: "1.2Cr"
+              },
+              {
+                property: "Studio Apartment",
+                location: "Thane",
+                soldTo: "Mr. Patil",
+                agent: "Nikita",
+                amount: "60L"
+              },
+              {
+                property: "Row House",
+                location: "Borivali",
+                soldTo: "Mr. Agarwal",
+                agent: "Ramesh",
+                amount: "1.1Cr"
+              },
+              {
+                property: "Office Space",
+                location: "Powai",
+                soldTo: "XYZ Ltd",
+                agent: "Amit",
+                amount: "2Cr"
+              },
+              {
+                property: "3BHK Flat",
+                location: "Vashi",
+                soldTo: "Ms. Joshi",
+                agent: "Sneha",
+                amount: "90L"
+              },
+              {
+                property: "Penthouse Suite",
+                location: "Worli",
+                soldTo: "Mr. Khanna",
+                agent: "Neha",
+                amount: "4.5Cr"
+              },
+              {
+                property: "1BHK Studio",
+                location: "Khar",
+                soldTo: "Ms. Batra",
+                agent: "Vikas",
+                amount: "75L"
+              },
+              {
+                property: "Industrial Shed",
+                location: "Navi Mumbai",
+                soldTo: "PQR Industries",
+                agent: "Alok",
+                amount: "3Cr"
+              },
+              {
+                property: "4BHK Duplex",
+                location: "Chembur",
+                soldTo: "Mr. Nair",
+                agent: "Sana",
+                amount: "2.7Cr"
+              },
+              {
+                property: "Retail Space",
+                location: "Kurla",
+                soldTo: "Fashion Hub",
+                agent: "Mona",
+                amount: "1.5Cr"
+              },
+              {
+                property: "Farmhouse",
+                location: "Karjat",
+                soldTo: "Mr. & Mrs. Shetty",
+                agent: "Dev",
+                amount: "5Cr"
+              },
+              {
+                property: "2BHK Apartment",
+                location: "Mulund",
+                soldTo: "Mr. Rao",
+                agent: "Sonia",
+                amount: "1Cr"
+              },
+              {
+                property: "Resort Land",
+                location: "Alibaug",
+                soldTo: "Mr. Varma",
+                agent: "Ravi",
+                amount: "6Cr"
+              },
+              {
+                property: "Studio Condo",
+                location: "Santacruz",
+                soldTo: "Ms. Pillai",
+                agent: "Zoya",
+                amount: "85L"
+              },
+              {
+                property: "Luxury Office",
+                location: "Lower Parel",
+                soldTo: "ABC Corp",
+                agent: "Deepak",
+                amount: "3.2Cr"
               }
+            ];
 
-              function viewClosureSummary(propertyId) {
-                const modal = new bootstrap.Modal(document.getElementById("closureModal"));
-                modal.show();
-              }
 
-              function confirmRestore(propertyId) {
-                selectedPropertyId = propertyId;
-                const modal = new bootstrap.Modal(document.getElementById("restoreModal"));
-                modal.show();
-              }
+            let filteredData = [...archivedProperties];
+            let currentPage = 1;
+            const rowsPerPage = 5;
 
-              function confirmDelete(propertyId) {
-                selectedPropertyId = propertyId;
-                const modal = new bootstrap.Modal(document.getElementById("deleteModal"));
-                modal.show();
-              }
+            function renderTable(data) {
+              const start = (currentPage - 1) * rowsPerPage;
+              const end = start + rowsPerPage;
+              const rows = data.slice(start, end);
+              const tableBody = document.getElementById("tableBody");
 
-              document.getElementById("confirmRestoreBtn").addEventListener("click", function() {
-                showToast(`Property ${selectedPropertyId} has been restored.`);
-                const modal = bootstrap.Modal.getInstance(document.getElementById("restoreModal"));
-                modal.hide();
+              tableBody.innerHTML = rows.map(item => `
+        <tr>
+          <td>${item.property}</td>
+          <td>${item.location}</td>
+          <td>${item.soldTo}</td>
+          <td>${item.agent}</td>
+          <td>${item.amount}</td>
+          <td>
+            <div class="dropdown">
+              <button class="btn btn-sm btn-outline-secondary" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></button>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="#" onclick="alert('Viewing closure summary for ${item.property}')"><i class="bi bi-file-earmark-text me-2"></i>View Summary</a></li>
+                <li><a class="dropdown-item" href="#" onclick="alert('Restored ${item.property}')"><i class="bi bi-arrow-counterclockwise me-2"></i>Restore</a></li>
+                <li><a class="dropdown-item text-danger" href="#" onclick="confirmDelete('${item.property}')"><i class="bi bi-trash me-2"></i>Delete Permanently</a></li>
+              </ul>
+            </div>
+          </td>
+        </tr>`).join("");
+
+              // GSAP fade-in animation
+              gsap.from("#tableBody tr", {
+                duration: 0.4,
+                opacity: 0,
+                y: 10,
+                stagger: 0.1
               });
+            }
 
-              document.getElementById("confirmDeleteBtn").addEventListener("click", function() {
-                showToast(`Property ${selectedPropertyId} has been deleted.`);
-                const modal = bootstrap.Modal.getInstance(document.getElementById("deleteModal"));
-                modal.hide();
-              });
+            function renderPagination(data) {
+              const totalPages = Math.ceil(data.length / rowsPerPage);
+              const pagination = document.getElementById("pagination");
+              pagination.innerHTML = '';
 
-              // Search functionality
-              document.getElementById("propertySearch").addEventListener("input", function() {
-                const searchTerm = this.value.toLowerCase();
-                const rows = document.querySelectorAll("tbody tr");
+              // Always show pagination if there's more than 1 page
+              if (totalPages > 1) {
+                // Previous button
+                pagination.innerHTML += `
+      <li class="page-item ${currentPage === 1 ? 'disabled' : ''}">
+        <button class="page-link" onclick="changePage(${currentPage - 1})" ${currentPage === 1 ? 'disabled' : ''}>
+          &laquo; Previous
+        </button>
+      </li>`;
 
-                rows.forEach(row => {
-                  const id = row.cells[0].textContent.toLowerCase();
-                  const title = row.cells[1].textContent.toLowerCase();
-                  const location = row.cells[2].textContent.toLowerCase();
-                  const owner = row.cells[3].textContent.toLowerCase();
+                // Page numbers
+                for (let i = 1; i <= totalPages; i++) {
+                  pagination.innerHTML += `
+        <li class="page-item ${i === currentPage ? 'active' : ''}">
+          <button class="page-link" onclick="changePage(${i})">${i}</button>
+        </li>`;
+                }
 
-                  row.style.display = id.includes(searchTerm) || title.includes(searchTerm) || location.includes(searchTerm) || owner.includes(searchTerm) ? '' : 'none';
-                });
-              });
-            </script>
-          </div>
+                // Next button
+                pagination.innerHTML += `
+      <li class="page-item ${currentPage === totalPages ? 'disabled' : ''}">
+        <button class="page-link" onclick="changePage(${currentPage + 1})" ${currentPage === totalPages ? 'disabled' : ''}>
+          Next &raquo;
+        </button>
+      </li>`;
+              }
+            }
 
 
+            function changePage(page) {
+              const totalPages = Math.ceil(filteredData.length / rowsPerPage);
+              if (page < 1 || page > totalPages) return;
+              currentPage = page;
+              renderTable(filteredData);
+              renderPagination(filteredData);
+            }
+
+            function filterTable() {
+              const searchText = document.getElementById("searchInput").value.toLowerCase();
+              filteredData = archivedProperties.filter(item =>
+                item.property.toLowerCase().includes(searchText) ||
+                item.location.toLowerCase().includes(searchText) ||
+                item.soldTo.toLowerCase().includes(searchText) ||
+                item.agent.toLowerCase().includes(searchText)
+              );
+              currentPage = 1;
+              renderTable(filteredData);
+              renderPagination(filteredData);
+            }
+
+            function confirmDelete(propertyName) {
+              if (confirm(`Are you sure you want to permanently delete "${propertyName}"?`)) {
+                alert(`"${propertyName}" deleted permanently.`);
+              }
+            }
+
+            document.getElementById("searchInput").addEventListener("input", filterTable);
+
+            // Initial render
+            renderTable(filteredData);
+            renderPagination(filteredData);
+          </script>
 
         </div>
-        <!-- /.container-fluid -->
-
       </div>
-      <!-- End of Main Content -->
+      <!-- /.container-fluid -->
+
 
       <!-- Footer -->
       <footer class="sticky-footer bg-white text-dark py-4 mt-auto">
@@ -526,9 +777,11 @@
         </div>
       </footer>
       <!-- End of Footer -->
-
     </div>
-    <!-- End of Content Wrapper -->
+    <!-- End of Main Content -->
+
+  </div>
+  <!-- End of Content Wrapper -->
 
   </div>
   <!-- End of Page Wrapper -->
