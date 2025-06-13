@@ -353,7 +353,7 @@
             <div class="text-center me-4 mt-2 mb-4">
               <div class="d-flex justify-content-center align-items-center gap-2">
                 <i class="bi bi-house-gear-fill text-primary fs-4"></i>
-                <h5 class="fw-semibold fs- mb-0 text-primary">Property Management</h5>
+                <h5 class="fw-semibold fs-3 mb-0 text-primary">Property Management</h5>
               </div>
               <p class="text-muted small mb-0 mt-2">Manage, filter, and act on property listings</p>
             </div>
@@ -428,91 +428,40 @@
 
           <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
           <script>
-            const properties = [{
-                id: "PROP001",
-                title: "Sea View Villa",
-                location: "Goa",
-                owner: "Jane Smith",
-                status: "Available",
-                statusClass: "bg-success",
-                agent: "Team A"
-              },
-              {
-                id: "PROP002",
-                title: "City Center Apartment",
-                location: "Mumbai",
-                owner: "Rahul Mehta",
-                status: "Pending",
-                statusClass: "bg-warning text-dark",
-                agent: "Team B"
-              },
-              {
-                id: "PROP003",
-                title: "Lakefront Bungalow",
-                location: "Udaipur",
-                owner: "Anita Rao",
-                status: "Available",
-                statusClass: "bg-success",
-                agent: "Team C"
-              },
-              {
-                id: "PROP004",
-                title: "Mountain View Retreat",
-                location: "Manali",
-                owner: "Sunil Kapoor",
-                status: "Sold",
-                statusClass: "bg-danger",
-                agent: "Team A"
-              },
-              {
-                id: "PROP005",
-                title: "Luxury Penthouse",
-                location: "Bangalore",
-                owner: "Meena Iyer",
-                status: "Available",
-                statusClass: "bg-success",
-                agent: "Team D"
-              },
-              {
-                id: "PROP006",
-                title: "Business Park Office",
-                location: "Chennai",
-                owner: "Arjun Das",
-                status: "Pending",
-                statusClass: "bg-warning text-dark",
-                agent: "Team B"
-              },
-              {
-                id: "PROP007",
-                title: "Heritage Haveli",
-                location: "Jaipur",
-                owner: "Fatima Khan",
-                status: "Sold",
-                statusClass: "bg-danger",
-                agent: "Team E"
-              }
-            ];
+  const allProperties = [ // Renamed for clarity
+    { id: "PROP001", title: "Sea View Villa", location: "Goa", owner: "Jane Smith", status: "Available", agent: "Team A" },
+    { id: "PROP002", title: "City Center Apartment", location: "Mumbai", owner: "Rahul Mehta", status: "Pending", agent: "Team B" },
+    { id: "PROP003", title: "Lakefront Bungalow", location: "Udaipur", owner: "Anita Rao", status: "Available", agent: "Team C" },
+    { id: "PROP004", title: "Mountain View Retreat", location: "Manali", owner: "Sunil Kapoor", status: "Sold", agent: "Team A" },
+    { id: "PROP005", title: "Luxury Penthouse", location: "Bangalore", owner: "Meena Iyer", status: "Available", agent: "Team D" },
+    { id: "PROP006", title: "Business Park Office", location: "Chennai", owner: "Arjun Das", status: "Pending", agent: "Team B" },
+    { id: "PROP007", title: "Heritage Haveli", location: "Jaipur", owner: "Fatima Khan", status: "Sold", agent: "Team E" },
+  ];
 
-            const rowsPerPage = 5;
-            let currentPage = 1;
+  let filteredProperties = [...allProperties];
+  const rowsPerPage = 5;
+  let currentPage = 1;
 
-            function renderTable() {
-              const start = (currentPage - 1) * rowsPerPage;
-              const end = start + rowsPerPage;
-              const paginatedData = properties.slice(start, end);
+  function getBadge(status) {
+    return `<span class="badge border text-dark">${status}</span>`;
+  }
 
-              const tbody = document.getElementById("propertyTableBody");
-              tbody.innerHTML = "";
+  function renderTable() {
+    const start = (currentPage - 1) * rowsPerPage;
+    const end = start + rowsPerPage;
+    const paginatedData = filteredProperties.slice(start, end);
 
-              paginatedData.forEach((item) => {
-                const row = document.createElement("tr");
+    const tbody = document.getElementById("propertyTableBody");
+    tbody.innerHTML = "";
 
-                row.innerHTML = `
+    paginatedData.forEach((item) => {
+      const row = document.createElement("tr");
+      row.innerHTML = `
         <td>${item.id}</td>
         <td>${item.title}</td>
         <td>${item.location}</td>
         <td>${item.owner}</td>
-        <td><span class="badge ${item.statusClass}">${item.status}</span></td>
+        <td>${getBadge(item.status)}</td>
         <td>${item.agent}</td>
         <td class="text-center">
           <div class="btn-group btn-group-sm">
@@ -530,128 +479,78 @@
               <li><a class="dropdown-item text-danger" href="#"><i class="bi bi-archive"></i> Archive</a></li>
             </ul>
           </div>
-        </td>
-      `;
-                tbody.appendChild(row);
-              });
-            }
+        </td>`;
+      tbody.appendChild(row);
+    });
+  }
 
-            function renderPagination() {
-              const totalPages = Math.ceil(properties.length / rowsPerPage);
-              const container = document.getElementById("paginationContainer");
-              container.innerHTML = "";
+  function renderPagination() {
+    const totalPages = Math.ceil(filteredProperties.length / rowsPerPage);
+    const container = document.getElementById("paginationContainer");
+    container.innerHTML = "";
 
-              const createButton = (label, page, disabled = false, active = false) => {
-                const li = document.createElement("li");
-                li.className = `page-item ${disabled ? "disabled" : ""} ${active ? "active" : ""}`;
-                const btn = document.createElement("button");
-                btn.className = "page-link";
-                btn.textContent = label;
-                btn.onclick = () => {
-                  currentPage = page;
-                  renderTable();
-                  renderPagination();
-                };
-                li.appendChild(btn);
-                return li;
-              };
+    const createButton = (label, page, disabled = false, active = false) => {
+      const li = document.createElement("li");
+      li.className = `page-item ${disabled ? "disabled" : ""} ${active ? "active" : ""}`;
+      const btn = document.createElement("button");
+      btn.className = "page-link";
+      btn.textContent = label;
+      btn.onclick = () => {
+        currentPage = page;
+        renderTable();
+        renderPagination();
+      };
+      li.appendChild(btn);
+      return li;
+    };
 
-              // Previous
-              container.appendChild(createButton("Previous", currentPage - 1, currentPage === 1));
+    container.appendChild(createButton("Previous", currentPage - 1, currentPage === 1));
 
-              // Page numbers
-              for (let i = 1; i <= totalPages; i++) {
-                container.appendChild(createButton(i, i, false, i === currentPage));
-              }
+    for (let i = 1; i <= totalPages; i++) {
+      container.appendChild(createButton(i, i, false, i === currentPage));
+    }
 
-              // Next
-              container.appendChild(createButton("Next", currentPage + 1, currentPage === totalPages));
-            }
+    container.appendChild(createButton("Next", currentPage + 1, currentPage === totalPages));
+  }
 
-            document.addEventListener("DOMContentLoaded", () => {
-              renderTable();
-              renderPagination();
-            });
+  function applyFilters() {
+    const locationVal = document.getElementById("filterLocation").value.trim().toLowerCase();
+    const ownerVal = document.getElementById("filterOwner").value.trim().toLowerCase();
+    const statusVal = document.getElementById("filterStatus").value.trim().toLowerCase();
 
-            function showToast(message) {
-              document.getElementById("toastMessage").innerText = message;
-              new bootstrap.Toast(document.getElementById("confirmationToast")).show();
-            }
+    filteredProperties = allProperties.filter(prop => {
+      const matchLocation = prop.location.toLowerCase().includes(locationVal);
+      const matchOwner = prop.owner.toLowerCase().includes(ownerVal);
+      const matchStatus = statusVal === "" || prop.status.toLowerCase().includes(statusVal);
+      return matchLocation && matchOwner && matchStatus;
+    });
 
-            function openPreviewModal() {
-              new bootstrap.Modal(document.getElementById("previewModal")).show();
-            }
+    currentPage = 1;
+    renderTable();
+    renderPagination();
+  }
 
-            function assignAgent(id) {
-              const agents = ["Team A", "Team B", "Team C"];
-              let agent = prompt("Assign to agent/team:", agents.join(", "));
-              if (agent) showToast(`Assigned to ${agent}`);
-            }
+  document.addEventListener("DOMContentLoaded", () => {
+    renderTable();
+    renderPagination();
 
-            gsap.from("table", {
-              scrollTrigger: {
-                trigger: "table",
-                start: "top 90%",
-              },
-              y: 50,
-              opacity: 0,
-              duration: 1,
-            });
+    document.getElementById("applyFilters").addEventListener("click", applyFilters);
 
-            document.addEventListener("DOMContentLoaded", function() {
-              document.getElementById("applyFilters").addEventListener("click", function() {
-                const locationVal = document.getElementById("filterLocation").value.toLowerCase();
-                const ownerVal = document.getElementById("filterOwner").value.toLowerCase();
-                const statusVal = document.getElementById("filterStatus").value.toLowerCase();
+    gsap.from("table", {
+      scrollTrigger: {
+        trigger: "table",
+        start: "top 90%",
+      },
+      y: 50,
+      opacity: 0,
+      duration: 1,
+    });
+  });
 
-                document.querySelectorAll("#propertyTable tbody tr").forEach((row) => {
-                  const location = row.cells[2].innerText.toLowerCase();
-                  const owner = row.cells[3].innerText.toLowerCase();
-                  const status = row.cells[4].innerText.toLowerCase();
-                  const matchLoc = location.includes(locationVal);
-                  const matchOwner = owner.includes(ownerVal);
-                  const matchStatus = statusVal === "" || status.includes(statusVal);
-                  row.style.display = matchLoc && matchOwner && matchStatus ? "" : "none";
-                });
-              });
-            });
-
-            document.addEventListener("DOMContentLoaded", function() {
-              const table = document.getElementById("propertyTable");
-              const tbody = table.querySelector("tbody");
-              const allRows = Array.from(tbody.querySelectorAll("tr")); // store original rows
-
-              const filterLocation = document.getElementById("filterLocation");
-              const filterOwner = document.getElementById("filterOwner");
-              const filterStatus = document.getElementById("filterStatus");
-              const applyBtn = document.getElementById("applyFilters");
-
-              function applyFilters() {
-                const locationVal = filterLocation.value.trim().toLowerCase();
-                const ownerVal = filterOwner.value.trim().toLowerCase();
-                const statusVal = filterStatus.value.trim().toLowerCase();
-
-                tbody.innerHTML = ""; // Clear the table
-
-                allRows.forEach(row => {
-                  const location = row.cells[2].textContent.toLowerCase();
-                  const owner = row.cells[3].textContent.toLowerCase();
-                  const status = row.cells[4].textContent.toLowerCase();
-
-                  const locationMatch = location.includes(locationVal);
-                  const ownerMatch = owner.includes(ownerVal);
-                  const statusMatch = statusVal === "" || status.includes(statusVal);
-
-                  if (locationMatch && ownerMatch && statusMatch) {
-                    tbody.appendChild(row); // Show matching rows
-                  }
-                });
-              }
-
-              // Only filter when the button is clicked
-              applyBtn.addEventListener("click", applyFilters);
-            });
-          </script>
+  function openPreviewModal() {
+    new bootstrap.Modal(document.getElementById("previewModal")).show();
+  }
+</script>
 
 
 

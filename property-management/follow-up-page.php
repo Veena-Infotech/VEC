@@ -171,99 +171,152 @@
 
           <!-- Page Heading -->
           <h1 class="h3 mb-4 text-gray-800"> </h1>
-    <div class="container py-4">
-    <div class="text-center mb-4">
-      <h2 class="fw-bold text-primary"><i class="bi bi-clipboard-check me-2"></i>Property Follow-Up</h2>
-      <p class="text-muted">Track client interactions, statuses, and follow-ups</p>
-    </div>
+          <div class="container py-4">
+            <div class="text-center mb-4">
+              <h2 class="fw-bold text-primary"><i class="bi bi-clipboard-check me-2"></i>Property Follow-Up</h2>
+              <p class="text-muted">Track client interactions, statuses, and follow-ups</p>
+            </div>
 
-    <!-- Search -->
-    <div class="row g-2 mb-3">
-  <div class="col-md-8">
-    <input type="text" id="searchInput" name="searchInput"  class="form-control form-control-sm" placeholder="Search by Client Name or Notes">
-  </div>
-  <div class="col-md-4">
-    <select id="statusFilter" name="statusFilter" class="form-select form-select-sm">
-      <option value="">Filter by Status</option>
-      <option value="Interested">Interested</option>
-      <option value="Visited">Visited</option>
-      <option value="Negotiating">Negotiating</option>
-      <option value="Finalized">Finalized</option>
-    </select>
-  </div>
-</div>
+            <!-- Search -->
+            <div class="row g-2 mb-3">
+              <div class="col-md-8">
+                <input type="text" id="searchInput" name="searchInput" class="form-control form-control-sm" placeholder="Search by Client Name or Notes">
+              </div>
+              <div class="col-md-4">
+                <select id="statusFilter" name="statusFilter" class="form-select form-select-sm">
+                  <option value="">Filter by Status</option>
+                  <option value="Interested">Interested</option>
+                  <option value="Visited">Visited</option>
+                  <option value="Negotiating">Negotiating</option>
+                  <option value="Finalized">Finalized</option>
+                </select>
+              </div>
+            </div>
 
 
-    <!-- Table -->
-    <div class="table-responsive">
-      <table class="table table-bordered table-hover table-sm bg-white">
-        <thead class="table-primary text-center">
-          <tr>
-            <th>Client Name</th>
-            <th>Contact</th>
-            <th>Status</th>
-            <th>Follow-Up Date</th>
-            <th>Notes</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody id="tableBody"></tbody>
-      </table>
-    </div>
+            <!-- Table -->
+            <div class="table-responsive">
+              <table class="table table-bordered table-hover table-sm bg-white">
+                <thead class="table-primary text-center">
+                  <tr>
+                    <th>Client Name</th>
+                    <th>Contact</th>
+                    <th>Status</th>
+                    <th>Follow-Up Date</th>
+                    <th>Notes</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="tableBody"></tbody>
+              </table>
+            </div>
 
-    <!-- Pagination -->
-    <div class="d-flex flex-column align-items-center mt-3">
-      <ul class="pagination pagination-sm mb-2" id="pagination"></ul>
-      <div>
-        <button class="btn btn-outline-primary btn-sm me-1" id="prevPage">
-          <i class="bi bi-chevron-left"></i> Previous
-        </button>
-        <button class="btn btn-outline-primary btn-sm" id="nextPage">
-          Next <i class="bi bi-chevron-right"></i>
-        </button>
-      </div>
-    </div>
-  </div>
+            <!-- Pagination -->
+            <nav class="mt-4">
+              <ul class="pagination justify-content-end pagination-sm mb-0" id="paginationContainer">
+                <!-- Pagination buttons will be injected via JS -->
+              </ul>
+            </nav>
 
-  <!-- JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script>
-    const data = [
-      { name: "Aman Gupta", contact: "9876543210", status: "Interested", followUp: "2025-06-10", notes: "Shared Bandra details." },
-      { name: "Neha Sharma", contact: "9876523450", status: "Visited", followUp: "2025-06-09", notes: "Visited Andheri site." },
-      { name: "Ravi Mehta", contact: "9765432109", status: "Negotiating", followUp: "2025-06-08", notes: "Wants lower price." },
-      { name: "Priya Nair", contact: "9876509876", status: "Finalized", followUp: "2025-06-07", notes: "Deal signed." },
-      { name: "Suresh Kumar", contact: "9898989898", status: "Interested", followUp: "2025-06-06", notes: "Interested in 2 BHK." },
-      { name: "Anjali Verma", contact: "9812345678", status: "Visited", followUp: "2025-06-05", notes: "Site review done." },
-      { name: "Karan Singh", contact: "9823456789", status: "Negotiating", followUp: "2025-06-04", notes: "Wants EMI options." },
-      { name: "Fatima Ali", contact: "9834567890", status: "Finalized", followUp: "2025-06-03", notes: "Final docs pending." },
-      { name: "Rajeev Saini", contact: "9845678901", status: "Interested", followUp: "2025-06-02", notes: "Asked for brochure." },
-      { name: "Meera Joshi", contact: "9856789012", status: "Visited", followUp: "2025-06-01", notes: "Liked flat plan." }
-    ];
 
-    let currentPage = 1;
-    const rowsPerPage = 5;
+            <!-- JS -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+            <script>
+              const data = [{
+                  name: "Aman Gupta",
+                  contact: "9876543210",
+                  status: "Interested",
+                  followUp: "2025-06-10",
+                  notes: "Shared Bandra details."
+                },
+                {
+                  name: "Neha Sharma",
+                  contact: "9876523450",
+                  status: "Visited",
+                  followUp: "2025-06-09",
+                  notes: "Visited Andheri site."
+                },
+                {
+                  name: "Ravi Mehta",
+                  contact: "9765432109",
+                  status: "Negotiating",
+                  followUp: "2025-06-08",
+                  notes: "Wants lower price."
+                },
+                {
+                  name: "Priya Nair",
+                  contact: "9876509876",
+                  status: "Finalized",
+                  followUp: "2025-06-07",
+                  notes: "Deal signed."
+                },
+                {
+                  name: "Suresh Kumar",
+                  contact: "9898989898",
+                  status: "Interested",
+                  followUp: "2025-06-06",
+                  notes: "Interested in 2 BHK."
+                },
+                {
+                  name: "Anjali Verma",
+                  contact: "9812345678",
+                  status: "Visited",
+                  followUp: "2025-06-05",
+                  notes: "Site review done."
+                },
+                {
+                  name: "Karan Singh",
+                  contact: "9823456789",
+                  status: "Negotiating",
+                  followUp: "2025-06-04",
+                  notes: "Wants EMI options."
+                },
+                {
+                  name: "Fatima Ali",
+                  contact: "9834567890",
+                  status: "Finalized",
+                  followUp: "2025-06-03",
+                  notes: "Final docs pending."
+                },
+                {
+                  name: "Rajeev Saini",
+                  contact: "9845678901",
+                  status: "Interested",
+                  followUp: "2025-06-02",
+                  notes: "Asked for brochure."
+                },
+                {
+                  name: "Meera Joshi",
+                  contact: "9856789012",
+                  status: "Visited",
+                  followUp: "2025-06-01",
+                  notes: "Liked flat plan."
+                }
+              ];
 
-    function getFilteredData() {
-      const query = document.getElementById("searchInput").value.toLowerCase();
-      return data.filter(entry =>
-        entry.name.toLowerCase().includes(query) || entry.notes.toLowerCase().includes(query)
-      );
-    }
+              let currentPage = 1;
+              const rowsPerPage = 5;
 
-    function renderTable() {
-      const filtered = getFilteredData();
-      const start = (currentPage - 1) * rowsPerPage;
-      const end = start + rowsPerPage;
-      const sliced = filtered.slice(start, end);
+              function getFilteredData() {
+                const query = document.getElementById("searchInput").value.toLowerCase();
+                return data.filter(entry =>
+                  entry.name.toLowerCase().includes(query) || entry.notes.toLowerCase().includes(query)
+                );
+              }
 
-      const tbody = document.getElementById("tableBody");
-      tbody.innerHTML = "";
+              function renderTable() {
+                const filtered = getFilteredData();
+                const start = (currentPage - 1) * rowsPerPage;
+                const end = start + rowsPerPage;
+                const sliced = filtered.slice(start, end);
 
-      sliced.forEach((row, i) => {
-        const tr = document.createElement("tr");
-        tr.innerHTML = `
+                const tbody = document.getElementById("tableBody");
+                tbody.innerHTML = "";
+
+                sliced.forEach((row, i) => {
+                  const tr = document.createElement("tr");
+                  tr.innerHTML = `
           <td>${row.name}</td>
           <td>${row.contact}</td>
           <td>${row.status}</td>
@@ -278,94 +331,97 @@
             </button>
           </td>
         `;
-        tbody.appendChild(tr);
-        gsap.from(tr, { opacity: 0, y: 20, duration: 0.4, delay: i * 0.05 });
-      });
+                  tbody.appendChild(tr);
+                  gsap.from(tr, {
+                    opacity: 0,
+                    y: 20,
+                    duration: 0.4,
+                    delay: i * 0.05
+                  });
+                });
 
-      renderPagination(filtered.length);
-    }
+                renderPagination(filtered.length);
+              }
 
-    function renderPagination(total) {
-      const totalPages = Math.ceil(total / rowsPerPage);
-      const pagination = document.getElementById("pagination");
-      pagination.innerHTML = "";
+              function renderPagination() {
+                const totalPages = Math.ceil(getFilteredData().length / rowsPerPage);
+                const container = document.getElementById("paginationContainer");
+                container.innerHTML = "";
 
-      for (let i = 1; i <= totalPages; i++) {
-        const li = document.createElement("li");
-        li.className = `page-item ${i === currentPage ? "active" : ""}`;
-        li.innerHTML = `<button class="page-link">${i}</button>`;
-        li.querySelector("button").addEventListener("click", () => {
-          currentPage = i;
-          renderTable();
-        });
-        pagination.appendChild(li);
-      }
+                const createButton = (label, page, disabled = false, active = false) => {
+                  const li = document.createElement("li");
+                  li.className = `page-item ${disabled ? "disabled" : ""} ${active ? "active" : ""}`;
+                  const btn = document.createElement("button");
+                  btn.className = "page-link";
+                  btn.textContent = label;
+                  btn.onclick = () => {
+                    currentPage = page;
+                    renderTable();
+                    renderPagination();
+                  };
+                  li.appendChild(btn);
+                  return li;
+                };
 
-      document.getElementById("prevPage").disabled = currentPage === 1;
-      document.getElementById("nextPage").disabled = currentPage === totalPages || totalPages === 0;
-    }
+                // Previous Button
+                container.appendChild(createButton("« Previous", currentPage - 1, currentPage === 1));
 
-    document.getElementById("prevPage").addEventListener("click", () => {
-      if (currentPage > 1) {
-        currentPage--;
-        renderTable();
-      }
-    });
+                // Page Numbers
+                for (let i = 1; i <= totalPages; i++) {
+                  container.appendChild(createButton(i, i, false, i === currentPage));
+                }
 
-    document.getElementById("nextPage").addEventListener("click", () => {
-      const totalPages = Math.ceil(getFilteredData().length / rowsPerPage);
-      if (currentPage < totalPages) {
-        currentPage++;
-        renderTable();
-      }
-    });
+                // Next Button
+                container.appendChild(createButton("Next »", currentPage + 1, currentPage === totalPages));
+              }
 
-    document.getElementById("searchInput").addEventListener("input", () => {
-      currentPage = 1;
-      renderTable();
-    });
 
-    renderTable();
-  </script>
+              document.getElementById("searchInput").addEventListener("input", () => {
+                currentPage = 1;
+                renderTable();
+              });
+
+              renderTable();
+            </script>
+          </div>
         </div>
+
+        <!-- Footer -->
+        <footer class="sticky-footer bg-white text-dark py-4 mt-auto">
+          <hr class="border-top border-dark opacity-25 mb-4" />
+
+          <div class="container text-center">
+            <div class="mb-3">
+              <p class="mb-1 fw-semibold">© 2025 Veena Group. All Rights Reserved.</p>
+              <p class="mb-3 small">Empowering Mumbai’s Real Estate Market through Smart Digital Solutions.</p>
+            </div>
+            ''
+            <nav class="mb-3 d-flex justify-content-center gap-4 flex-wrap">
+              <a href="#" class="text-decoration-none text-primary fw-semibold small">Privacy Policy</a>
+              <a href="#" class="text-decoration-none text-primary fw-semibold small">Terms of Service</a>
+              <a href="#" class="text-decoration-none text-primary fw-semibold small">Contact Us</a>
+            </nav>
+
+            <div class="d-flex justify-content-center gap-3">
+              <a href="#" class="text-primary fs-5" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="text-primary fs-5" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="text-primary fs-5" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+
+          </div>
+        </footer>
+        <!-- End of Footer -->
       </div>
-
-      <!-- Footer -->
-      <footer class="sticky-footer bg-white text-dark py-4 mt-auto">
-        <hr class="border-top border-dark opacity-25 mb-4" />
-
-        <div class="container text-center">
-          <div class="mb-3">
-            <p class="mb-1 fw-semibold">© 2025 Veena Group. All Rights Reserved.</p>
-            <p class="mb-3 small">Empowering Mumbai’s Real Estate Market through Smart Digital Solutions.</p>
-          </div>
-
-           <nav class="mb-3 d-flex justify-content-center gap-4 flex-wrap">
-            <a href="#" class="text-decoration-none text-primary fw-semibold small">Privacy Policy</a>
-            <a href="#" class="text-decoration-none text-primary fw-semibold small">Terms of Service</a>
-            <a href="#" class="text-decoration-none text-primary fw-semibold small">Contact Us</a>
-          </nav>
-
-          <div class="d-flex justify-content-center gap-3">
-            <a href="#" class="text-primary fs-5" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="text-primary fs-5" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="text-primary fs-5" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          </div>
-
-        </div>
-      </footer>
-      <!-- End of Footer -->
     </div>
-  </div>
-  <!-- Bootstrap core JavaScript-->
-  <script src="../vendor/jquery/jquery.min.js"></script>
-  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap core JavaScript-->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Core plugin JavaScript-->
-  <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
 
-  <!-- Custom scripts for all pages-->
-  <script src="../js/sb-admin-2.min.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="../js/sb-admin-2.min.js"></script>
 
 </body>
 
