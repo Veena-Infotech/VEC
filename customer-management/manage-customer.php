@@ -490,7 +490,11 @@
             let currentPage = 1;
             const rowsPerPage = 5;
 
-            
+            function getBadge(status) {
+              return `<span class="badge text-dark">${status}</span>`;
+            }
+
+
             function renderTable(data) {
               const start = (currentPage - 1) * rowsPerPage;
               const end = start + rowsPerPage;
