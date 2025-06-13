@@ -348,222 +348,128 @@
 
           <!-- Page Heading -->
           <div class="container py-5">
-            <h1 class="mb-4 text-primary fw-bold text-center fs-3">Edit Your Property</h1>
+            <!-- Header -->
+            <!-- Heading -->
+            <div class="text-center mb-4">
+              <h2 class="fw-bold text-primary"><i class="bi bi-person-plus me-2"></i>Add New Customer</h2>
+              <p class="text-muted">Enter details of a buyer, seller, or tenant</p>
+            </div>
 
-            <form id="propertyForm" class="bg-white p-4 rounded shadow-sm small">
-              <div class="row g-3">
-
-                <!-- Property Type -->
-                <div class="col-md-4">
-                  <label class="form-label">Property Type</label>
-                  <select class="form-select" name="propertyType" required>
-                    <option value="" disabled selected>Select property type</option>
-                    <option>1 BHK</option>
-                    <option>2 BHK</option>
-                    <option>3 BHK</option>
-                    <option>4 BHK</option>
-                    <option>5 BHK+</option>
-                    <option>Studio Apartment</option>
-                    <option>Apartment</option>
-                    <option>Independent House</option>
-                    <option>Bungalow</option>
-                    <option>Villa</option>
-                    <option>Row House</option>
-                    <option>Duplex</option>
-                    <option>Penthouse</option>
-                    <option>Farmhouse</option>
+            <!-- Form -->
+            <form>
+              <div class="row g-4">
+                <!-- Row 1: Customer Type + Full Name -->
+                <div class="col-md-6">
+                  <label for="customerType" class="form-label">Customer Type</label>
+                  <select id="customerType" name="customerType" class="form-select" required>
+                    <option value="">Select...</option>
+                    <option>Buyer</option>
+                    <option>Seller</option>
+                    <option>Tenant</option>
                   </select>
                 </div>
+                <div class="col-md-6">
+                  <label for="fullName" class="form-label">Full Name</label>
+                  <input type="text" id="fullName" name="fullName" class="form-control" required />
+                </div>
 
-                <!-- Transaction Type -->
-                <div class="col-md-4">
-                  <label class="form-label">Transaction Type</label>
-                  <select class="form-select" name="transactionType" required>
-                    <option value="" disabled selected>Select transaction type</option>
-                    <option>Buy</option>
-                    <option>Sell</option>
-                    <option>Rent</option>
+                <!-- Row 2: Email + Contact -->
+                <div class="col-md-6">
+                  <label for="email" class="form-label">Email</label>
+                  <input type="email" id="email" name="email" class="form-control" required />
+                </div>
+                <div class="col-md-6">
+                  <label for="contactNumber" class="form-label">Contact Number</label>
+                  <input type="tel" id="contactNumber" name="contactNumber" class="form-control" required />
+                </div>
+
+                <!-- Row 3: ID Proof Upload -->
+                <div class="col-md-6">
+                  <label for="idProof" class="form-label">ID Proof Upload</label>
+                  <input type="file" id="idProof" name="idProof" class="form-control" required />
+                </div>
+
+                <!-- Row 4: Budget + Preferred Localities -->
+                <div class="col-md-6">
+                  <label for="budget" class="form-label">Budget Range</label>
+                  <input type="text" id="budget" name="budget" class="form-control" placeholder="e.g., ₹50L - ₹1Cr" required />
+                </div>
+                <div class="col-md-6">
+                  <label for="localities" class="form-label">Preferred Localities</label>
+                  <input type="text" id="localities" name="localities" class="form-control" placeholder="e.g., Andheri, Bandra" required />
+                </div>
+
+                <!-- Row 5: Purpose + Property Type -->
+                <div class="col-md-6">
+                  <label for="purpose" class="form-label">Purpose</label>
+                  <select id="purpose" name="purpose" class="form-select">
+                    <option value="">Select...</option>
+                    <option>Investment</option>
+                    <option>Self-use</option>
+                    <option>Rental</option>
                   </select>
                 </div>
-
-                <!-- Locality -->
-                <div class="col-md-4 position-relative small">
-                  <label class="form-label">Locality (Ward-based Mumbai regions)</label>
-                  <input type="text" class="form-control form-control-sm" name="locality" placeholder="Start typing locality..." autocomplete="off" required />
-                  <ul class="list-group list-group-sm position-absolute w-100" style="z-index: 1050; max-height: 180px; overflow-y: auto; display: none;"></ul>
-                </div>
-
-
-                <!-- Address -->
                 <div class="col-md-6">
-                  <label class="form-label">Address</label>
-                  <input type="text" class="form-control" name="address" placeholder="Enter full address" required />
+                  <label for="propertyType" class="form-label">Type of Property Interested In</label>
+                  <input type="text" id="propertyType" name="propertyType" class="form-control" placeholder="e.g., 2BHK, Plot"  required />
                 </div>
 
-                <!-- Pincode -->
-                <div class="col-md-3">
-                  <label class="form-label">Pincode</label>
-                  <input type="text" class="form-control" name="pincode" placeholder="Enter pincode" pattern="[0-9]{6}" title="6 digit pincode" required />
-                </div>
-
-                <!-- Landmark -->
-                <div class="col-md-3">
-                  <label class="form-label">Landmark</label>
-                  <input type="text" class="form-control" name="landmark" placeholder="Nearby landmark" />
-                </div>
-
-                <!-- Area -->
-                <div class="col-12">
-                  <legend class="h6 text-secondary mb-3">Area (in sqft)</legend>
-                  <div class="row g-3">
-                    <div class="col-md-4">
-                      <label class="form-label">Carpet Area</label>
-                      <input type="number" min="0" class="form-control" name="areaCarpet" placeholder="e.g., 900" required />
-                    </div>
-                    <div class="col-md-4">
-                      <label class="form-label">Built-up Area</label>
-                      <input type="number" min="0" class="form-control" name="areaBuiltup" placeholder="e.g., 1100" required />
-                    </div>
-                    <div class="col-md-4">
-                      <label class="form-label">Plot Area</label>
-                      <input type="number" min="0" class="form-control" name="areaPlot" placeholder="e.g., 1200" required />
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Price and Negotiable -->
-                <div class="col-md-8">
-                  <label class="form-label">Price (INR)</label>
-                  <input type="number" min="0" class="form-control" name="price" placeholder="Enter price" required />
-                </div>
-                <div class="col-md-4 d-flex align-items-center">
-                  <div class="form-check form-switch mt-4">
-                    <input class="form-check-input" type="checkbox" name="negotiable" />
-                    <label class="form-check-label">Negotiable</label>
-                  </div>
-                </div>
-
-                <!-- Amenities -->
-                <div class="col-12">
-                  <legend class="h6 text-secondary mb-3">Amenities</legend>
-                  <div class="row row-cols-2 row-cols-md-4 g-2">
-                    <div class="form-check col">
-                      <input class="form-check-input" type="checkbox" name="amenities" value="Lift" />
-                      <label class="form-check-label">Lift</label>
-                    </div>
-                    <div class="form-check col">
-                      <input class="form-check-input" type="checkbox" name="amenities" value="Parking" />
-                      <label class="form-check-label">Parking</label>
-                    </div>
-                    <div class="form-check col">
-                      <input class="form-check-input" type="checkbox" name="amenities" value="Security" />
-                      <label class="form-check-label">Security</label>
-                    </div>
-                    <div class="form-check col">
-                      <input class="form-check-input" type="checkbox" name="amenities" value="Garden" />
-                      <label class="form-check-label">Garden</label>
-                    </div>
-                    <div class="form-check col">
-                      <input class="form-check-input" type="checkbox" name="amenities" value="Gym" />
-                      <label class="form-check-label">Gym</label>
-                    </div>
-                    <div class="form-check col">
-                      <input class="form-check-input" type="checkbox" name="amenities" value="Swimming Pool" />
-                      <label class="form-check-label">Swimming Pool</label>
-                    </div>
-                    <div class="form-check col">
-                      <input class="form-check-input" type="checkbox" name="amenities" value="Power Backup" />
-                      <label class="form-check-label">Power Backup</label>
-                    </div>
-                    <div class="form-check col">
-                      <input class="form-check-input" type="checkbox" name="amenities" value="Clubhouse" />
-                      <label class="form-check-label">Clubhouse</label>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Linked To -->
+                <!-- Row 6: Agent -->
                 <div class="col-md-6">
-                  <legend class="h6 text-secondary mb-3">Linked To</legend>
-                  <div class="form-check">
-                    <input class="form-check-input" type="radio" name="linkedTo" value="Owner" required />
-                    <label class="form-check-label">Owner</label>
-                  </div>
-                  <div class="form-check">
-                    <input class="form-check-input" type="radio" name="linkedTo" value="Agent" required />
-                    <label class="form-check-label">Agent</label>
-                  </div>
-                </div>
-
-                <!-- Source -->
-                <div class="col-md-6">
-                  <label class="form-label">Source</label>
-                  <select class="form-select" name="source" required>
-                    <option value="" disabled selected>Select source</option>
-                    <option>Direct Client</option>
-                    <option>Agent Referral</option>
-                  </select>
-                </div>
-
-                <!-- Uploads -->
-                <div class="col-md-6">
-                  <label class="form-label">Upload Images/Videos</label>
-                  <input class="form-control" type="file" name="mediaFiles" accept="image/*,video/*" multiple />
-                  <small class="form-text text-muted">You can upload up to 10 images/videos (max 5MB each).</small>
-                </div>
-
-                <div class="col-md-6">
-                  <label class="form-label">Upload Documents (Title Deed, OC, etc.)</label>
-                  <input class="form-control" type="file" name="documents" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" multiple />
-                  <small class="form-text text-muted">Supported formats: PDF, DOC, Images</small>
+                  <label for="agent" class="form-label">Agent Linked (Optional)</label>
+                  <input type="text" id="agent" name="agent" class="form-control" placeholder="Agent Name or Code" />
                 </div>
 
                 <!-- Submit -->
-                <div class="col-12 text-center mt-4">
-                  <button type="submit" class="btn btn-primary btn-sm px-4">Submit Listing</button>
+                <div class="col-12 text-end">
+                  <button type="submit" class="btn btn-primary">
+                    <i class="bi bi-save me-1"></i> Save Customer
+                  </button>
                 </div>
-
               </div>
             </form>
           </div>
 
 
-
-
         </div>
-        <!-- /.container-fluid -->
+
+        <!-- Footer -->
+        <footer class="sticky-footer bg-white text-dark py-4 mt-auto">
+          <hr class="border-top border-dark opacity-25 mb-4" />
+
+          <div class="container text-center">
+            <div class="mb-3">
+              <p class="mb-1 fw-semibold">© 2025 Veena Group. All Rights Reserved.</p>
+              <p class="mb-3 small">Empowering Mumbai’s Real Estate Market through Smart Digital Solutions.</p>
+            </div>
+
+            <nav class="mb-3 d-flex justify-content-center gap-4 flex-wrap">
+              <a href="#" class="text-decoration-none text-primary fw-semibold small">Privacy Policy</a>
+              <a href="#" class="text-decoration-none text-primary fw-semibold small">Terms of Service</a>
+              <a href="#" class="text-decoration-none text-primary fw-semibold small">Contact Us</a>
+            </nav>
+
+            <div class="d-flex justify-content-center gap-3">
+              <a href="#" class="text-primary fs-5" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="text-primary fs-5" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="text-primary fs-5" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+
+          </div>
+        </footer>
+        <!-- End of Footer -->
+
+
 
       </div>
-      <!-- End of Main Content -->
-
-      <!-- Footer -->
-      <footer class="sticky-footer bg-white text-dark py-4 mt-auto">
-        <hr class="border-top border-dark opacity-25 mb-4" />
-
-        <div class="container text-center">
-          <div class="mb-3">
-            <p class="mb-1 fw-semibold">© 2025 Veena Group. All Rights Reserved.</p>
-            <p class="mb-3 small">Empowering Mumbai’s Real Estate Market through Smart Digital Solutions.</p>
-          </div>
-
-           <nav class="mb-3 d-flex justify-content-center gap-4 flex-wrap">
-            <a href="#" class="text-decoration-none text-primary fw-semibold small">Privacy Policy</a>
-            <a href="#" class="text-decoration-none text-primary fw-semibold small">Terms of Service</a>
-            <a href="#" class="text-decoration-none text-primary fw-semibold small">Contact Us</a>
-          </nav>
-
-          <div class="d-flex justify-content-center gap-3">
-            <a href="#" class="text-primary fs-5" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="text-primary fs-5" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="text-primary fs-5" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          </div>
-
-        </div>
-      </footer>
-      <!-- End of Footer -->
+      <!-- /.container-fluid -->
 
     </div>
-    <!-- End of Content Wrapper -->
+    <!-- End of Main Content -->
+
+
+  </div>
+  <!-- End of Content Wrapper -->
 
   </div>
 

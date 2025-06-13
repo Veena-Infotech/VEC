@@ -382,276 +382,276 @@
             </div>
 
 
-           <nav class="mt-4">
-  <ul class="pagination justify-content-center" id="pagination">
-    <!-- JS will populate here -->
-  </ul>
-</nav>
+            <nav class="mt-4">
+              <ul class="pagination justify-content-center" id="pagination">
+                <!-- JS will populate here -->
+              </ul>
+            </nav>
 
 
-          <!-- Bootstrap JS -->
-          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+            <!-- Bootstrap JS -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-          <script>
-            const archivedProperties = [{
-                property: "Sea View Apartment",
-                location: "Bandra",
-                soldTo: "Mr. Mehta",
-                agent: "Anjali",
-                amount: "2.5Cr"
-              },
-              {
-                property: "Hilltop Villa",
-                location: "Lonavala",
-                soldTo: "Mrs. Kapoor",
-                agent: "Rohit",
-                amount: "3Cr"
-              },
-              {
-                property: "Luxury Flat",
-                location: "Juhu",
-                soldTo: "Mr. Shah",
-                agent: "Meera",
-                amount: "1.8Cr"
-              },
-              {
-                property: "Commercial Shop",
-                location: "Andheri",
-                soldTo: "ABC Pvt Ltd",
-                agent: "Karan",
-                amount: "1.2Cr"
-              },
-              {
-                property: "Studio Apartment",
-                location: "Thane",
-                soldTo: "Mr. Patil",
-                agent: "Nikita",
-                amount: "60L"
-              },
-              {
-                property: "Row House",
-                location: "Borivali",
-                soldTo: "Mr. Agarwal",
-                agent: "Ramesh",
-                amount: "1.1Cr"
-              },
-              {
-                property: "Office Space",
-                location: "Powai",
-                soldTo: "XYZ Ltd",
-                agent: "Amit",
-                amount: "2Cr"
-              },
-              {
-                property: "3BHK Flat",
-                location: "Vashi",
-                soldTo: "Ms. Joshi",
-                agent: "Sneha",
-                amount: "90L"
-              },
-              {
-                property: "Penthouse Suite",
-                location: "Worli",
-                soldTo: "Mr. Khanna",
-                agent: "Neha",
-                amount: "4.5Cr"
-              },
-              {
-                property: "1BHK Studio",
-                location: "Khar",
-                soldTo: "Ms. Batra",
-                agent: "Vikas",
-                amount: "75L"
-              },
-              {
-                property: "Industrial Shed",
-                location: "Navi Mumbai",
-                soldTo: "PQR Industries",
-                agent: "Alok",
-                amount: "3Cr"
-              },
-              {
-                property: "4BHK Duplex",
-                location: "Chembur",
-                soldTo: "Mr. Nair",
-                agent: "Sana",
-                amount: "2.7Cr"
-              },
-              {
-                property: "Retail Space",
-                location: "Kurla",
-                soldTo: "Fashion Hub",
-                agent: "Mona",
-                amount: "1.5Cr"
-              },
-              {
-                property: "Farmhouse",
-                location: "Karjat",
-                soldTo: "Mr. & Mrs. Shetty",
-                agent: "Dev",
-                amount: "5Cr"
-              },
-              {
-                property: "2BHK Apartment",
-                location: "Mulund",
-                soldTo: "Mr. Rao",
-                agent: "Sonia",
-                amount: "1Cr"
-              },
-              {
-                property: "Resort Land",
-                location: "Alibaug",
-                soldTo: "Mr. Varma",
-                agent: "Ravi",
-                amount: "6Cr"
-              },
-              {
-                property: "Studio Condo",
-                location: "Santacruz",
-                soldTo: "Ms. Pillai",
-                agent: "Zoya",
-                amount: "85L"
-              },
-              {
-                property: "Luxury Office",
-                location: "Lower Parel",
-                soldTo: "ABC Corp",
-                agent: "Deepak",
-                amount: "3.2Cr"
-              },
-              {
-                property: "Hilltop Villa",
-                location: "Lonavala",
-                soldTo: "Mrs. Kapoor",
-                agent: "Rohit",
-                amount: "3Cr"
-              },
-              {
-                property: "Luxury Flat",
-                location: "Juhu",
-                soldTo: "Mr. Shah",
-                agent: "Meera",
-                amount: "1.8Cr"
-              },
-              {
-                property: "Commercial Shop",
-                location: "Andheri",
-                soldTo: "ABC Pvt Ltd",
-                agent: "Karan",
-                amount: "1.2Cr"
-              },
-              {
-                property: "Studio Apartment",
-                location: "Thane",
-                soldTo: "Mr. Patil",
-                agent: "Nikita",
-                amount: "60L"
-              },
-              {
-                property: "Row House",
-                location: "Borivali",
-                soldTo: "Mr. Agarwal",
-                agent: "Ramesh",
-                amount: "1.1Cr"
-              },
-              {
-                property: "Office Space",
-                location: "Powai",
-                soldTo: "XYZ Ltd",
-                agent: "Amit",
-                amount: "2Cr"
-              },
-              {
-                property: "3BHK Flat",
-                location: "Vashi",
-                soldTo: "Ms. Joshi",
-                agent: "Sneha",
-                amount: "90L"
-              },
-              {
-                property: "Penthouse Suite",
-                location: "Worli",
-                soldTo: "Mr. Khanna",
-                agent: "Neha",
-                amount: "4.5Cr"
-              },
-              {
-                property: "1BHK Studio",
-                location: "Khar",
-                soldTo: "Ms. Batra",
-                agent: "Vikas",
-                amount: "75L"
-              },
-              {
-                property: "Industrial Shed",
-                location: "Navi Mumbai",
-                soldTo: "PQR Industries",
-                agent: "Alok",
-                amount: "3Cr"
-              },
-              {
-                property: "4BHK Duplex",
-                location: "Chembur",
-                soldTo: "Mr. Nair",
-                agent: "Sana",
-                amount: "2.7Cr"
-              },
-              {
-                property: "Retail Space",
-                location: "Kurla",
-                soldTo: "Fashion Hub",
-                agent: "Mona",
-                amount: "1.5Cr"
-              },
-              {
-                property: "Farmhouse",
-                location: "Karjat",
-                soldTo: "Mr. & Mrs. Shetty",
-                agent: "Dev",
-                amount: "5Cr"
-              },
-              {
-                property: "2BHK Apartment",
-                location: "Mulund",
-                soldTo: "Mr. Rao",
-                agent: "Sonia",
-                amount: "1Cr"
-              },
-              {
-                property: "Resort Land",
-                location: "Alibaug",
-                soldTo: "Mr. Varma",
-                agent: "Ravi",
-                amount: "6Cr"
-              },
-              {
-                property: "Studio Condo",
-                location: "Santacruz",
-                soldTo: "Ms. Pillai",
-                agent: "Zoya",
-                amount: "85L"
-              },
-              {
-                property: "Luxury Office",
-                location: "Lower Parel",
-                soldTo: "ABC Corp",
-                agent: "Deepak",
-                amount: "3.2Cr"
-              }
-            ];
+            <script>
+              const archivedProperties = [{
+                  property: "Sea View Apartment",
+                  location: "Bandra",
+                  soldTo: "Mr. Mehta",
+                  agent: "Anjali",
+                  amount: "2.5Cr"
+                },
+                {
+                  property: "Hilltop Villa",
+                  location: "Lonavala",
+                  soldTo: "Mrs. Kapoor",
+                  agent: "Rohit",
+                  amount: "3Cr"
+                },
+                {
+                  property: "Luxury Flat",
+                  location: "Juhu",
+                  soldTo: "Mr. Shah",
+                  agent: "Meera",
+                  amount: "1.8Cr"
+                },
+                {
+                  property: "Commercial Shop",
+                  location: "Andheri",
+                  soldTo: "ABC Pvt Ltd",
+                  agent: "Karan",
+                  amount: "1.2Cr"
+                },
+                {
+                  property: "Studio Apartment",
+                  location: "Thane",
+                  soldTo: "Mr. Patil",
+                  agent: "Nikita",
+                  amount: "60L"
+                },
+                {
+                  property: "Row House",
+                  location: "Borivali",
+                  soldTo: "Mr. Agarwal",
+                  agent: "Ramesh",
+                  amount: "1.1Cr"
+                },
+                {
+                  property: "Office Space",
+                  location: "Powai",
+                  soldTo: "XYZ Ltd",
+                  agent: "Amit",
+                  amount: "2Cr"
+                },
+                {
+                  property: "3BHK Flat",
+                  location: "Vashi",
+                  soldTo: "Ms. Joshi",
+                  agent: "Sneha",
+                  amount: "90L"
+                },
+                {
+                  property: "Penthouse Suite",
+                  location: "Worli",
+                  soldTo: "Mr. Khanna",
+                  agent: "Neha",
+                  amount: "4.5Cr"
+                },
+                {
+                  property: "1BHK Studio",
+                  location: "Khar",
+                  soldTo: "Ms. Batra",
+                  agent: "Vikas",
+                  amount: "75L"
+                },
+                {
+                  property: "Industrial Shed",
+                  location: "Navi Mumbai",
+                  soldTo: "PQR Industries",
+                  agent: "Alok",
+                  amount: "3Cr"
+                },
+                {
+                  property: "4BHK Duplex",
+                  location: "Chembur",
+                  soldTo: "Mr. Nair",
+                  agent: "Sana",
+                  amount: "2.7Cr"
+                },
+                {
+                  property: "Retail Space",
+                  location: "Kurla",
+                  soldTo: "Fashion Hub",
+                  agent: "Mona",
+                  amount: "1.5Cr"
+                },
+                {
+                  property: "Farmhouse",
+                  location: "Karjat",
+                  soldTo: "Mr. & Mrs. Shetty",
+                  agent: "Dev",
+                  amount: "5Cr"
+                },
+                {
+                  property: "2BHK Apartment",
+                  location: "Mulund",
+                  soldTo: "Mr. Rao",
+                  agent: "Sonia",
+                  amount: "1Cr"
+                },
+                {
+                  property: "Resort Land",
+                  location: "Alibaug",
+                  soldTo: "Mr. Varma",
+                  agent: "Ravi",
+                  amount: "6Cr"
+                },
+                {
+                  property: "Studio Condo",
+                  location: "Santacruz",
+                  soldTo: "Ms. Pillai",
+                  agent: "Zoya",
+                  amount: "85L"
+                },
+                {
+                  property: "Luxury Office",
+                  location: "Lower Parel",
+                  soldTo: "ABC Corp",
+                  agent: "Deepak",
+                  amount: "3.2Cr"
+                },
+                {
+                  property: "Hilltop Villa",
+                  location: "Lonavala",
+                  soldTo: "Mrs. Kapoor",
+                  agent: "Rohit",
+                  amount: "3Cr"
+                },
+                {
+                  property: "Luxury Flat",
+                  location: "Juhu",
+                  soldTo: "Mr. Shah",
+                  agent: "Meera",
+                  amount: "1.8Cr"
+                },
+                {
+                  property: "Commercial Shop",
+                  location: "Andheri",
+                  soldTo: "ABC Pvt Ltd",
+                  agent: "Karan",
+                  amount: "1.2Cr"
+                },
+                {
+                  property: "Studio Apartment",
+                  location: "Thane",
+                  soldTo: "Mr. Patil",
+                  agent: "Nikita",
+                  amount: "60L"
+                },
+                {
+                  property: "Row House",
+                  location: "Borivali",
+                  soldTo: "Mr. Agarwal",
+                  agent: "Ramesh",
+                  amount: "1.1Cr"
+                },
+                {
+                  property: "Office Space",
+                  location: "Powai",
+                  soldTo: "XYZ Ltd",
+                  agent: "Amit",
+                  amount: "2Cr"
+                },
+                {
+                  property: "3BHK Flat",
+                  location: "Vashi",
+                  soldTo: "Ms. Joshi",
+                  agent: "Sneha",
+                  amount: "90L"
+                },
+                {
+                  property: "Penthouse Suite",
+                  location: "Worli",
+                  soldTo: "Mr. Khanna",
+                  agent: "Neha",
+                  amount: "4.5Cr"
+                },
+                {
+                  property: "1BHK Studio",
+                  location: "Khar",
+                  soldTo: "Ms. Batra",
+                  agent: "Vikas",
+                  amount: "75L"
+                },
+                {
+                  property: "Industrial Shed",
+                  location: "Navi Mumbai",
+                  soldTo: "PQR Industries",
+                  agent: "Alok",
+                  amount: "3Cr"
+                },
+                {
+                  property: "4BHK Duplex",
+                  location: "Chembur",
+                  soldTo: "Mr. Nair",
+                  agent: "Sana",
+                  amount: "2.7Cr"
+                },
+                {
+                  property: "Retail Space",
+                  location: "Kurla",
+                  soldTo: "Fashion Hub",
+                  agent: "Mona",
+                  amount: "1.5Cr"
+                },
+                {
+                  property: "Farmhouse",
+                  location: "Karjat",
+                  soldTo: "Mr. & Mrs. Shetty",
+                  agent: "Dev",
+                  amount: "5Cr"
+                },
+                {
+                  property: "2BHK Apartment",
+                  location: "Mulund",
+                  soldTo: "Mr. Rao",
+                  agent: "Sonia",
+                  amount: "1Cr"
+                },
+                {
+                  property: "Resort Land",
+                  location: "Alibaug",
+                  soldTo: "Mr. Varma",
+                  agent: "Ravi",
+                  amount: "6Cr"
+                },
+                {
+                  property: "Studio Condo",
+                  location: "Santacruz",
+                  soldTo: "Ms. Pillai",
+                  agent: "Zoya",
+                  amount: "85L"
+                },
+                {
+                  property: "Luxury Office",
+                  location: "Lower Parel",
+                  soldTo: "ABC Corp",
+                  agent: "Deepak",
+                  amount: "3.2Cr"
+                }
+              ];
 
 
-            let filteredData = [...archivedProperties];
-            let currentPage = 1;
-            const rowsPerPage = 5;
+              let filteredData = [...archivedProperties];
+              let currentPage = 1;
+              const rowsPerPage = 5;
 
-            function renderTable(data) {
-              const start = (currentPage - 1) * rowsPerPage;
-              const end = start + rowsPerPage;
-              const rows = data.slice(start, end);
-              const tableBody = document.getElementById("tableBody");
+              function renderTable(data) {
+                const start = (currentPage - 1) * rowsPerPage;
+                const end = start + rowsPerPage;
+                const rows = data.slice(start, end);
+                const tableBody = document.getElementById("tableBody");
 
-              tableBody.innerHTML = rows.map(item => `
+                tableBody.innerHTML = rows.map(item => `
         <tr>
           <td>${item.property}</td>
           <td>${item.location}</td>
@@ -670,118 +670,118 @@
           </td>
         </tr>`).join("");
 
-              // GSAP fade-in animation
-              gsap.from("#tableBody tr", {
-                duration: 0.4,
-                opacity: 0,
-                y: 10,
-                stagger: 0.1
-              });
-            }
+                // GSAP fade-in animation
+                gsap.from("#tableBody tr", {
+                  duration: 0.4,
+                  opacity: 0,
+                  y: 10,
+                  stagger: 0.1
+                });
+              }
 
-            function renderPagination(data) {
-              const totalPages = Math.ceil(data.length / rowsPerPage);
-              const pagination = document.getElementById("pagination");
-              pagination.innerHTML = '';
+              function renderPagination(data) {
+                const totalPages = Math.ceil(data.length / rowsPerPage);
+                const pagination = document.getElementById("pagination");
+                pagination.innerHTML = '';
 
-              // Always show pagination if there's more than 1 page
-              if (totalPages > 1) {
-                // Previous button
-                pagination.innerHTML += `
+                // Always show pagination if there's more than 1 page
+                if (totalPages > 1) {
+                  // Previous button
+                  pagination.innerHTML += `
       <li class="page-item ${currentPage === 1 ? 'disabled' : ''}">
         <button class="page-link" onclick="changePage(${currentPage - 1})" ${currentPage === 1 ? 'disabled' : ''}>
           &laquo; Previous
         </button>
       </li>`;
 
-                // Page numbers
-                for (let i = 1; i <= totalPages; i++) {
-                  pagination.innerHTML += `
+                  // Page numbers
+                  for (let i = 1; i <= totalPages; i++) {
+                    pagination.innerHTML += `
         <li class="page-item ${i === currentPage ? 'active' : ''}">
           <button class="page-link" onclick="changePage(${i})">${i}</button>
         </li>`;
-                }
+                  }
 
-                // Next button
-                pagination.innerHTML += `
+                  // Next button
+                  pagination.innerHTML += `
       <li class="page-item ${currentPage === totalPages ? 'disabled' : ''}">
         <button class="page-link" onclick="changePage(${currentPage + 1})" ${currentPage === totalPages ? 'disabled' : ''}>
           Next &raquo;
         </button>
       </li>`;
+                }
               }
-            }
 
 
-            function changePage(page) {
-              const totalPages = Math.ceil(filteredData.length / rowsPerPage);
-              if (page < 1 || page > totalPages) return;
-              currentPage = page;
+              function changePage(page) {
+                const totalPages = Math.ceil(filteredData.length / rowsPerPage);
+                if (page < 1 || page > totalPages) return;
+                currentPage = page;
+                renderTable(filteredData);
+                renderPagination(filteredData);
+              }
+
+              function filterTable() {
+                const searchText = document.getElementById("searchInput").value.toLowerCase();
+                filteredData = archivedProperties.filter(item =>
+                  item.property.toLowerCase().includes(searchText) ||
+                  item.location.toLowerCase().includes(searchText) ||
+                  item.soldTo.toLowerCase().includes(searchText) ||
+                  item.agent.toLowerCase().includes(searchText)
+                );
+                currentPage = 1;
+                renderTable(filteredData);
+                renderPagination(filteredData);
+              }
+
+              function confirmDelete(propertyName) {
+                if (confirm(`Are you sure you want to permanently delete "${propertyName}"?`)) {
+                  alert(`"${propertyName}" deleted permanently.`);
+                }
+              }
+
+              document.getElementById("searchInput").addEventListener("input", filterTable);
+
+              // Initial render
               renderTable(filteredData);
               renderPagination(filteredData);
-            }
+            </script>
 
-            function filterTable() {
-              const searchText = document.getElementById("searchInput").value.toLowerCase();
-              filteredData = archivedProperties.filter(item =>
-                item.property.toLowerCase().includes(searchText) ||
-                item.location.toLowerCase().includes(searchText) ||
-                item.soldTo.toLowerCase().includes(searchText) ||
-                item.agent.toLowerCase().includes(searchText)
-              );
-              currentPage = 1;
-              renderTable(filteredData);
-              renderPagination(filteredData);
-            }
-
-            function confirmDelete(propertyName) {
-              if (confirm(`Are you sure you want to permanently delete "${propertyName}"?`)) {
-                alert(`"${propertyName}" deleted permanently.`);
-              }
-            }
-
-            document.getElementById("searchInput").addEventListener("input", filterTable);
-
-            // Initial render
-            renderTable(filteredData);
-            renderPagination(filteredData);
-          </script>
-
+          </div>
         </div>
+        <!-- /.container-fluid -->
+
+
+        <!-- Footer -->
+        <footer class="sticky-footer bg-white text-dark py-4 mt-auto">
+          <hr class="border-top border-dark opacity-25 mb-4" />
+
+          <div class="container text-center">
+            <div class="mb-3">
+              <p class="mb-1 fw-semibold">© 2025 Veena Group. All Rights Reserved.</p>
+              <p class="mb-3 small">Empowering Mumbai’s Real Estate Market through Smart Digital Solutions.</p>
+            </div>
+
+            <nav class="mb-3 d-flex justify-content-center gap-4 flex-wrap">
+              <a href="#" class="text-decoration-none text-primary fw-semibold small">Privacy Policy</a>
+              <a href="#" class="text-decoration-none text-primary fw-semibold small">Terms of Service</a>
+              <a href="#" class="text-decoration-none text-primary fw-semibold small">Contact Us</a>
+            </nav>
+
+            <div class="d-flex justify-content-center gap-3">
+              <a href="#" class="text-primary fs-5" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="text-primary fs-5" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="text-primary fs-5" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+
+          </div>
+        </footer>
+        <!-- End of Footer -->
       </div>
-      <!-- /.container-fluid -->
+      <!-- End of Main Content -->
 
-
-      <!-- Footer -->
-      <footer class="sticky-footer bg-white text-dark py-4 mt-auto">
-        <hr class="border-top border-dark opacity-25 mb-4" />
-
-        <div class="container text-center">
-          <div class="mb-3">
-            <p class="mb-1 fw-semibold">© 2025 Veena Group. All Rights Reserved.</p>
-            <p class="mb-3 small">Empowering Mumbai’s Real Estate Market through Smart Digital Solutions.</p>
-          </div>
-
-          <nav class="mb-3 d-flex justify-content-center gap-4 flex-wrap">
-            <a href="#" class="text-decoration-none text-primary fw-semibold small">Privacy Policy</a>
-            <a href="#" class="text-decoration-none text-primary fw-semibold small">Terms of Service</a>
-            <a href="#" class="text-decoration-none text-primary fw-semibold small">Contact Us</a>
-          </nav>
-
-          <div class="d-flex justify-content-center gap-3">
-            <a href="#" class="text-primary fs-5" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="text-primary fs-5" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="text-primary fs-5" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          </div>
-
-        </div>
-      </footer>
-      <!-- End of Footer -->
     </div>
-    <!-- End of Main Content -->
-
-  </div>
-  <!-- End of Content Wrapper -->
+    <!-- End of Content Wrapper -->
 
   </div>
   <!-- End of Page Wrapper -->

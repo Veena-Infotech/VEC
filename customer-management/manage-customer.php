@@ -490,58 +490,48 @@
             let currentPage = 1;
             const rowsPerPage = 5;
 
-            function getBadge(status) {
-              const badgeClass = {
-                "Looking": "info",
-                "On Hold": "warning",
-                "Closed Deal": "success"
-              } [status] || "secondary";
-              return `<span class="badge bg-${badgeClass}">${status}</span>`;
-            }
-
-            // Call this after renderTable finishes inserting the HTML
-            document.querySelectorAll('.dropdown-toggle').forEach(dropdownToggleEl => {
-              new bootstrap.Dropdown(dropdownToggleEl);
-            });
-
+            
             function renderTable(data) {
               const start = (currentPage - 1) * rowsPerPage;
               const end = start + rowsPerPage;
               const pageData = data.slice(start, end);
               const tbody = document.getElementById("customerTable");
 
-              tbody.innerHTML = pageData.length ?
-                pageData.map(c => `
-        <tr>
-          <td>${c.name}</td>
-          <td>${c.type}</td>
-          <td>${c.budget}</td>
-          <td>${c.location}</td>
-          <td>${c.status}</td>
-          <td>${c.agent}</td>
-          <td class="text-nowrap">
-            <div class="dropdown">
-              <button class="btn btn-sm btn-outline-dark dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                <i class="bi bi-three-dots-vertical"></i>
-              </button>
-              <ul class="dropdown-menu dropdown-menu-end">
-                <li><a class="dropdown-item" href="#" onclick="alert('Status updated for ${c.name}')"><i class="bi bi-pencil-square me-2"></i>Update Status</a></li>
-                <li><a class="dropdown-item" href="#" onclick="alert('Matched properties for ${c.name}')"><i class="bi bi-house-door me-2"></i>Match Properties</a></li>
-                <li><a class="dropdown-item" href="#" onclick="alert('Note added for ${c.name} at ' + new Date().toLocaleTimeString())"><i class="bi bi-journal-text me-2"></i>Add Note</a></li>
-                <li><a class="dropdown-item" href="#" onclick="alert('Assigned agent for ${c.name}')"><i class="bi bi-person-check me-2"></i>Assign Agent</a></li>
-              </ul>
-            </div>
-          </td>
-        </tr>`).join("") :
-                `<tr><td colspan="7" class="text-muted">No records match your filters.</td></tr>`;
+              if (pageData.length) {
+                tbody.innerHTML = pageData.map(c => `
+      <tr>
+        <td>${c.name}</td>
+        <td>${c.type}</td>
+        <td>${c.budget}</td>
+        <td>${c.location}</td>
+        <td>${getBadge(c.status)}</td>
+        <td>${c.agent}</td>
+        <td class="text-nowrap">
+          <div class="dropdown">
+            <button class="btn btn-sm btn-outline-dark dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="bi bi-three-dots-vertical"></i>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" href="#" onclick="alert('Status updated for ${c.name}')"><i class="bi bi-pencil-square me-2"></i>Update Status</a></li>
+              <li><a class="dropdown-item" href="#" onclick="alert('Matched properties for ${c.name}')"><i class="bi bi-house-door me-2"></i>Match Properties</a></li>
+              <li><a class="dropdown-item" href="#" onclick="alert('Note added for ${c.name} at ' + new Date().toLocaleTimeString())"><i class="bi bi-journal-text me-2"></i>Add Note</a></li>
+              <li><a class="dropdown-item" href="#" onclick="alert('Assigned agent for ${c.name}')"><i class="bi bi-person-check me-2"></i>Assign Agent</a></li>
+            </ul>
+          </div>
+        </td>
+      </tr>
+    `).join("");
+              } else {
+                tbody.innerHTML = `<tr><td colspan="7" class="text-center text-muted">No records match your filters.</td></tr>`;
+              }
 
-              // ✅ Initialize dropdowns after DOM is updated
-              document.querySelectorAll('.dropdown-toggle').forEach(el => {
-                new bootstrap.Dropdown(el);
-              });
+              // ✅ Initialize dropdowns AFTER table is populated
+              setTimeout(() => {
+                document.querySelectorAll('.dropdown-toggle').forEach(el => {
+                  new bootstrap.Dropdown(el);
+                });
+              }, 0);
             }
-
-
 
             function renderPagination(data) {
               const totalPages = Math.ceil(data.length / rowsPerPage);
