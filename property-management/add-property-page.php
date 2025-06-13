@@ -234,6 +234,12 @@
                                     <input type="text" class="form-control" id="landmark" name="landmark" placeholder="Nearby landmark" />
                                 </div>
 
+                                <!-- location -->
+                                <div class="col-md-6">
+                                    <label for="location" class="form-label">Location (City, State)</label>
+                                    <input type="text" class="form-control" id="location" name="location" placeholder="e.g., Mumbai, Maharashtra" required />
+                                </div>
+
                                 <!-- Area Fields -->
                                 <div class="col-md-6">
                                     <label for="areaCarpet" class="form-label">Carpet Area (sqft)</label>
@@ -302,6 +308,7 @@
                                     </div>
                                 </div>
 
+
                                 <!-- Linked To -->
                                 <div class="col-md-6">
                                     <label class="form-label">Linked To</label>
@@ -314,6 +321,24 @@
                                         <label class="form-check-label" for="linkedAgent">Agent</label>
                                     </div>
                                 </div>
+
+                                <!-- Owner Name Input -->
+                                <div class="col-md-6" id="ownerNameContainer" style="display: none;">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="ownerName" name="ownerName" placeholder="Enter Owner Name">
+                                        <label for="ownerName">Please enter the name of the owner</label>
+                                    </div>
+                                </div>
+
+                                <!-- Agent Name Input -->
+                                <div class="col-md-6" id="agentNameContainer" style="display: none;">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="agentName" name="agentName" placeholder="Enter Agent Name">
+                                        <label for="agentName">Please enter the name of the agent</label>
+                                    </div>
+                                </div>
+
+
 
                                 <!-- Source -->
                                 <div class="col-md-6">
@@ -469,35 +494,65 @@
                     </div>
                 </div>
 
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        const ownerRadio = document.getElementById('linkedOwner');
+                        const agentRadio = document.getElementById('linkedAgent');
+                        const ownerContainer = document.getElementById('ownerNameContainer');
+                        const agentContainer = document.getElementById('agentNameContainer');
+                        const ownerInput = document.getElementById('ownerName');
+                        const agentInput = document.getElementById('agentName');
+
+                        function toggleInputFields() {
+                            if (ownerRadio.checked) {
+                                ownerContainer.style.display = 'block';
+                                agentContainer.style.display = 'none';
+                                ownerInput.required = true;
+                                agentInput.required = false;
+                                agentInput.value = '';
+                            } else if (agentRadio.checked) {
+                                agentContainer.style.display = 'block';
+                                ownerContainer.style.display = 'none';
+                                agentInput.required = true;
+                                ownerInput.required = false;
+                                ownerInput.value = '';
+                            }
+                        }
+
+                        ownerRadio.addEventListener('change', toggleInputFields);
+                        agentRadio.addEventListener('change', toggleInputFields);
+                    });
+                </script>
+
 
             </div>
             <!-- End of Main Content -->
 
             <!-- Footer -->
-                 <!-- Footer -->
-      <footer class="sticky-footer bg-white text-dark py-4 mt-auto">
-        <hr class="border-top border-dark opacity-25 mb-4" />
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white text-dark py-4 mt-auto">
+                <hr class="border-top border-dark opacity-25 mb-4" />
 
-        <div class="container text-center">
-          <div class="mb-3">
-            <p class="mb-1 fw-semibold">© 2025 Veena Group. All Rights Reserved.</p>
-            <p class="mb-3 small">Empowering Mumbai’s Real Estate Market through Smart Digital Solutions.</p>
-          </div>
+                <div class="container text-center">
+                    <div class="mb-3">
+                        <p class="mb-1 fw-semibold">© 2025 Veena Group. All Rights Reserved.</p>
+                        <p class="mb-3 small">Empowering Mumbai’s Real Estate Market through Smart Digital Solutions.</p>
+                    </div>
 
-          <nav class="mb-3 d-flex justify-content-center gap-4 flex-wrap">
-            <a href="#" class="text-decoration-none text-primary fw-semibold small">Privacy Policy</a>
-            <a href="#" class="text-decoration-none text-primary fw-semibold small">Terms of Service</a>
-            <a href="#" class="text-decoration-none text-primary fw-semibold small">Contact Us</a>
-          </nav>
+                    <nav class="mb-3 d-flex justify-content-center gap-4 flex-wrap">
+                        <a href="#" class="text-decoration-none text-primary fw-semibold small">Privacy Policy</a>
+                        <a href="#" class="text-decoration-none text-primary fw-semibold small">Terms of Service</a>
+                        <a href="#" class="text-decoration-none text-primary fw-semibold small">Contact Us</a>
+                    </nav>
 
-          <div class="d-flex justify-content-center gap-3">
-            <a href="#" class="text-primary fs-5" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="text-primary fs-5" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="text-primary fs-5" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          </div>
+                    <div class="d-flex justify-content-center gap-3">
+                        <a href="#" class="text-primary fs-5" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-primary fs-5" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-primary fs-5" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
 
-        </div>
-      </footer>
+                </div>
+            </footer>
             <!-- End of Footer -->
 
         </div>
@@ -517,6 +572,7 @@
 
     <!-- Custom scripts for all pages-->
     <script src="../js/sb-admin-2.min.js"></script>
+
 
 </body>
 

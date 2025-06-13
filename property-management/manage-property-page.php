@@ -402,7 +402,7 @@
                     <th>Property ID</th>
                     <th>Title</th>
                     <th>Location</th>
-                    <th>Owner</th>
+                    <th>Owner/Agent</th>
                     <th>Status</th>
                     <th>Agent</th>
                     <th class="text-center">Actions</th>
@@ -473,7 +473,6 @@
             </button>
             <button class="btn btn-outline-warning dropdown-toggle" data-bs-toggle="dropdown" title="More Actions"></button>
             <ul class="dropdown-menu dropdown-menu-end">
-              <li><a class="dropdown-item" href="#"><i class="bi bi-person-plus"></i> Assign Agent</a></li>
               <li><a class="dropdown-item" href="#"><i class="bi bi-check-circle"></i> Mark as Sold</a></li>
               <li><a class="dropdown-item" href="#"><i class="bi bi-house-door"></i> Mark as Rented</a></li>
               <li><a class="dropdown-item text-danger" href="#"><i class="bi bi-archive"></i> Archive</a></li>

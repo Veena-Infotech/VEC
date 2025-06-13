@@ -369,7 +369,6 @@
                   <tr>
                     <th><i class="bi bi-house-door-fill me-1"></i>Property</th>
                     <th><i class="bi bi-geo-alt-fill me-1"></i>Location</th>
-                    <th><i class="bi bi-person-fill me-1"></i>Sold To</th>
                     <th><i class="bi bi-person-badge-fill me-1"></i>Agent</th>
                     <th><i class="bi bi-cash-coin me-1"></i>Amount</th>
                     <th><i class="bi bi-three-dots-vertical me-1"></i>Actions</th>
@@ -396,245 +395,245 @@
               const archivedProperties = [{
                   property: "Sea View Apartment",
                   location: "Bandra",
-                  soldTo: "Mr. Mehta",
+                 
                   agent: "Anjali",
                   amount: "2.5Cr"
                 },
                 {
                   property: "Hilltop Villa",
                   location: "Lonavala",
-                  soldTo: "Mrs. Kapoor",
+                 
                   agent: "Rohit",
                   amount: "3Cr"
                 },
                 {
                   property: "Luxury Flat",
                   location: "Juhu",
-                  soldTo: "Mr. Shah",
+                
                   agent: "Meera",
                   amount: "1.8Cr"
                 },
                 {
                   property: "Commercial Shop",
                   location: "Andheri",
-                  soldTo: "ABC Pvt Ltd",
+                 
                   agent: "Karan",
                   amount: "1.2Cr"
                 },
                 {
                   property: "Studio Apartment",
                   location: "Thane",
-                  soldTo: "Mr. Patil",
+              
                   agent: "Nikita",
                   amount: "60L"
                 },
                 {
                   property: "Row House",
                   location: "Borivali",
-                  soldTo: "Mr. Agarwal",
+                 
                   agent: "Ramesh",
                   amount: "1.1Cr"
                 },
                 {
                   property: "Office Space",
                   location: "Powai",
-                  soldTo: "XYZ Ltd",
+                 
                   agent: "Amit",
                   amount: "2Cr"
                 },
                 {
                   property: "3BHK Flat",
                   location: "Vashi",
-                  soldTo: "Ms. Joshi",
+                
                   agent: "Sneha",
                   amount: "90L"
                 },
                 {
                   property: "Penthouse Suite",
                   location: "Worli",
-                  soldTo: "Mr. Khanna",
+                 
                   agent: "Neha",
                   amount: "4.5Cr"
                 },
                 {
                   property: "1BHK Studio",
                   location: "Khar",
-                  soldTo: "Ms. Batra",
+                  
                   agent: "Vikas",
                   amount: "75L"
                 },
                 {
                   property: "Industrial Shed",
                   location: "Navi Mumbai",
-                  soldTo: "PQR Industries",
+                  
                   agent: "Alok",
                   amount: "3Cr"
                 },
                 {
                   property: "4BHK Duplex",
                   location: "Chembur",
-                  soldTo: "Mr. Nair",
+                 
                   agent: "Sana",
                   amount: "2.7Cr"
                 },
                 {
                   property: "Retail Space",
                   location: "Kurla",
-                  soldTo: "Fashion Hub",
+                  
                   agent: "Mona",
                   amount: "1.5Cr"
                 },
                 {
                   property: "Farmhouse",
                   location: "Karjat",
-                  soldTo: "Mr. & Mrs. Shetty",
+                  
                   agent: "Dev",
                   amount: "5Cr"
                 },
                 {
                   property: "2BHK Apartment",
                   location: "Mulund",
-                  soldTo: "Mr. Rao",
+                  
                   agent: "Sonia",
                   amount: "1Cr"
                 },
                 {
                   property: "Resort Land",
                   location: "Alibaug",
-                  soldTo: "Mr. Varma",
+                  
                   agent: "Ravi",
                   amount: "6Cr"
                 },
                 {
                   property: "Studio Condo",
                   location: "Santacruz",
-                  soldTo: "Ms. Pillai",
+                 
                   agent: "Zoya",
                   amount: "85L"
                 },
                 {
                   property: "Luxury Office",
                   location: "Lower Parel",
-                  soldTo: "ABC Corp",
+                  
                   agent: "Deepak",
                   amount: "3.2Cr"
                 },
                 {
                   property: "Hilltop Villa",
                   location: "Lonavala",
-                  soldTo: "Mrs. Kapoor",
+                  
                   agent: "Rohit",
                   amount: "3Cr"
                 },
                 {
                   property: "Luxury Flat",
                   location: "Juhu",
-                  soldTo: "Mr. Shah",
+                 
                   agent: "Meera",
                   amount: "1.8Cr"
                 },
                 {
                   property: "Commercial Shop",
                   location: "Andheri",
-                  soldTo: "ABC Pvt Ltd",
+                  
                   agent: "Karan",
                   amount: "1.2Cr"
                 },
                 {
                   property: "Studio Apartment",
                   location: "Thane",
-                  soldTo: "Mr. Patil",
+                 
                   agent: "Nikita",
                   amount: "60L"
                 },
                 {
                   property: "Row House",
                   location: "Borivali",
-                  soldTo: "Mr. Agarwal",
+                
                   agent: "Ramesh",
                   amount: "1.1Cr"
                 },
                 {
                   property: "Office Space",
                   location: "Powai",
-                  soldTo: "XYZ Ltd",
+                 
                   agent: "Amit",
                   amount: "2Cr"
                 },
                 {
                   property: "3BHK Flat",
                   location: "Vashi",
-                  soldTo: "Ms. Joshi",
+                  
                   agent: "Sneha",
                   amount: "90L"
                 },
                 {
                   property: "Penthouse Suite",
                   location: "Worli",
-                  soldTo: "Mr. Khanna",
+                 
                   agent: "Neha",
                   amount: "4.5Cr"
                 },
                 {
                   property: "1BHK Studio",
                   location: "Khar",
-                  soldTo: "Ms. Batra",
+                  
                   agent: "Vikas",
                   amount: "75L"
                 },
                 {
                   property: "Industrial Shed",
                   location: "Navi Mumbai",
-                  soldTo: "PQR Industries",
+                  
                   agent: "Alok",
                   amount: "3Cr"
                 },
                 {
                   property: "4BHK Duplex",
                   location: "Chembur",
-                  soldTo: "Mr. Nair",
+                
                   agent: "Sana",
                   amount: "2.7Cr"
                 },
                 {
                   property: "Retail Space",
                   location: "Kurla",
-                  soldTo: "Fashion Hub",
+                 
                   agent: "Mona",
                   amount: "1.5Cr"
                 },
                 {
                   property: "Farmhouse",
                   location: "Karjat",
-                  soldTo: "Mr. & Mrs. Shetty",
+                  
                   agent: "Dev",
                   amount: "5Cr"
                 },
                 {
                   property: "2BHK Apartment",
                   location: "Mulund",
-                  soldTo: "Mr. Rao",
+                  
                   agent: "Sonia",
                   amount: "1Cr"
                 },
                 {
                   property: "Resort Land",
                   location: "Alibaug",
-                  soldTo: "Mr. Varma",
+                  
                   agent: "Ravi",
                   amount: "6Cr"
                 },
                 {
                   property: "Studio Condo",
                   location: "Santacruz",
-                  soldTo: "Ms. Pillai",
+                  
                   agent: "Zoya",
                   amount: "85L"
                 },
                 {
                   property: "Luxury Office",
                   location: "Lower Parel",
-                  soldTo: "ABC Corp",
+                
                   agent: "Deepak",
                   amount: "3.2Cr"
                 }
@@ -655,7 +654,7 @@
         <tr>
           <td>${item.property}</td>
           <td>${item.location}</td>
-          <td>${item.soldTo}</td>
+         
           <td>${item.agent}</td>
           <td>${item.amount}</td>
           <td>

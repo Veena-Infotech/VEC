@@ -177,21 +177,14 @@
               <p class="text-muted">Track client interactions, statuses, and follow-ups</p>
             </div>
 
+            
             <!-- Search -->
             <div class="row g-2 mb-3">
-              <div class="col-md-8">
+              <div class="col-md-5 mx-auto">
                 <input type="text" id="searchInput" name="searchInput" class="form-control form-control-sm" placeholder="Search by Client Name or Notes">
               </div>
-              <div class="col-md-4">
-                <select id="statusFilter" name="statusFilter" class="form-select form-select-sm">
-                  <option value="">Filter by Status</option>
-                  <option value="Interested">Interested</option>
-                  <option value="Visited">Visited</option>
-                  <option value="Negotiating">Negotiating</option>
-                  <option value="Finalized">Finalized</option>
-                </select>
-              </div>
             </div>
+
 
 
             <!-- Table -->
