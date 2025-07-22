@@ -1,1 +1,0 @@
-Main page to show luxury real estate listings
