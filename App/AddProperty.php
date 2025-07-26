@@ -73,7 +73,7 @@ include './sidebar.php';
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb bg-transparent mb-2 pb-0 pt-1 px-0">
         <li class="breadcrumb-item text-sm">
-          <a class="opacity-5 text-dark" href="./Dashboard.php">Dashboard</a>
+          <a class="opacity-5 text-dark" href="./Dashboard.php">Home</a>
         </li>
         <li class="breadcrumb-item text-sm text-dark active" aria-current="page">
           Add Property
@@ -83,23 +83,133 @@ include './sidebar.php';
     <!-- Page Content -->
     <h2>Add Property</h2>
     <form>
-      <div class="mb-3">
-        <label for="propertyName" class="form-label">Property Name</label>
-        <input type="text" class="form-control" id="propertyName" name="propertyName">
+       <!-- Navbar / Breadcrumb -->
+    <nav class="navbar navbar-main navbar-expand-lg px-0 mx-3 shadow-none border-radius-xl" id="navbarBlur" data-scroll="true">
+      <div class="container-fluid py-1 px-3">
+        
       </div>
-      <div class="mb-3">
-        <label for="propertyType" class="form-label">Property Type</label>
-        <select class="form-control" id="propertyType" name="propertyType">
-          <option>Apartment</option>
-          <option>House</option>
-          <option>Commercial</option>
-        </select>
+    </nav>
+    <!-- End Navbar / Breadcrumb -->
+
+    <div class="container-fluid py-4">
+      <div class="row">
+        <div class="col-12 col-lg-10 mx-auto">
+          <div class="card">
+            
+            <div class="card-body">
+              <form>
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label for="propertyType" class="form-label">Property Type</label>
+                    <select class="form-select" id="propertyType" name="propertyType">
+                      <option selected disabled>Select type</option>
+                      <option>1 BHK</option>
+                      <option>2 BHK</option>
+                      <option>3 BHK</option>
+                      <option>4 BHK</option>
+                      <option>5 BHK</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="transactionType" class="form-label">Transaction Type</label>
+                    <select class="form-select" id="transactionType" name="transactionType">
+                      <option selected disabled>Select transaction</option>
+                      <option>Sell</option>
+                      <option>Rent</option>
+                    </select>
+                  </div>
+                 <div class="input-group input-group-outline my-3">
+                    <label class="form-label">Locality Ward Based (Mumbai Region)</label>
+                    <input type="email" class="form-control">
+                  </div>
+                  <div class="input-group input-group-outline my-3">
+                    <label class="form-label">Address</label>
+                    <textarea  class="form-control" id=""></textarea>
+                  </div>
+                  <div class="input-group input-group-outline my-3">
+                    <label class="form-label">Pincode</label>
+                    <input type="number" class="form-control">
+                  </div>
+                  <div class="col-md-4 mb-3">
+                    <div class="input-group input-group-outline my-3">
+                    <label class="form-label">Landmark</label>
+                    <input type="text" class="form-control">
+                  </div>
+                  </div>
+                  <div class="col-md-4 mb-3">
+                    <div class="input-group input-group-outline my-3">
+                    <label class="form-label">Carpet area (Sq. FT)</label>
+                    <input type="text" class="form-control">
+                  </div>
+                  </div>
+                  <div class="col-md-4 mb-3">
+                   <div class="input-group input-group-outline my-3">
+                    <label class="form-label">Build Up area (SQ ft)</label>
+                    <input type="text" class="form-control">
+                  </div>
+                  </div>
+                  <div class="col-md-4 mb-3">
+                    <div class="input-group input-group-outline my-3">
+                    <label class="form-label">Plot area (Sq Ft)</label>
+                    <input type="text" class="form-control">
+                  </div>
+                  </div>
+                  <div class="col-md-4 mb-3">
+                    <div class="input-group input-group-outline my-3">
+                    <label class="form-label">Price</label>
+                    <input type="nummber" class="form-control">
+                  </div>
+                  </div>
+                  <div class="col-md-4 mb-3 d-flex align-items-center">
+                    <label class="form-label me-3 mb-0">Negotiable</label>
+                    <div class="form-check form-switch">
+                      <input class="form-check-input" type="checkbox" id="negotiable" name="negotiable">
+                    </div>
+                  </div>
+                   <div class="input-group input-group-static">
+       <label for="exampleFormControlSelect2" class="ms-0">Amenities</label>
+       <select multiple="" class="form-control pb-4" id="exampleFormControlSelect2">
+         <option>Gym</option>
+         <option>Parking</option>
+         <option>Balcony</option>
+         <option>Turf</option>
+         <option></option>
+       </select>
+     </div>
+                  <div class="col-md-4 mb-3">
+                    <label for="source" class="form-label">Source</label>
+                    <select class="form-select" id="source" name="source">
+                      <option selected disabled>Select source</option>
+                      <option>Direct Client</option>
+                      <option>Agent</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="photos" class="form-label">Upload Photos</label>
+                    <div class="input-group">
+                      <input type="file" class="form-control" id="photos" name="photos[]" multiple accept="image/*">
+                      <label class="input-group-text" for="photos">Choose files</label>
+                    </div>
+                    <small class="text-muted">Maximum size: 2MB per file.</small>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="documents" class="form-label">Upload Documents</label>
+                    <div class="input-group">
+                      <input type="file" class="form-control" id="documents" name="documents[]" multiple>
+                      <label class="input-group-text" for="documents">Choose files</label>
+                    </div>
+                    <small class="text-muted">Maximum size: 2MB per file.</small>
+                  </div>
+                </div>
+                <div class="mt-4 text-end">
+                  <button type="submit" class="btn btn-primary">Add Property</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="mb-3">
-        <label for="propertyPrice" class="form-label">Price</label>
-        <input type="number" class="form-control" id="propertyPrice" name="propertyPrice">
-      </div>
-      <button type="submit" class="btn btn-primary">Add Property</button>
+    </div>
     </form>
   </div>
 </body>
